@@ -1,0 +1,82 @@
+;FFMETADATA1
+title=The Three-Phase Inverter — PMSM & BLDC, Lesson 17
+artist=lecture-forge
+language=eng
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=28294
+title=01 Six switches, sine-wave currents
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=28294
+END=55495
+title=02 Answers from Lesson 16
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=55495
+END=95352
+title=03 One leg, two positions
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=95352
+END=133328
+title=04 Three legs, eight states
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=133328
+END=176324
+title=05 Pole, phase and line voltages
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=176324
+END=225989
+title=06 Sine-triangle PWM
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=225989
+END=255677
+title=07 The switched voltage in frequency
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=255677
+END=295858
+title=08 Borrowing the common mode
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=295858
+END=334958
+title=09 Dead time
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=334958
+END=373515
+title=10 Dead time in the current
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=373515
+END=398875
+title=11 Simulate the bridge
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=398875
+END=452338
+title=12 On the bench
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=452338
+END=490616
+title=13 Predict, then check

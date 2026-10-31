@@ -1,0 +1,509 @@
+1
+00:00:00,600 --> 00:00:02,872
+Twenty-four volts DC, six switches,
+
+2
+00:00:02,912 --> 00:00:07,633
+and each motor terminal can only be
+connected to plus or to minus.
+
+3
+00:00:07,673 --> 00:00:11,891
+Here's phase a's terminal voltage for our
+reference
+
+4
+00:00:11,931 --> 00:00:15,881
+motor at 3000 rpm: nothing but 24 V
+pulses.
+
+5
+00:00:15,921 --> 00:00:20,240
+Yet the currents are 10 A sine waves, with
+ripple riding on top.
+
+6
+00:00:20,340 --> 00:00:24,393
+Today: the three-phase inverter, how it
+makes sine waves from pulses,
+
+7
+00:00:24,433 --> 00:00:27,483
+and what its limits and imperfections
+cost.
+
+8
+00:00:28,594 --> 00:00:31,155
+First, the answers from Lesson 16.
+
+9
+00:00:31,195 --> 00:00:34,525
+One: six conduction states per electrical
+cycle.
+
+10
+00:00:34,565 --> 00:00:40,865
+Two: 60 electrical degrees per step is 15
+mechanical degrees on our 8-pole motor.
+
+11
+00:00:40,905 --> 00:00:45,859
+Three: six-step puts two terminals
+straight across the bus,
+
+12
+00:00:45,899 --> 00:00:51,277
+a 24 V line-to-line peak. Sine-triangle
+PWM reaches only 20.8 V,
+
+13
+00:00:51,317 --> 00:00:54,695
+√3/2 of that. Today we'll see why.
+
+14
+00:00:55,795 --> 00:00:59,424
+Start with one leg: two transistors in
+series across the bus.
+
+15
+00:00:59,464 --> 00:01:02,110
+The terminal between them is the pole.
+
+16
+00:01:02,150 --> 00:01:06,022
+Upper switch on: the pole sits at 24 V.
+Lower switch on:
+
+17
+00:01:06,062 --> 00:01:10,544
+zero, the negative rail N. Never both:
+that shorts the bus.
+
+18
+00:01:10,584 --> 00:01:16,804
+Switch every 50 µs with duty d, and the
+pole's average is d times the bus voltage.
+
+19
+00:01:16,844 --> 00:01:21,235
+The motor follows that average: its
+inductance limits how fast the
+
+20
+00:01:21,275 --> 00:01:25,865
+current can change, so in one period it
+moves by at most 2.8 A.
+
+21
+00:01:25,905 --> 00:01:30,604
+The upper gate drive rides on the pole, so
+it's powered by a bootstrap capacitor,
+
+22
+00:01:30,644 --> 00:01:34,537
+recharged through a diode whenever the
+lower switch is on.
+
+23
+00:01:35,652 --> 00:01:39,097
+Three legs, two positions each: eight
+switching states.
+
+24
+00:01:39,137 --> 00:01:43,708
+Write a state as S_a S_b S_c, with 1 for
+upper on.
+
+25
+00:01:43,748 --> 00:01:50,563
+Its space vector is two-thirds of the bus,
+times S_a + a S_b + a² S_c.
+
+26
+00:01:50,603 --> 00:01:54,614
+State 100 points along phase a, with 16 V.
+
+27
+00:01:54,654 --> 00:02:00,704
+State 110 sits 60° further on, and so on
+around: a hexagon.
+
+28
+00:02:00,744 --> 00:02:06,774
+The other two, 000 and 111, tie all three
+terminals to one rail: zero vectors.
+
+29
+00:02:06,814 --> 00:02:12,528
+Anything between the eight vectors is an
+average over a PWM period.
+
+30
+00:02:13,628 --> 00:02:15,743
+Which voltage does each winding feel?
+
+31
+00:02:15,783 --> 00:02:20,046
+We measure poles from the negative rail,
+but the star point floats.
+
+32
+00:02:20,086 --> 00:02:25,037
+Each pole voltage is the phase voltage
+plus the star point's. Add all three:
+
+33
+00:02:25,077 --> 00:02:30,166
+with no neutral, the currents sum to zero,
+and so do balanced back-EMFs.
+
+34
+00:02:30,206 --> 00:02:33,272
+So the star point sits at the average of
+the poles,
+
+35
+00:02:33,312 --> 00:02:37,630
+the common-mode voltage. Phase voltage is
+pole minus common mode.
+
+36
+00:02:37,670 --> 00:02:43,334
+In one period here, the common mode climbs
+0, 8, 16, 24 V and back;
+
+37
+00:02:43,374 --> 00:02:48,756
+the phase voltage takes 0, 8 and 16; line-
+to-line, 0 or 24.
+
+38
+00:02:48,796 --> 00:02:50,910
+The motor never sees the common mode,
+
+39
+00:02:50,950 --> 00:02:55,524
+though a third harmonic in the back-EMF
+would move the star point too.
+
+40
+00:02:56,624 --> 00:02:58,882
+To set the duties, compare each reference
+
+41
+00:02:58,922 --> 00:03:01,749
+with a triangular carrier, slowed down
+here.
+
+42
+00:03:01,789 --> 00:03:06,632
+Digital timers sample the reference once
+per period. While it's above the carrier,
+
+43
+00:03:06,672 --> 00:03:11,082
+the upper switch is on, so duty is one
+plus the reference, over two.
+
+44
+00:03:11,122 --> 00:03:16,475
+With references m cos θ, 120° apart, each
+pole averages half the bus
+
+45
+00:03:16,515 --> 00:03:22,427
+plus m times half the bus times the
+cosine. The offset is common mode.
+
+46
+00:03:22,467 --> 00:03:26,848
+So the phase voltage is m times 12 V.
+
+47
+00:03:26,888 --> 00:03:33,940
+At 3000 rpm and 10 A, our motor needs 8.59
+V: m = 0.716.
+
+48
+00:03:33,980 --> 00:03:38,812
+Past m = 1 the references clip: 12 V per
+phase,
+
+49
+00:03:38,852 --> 00:03:45,158
+and √3/2 × 24 = 20.8 V line-to-line.
+Lesson 16's number.
+
+50
+00:03:46,289 --> 00:03:50,189
+Now in frequency, computed exactly from
+the switching edges.
+
+51
+00:03:50,229 --> 00:03:53,677
+The pole voltage has the 200 Hz
+fundamental,
+
+52
+00:03:53,717 --> 00:03:58,119
+a 10.8 V line at the 20 kHz carrier, and
+sidebands.
+
+53
+00:03:58,159 --> 00:04:03,131
+Line-to-line, the carrier line vanishes:
+it's the same in all three legs,
+
+54
+00:04:03,171 --> 00:04:07,720
+common mode again. The sidebands, 400 Hz
+either side, remain.
+
+55
+00:04:07,760 --> 00:04:10,370
+Against 6.3 Ω of reactance at 20 kHz,
+
+56
+00:04:10,410 --> 00:04:14,850
+each drives about a third of an amp:
+that's the ripple.
+
+57
+00:04:15,977 --> 00:04:18,173
+Since the motor ignores the common mode,
+
+58
+00:04:18,213 --> 00:04:21,423
+we can add the same signal to all three
+references.
+
+59
+00:04:21,463 --> 00:04:27,282
+Subtract the midpoint of the largest and
+smallest: min–max injection.
+
+60
+00:04:27,322 --> 00:04:34,475
+The peaks flatten, so m can reach 2/√3:
+15.5 % more, the full 24 V line-to-line.
+
+61
+00:04:34,515 --> 00:04:39,444
+On the hexagon, sine-triangle stops at a
+circle of V_dc/2;
+
+62
+00:04:39,484 --> 00:04:43,957
+injection reaches the inscribed circle,
+V_dc/√3.
+
+63
+00:04:43,997 --> 00:04:49,562
+Adding a third harmonic of a quarter of
+the fundamental gains 12.2 %.
+
+64
+00:04:49,602 --> 00:04:55,058
+Lesson 18 shows that space-vector PWM is
+the min–max version.
+
+65
+00:04:56,158 --> 00:05:00,546
+Now the imperfections. Transistors take
+time to turn off: switch the upper
+
+66
+00:05:00,586 --> 00:05:05,434
+one on too early, and both conduct,
+shorting the bus. That's shoot-through.
+
+67
+00:05:05,474 --> 00:05:08,984
+So each turn-on waits a dead time, t_d,
+with both switches off.
+
+68
+00:05:09,024 --> 00:05:13,160
+The current keeps flowing, through a diode
+chosen by its direction.
+
+69
+00:05:13,200 --> 00:05:17,836
+Current out of the leg takes the lower
+diode: the pulse loses one dead time.
+
+70
+00:05:17,876 --> 00:05:22,173
+Current into the leg takes the upper
+diode: the pulse gains one.
+
+71
+00:05:22,213 --> 00:05:27,508
+On average, the error is V_dc · t_d ·
+f_sw,
+
+72
+00:05:27,548 --> 00:05:34,127
+against the current: 0.12 V for a typical
+250 ns.
+
+73
+00:05:35,259 --> 00:05:38,511
+Here's the reference motor at 1500 rpm,
+
+74
+00:05:38,551 --> 00:05:44,482
+simulated with 250 ns of dead time and
+open-loop voltage commands.
+
+75
+00:05:44,522 --> 00:05:48,398
+Each leg's average is off by 0.12 V
+against its current,
+
+76
+00:05:48,438 --> 00:05:52,994
+except near zero crossings, where the
+ripple straddles zero.
+
+77
+00:05:53,034 --> 00:06:00,005
+That small error shrinks the current from
+10 to 7.4 A and shifts it 10° ahead:
+
+78
+00:06:00,045 --> 00:06:04,720
+at 100 Hz, the motor's impedance is only
+0.05 Ω.
+
+79
+00:06:04,760 --> 00:06:07,984
+Adding the error back, along the commanded
+current,
+
+80
+00:06:08,024 --> 00:06:12,684
+restores 10 A; a current controller,
+Lesson 19, handles the rest.
+
+81
+00:06:13,815 --> 00:06:17,029
+Your turn: inverter.py in the series code
+simulates
+
+82
+00:06:17,069 --> 00:06:20,555
+the bridge and the reference motor, edge
+by edge.
+
+83
+00:06:20,595 --> 00:06:25,156
+Run the exercise script and check this
+lesson's numbers:
+
+84
+00:06:25,196 --> 00:06:30,815
+2.8 A of ripple, the 10.8 V carrier line,
+and the drop to 7.4 A.
+
+85
+00:06:30,855 --> 00:06:33,005
+Then halve the switching frequency,
+
+86
+00:06:33,045 --> 00:06:38,049
+or raise the speed until m passes 1, and
+compare with min–max injection.
+
+87
+00:06:39,175 --> 00:06:44,541
+On the bench: a low-voltage inverter
+board, a current-limited 24 V supply,
+
+88
+00:06:44,581 --> 00:06:48,447
+and three 10 Ω resistors in star as a safe
+load.
+
+89
+00:06:48,487 --> 00:06:54,429
+Command m = 0.5 at 50 Hz. Pole a, measured
+to the negative rail,
+
+90
+00:06:54,469 --> 00:06:59,969
+shows 0 and 24 V pulses averaging 12 V
+plus a 6 V sine.
+
+91
+00:07:00,009 --> 00:07:05,985
+Between a and b: +24, 0 and −24 V,
+averaging to a 10.4 V peak.
+
+92
+00:07:06,025 --> 00:07:11,430
+To the resistors' star point: five levels,
+6 V peak.
+
+93
+00:07:11,470 --> 00:07:14,491
+With the motor running, zoom on a rising
+pole edge:
+
+94
+00:07:14,531 --> 00:07:19,512
+when current flows out of the leg, it
+waits one dead time for the upper gate.
+
+95
+00:07:19,552 --> 00:07:22,318
+Safety: the scope's ground clip is
+earthed,
+
+96
+00:07:22,358 --> 00:07:26,821
+and often so is the negative rail, through
+a USB debugger; on a pole,
+
+97
+00:07:26,861 --> 00:07:31,538
+it shorts that leg. Use differential
+probes rated above the bus.
+
+98
+00:07:32,638 --> 00:07:34,918
+Three predictions before next time.
+
+99
+00:07:34,958 --> 00:07:39,190
+One: 500 ns of dead time at 20 kHz on a 24
+V bus.
+
+100
+00:07:39,230 --> 00:07:43,828
+What's the average error in each leg's
+voltage?
+
+101
+00:07:44,828 --> 00:07:49,684
+Two: how many of the eight states put zero
+volts between every pair of terminals?
+
+102
+00:07:50,684 --> 00:07:55,475
+Three: instead of min–max, add a third
+harmonic of one-sixth of the fundamental.
+
+103
+00:07:55,515 --> 00:07:58,310
+How much more fundamental can you get?
+
+104
+00:07:59,310 --> 00:08:03,683
+Next time: space-vector PWM and current
+sensing — sectors,
+
+105
+00:08:03,723 --> 00:08:09,016
+dwell times, and why currents are sampled
+in the middle of 000.

@@ -1,0 +1,442 @@
+[
+ {
+  "id": "hook",
+  "title": "Six switches, sine-wave currents",
+  "start": 0.0,
+  "beats": [
+   {
+    "id": "h1",
+    "start": 0.6,
+    "end": 7.273,
+    "text": "Twenty-four volts DC, six switches, and each motor terminal can only be connected to plus or to minus."
+   },
+   {
+    "id": "h2",
+    "start": 7.673,
+    "end": 15.521,
+    "text": "Here's phase a's terminal voltage for our reference motor at 3000 rpm: nothing but 24 V pulses."
+   },
+   {
+    "id": "h3",
+    "start": 15.921,
+    "end": 19.74,
+    "text": "Yet the currents are 10 A sine waves, with ripple riding on top."
+   },
+   {
+    "id": "h4",
+    "start": 20.34,
+    "end": 26.983,
+    "text": "Today: the three-phase inverter, how it makes sine waves from pulses, and what its limits and imperfections cost."
+   }
+  ],
+  "end": 28.29425
+ },
+ {
+  "id": "answers",
+  "title": "Answers from Lesson 16",
+  "start": 28.29425,
+  "beats": [
+   {
+    "id": "a1",
+    "start": 28.594,
+    "end": 30.895,
+    "text": "First, the answers from Lesson 16."
+   },
+   {
+    "id": "a2",
+    "start": 31.195,
+    "end": 34.165,
+    "text": "One: six conduction states per electrical cycle."
+   },
+   {
+    "id": "a3",
+    "start": 34.565,
+    "end": 40.505,
+    "text": "Two: 60 electrical degrees per step is 15 mechanical degrees on our 8-pole motor."
+   },
+   {
+    "id": "a4",
+    "start": 40.905,
+    "end": 54.195,
+    "text": "Three: six-step puts two terminals straight across the bus, a 24 V line-to-line peak. Sine-triangle PWM reaches only 20.8 V, \u221a3/2 of that. Today we'll see why."
+   }
+  ],
+  "end": 55.494708333333335
+ },
+ {
+  "id": "leg",
+  "title": "One leg, two positions",
+  "start": 55.494708333333335,
+  "beats": [
+   {
+    "id": "l1",
+    "start": 55.795,
+    "end": 61.75,
+    "text": "Start with one leg: two transistors in series across the bus. The terminal between them is the pole."
+   },
+   {
+    "id": "l2",
+    "start": 62.15,
+    "end": 70.184,
+    "text": "Upper switch on: the pole sits at 24 V. Lower switch on: zero, the negative rail N. Never both: that shorts the bus."
+   },
+   {
+    "id": "l3",
+    "start": 70.584,
+    "end": 76.444,
+    "text": "Switch every 50 \u00b5s with duty d, and the pole's average is d times the bus voltage."
+   },
+   {
+    "id": "l4",
+    "start": 76.844,
+    "end": 85.505,
+    "text": "The motor follows that average: its inductance limits how fast the current can change, so in one period it moves by at most 2.8 A."
+   },
+   {
+    "id": "l5",
+    "start": 85.905,
+    "end": 94.037,
+    "text": "The upper gate drive rides on the pole, so it's powered by a bootstrap capacitor, recharged through a diode whenever the lower switch is on."
+   }
+  ],
+  "end": 95.35233333333333
+ },
+ {
+  "id": "states",
+  "title": "Three legs, eight states",
+  "start": 95.35233333333333,
+  "beats": [
+   {
+    "id": "s1",
+    "start": 95.652,
+    "end": 98.737,
+    "text": "Three legs, two positions each: eight switching states."
+   },
+   {
+    "id": "s2",
+    "start": 99.137,
+    "end": 110.203,
+    "text": "Write a state as S_a S_b S_c, with 1 for upper on. Its space vector is two-thirds of the bus, times S_a + a S_b + a\u00b2 S_c."
+   },
+   {
+    "id": "s3",
+    "start": 110.603,
+    "end": 120.344,
+    "text": "State 100 points along phase a, with 16 V. State 110 sits 60\u00b0 further on, and so on around: a hexagon."
+   },
+   {
+    "id": "s4",
+    "start": 120.744,
+    "end": 132.028,
+    "text": "The other two, 000 and 111, tie all three terminals to one rail: zero vectors. Anything between the eight vectors is an average over a PWM period."
+   }
+  ],
+  "end": 133.32808333333332
+ },
+ {
+  "id": "voltages",
+  "title": "Pole, phase and line voltages",
+  "start": 133.32808333333332,
+  "beats": [
+   {
+    "id": "p1",
+    "start": 133.628,
+    "end": 139.686,
+    "text": "Which voltage does each winding feel? We measure poles from the negative rail, but the star point floats."
+   },
+   {
+    "id": "p2",
+    "start": 140.086,
+    "end": 149.806,
+    "text": "Each pole voltage is the phase voltage plus the star point's. Add all three: with no neutral, the currents sum to zero, and so do balanced back-EMFs."
+   },
+   {
+    "id": "p3",
+    "start": 150.206,
+    "end": 157.27,
+    "text": "So the star point sits at the average of the poles, the common-mode voltage. Phase voltage is pole minus common mode."
+   },
+   {
+    "id": "p4",
+    "start": 157.67,
+    "end": 168.396,
+    "text": "In one period here, the common mode climbs 0, 8, 16, 24 V and back; the phase voltage takes 0, 8 and 16; line-to-line, 0 or 24."
+   },
+   {
+    "id": "p5",
+    "start": 168.796,
+    "end": 175.024,
+    "text": "The motor never sees the common mode, though a third harmonic in the back-EMF would move the star point too."
+   }
+  ],
+  "end": 176.3237916666667
+ },
+ {
+  "id": "sinetri",
+  "title": "Sine-triangle PWM",
+  "start": 176.3237916666667,
+  "beats": [
+   {
+    "id": "t1",
+    "start": 176.624,
+    "end": 181.389,
+    "text": "To set the duties, compare each reference with a triangular carrier, slowed down here."
+   },
+   {
+    "id": "t2",
+    "start": 181.789,
+    "end": 190.722,
+    "text": "Digital timers sample the reference once per period. While it's above the carrier, the upper switch is on, so duty is one plus the reference, over two."
+   },
+   {
+    "id": "t3",
+    "start": 191.122,
+    "end": 202.067,
+    "text": "With references m cos \u03b8, 120\u00b0 apart, each pole averages half the bus plus m times half the bus times the cosine. The offset is common mode."
+   },
+   {
+    "id": "t4",
+    "start": 202.467,
+    "end": 213.58,
+    "text": "So the phase voltage is m times 12 V. At 3000 rpm and 10 A, our motor needs 8.59 V: m = 0.716."
+   },
+   {
+    "id": "t5",
+    "start": 213.98,
+    "end": 224.658,
+    "text": "Past m = 1 the references clip: 12 V per phase, and \u221a3/2 \u00d7 24 = 20.8 V line-to-line. Lesson 16's number."
+   }
+  ],
+  "end": 225.98854166666672
+ },
+ {
+  "id": "spectrum",
+  "title": "The switched voltage in frequency",
+  "start": 225.98854166666672,
+  "beats": [
+   {
+    "id": "f1",
+    "start": 226.289,
+    "end": 229.829,
+    "text": "Now in frequency, computed exactly from the switching edges."
+   },
+   {
+    "id": "f2",
+    "start": 230.229,
+    "end": 237.759,
+    "text": "The pole voltage has the 200 Hz fundamental, a 10.8 V line at the 20 kHz carrier, and sidebands."
+   },
+   {
+    "id": "f3",
+    "start": 238.159,
+    "end": 247.36,
+    "text": "Line-to-line, the carrier line vanishes: it's the same in all three legs, common mode again. The sidebands, 400 Hz either side, remain."
+   },
+   {
+    "id": "f4",
+    "start": 247.76,
+    "end": 254.35,
+    "text": "Against 6.3 \u03a9 of reactance at 20 kHz, each drives about a third of an amp: that's the ripple."
+   }
+  ],
+  "end": 255.67662500000006
+ },
+ {
+  "id": "injection",
+  "title": "Borrowing the common mode",
+  "start": 255.67662500000006,
+  "beats": [
+   {
+    "id": "i1",
+    "start": 255.977,
+    "end": 261.063,
+    "text": "Since the motor ignores the common mode, we can add the same signal to all three references."
+   },
+   {
+    "id": "i2",
+    "start": 261.463,
+    "end": 274.115,
+    "text": "Subtract the midpoint of the largest and smallest: min\u2013max injection. The peaks flatten, so m can reach 2/\u221a3: 15.5 % more, the full 24 V line-to-line."
+   },
+   {
+    "id": "i3",
+    "start": 274.515,
+    "end": 283.597,
+    "text": "On the hexagon, sine-triangle stops at a circle of V_dc/2; injection reaches the inscribed circle, V_dc/\u221a3."
+   },
+   {
+    "id": "i4",
+    "start": 283.997,
+    "end": 294.558,
+    "text": "Adding a third harmonic of a quarter of the fundamental gains 12.2 %. Lesson 18 shows that space-vector PWM is the min\u2013max version."
+   }
+  ],
+  "end": 295.85829166666673
+ },
+ {
+  "id": "deadtime",
+  "title": "Dead time",
+  "start": 295.85829166666673,
+  "beats": [
+   {
+    "id": "d1",
+    "start": 296.158,
+    "end": 305.074,
+    "text": "Now the imperfections. Transistors take time to turn off: switch the upper one on too early, and both conduct, shorting the bus. That's shoot-through."
+   },
+   {
+    "id": "d2",
+    "start": 305.474,
+    "end": 312.8,
+    "text": "So each turn-on waits a dead time, t_d, with both switches off. The current keeps flowing, through a diode chosen by its direction."
+   },
+   {
+    "id": "d3",
+    "start": 313.2,
+    "end": 321.813,
+    "text": "Current out of the leg takes the lower diode: the pulse loses one dead time. Current into the leg takes the upper diode: the pulse gains one."
+   },
+   {
+    "id": "d4",
+    "start": 322.213,
+    "end": 333.627,
+    "text": "On average, the error is V_dc \u00b7 t_d \u00b7 f_sw, against the current: 0.12 V for a typical 250 ns."
+   }
+  ],
+  "end": 334.9585
+ },
+ {
+  "id": "distortion",
+  "title": "Dead time in the current",
+  "start": 334.9585,
+  "beats": [
+   {
+    "id": "x1",
+    "start": 335.259,
+    "end": 344.122,
+    "text": "Here's the reference motor at 1500 rpm, simulated with 250 ns of dead time and open-loop voltage commands."
+   },
+   {
+    "id": "x2",
+    "start": 344.522,
+    "end": 352.634,
+    "text": "Each leg's average is off by 0.12 V against its current, except near zero crossings, where the ripple straddles zero."
+   },
+   {
+    "id": "x3",
+    "start": 353.034,
+    "end": 364.36,
+    "text": "That small error shrinks the current from 10 to 7.4 A and shifts it 10\u00b0 ahead: at 100 Hz, the motor's impedance is only 0.05 \u03a9."
+   },
+   {
+    "id": "x4",
+    "start": 364.76,
+    "end": 372.184,
+    "text": "Adding the error back, along the commanded current, restores 10 A; a current controller, Lesson 19, handles the rest."
+   }
+  ],
+  "end": 373.5153333333333
+ },
+ {
+  "id": "simulate",
+  "title": "Simulate the bridge",
+  "start": 373.5153333333333,
+  "beats": [
+   {
+    "id": "e1",
+    "start": 373.815,
+    "end": 380.195,
+    "text": "Your turn: inverter.py in the series code simulates the bridge and the reference motor, edge by edge."
+   },
+   {
+    "id": "e2",
+    "start": 380.595,
+    "end": 390.455,
+    "text": "Run the exercise script and check this lesson's numbers: 2.8 A of ripple, the 10.8 V carrier line, and the drop to 7.4 A."
+   },
+   {
+    "id": "e3",
+    "start": 390.855,
+    "end": 397.549,
+    "text": "Then halve the switching frequency, or raise the speed until m passes 1, and compare with min\u2013max injection."
+   }
+  ],
+  "end": 398.8747499999999
+ },
+ {
+  "id": "bench",
+  "title": "On the bench",
+  "start": 398.8747499999999,
+  "beats": [
+   {
+    "id": "b1",
+    "start": 399.175,
+    "end": 408.087,
+    "text": "On the bench: a low-voltage inverter board, a current-limited 24 V supply, and three 10 \u03a9 resistors in star as a safe load."
+   },
+   {
+    "id": "b2",
+    "start": 408.487,
+    "end": 419.609,
+    "text": "Command m = 0.5 at 50 Hz. Pole a, measured to the negative rail, shows 0 and 24 V pulses averaging 12 V plus a 6 V sine."
+   },
+   {
+    "id": "b3",
+    "start": 420.009,
+    "end": 431.07,
+    "text": "Between a and b: +24, 0 and \u221224 V, averaging to a 10.4 V peak. To the resistors' star point: five levels, 6 V peak."
+   },
+   {
+    "id": "b4",
+    "start": 431.47,
+    "end": 439.152,
+    "text": "With the motor running, zoom on a rising pole edge: when current flows out of the leg, it waits one dead time for the upper gate."
+   },
+   {
+    "id": "b5",
+    "start": 439.552,
+    "end": 451.038,
+    "text": "Safety: the scope's ground clip is earthed, and often so is the negative rail, through a USB debugger; on a pole, it shorts that leg. Use differential probes rated above the bus."
+   }
+  ],
+  "end": 452.3381666666665
+ },
+ {
+  "id": "predict",
+  "title": "Predict, then check",
+  "start": 452.3381666666665,
+  "beats": [
+   {
+    "id": "q1",
+    "start": 452.638,
+    "end": 454.558,
+    "text": "Three predictions before next time."
+   },
+   {
+    "id": "q2",
+    "start": 454.958,
+    "end": 463.328,
+    "text": "One: 500 ns of dead time at 20 kHz on a 24 V bus. What's the average error in each leg's voltage?"
+   },
+   {
+    "id": "q3",
+    "start": 464.828,
+    "end": 469.184,
+    "text": "Two: how many of the eight states put zero volts between every pair of terminals?"
+   },
+   {
+    "id": "q4",
+    "start": 470.684,
+    "end": 477.81,
+    "text": "Three: instead of min\u2013max, add a third harmonic of one-sixth of the fundamental. How much more fundamental can you get?"
+   },
+   {
+    "id": "q5",
+    "start": 479.31,
+    "end": 488.516,
+    "text": "Next time: space-vector PWM and current sensing \u2014 sectors, dwell times, and why currents are sampled in the middle of 000."
+   }
+  ],
+  "end": 490.6157499999999
+ }
+]

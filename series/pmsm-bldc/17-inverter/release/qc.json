@@ -1,0 +1,176 @@
+{
+ "rep": {
+  "video": "h264 1920x1080 30/1 490.60s",
+  "audio": "aac 48000 Hz 1 ch 490.62s",
+  "subtitles": "1 track(s): mov_text/eng",
+  "chapters": 13,
+  "av_duration_diff_s": 0.016,
+  "integrated_LUFS": -16.1,
+  "true_peak_dBTP": -1.4,
+  "LRA_LU": 2.7,
+  "asr_word_error_rate": 0.054,
+  "captions": "105 cues, 0 cues mostly over silence, 0 overlaps, max 18.2 chars/s, last cue ends 489.0s"
+ },
+ "mism": [
+  [
+   "h1",
+   "Twenty-four volts DC, six switches, and each motor terminal can only be connected to plus or to minus.",
+   "24 volts DC, 6 switches, and each motor terminal can only be connected to plus or to minus."
+  ],
+  [
+   "h3",
+   "Yet the currents are 10 amp sine waves, with ripple riding on top.",
+   "Yet the currents are 10 amp-sign waves, with ripple riding on top."
+  ],
+  [
+   "a2",
+   "One: six conduction states per electrical cycle.",
+   "1. 6 conduction states per electrical cycle."
+  ],
+  [
+   "a3",
+   "Two: 60 electrical degrees per step is 15 mechanical degrees on our 8 pole motor.",
+   "2.60 electrical degrees per step is 15 mechanical degrees on our 8 pole motor."
+  ],
+  [
+   "a4",
+   "Three: six step puts two terminals straight across the bus, a 24 volt line to line peak. Sine triangle PWM reaches only 20.8 volts, root 3 over 2 of that. Today we'll see why.",
+   "Three, six step puts two terminals straight across the bus, a 24 volt line to line peak. Sign triangle PWM reaches only 20.8 volts, route three over two of that. Today we'll see why."
+  ],
+  [
+   "l3",
+   "Switch every 50 microseconds with duty D, and the pole's average is D times the bus voltage.",
+   "Switch every 50 microseconds with duty D, and the pole's average is D times the bus voltage. (buzzer buzzes)"
+  ],
+  [
+   "l5",
+   "The upper gate drive rides on the pole, so it's powered by a bootstrap capacitor, recharged through a diode whenever the lower switch is on.",
+   "The upper gate drive rides on the pole, so it's powered by a bootstrap capacitor, recharged through a diode whenever the lower switch is on. [BUZZER]"
+  ],
+  [
+   "s2",
+   "Write a state as S A, S B, S C, with 1 for upper on. Its space vector is two thirds of the bus, times S A, plus little a times S B, plus a squared times S C.",
+   "write a state as S-A, S-B, S-C with one for upper on. Its space vector is two-thirds of the bus, times S-A plus little a times S-B plus a squared times S-C."
+  ],
+  [
+   "s3",
+   "State one zero zero points along phase A, with 16 volts. State one one zero sits 60 degrees further on, and so on around: a hexagon.",
+   "State 1-0-0 points along phase A with 16 volts. State 1-1-0 sits 60 degrees further on and so on around, a hexagon."
+  ],
+  [
+   "s4",
+   "The other two, zero zero zero and one one one, tie all three terminals to one rail: zero vectors. Anything between the eight vectors is an average over a PWM period.",
+   "The other two, 0, 0, 0, and 1, 1, 1, tie all three terminals to one rail, zero vectors. Anything between the eight vectors is an average over a PWM period."
+  ],
+  [
+   "p2",
+   "Each pole voltage is the phase voltage plus the star point's. Add all three: with no neutral, the currents sum to zero, and so do balanced back EMFs.",
+   "Each pole voltage is the phase voltage plus the star points. Add all three. With no neutral, the current sum to zero, and so do balanced back EMFs."
+  ],
+  [
+   "p5",
+   "The motor never sees the common mode, though a third harmonic in the back EMF would move the star point too.",
+   "The motor never sees the common mode, though a third harmonic in the back EMF would move the star point two."
+  ],
+  [
+   "t2",
+   "Digital timers sample the reference once per period. While it's above the carrier, the upper switch is on, so duty is one plus the reference, over two.",
+   "Digital timers sample the reference once per period. While it's above the carrier, the upper switch is on, so duty is one plus the reference, over two. (buzzer)"
+  ],
+  [
+   "f2",
+   "The pole voltage has the 200 hertz fundamental, a 10.8 volt line at the 20 kilohertz carrier, and sidebands.",
+   "The pole voltage has the 200 Hz fundamental, a 10.8 volt line at the 20 kHz carrier, and side bands."
+  ],
+  [
+   "f3",
+   "Line to line, the carrier line vanishes: it's the same in all three legs, common mode again. The sidebands, 400 hertz either side, remain.",
+   "Line to line, the carrier line vanishes. It's the same in all three legs, common mode again. The side bands, 400 hertz either side, remain."
+  ],
+  [
+   "f4",
+   "Against 6.3 ohms of reactance at 20 kilohertz, each drives about a third of an amp: that's the ripple.",
+   "Against 6.3 ohms of reactants at 20 kilohertz, each drives about a third of an amp. That's the ripple."
+  ],
+  [
+   "i3",
+   "On the hexagon, sine triangle stops at a circle of half the bus voltage; injection reaches the inscribed circle, the bus voltage over root 3.",
+   "On the hexagon, sine triangle stops at a circle of half the bus voltage. Injection reaches the inscribed circle, the bus voltage over Route 3."
+  ],
+  [
+   "d2",
+   "So each turn on waits a dead time, with both switches off. The current keeps flowing, through a diode chosen by its direction.",
+   "So each turn on weights a dead time, with both switches off. The current keeps flowing through a diode chosen by its direction. [BUZZER]"
+  ],
+  [
+   "d3",
+   "Current out of the leg takes the lower diode: the pulse loses one dead time. Current into the leg takes the upper diode: the pulse gains one.",
+   "Current out of the leg takes the lower diode. The pulse loses one dead time. Current into the leg takes the upper diode. The pulse gains one. [BUZZER]"
+  ],
+  [
+   "x2",
+   "Each leg's average is off by 0.12 volts against its current, except near zero crossings, where the ripple straddles zero.",
+   "Each leg's average is off by 0.12 volts against its current, except near zero crossings, where the ripple straddle's zero."
+  ],
+  [
+   "x3",
+   "That small error shrinks the current from 10 to 7.4 amps and shifts it 10 degrees ahead: at 100 hertz, the motor's impedance is only 0.05 ohms.",
+   "That small error shrinks the current from 10 to 7.4 amps and shifts at 10 degrees ahead. At 100 hertz, the motor's impedance is only 0.05 ohms."
+  ],
+  [
+   "x4",
+   "Adding the error back, along the commanded current, restores 10 amps; a current controller, Lesson 19, handles the rest.",
+   "Adding the error back along the commanded current restores 10 amps. A current controller, less than 19, handles the rest. [BUZZER]"
+  ],
+  [
+   "e1",
+   "Your turn: inverter dot pie, in the series code, simulates the bridge and the reference motor, edge by edge.",
+   "Your turn, inverter.py in the series code, simulates the bridge and the reference motor, edge by edge. [BUZZER]"
+  ],
+  [
+   "e3",
+   "Then halve the switching frequency, or raise the speed until M passes 1, and compare with min max injection.",
+   "then have the switching frequency or raise the speed until M passes 1 and compare with min/max injection."
+  ],
+  [
+   "b1",
+   "On the bench: a low voltage inverter board, a current limited 24 volt supply, and three 10 ohm resistors in star as a safe load.",
+   "On the bench, a low voltage inverter board, a current limited 24 volt supply, and 310 ohm resistors and star as a safe load."
+  ],
+  [
+   "b2",
+   "Command M equals 0.5 at 50 hertz. Pole A, measured to the negative rail, shows 0 and 24 volt pulses averaging 12 volts plus a 6 volt sine.",
+   "Command M equals 0.5 at 50 hertz. Poll A, measured to the negative rail, shows 0 and 24 volt pulses averaging 12 volts plus a 6 volt sign."
+  ],
+  [
+   "b3",
+   "Between A and B: plus 24, 0 and minus 24 volts, averaging to a 10.4 volt peak. To the resistors' star point: five levels, 6 volts peak.",
+   "between A and B, plus 24, 0 and minus 24 volts, averaging to a 10.4 volt peak. To the resistor's star point, five levels, six volts peak."
+  ],
+  [
+   "b5",
+   "Safety: the scope's ground clip is earthed, and often so is the negative rail, through a USB debugger; on a pole, it shorts that leg. Use differential probes rated above the bus.",
+   "Safety, the scope's ground clip is irthed, and often so is the negative rail through a USB debugger. On a pole, it shorts that leg. Use differential probes rated above the bus."
+  ],
+  [
+   "q2",
+   "One: 500 nanoseconds of dead time at 20 kilohertz on a 24 volt bus. What's the average error in each leg's voltage?",
+   "1/500 nanoseconds of dead time at 20 kilohertz on a 24 volt bus. What's the average error in each leg's voltage?"
+  ],
+  [
+   "q3",
+   "Two: how many of the eight states put zero volts between every pair of terminals?",
+   "2. How many of the eight states put zero volts between every pair of terminals?"
+  ],
+  [
+   "q4",
+   "Three: instead of min max, add a third harmonic of one sixth of the fundamental. How much more fundamental can you get?",
+   "3. Instead of Min Max, add a third harmonic of 1/6 of the fundamental. How much more fundamental can you get?"
+  ],
+  [
+   "q5",
+   "Next time: space vector PWM and current sensing: sectors, dwell times, and why currents are sampled in the middle of zero zero zero.",
+   "Next time, space vector PWM and current sensing. Sectors, dwell times, and why currents are sampled in the middle of 0, 0, 0."
+  ]
+ ]
+}
