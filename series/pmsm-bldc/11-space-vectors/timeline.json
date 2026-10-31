@@ -1,0 +1,472 @@
+[
+ {
+  "id": "hook",
+  "title": "Three currents, one arrow",
+  "start": 0.0,
+  "beats": [
+   {
+    "id": "h1",
+    "start": 0.6,
+    "end": 5.664,
+    "text": "Here are three phase currents, the kind a motor drive samples thousands of times a second."
+   },
+   {
+    "id": "h2",
+    "start": 6.164,
+    "end": 12.455,
+    "text": "Where is the stator field pointing right now, and how strong is it? From three wiggling traces, that's hard to say."
+   },
+   {
+    "id": "h3",
+    "start": 12.955,
+    "end": 19.201,
+    "text": "Combine the three values into one complex number, and the answer is an arrow: its angle and its length."
+   },
+   {
+    "id": "h4",
+    "start": 19.801,
+    "end": 23.966,
+    "text": "That arrow is the space vector, and it opens the control half of this series."
+   }
+  ],
+  "end": 25.366083333333336
+ },
+ {
+  "id": "answers",
+  "title": "Answers from Lesson 10",
+  "start": 25.366083333333336,
+  "beats": [
+   {
+    "id": "a1",
+    "start": 25.766,
+    "end": 27.851,
+    "text": "First, the answers from Lesson 10."
+   },
+   {
+    "id": "a2",
+    "start": 28.151,
+    "end": 35.914,
+    "text": "One: 8 inductance cycles per mechanical revolution \u2014 two per electrical cycle, and 4 electrical cycles per turn."
+   },
+   {
+    "id": "a3",
+    "start": 36.314,
+    "end": 46.458,
+    "text": "Two: \u221210 A on d and 10 A on q give 0.396 N\u00b7m in the IPM variant, about a quarter of it reluctance torque."
+   },
+   {
+    "id": "a4",
+    "start": 46.858,
+    "end": 55.923,
+    "text": "Three: an LCR meter reads small-signal, incremental inductance; eddy currents, magnet saturation and coupling to the other phases shift it."
+   }
+  ],
+  "end": 57.323
+ },
+ {
+  "id": "phasors",
+  "title": "Why phasors aren't enough",
+  "start": 57.323,
+  "beats": [
+   {
+    "id": "p1",
+    "start": 57.723,
+    "end": 64.365,
+    "text": "In circuit theory, each sinusoid gets a phasor: one fixed complex number holding its amplitude and phase."
+   },
+   {
+    "id": "p2",
+    "start": 64.765,
+    "end": 72.301,
+    "text": "That's perfect for steady state at one frequency. But a phasor's angle is a shift in time, not a direction inside the machine."
+   },
+   {
+    "id": "p3",
+    "start": 72.801,
+    "end": 80.0,
+    "text": "A drive needs to know where the stator field points at every instant \u2014 during start-up, with harmonics, at changing speed."
+   },
+   {
+    "id": "p4",
+    "start": 80.5,
+    "end": 87.285,
+    "text": "The geometry for that is already there: the three winding axes sit 120 degrees apart, in space."
+   }
+  ],
+  "end": 88.68533333333332
+ },
+ {
+  "id": "define",
+  "title": "The space vector",
+  "start": 88.68533333333332,
+  "beats": [
+   {
+    "id": "d1",
+    "start": 89.085,
+    "end": 94.856,
+    "text": "In Lesson 1, we added the three currents as vectors, each along the axis of its own winding."
+   },
+   {
+    "id": "d2",
+    "start": 95.256,
+    "end": 101.494,
+    "text": "For balanced currents of amplitude I, the sum kept a constant length \u2014 three-halves of I \u2014 and turned at \u03c9."
+   },
+   {
+    "id": "d3",
+    "start": 101.994,
+    "end": 108.225,
+    "text": "Scale that sum by two-thirds, and you have the space vector. Its length now equals the phase amplitude."
+   },
+   {
+    "id": "d4",
+    "start": 108.725,
+    "end": 117.188,
+    "text": "A bonus: project the vector onto a phase axis, and you read back that phase's current \u2014 as long as the three currents add up to zero."
+   },
+   {
+    "id": "d5",
+    "start": 117.688,
+    "end": 123.521,
+    "text": "And nothing here assumed sinusoids: the definition works for any three values, at any instant."
+   },
+   {
+    "id": "d6",
+    "start": 123.921,
+    "end": 132.298,
+    "text": "As a general method for machine transients, it's usually credited to Kov\u00e1cs and R\u00e1cz, whose book appeared in Budapest in 1954."
+   }
+  ],
+  "end": 133.69770833333334
+ },
+ {
+  "id": "scaling",
+  "title": "Two scalings, two power formulas",
+  "start": 133.69770833333334,
+  "beats": [
+   {
+    "id": "c1",
+    "start": 134.098,
+    "end": 141.5,
+    "text": "Two-thirds isn't the only choice. Scale by the square root of two-thirds, and ten-amp currents give a 12.2-amp vector."
+   },
+   {
+    "id": "c2",
+    "start": 141.9,
+    "end": 149.746,
+    "text": "Why use it? With this power-invariant scaling, instantaneous power is simply the real part of v times the conjugate of i."
+   },
+   {
+    "id": "c3",
+    "start": 150.146,
+    "end": 156.749,
+    "text": "With amplitude-invariant scaling, it's three-halves of that \u2014 the same three-halves that sits in this series' torque equation."
+   },
+   {
+    "id": "c4",
+    "start": 157.149,
+    "end": 166.259,
+    "text": "Check: 10 volts and 10 amps peak, in phase. The three phases deliver a steady 150 watts, and both formulas give exactly that."
+   },
+   {
+    "id": "c5",
+    "start": 166.759,
+    "end": 176.39,
+    "text": "This series uses the amplitude-invariant form. Mix the two up in drive code, and you're off by 1.5 in power, or 22 percent in current."
+   }
+  ],
+  "end": 177.79037500000004
+ },
+ {
+  "id": "mmf",
+  "title": "Where the vector points",
+  "start": 177.79037500000004,
+  "beats": [
+   {
+    "id": "f1",
+    "start": 178.19,
+    "end": 180.382,
+    "text": "So what does the vector point at, physically?"
+   },
+   {
+    "id": "f2",
+    "start": 180.782,
+    "end": 188.103,
+    "text": "In Lesson 2, the stator MMF around the gap was a staircase. Here's one for a simple two-pole, six-slot winding."
+   },
+   {
+    "id": "f3",
+    "start": 188.603,
+    "end": 196.614,
+    "text": "The steps change shape as the currents change, but the fundamental, computed with a Fourier transform, slides smoothly around the gap."
+   },
+   {
+    "id": "f4",
+    "start": 197.114,
+    "end": 202.933,
+    "text": "Its peak sits exactly where the space vector points, and its height is proportional to the vector's length."
+   },
+   {
+    "id": "f5",
+    "start": 203.433,
+    "end": 208.453,
+    "text": "The space harmonics of the staircase come from the winding layout; the vector doesn't carry them."
+   }
+  ],
+  "end": 209.85325000000006
+ },
+ {
+  "id": "zero",
+  "title": "Zero sequence: invisible",
+  "start": 209.85325000000006,
+  "beats": [
+   {
+    "id": "z1",
+    "start": 210.253,
+    "end": 212.579,
+    "text": "Now add the same current to all three phases."
+   },
+   {
+    "id": "z2",
+    "start": 213.079,
+    "end": 219.018,
+    "text": "Three equal arrows, 120 degrees apart, sum to zero. The space vector doesn't move."
+   },
+   {
+    "id": "z3",
+    "start": 219.518,
+    "end": 225.833,
+    "text": "That common part is the zero sequence, a third of the sum of the phases. We keep it as a separate number."
+   },
+   {
+    "id": "z4",
+    "start": 226.333,
+    "end": 237.183,
+    "text": "In a star connection without neutral, Kirchhoff's current law at the star point makes the three currents add to zero: no zero-sequence current. That's why two current sensors are enough."
+   },
+   {
+    "id": "z5",
+    "start": 237.683,
+    "end": 244.107,
+    "text": "In a delta connection, though, a zero-sequence current can circulate inside the delta, unseen at the terminals."
+   }
+  ],
+  "end": 245.50658333333342
+ },
+ {
+  "id": "unbalance",
+  "title": "Unbalance: an ellipse",
+  "start": 245.50658333333342,
+  "beats": [
+   {
+    "id": "u1",
+    "start": 245.907,
+    "end": 253.869,
+    "text": "What if the currents aren't balanced? Say phase a peaks at only 8 amps, and the other two at about nine and a half \u2014 still adding to zero."
+   },
+   {
+    "id": "u2",
+    "start": 254.369,
+    "end": 256.708,
+    "text": "The tip of the vector now traces an ellipse."
+   },
+   {
+    "id": "u3",
+    "start": 257.308,
+    "end": 265.542,
+    "text": "It splits into two rotating parts: a forward vector of 9 amps at plus \u03c9, and a backward vector of 1 amp at minus \u03c9."
+   },
+   {
+    "id": "u4",
+    "start": 266.042,
+    "end": 270.181,
+    "text": "Where they line up, they make 10 amps; where they oppose, 8: the two semi-axes."
+   },
+   {
+    "id": "u5",
+    "start": 270.681,
+    "end": 281.164,
+    "text": "These are the positive- and negative-sequence components. If the backward part grows as large as the forward one, the ellipse flattens into a line: the field only pulsates."
+   }
+  ],
+  "end": 282.5638750000001
+ },
+ {
+  "id": "harmonics",
+  "title": "Harmonics turn both ways",
+  "start": 282.5638750000001,
+  "beats": [
+   {
+    "id": "k1",
+    "start": 282.964,
+    "end": 292.854,
+    "text": "Harmonics are just as easy. In a fifth harmonic, every phase shift is five times larger: 600 degrees of lag, which is 120 degrees of lead."
+   },
+   {
+    "id": "k2",
+    "start": 293.254,
+    "end": 298.609,
+    "text": "The phase order reverses, so its space vector turns backward, at five times the speed."
+   },
+   {
+    "id": "k3",
+    "start": 299.109,
+    "end": 307.995,
+    "text": "The seventh turns forward, at 7\u03c9. And every multiple of three is identical in all three phases: pure zero sequence, invisible."
+   },
+   {
+    "id": "k4",
+    "start": 308.495,
+    "end": 313.3,
+    "text": "With five percent of fifth harmonic, the tip wobbles in and out six times per turn."
+   },
+   {
+    "id": "k5",
+    "start": 313.8,
+    "end": 322.052,
+    "text": "Seen from a frame turning with the fundamental, both appear at six times the frequency: one source of the six-times ripple common in drives."
+   }
+  ],
+  "end": 323.45183333333347
+ },
+ {
+  "id": "log",
+  "title": "From a log file to a locus",
+  "start": 323.45183333333347,
+  "beats": [
+   {
+    "id": "l1",
+    "start": 323.852,
+    "end": 335.684,
+    "text": "Now, data: a synthetic log, so we know the answer. Two phase currents: 10 amps at 50 hertz, 5 percent fifth harmonic, a 200-milliamp offset on channel a, and noise."
+   },
+   {
+    "id": "l2",
+    "start": 336.184,
+    "end": 342.103,
+    "text": "It's in the release folder as a CSV file, and a few lines of Python turn it into a space vector."
+   },
+   {
+    "id": "l3",
+    "start": 342.503,
+    "end": 346.38,
+    "text": "Phase c comes from the star-point rule; then it's just the definition."
+   },
+   {
+    "id": "l4",
+    "start": 346.88,
+    "end": 352.088,
+    "text": "The locus is a ring at 10 amps: the fundamental amplitude, read straight off the plot."
+   },
+   {
+    "id": "l5",
+    "start": 352.588,
+    "end": 359.837,
+    "text": "Noise thickens it, the fifth harmonic gives it six faint lobes, and the offset shifts its centre by about a quarter of an amp."
+   }
+  ],
+  "end": 361.23700000000014
+ },
+ {
+  "id": "spectrum",
+  "title": "Forward and backward in one spectrum",
+  "start": 361.23700000000014,
+  "beats": [
+   {
+    "id": "r1",
+    "start": 361.637,
+    "end": 367.464,
+    "text": "Because the space vector is complex, its Fourier transform tells forward rotation from backward."
+   },
+   {
+    "id": "r2",
+    "start": 367.864,
+    "end": 376.409,
+    "text": "There's a line at plus 50 hertz: 10 amps, the forward fundamental. And one at minus 250: half an amp, the backward fifth."
+   },
+   {
+    "id": "r3",
+    "start": 376.909,
+    "end": 385.182,
+    "text": "The line at zero hertz is the offset: 0.23 amps at 30 degrees, because phase c was computed from the offset channel."
+   },
+   {
+    "id": "r4",
+    "start": 385.682,
+    "end": 390.471,
+    "text": "Next lesson turns fingerprints like these into a diagnosis of sensor errors."
+   }
+  ],
+  "end": 391.8708750000001
+ },
+ {
+  "id": "bench",
+  "title": "On the bench",
+  "start": 391.8708750000001,
+  "beats": [
+   {
+    "id": "b1",
+    "start": 392.271,
+    "end": 398.103,
+    "text": "On a real motor: run it from a drive at steady load, and clip current probes onto two phase leads."
+   },
+   {
+    "id": "b2",
+    "start": 398.503,
+    "end": 410.994,
+    "text": "Zero the probes, arrows toward the motor, and log both channels together, fast compared with the PWM: say 100 kilosamples per second for a 20-kilohertz drive. Export a CSV."
+   },
+   {
+    "id": "b3",
+    "start": 411.494,
+    "end": 421.388,
+    "text": "Run the same Python. The ring's radius should match the peak phase current: a clamp meter reading 7.07 amps RMS means a 10-amp ring."
+   },
+   {
+    "id": "b4",
+    "start": 421.888,
+    "end": 432.746,
+    "text": "PWM ripple shows up as fuzz. If the ring is squashed or off-centre, suspect the probes before the motor. And if the neutral is connected, log all three phases."
+   }
+  ],
+  "end": 434.1459583333334
+ },
+ {
+  "id": "predict",
+  "title": "Predict, then check",
+  "start": 434.1459583333334,
+  "beats": [
+   {
+    "id": "q1",
+    "start": 434.546,
+    "end": 436.466,
+    "text": "Three predictions before next time."
+   },
+   {
+    "id": "q2",
+    "start": 436.866,
+    "end": 441.621,
+    "text": "One: balanced currents of 10 amps peak. What's the magnitude of the space vector?"
+   },
+   {
+    "id": "q3",
+    "start": 443.421,
+    "end": 448.308,
+    "text": "Two: add 1 amp of DC to all three phases. Does the space vector change?"
+   },
+   {
+    "id": "q4",
+    "start": 450.108,
+    "end": 457.377,
+    "text": "Three: phase c is open, so the phase-a current is minus the phase-b current. What does the tip of the vector trace?"
+   },
+   {
+    "id": "q5",
+    "start": 459.177,
+    "end": 468.311,
+    "text": "Next time, we split this complex number into two real axes, \u03b1 and \u03b2 \u2014 the Clarke transformation \u2014 and use it to diagnose sensor errors."
+   }
+  ],
+  "end": 470.51079166666676
+ }
+]
