@@ -1,0 +1,171 @@
+{
+ "rep": {
+  "video": "h264 1920x1080 30/1 472.43s",
+  "audio": "aac 48000 Hz 1 ch 472.43s",
+  "subtitles": "1 track(s): mov_text/eng",
+  "chapters": 13,
+  "av_duration_diff_s": 0.006,
+  "integrated_LUFS": -16.1,
+  "true_peak_dBTP": -1.4,
+  "LRA_LU": 2.7,
+  "asr_word_error_rate": 0.073,
+  "captions": "92 cues, 0 cues mostly over silence, 0 overlaps, max 19.4 chars/s, last cue ends 470.8s"
+ },
+ "mism": [
+  [
+   "h2",
+   "Between them sits the fastest loop in the drive: twenty thousand times a second, it measures the currents and sets new voltages.",
+   "Between them sits the fastest loop in the drive. 20,000 times a second, it measures the currents and sets new voltages."
+  ],
+  [
+   "h4",
+   "Today: current control in DQ, tuned straight from the motor model.",
+   "Today, current control in DQ tunes straight from the motor model."
+  ],
+  [
+   "a2",
+   "One: linear space vector PWM reaches the inscribed circle, 24 volts over root 3, 13.9 volts.",
+   "One linear space vector PWM reaches the inscribed circle, 24 volts over Route 3, 13.9 volts."
+  ],
+  [
+   "a3",
+   "Two: in the middle of zero zero zero, all three low side switches conduct, and the switching edges are as far away as they get.",
+   "Two, in the middle of 0-0-0, all three low side switches conduct, and the switching edges are as far away as they get."
+  ],
+  [
+   "a4",
+   "Three: KP equals omega C times L: 2 pi, times 1 kilohertz, times 0.05 millihenry, is 0.31 volts per amp.",
+   "3, Kp equals omega c times L. 2 pi times 1 kilohertz times 0.05 millihenry is 0.31 volts per amp."
+  ],
+  [
+   "w2",
+   "Voltage alone doesn't set the current: the back EMF takes a share that grows with speed, and a hot winding's resistance rises.",
+   "Voltage alone doesn't set the current. The back EMF takes a share that grows with speed and a hot windings resistance rises."
+  ],
+  [
+   "w3",
+   "At standstill, the full 13.9 volts across 40 milliohms would drive 346 amps, seventeen times the drive's 20 amp rating.",
+   "At Stanstil, the full 13.9 volts across 40 milli ohms would drive 346 amps, 17 times the drive's 20 amp rating."
+  ],
+  [
+   "p1",
+   "Lesson 14's model is the plant. Each axis is a resistor and an inductor in series: one over R plus S L, with one pole at R over L, 800 radians per second.",
+   "Lesson 14's model is the plant. Each axis is a resistor and an inductor in series, 1/r+sl, with 1 pole at r/l, 800 radians per second."
+  ],
+  [
+   "p2",
+   "Rotation adds speed voltages: the back EMF, omega E lambda M, on q, and a cross coupling, omega E L, times the other axis's current.",
+   "Rotation adds speed voltages. The back EMF, omega e-lambda m, on Q, and across coupling, omega EL, times the other axis's current."
+  ],
+  [
+   "p3",
+   "At 3000 rpm, 10 amps on q puts 0.63 volts on d, and the back EMF is 8.17 volts. To each controller, they're disturbances.",
+   "At 3000 RPM, 10 amps on Q puts 0.63 volts on D, and the back EMF is 8.17 volts. To each controller, there are disturbances. [BUZZER]"
+  ],
+  [
+   "t2",
+   "Put that zero on the plant's pole, KI over KP equals R over L, and the two cancel. The loop gain becomes KP over S L: a pure integrator.",
+   "Put that zero on the plant's pole, K i over K p equals r over l, and the two cancel. The loop gain becomes K p over s l, a pure integrator."
+  ],
+  [
+   "t3",
+   "Choose KP equal to omega C times L: the loop gain is omega C over S, and the closed loop is one over one plus S over omega C; first order, with bandwidth omega C, and KI equal to omega C times R.",
+   "Choose Kp equal to omega c times L. The loop gain is omega c over s, and the closed loop is 1 over 1 plus s over omega c. First order, with bandwidth omega c, and Ki equal to omega c times r."
+  ],
+  [
+   "c1",
+   "At speed, the axes talk to each other. Here's a 10 amp step on q at 3000 rpm: with the two PIs alone, ID swings to 1.7 amps, where we asked for zero.",
+   "At speed, the axes talk to each other. Here's a 10 amp step on Q at 3,000 RPM. With the two PIs alone, ID swings to 1.7 amps, where we asked for zero. [BUZZER]"
+  ],
+  [
+   "c2",
+   "We know those speed voltages, so add them to the PI outputs: minus omega E L IQ on d, and omega E, times L ID plus lambda M, on q. That's decoupling feed forward.",
+   "We know those speed voltages, so add them to the PI outputs. Minus omega ELIQ on D and omega E times LID plus lambda M on Q that's decoupling feed forward."
+  ],
+  [
+   "d1",
+   "Digital control can't act instantly. The ADC samples in the middle of zero zero zero, the processor computes, and the new duties load at the next counter zero.",
+   "Digital control can't act instantly. The ADC samples in the middle of 0, 0, 0, 0, the processor computes, and the new duties load at the next counter-zero. [BUZZER]"
+  ],
+  [
+   "d2",
+   "So the voltage starts one period late, and it's spread over that period, which adds half a period more: one and a half samples, 75 microseconds.",
+   "So the voltage starts one period late, and it's spread over that period, which adds half a period more. 1.5 samples, 75 microseconds."
+  ],
+  [
+   "b3",
+   "That's why current loops sit at a twentieth to a tenth of the PWM frequency. Our 1 kilohertz at 20 kilohertz is at the safe end.",
+   "That's why current loops sit at a 20th to a 10th of the PWM frequency. Our 1 kilohertz at 20 kilohertz is at the safe end."
+  ],
+  [
+   "v2",
+   "At 4500 rpm, the back EMF alone takes 12.3 volts. For a 20 amp step, the controller asks for 18.5: the vector sits on the circle, and the current climbs only as fast as 1.6 volts of margin allows.",
+   "At 4,500 RPM, the back EMF alone takes 12.3 volts. For a 20 amp step, the controller asks for 18.5. The vector sits on the circle, and the current climbs only as fast as 1.6 volts of margin allows."
+  ],
+  [
+   "v3",
+   "Meanwhile, the integrator keeps adding up an error the voltage can't remove: 2.4 volts of it. When the current arrives, those stored volts push it to 24.2 amps, past the 20 amp limit.",
+   "Meanwhile, the integrator keeps adding up an error the voltage can't remove. 2.4 volts of it. When the current arrives, those stored volts push it to 24.2 amps, pass the 20 amp limit."
+  ],
+  [
+   "v4",
+   "Anti windup fixes it: feed the cut off part back, so the integrator only stores what the inverter really applies. The overshoot drops to 0.5%.",
+   "anti-wind-up fixes it, feed the cut-off part back so the integrator only stores what the inverter really applies. The overshoot drops to 0.5%."
+  ],
+  [
+   "f1",
+   "Here's the whole loop, every 50 microseconds: two shunts sampled, Clarke and Park with the rotor angle, the PIs with feed forward, the limit, inverse Park, and space vector PWM.",
+   "Here's the whole loop, every 50 microseconds. Two shunt sampled, Clark and Park with the rotor angle, the PIs with feed forward, the limit, inverse Park and space vector PWM."
+  ],
+  [
+   "f3",
+   "So the averaged model is the one to tune with; the switched one shows ripple and sensing.",
+   "So the averaged model is the one to tune with. The switched one shows ripple and sensing. [BUZZER]"
+  ],
+  [
+   "e1",
+   "Your turn. Compute KP and KI from your own R and L, measured as in Lesson 15; in code, store KI times the sample time, 0.0126 for our motor.",
+   "Your turn. Compute Kp and Ki from your own R and L, measured as in lesson 15. In code, store Ki times the sample time, 0.0126 for our motor. [BUZZER]"
+  ],
+  [
+   "m1",
+   "Finally, one iteration in C, run by the ADC interrupt in the middle of zero zero zero.",
+   "Finally, one iteration in C. Run by the ADC, interrupt in the middle of 0, 0, 0."
+  ],
+  [
+   "m2",
+   "Scale the shunt readings, then Clarke, and Park with the rotor angle.",
+   "Scale the shunt readings, then clark, and park with the rotor angle."
+  ],
+  [
+   "m4",
+   "Last, inverse Park, at the angle the rotor will have when the voltage lands, one and a half samples later: 5.4 degrees at 3000 rpm. Skip that, and our step's d swing doubles, to 1.3 amps.",
+   "Last, inverse park, at the angle the rotor will have when the voltage lands, 1.5 samples later. 5.4 degrees at 3,000 rpm. Skip that and our steps D swing doubles to 1.3 amps."
+  ],
+  [
+   "m5",
+   "Space vector PWM writes the compare registers, and they load at the next zero.",
+   "SpaceFector PWM writes the compare registers, and they load at the next zero."
+  ],
+  [
+   "q2",
+   "One: with this tuning, what does the ideal closed loop current response look like?",
+   "1. With this tuning, what does the ideal closed loop current response look like?"
+  ],
+  [
+   "q3",
+   "Two: sampling at 20 kilohertz, with a delay of one and a half samples, how much phase lag at 1 kilohertz?",
+   "2. Sampling at 20 kilohertz with a delay of 1.5 samples, how much phase lag at 1 kilohertz."
+  ],
+  [
+   "q4",
+   "Three: a speed loop sits on top of this current loop. How much lower is its bandwidth, typically?",
+   "3. A speed loop sits on top of this current loop. How much lower is its bandwidth typically?"
+  ],
+  [
+   "q5",
+   "Next time: field oriented control, the whole cascade from speed down to these currents.",
+   "Next time, field-oriented control, the whole cascade from speed down to these currents. [buzzer]"
+  ]
+ ]
+}

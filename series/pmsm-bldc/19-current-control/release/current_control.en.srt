@@ -1,0 +1,440 @@
+1
+00:00:00,600 --> 00:00:05,214
+The motor makes torque from current, but
+the inverter can only set voltages.
+
+2
+00:00:05,254 --> 00:00:08,265
+Between them sits the fastest loop in the
+drive:
+
+3
+00:00:08,305 --> 00:00:13,114
+20 000 times a second, it measures the
+currents and sets new voltages.
+
+4
+00:00:13,154 --> 00:00:17,822
+Tuned well, the current settles on a 10 A
+step within 0.3 ms.
+
+5
+00:00:17,862 --> 00:00:21,077
+Push the gains too far, and it rings.
+
+6
+00:00:21,117 --> 00:00:25,305
+Today: current control in dq, tuned
+straight from the motor model.
+
+7
+00:00:26,405 --> 00:00:28,601
+First, Lesson 18's answers.
+
+8
+00:00:28,641 --> 00:00:33,024
+One: linear SVPWM reaches the inscribed
+circle,
+
+9
+00:00:33,064 --> 00:00:37,188
+24 V over √3: 13.9 V of phase amplitude.
+
+10
+00:00:37,228 --> 00:00:41,373
+Two: in the middle of 000, all three low-
+side switches conduct,
+
+11
+00:00:41,413 --> 00:00:45,227
+and the switching edges are as far away as
+they get.
+
+12
+00:00:45,267 --> 00:00:55,957
+Three: Kp = ωc L = 2π × 1 kHz × 0.05 mH =
+0.31 V/A.
+
+13
+00:00:57,057 --> 00:01:01,458
+Why control current at all? Because
+current is torque:
+
+14
+00:01:01,498 --> 00:01:05,066
+on our motor, 0.039 N·m per amp of i_q.
+
+15
+00:01:05,106 --> 00:01:09,179
+Voltage alone doesn't set the current: the
+back-EMF takes a share
+
+16
+00:01:09,219 --> 00:01:13,376
+that grows with speed, and a hot winding's
+resistance rises.
+
+17
+00:01:13,416 --> 00:01:19,711
+At standstill, the full 13.9 V across
+40 mΩ would drive 346 A,
+
+18
+00:01:19,751 --> 00:01:23,483
+17 times the drive's 20 A rating.
+
+19
+00:01:23,523 --> 00:01:26,624
+So we command current instead: an i_q
+reference,
+
+20
+00:01:26,664 --> 00:01:30,895
+clamped at 20 A, that a fast loop makes
+the motor follow.
+
+21
+00:01:31,995 --> 00:01:39,955
+Lesson 14's model is the plant. Each axis
+is a resistor and an inductor in series:
+
+22
+00:01:39,995 --> 00:01:44,648
+1/(R + sL), with one pole at R/L,
+800 rad/s.
+
+23
+00:01:44,688 --> 00:01:49,350
+Rotation adds speed voltages: the back-EMF
+ωe λm on q,
+
+24
+00:01:49,390 --> 00:01:54,800
+and a cross-coupling, ωe L times the other
+axis's current.
+
+25
+00:01:54,840 --> 00:02:01,888
+At 3000 rpm, 10 A on q puts 0.63 V on d,
+and the back-EMF is 8.17 V.
+
+26
+00:02:01,928 --> 00:02:06,702
+To each controller, they're disturbances.
+
+27
+00:02:07,802 --> 00:02:12,310
+The PI controller is a gain plus an
+integrator,
+
+28
+00:02:12,350 --> 00:02:15,904
+Kp + Ki/s, with a zero at −Ki/Kp.
+
+29
+00:02:15,944 --> 00:02:21,578
+Put that zero on the plant's pole, Ki/Kp =
+R/L, and the two cancel.
+
+30
+00:02:21,618 --> 00:02:26,127
+The loop gain becomes Kp/(sL): a pure
+integrator.
+
+31
+00:02:26,167 --> 00:02:35,525
+Choose Kp = ωc L: the loop gain is ωc/s,
+and the closed loop is 1/(1 + s/ωc).
+
+32
+00:02:35,565 --> 00:02:41,540
+First order, with bandwidth ωc. And Ki =
+ωc R.
+
+33
+00:02:41,580 --> 00:02:46,427
+For 1 kHz on our motor: Kp is 0.314 V/A,
+
+34
+00:02:46,467 --> 00:02:53,197
+Ki is 251 V/(A·s), and the time constant
+is 159 µs.
+
+35
+00:02:54,297 --> 00:03:00,328
+At speed, the axes talk to each other.
+Here's a 10 A step on q at 3000 rpm:
+
+36
+00:03:00,368 --> 00:03:06,313
+with the two PIs alone, i_d swings to
+1.7 A, where we asked for zero.
+
+37
+00:03:06,353 --> 00:03:11,847
+We know those speed voltages, so add them
+to the PI outputs:
+
+38
+00:03:11,887 --> 00:03:18,980
+−ωe L i_q on d, and ωe (L i_d + λm) on q.
+That's decoupling feed-forward.
+
+39
+00:03:19,020 --> 00:03:23,915
+Now each axis sees just its R and L again.
+The swing drops to 0.6 A;
+
+40
+00:03:23,955 --> 00:03:28,156
+the rest comes from a delay we haven't
+counted yet.
+
+41
+00:03:29,256 --> 00:03:34,384
+Digital control can't act instantly. The
+ADC samples in the middle of 000,
+
+42
+00:03:34,424 --> 00:03:39,883
+the processor computes, and the new duties
+load at the next counter zero.
+
+43
+00:03:39,923 --> 00:03:45,271
+So the voltage starts one period late, and
+it's spread over that period,
+
+44
+00:03:45,311 --> 00:03:49,412
+which adds half a period more: 1.5
+samples, 75 µs.
+
+45
+00:03:49,452 --> 00:03:53,393
+At 1 kHz, 75 µs is 27° of phase lag.
+
+46
+00:03:53,433 --> 00:03:59,653
+The ideal loop had 90° of phase margin;
+63° are left.
+
+47
+00:03:59,693 --> 00:04:06,266
+Simulated sample by sample, the step still
+reaches 63 % at 154 µs,
+
+48
+00:04:06,306 --> 00:04:09,611
+but now overshoots by 1.8 %.
+
+49
+00:04:10,711 --> 00:04:14,349
+So why not go faster? The delay stays
+75 µs,
+
+50
+00:04:14,389 --> 00:04:18,009
+so a higher crossover loses more phase.
+
+51
+00:04:18,049 --> 00:04:22,832
+At 1.5 kHz the overshoot is 21 %; at
+2 kHz,
+
+52
+00:04:22,872 --> 00:04:31,307
+a tenth of the PWM frequency, 47 %. Above
+3.25 kHz the loop is unstable.
+
+53
+00:04:31,347 --> 00:04:36,792
+That's why current loops sit at a
+twentieth to a tenth of the PWM frequency.
+
+54
+00:04:36,832 --> 00:04:40,146
+Our 1 kHz at 20 kHz is at the safe end.
+
+55
+00:04:41,246 --> 00:04:47,277
+One more limit: the voltage. Linear SVPWM
+stops at the 13.9 V circle, so the
+
+56
+00:04:47,317 --> 00:04:53,987
+controller cuts its vector back to it: d
+keeps its voltage, q gets what's left.
+
+57
+00:04:54,027 --> 00:04:59,345
+At 4500 rpm, the back-EMF alone takes
+12.3 V. For a 20 A step,
+
+58
+00:04:59,385 --> 00:05:04,702
+the controller asks for 18.5 V: the vector
+sits on the circle,
+
+59
+00:05:04,742 --> 00:05:10,460
+and the current climbs only as fast as
+1.6 V of margin allows.
+
+60
+00:05:10,500 --> 00:05:15,848
+Meanwhile the integrator keeps adding up
+an error the voltage can't remove:
+
+61
+00:05:15,888 --> 00:05:18,578
+2.4 V of it. When the current arrives,
+
+62
+00:05:18,618 --> 00:05:23,145
+those stored volts push it to 24.2 A, past
+the 20 A limit.
+
+63
+00:05:23,185 --> 00:05:28,343
+Anti-windup fixes it: feed the cut-off
+part back, so the integrator only
+
+64
+00:05:28,383 --> 00:05:33,937
+stores what the inverter really applies.
+The overshoot drops to 0.5 %.
+
+65
+00:05:35,037 --> 00:05:40,857
+Here's the whole loop, every 50 µs: two
+shunts sampled, Clarke and Park with the
+
+66
+00:05:40,897 --> 00:05:46,751
+rotor angle, the PIs with feed-forward,
+the limit, inverse Park, and SVPWM.
+
+67
+00:05:46,791 --> 00:05:53,940
+Simulated edge by edge at 3000 rpm, the
+phase currents carry 2.8 A of PWM ripple,
+
+68
+00:05:53,980 --> 00:05:59,399
+yet the samples land within 0.5 mA of the
+averaged model.
+
+69
+00:05:59,439 --> 00:06:01,978
+So the averaged model is the one to tune
+with;
+
+70
+00:06:02,018 --> 00:06:04,872
+the switched one shows ripple and sensing.
+
+71
+00:06:05,972 --> 00:06:10,688
+Your turn. Compute Kp and Ki from your own
+R and L,
+
+72
+00:06:10,728 --> 00:06:18,082
+measured as in Lesson 15; in code, store
+Ki × Ts, 0.0126 V/A for our motor.
+
+73
+00:06:18,122 --> 00:06:23,260
+Then step i_d from 0 to 5 A at standstill.
+On a surface-magnet rotor,
+
+74
+00:06:23,300 --> 00:06:27,787
+i_d makes no torque, so it stays put. Log
+every sample.
+
+75
+00:06:27,827 --> 00:06:34,878
+Expect two samples of nothing, the delay,
+then 1.5, 3.1, 4.1 and 4.7 A,
+
+76
+00:06:34,918 --> 00:06:43,209
+peaking at 5.09. More overshoot means a
+high estimate: L 30 % high gives 10 %.
+
+77
+00:06:44,309 --> 00:06:50,524
+Finally, one iteration in C, run by the
+ADC interrupt in the middle of 000.
+
+78
+00:06:50,564 --> 00:06:54,563
+Scale the shunt readings, then Clarke, and
+Park with the rotor angle.
+
+79
+00:06:54,603 --> 00:06:57,224
+Then the PIs plus feed-forward, the limit,
+
+80
+00:06:57,264 --> 00:07:00,855
+d first, and the integrators with back-
+calculation.
+
+81
+00:07:00,895 --> 00:07:07,334
+Last, inverse Park, at the angle the rotor
+will have when the voltage lands,
+
+82
+00:07:07,374 --> 00:07:11,341
+1.5 samples later: 5.4° at 3000 rpm. Skip
+that,
+
+83
+00:07:11,381 --> 00:07:15,236
+and our step's d swing doubles, to 1.3 A.
+
+84
+00:07:15,276 --> 00:07:20,693
+Space-vector PWM writes the compare
+registers, and they load at the next zero.
+
+85
+00:07:21,793 --> 00:07:24,008
+Three questions before next time.
+
+86
+00:07:24,048 --> 00:07:25,799
+One: with Kp = ωc L and Ki = ωc R,
+
+87
+00:07:25,839 --> 00:07:29,026
+what does the ideal closed-loop response
+look like?
+
+88
+00:07:30,026 --> 00:07:37,214
+Two: sampling at 20 kHz with a 1.5-sample
+delay, how much phase lag at 1 kHz?
+
+89
+00:07:38,214 --> 00:07:41,188
+Three: a speed loop sits on top of this
+current loop.
+
+90
+00:07:41,228 --> 00:07:44,173
+How much lower is its bandwidth,
+typically?
+
+91
+00:07:45,173 --> 00:07:47,171
+Next time: field-oriented control,
+
+92
+00:07:47,211 --> 00:07:50,827
+the whole cascade from speed down to these
+currents.

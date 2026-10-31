@@ -1,0 +1,82 @@
+;FFMETADATA1
+title=Current Control in dq — PMSM & BLDC, Lesson 19
+artist=lecture-forge
+language=eng
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=26105
+title=01 The fastest loop in the drive
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=26105
+END=56757
+title=02 Answers from Lesson 18
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=56757
+END=91695
+title=03 Why control current?
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=91695
+END=127502
+title=04 What each axis sees
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=127502
+END=173997
+title=05 PI by pole–zero cancellation
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=173997
+END=208956
+title=06 Cross-coupling and feed-forward
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=208956
+END=250411
+title=07 The 1.5-sample delay
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=250411
+END=280946
+title=08 How fast can it be?
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=280946
+END=334737
+title=09 Voltage limit and windup
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=334737
+END=365672
+title=10 The whole sampled loop
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=365672
+END=404009
+title=11 Tune it, then measure it
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=404009
+END=441493
+title=12 One iteration in C
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=441493
+END=472427
+title=13 Predict, then check

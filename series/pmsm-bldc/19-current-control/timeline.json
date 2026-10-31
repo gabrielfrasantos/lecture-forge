@@ -1,0 +1,400 @@
+[
+ {
+  "id": "hook",
+  "title": "The fastest loop in the drive",
+  "start": 0.0,
+  "beats": [
+   {
+    "id": "h1",
+    "start": 0.6,
+    "end": 4.854,
+    "text": "The motor makes torque from current, but the inverter can only set voltages."
+   },
+   {
+    "id": "h2",
+    "start": 5.254,
+    "end": 12.754,
+    "text": "Between them sits the fastest loop in the drive: 20 000 times a second, it measures the currents and sets new voltages."
+   },
+   {
+    "id": "h3",
+    "start": 13.154,
+    "end": 20.718,
+    "text": "Tuned well, the current settles on a 10 A step within 0.3 ms. Push the gains too far, and it rings."
+   },
+   {
+    "id": "h4",
+    "start": 21.117,
+    "end": 24.805,
+    "text": "Today: current control in dq, tuned straight from the motor model."
+   }
+  ],
+  "end": 26.105333333333334
+ },
+ {
+  "id": "answers",
+  "title": "Answers from Lesson 18",
+  "start": 26.105333333333334,
+  "beats": [
+   {
+    "id": "a1",
+    "start": 26.405,
+    "end": 28.341,
+    "text": "First, Lesson 18's answers."
+   },
+   {
+    "id": "a2",
+    "start": 28.641,
+    "end": 36.828,
+    "text": "One: linear SVPWM reaches the inscribed circle, 24 V over \u221a3: 13.9 V of phase amplitude."
+   },
+   {
+    "id": "a3",
+    "start": 37.228,
+    "end": 44.867,
+    "text": "Two: in the middle of 000, all three low-side switches conduct, and the switching edges are as far away as they get."
+   },
+   {
+    "id": "a4",
+    "start": 45.267,
+    "end": 55.457,
+    "text": "Three: Kp = \u03c9c L = 2\u03c0 \u00d7 1 kHz \u00d7 0.05 mH = 0.31 V/A."
+   }
+  ],
+  "end": 56.757041666666666
+ },
+ {
+  "id": "why",
+  "title": "Why control current?",
+  "start": 56.757041666666666,
+  "beats": [
+   {
+    "id": "w1",
+    "start": 57.057,
+    "end": 64.706,
+    "text": "Why control current at all? Because current is torque: on our motor, 0.039 N\u00b7m per amp of i_q."
+   },
+   {
+    "id": "w2",
+    "start": 65.106,
+    "end": 73.016,
+    "text": "Voltage alone doesn't set the current: the back-EMF takes a share that grows with speed, and a hot winding's resistance rises."
+   },
+   {
+    "id": "w3",
+    "start": 73.416,
+    "end": 83.123,
+    "text": "At standstill, the full 13.9 V across 40 m\u03a9 would drive 346 A, 17 times the drive's 20 A rating."
+   },
+   {
+    "id": "w4",
+    "start": 83.523,
+    "end": 90.395,
+    "text": "So we command current instead: an i_q reference, clamped at 20 A, that a fast loop makes the motor follow."
+   }
+  ],
+  "end": 91.69454166666668
+ },
+ {
+  "id": "plant",
+  "title": "What each axis sees",
+  "start": 91.69454166666668,
+  "beats": [
+   {
+    "id": "p1",
+    "start": 91.995,
+    "end": 104.288,
+    "text": "Lesson 14's model is the plant. Each axis is a resistor and an inductor in series: 1/(R + sL), with one pole at R/L, 800 rad/s."
+   },
+   {
+    "id": "p2",
+    "start": 104.688,
+    "end": 114.44,
+    "text": "Rotation adds speed voltages: the back-EMF \u03c9e \u03bbm on q, and a cross-coupling, \u03c9e L times the other axis's current."
+   },
+   {
+    "id": "p3",
+    "start": 114.84,
+    "end": 126.202,
+    "text": "At 3000 rpm, 10 A on q puts 0.63 V on d, and the back-EMF is 8.17 V. To each controller, they're disturbances."
+   }
+  ],
+  "end": 127.5021666666667
+ },
+ {
+  "id": "tuning",
+  "title": "PI by pole\u2013zero cancellation",
+  "start": 127.5021666666667,
+  "beats": [
+   {
+    "id": "t1",
+    "start": 127.802,
+    "end": 135.544,
+    "text": "The PI controller is a gain plus an integrator, Kp + Ki/s, with a zero at \u2212Ki/Kp."
+   },
+   {
+    "id": "t2",
+    "start": 135.944,
+    "end": 145.767,
+    "text": "Put that zero on the plant's pole, Ki/Kp = R/L, and the two cancel. The loop gain becomes Kp/(sL): a pure integrator."
+   },
+   {
+    "id": "t3",
+    "start": 146.167,
+    "end": 161.18,
+    "text": "Choose Kp = \u03c9c L: the loop gain is \u03c9c/s, and the closed loop is 1/(1 + s/\u03c9c). First order, with bandwidth \u03c9c. And Ki = \u03c9c R."
+   },
+   {
+    "id": "t4",
+    "start": 161.58,
+    "end": 172.697,
+    "text": "For 1 kHz on our motor: Kp is 0.314 V/A, Ki is 251 V/(A\u00b7s), and the time constant is 159 \u00b5s."
+   }
+  ],
+  "end": 173.99737500000003
+ },
+ {
+  "id": "decouple",
+  "title": "Cross-coupling and feed-forward",
+  "start": 173.99737500000003,
+  "beats": [
+   {
+    "id": "c1",
+    "start": 174.297,
+    "end": 185.953,
+    "text": "At speed, the axes talk to each other. Here's a 10 A step on q at 3000 rpm: with the two PIs alone, i_d swings to 1.7 A, where we asked for zero."
+   },
+   {
+    "id": "c2",
+    "start": 186.353,
+    "end": 198.62,
+    "text": "We know those speed voltages, so add them to the PI outputs: \u2212\u03c9e L i_q on d, and \u03c9e (L i_d + \u03bbm) on q. That's decoupling feed-forward."
+   },
+   {
+    "id": "c3",
+    "start": 199.02,
+    "end": 207.656,
+    "text": "Now each axis sees just its R and L again. The swing drops to 0.6 A; the rest comes from a delay we haven't counted yet."
+   }
+  ],
+  "end": 208.95575000000002
+ },
+ {
+  "id": "delay",
+  "title": "The 1.5-sample delay",
+  "start": 208.95575000000002,
+  "beats": [
+   {
+    "id": "d1",
+    "start": 209.256,
+    "end": 219.523,
+    "text": "Digital control can't act instantly. The ADC samples in the middle of 000, the processor computes, and the new duties load at the next counter zero."
+   },
+   {
+    "id": "d2",
+    "start": 219.923,
+    "end": 229.052,
+    "text": "So the voltage starts one period late, and it's spread over that period, which adds half a period more: 1.5 samples, 75 \u00b5s."
+   },
+   {
+    "id": "d3",
+    "start": 229.452,
+    "end": 239.293,
+    "text": "At 1 kHz, 75 \u00b5s is 27\u00b0 of phase lag. The ideal loop had 90\u00b0 of phase margin; 63\u00b0 are left."
+   },
+   {
+    "id": "d4",
+    "start": 239.693,
+    "end": 249.111,
+    "text": "Simulated sample by sample, the step still reaches 63 % at 154 \u00b5s, but now overshoots by 1.8 %."
+   }
+  ],
+  "end": 250.41145833333334
+ },
+ {
+  "id": "bandwidth",
+  "title": "How fast can it be?",
+  "start": 250.41145833333334,
+  "beats": [
+   {
+    "id": "b1",
+    "start": 250.711,
+    "end": 257.649,
+    "text": "So why not go faster? The delay stays 75 \u00b5s, so a higher crossover loses more phase."
+   },
+   {
+    "id": "b2",
+    "start": 258.049,
+    "end": 270.947,
+    "text": "At 1.5 kHz the overshoot is 21 %; at 2 kHz, a tenth of the PWM frequency, 47 %. Above 3.25 kHz the loop is unstable."
+   },
+   {
+    "id": "b3",
+    "start": 271.347,
+    "end": 279.646,
+    "text": "That's why current loops sit at a twentieth to a tenth of the PWM frequency. Our 1 kHz at 20 kHz is at the safe end."
+   }
+  ],
+  "end": 280.9462083333333
+ },
+ {
+  "id": "windup",
+  "title": "Voltage limit and windup",
+  "start": 280.9462083333333,
+  "beats": [
+   {
+    "id": "v1",
+    "start": 281.246,
+    "end": 293.627,
+    "text": "One more limit: the voltage. Linear SVPWM stops at the 13.9 V circle, so the controller cuts its vector back to it: d keeps its voltage, q gets what's left."
+   },
+   {
+    "id": "v2",
+    "start": 294.027,
+    "end": 310.1,
+    "text": "At 4500 rpm, the back-EMF alone takes 12.3 V. For a 20 A step, the controller asks for 18.5 V: the vector sits on the circle, and the current climbs only as fast as 1.6 V of margin allows."
+   },
+   {
+    "id": "v3",
+    "start": 310.5,
+    "end": 322.785,
+    "text": "Meanwhile the integrator keeps adding up an error the voltage can't remove: 2.4 V of it. When the current arrives, those stored volts push it to 24.2 A, past the 20 A limit."
+   },
+   {
+    "id": "v4",
+    "start": 323.185,
+    "end": 333.437,
+    "text": "Anti-windup fixes it: feed the cut-off part back, so the integrator only stores what the inverter really applies. The overshoot drops to 0.5 %."
+   }
+  ],
+  "end": 334.7371249999999
+ },
+ {
+  "id": "fullloop",
+  "title": "The whole sampled loop",
+  "start": 334.7371249999999,
+  "beats": [
+   {
+    "id": "f1",
+    "start": 335.037,
+    "end": 346.391,
+    "text": "Here's the whole loop, every 50 \u00b5s: two shunts sampled, Clarke and Park with the rotor angle, the PIs with feed-forward, the limit, inverse Park, and SVPWM."
+   },
+   {
+    "id": "f2",
+    "start": 346.791,
+    "end": 359.039,
+    "text": "Simulated edge by edge at 3000 rpm, the phase currents carry 2.8 A of PWM ripple, yet the samples land within 0.5 mA of the averaged model."
+   },
+   {
+    "id": "f3",
+    "start": 359.439,
+    "end": 364.372,
+    "text": "So the averaged model is the one to tune with; the switched one shows ripple and sensing."
+   }
+  ],
+  "end": 365.67187499999983
+ },
+ {
+  "id": "exercise",
+  "title": "Tune it, then measure it",
+  "start": 365.67187499999983,
+  "beats": [
+   {
+    "id": "e1",
+    "start": 365.972,
+    "end": 377.722,
+    "text": "Your turn. Compute Kp and Ki from your own R and L, measured as in Lesson 15; in code, store Ki \u00d7 Ts, 0.0126 V/A for our motor."
+   },
+   {
+    "id": "e2",
+    "start": 378.122,
+    "end": 387.427,
+    "text": "Then step i_d from 0 to 5 A at standstill. On a surface-magnet rotor, i_d makes no torque, so it stays put. Log every sample."
+   },
+   {
+    "id": "e3",
+    "start": 387.827,
+    "end": 402.709,
+    "text": "Expect two samples of nothing, the delay, then 1.5, 3.1, 4.1 and 4.7 A, peaking at 5.09. More overshoot means a high estimate: L 30 % high gives 10 %."
+   }
+  ],
+  "end": 404.00945833333316
+ },
+ {
+  "id": "code",
+  "title": "One iteration in C",
+  "start": 404.00945833333316,
+  "beats": [
+   {
+    "id": "m1",
+    "start": 404.309,
+    "end": 410.164,
+    "text": "Finally, one iteration in C, run by the ADC interrupt in the middle of 000."
+   },
+   {
+    "id": "m2",
+    "start": 410.564,
+    "end": 414.203,
+    "text": "Scale the shunt readings, then Clarke, and Park with the rotor angle."
+   },
+   {
+    "id": "m3",
+    "start": 414.603,
+    "end": 420.495,
+    "text": "Then the PIs plus feed-forward, the limit, d first, and the integrators with back-calculation."
+   },
+   {
+    "id": "m4",
+    "start": 420.895,
+    "end": 434.876,
+    "text": "Last, inverse Park, at the angle the rotor will have when the voltage lands, 1.5 samples later: 5.4\u00b0 at 3000 rpm. Skip that, and our step's d swing doubles, to 1.3 A."
+   },
+   {
+    "id": "m5",
+    "start": 435.276,
+    "end": 440.193,
+    "text": "Space-vector PWM writes the compare registers, and they load at the next zero."
+   }
+  ],
+  "end": 441.49299999999977
+ },
+ {
+  "id": "predict",
+  "title": "Predict, then check",
+  "start": 441.49299999999977,
+  "beats": [
+   {
+    "id": "q1",
+    "start": 441.793,
+    "end": 443.648,
+    "text": "Three questions before next time."
+   },
+   {
+    "id": "q2",
+    "start": 444.048,
+    "end": 448.526,
+    "text": "One: with Kp = \u03c9c L and Ki = \u03c9c R, what does the ideal closed-loop response look like?"
+   },
+   {
+    "id": "q3",
+    "start": 450.026,
+    "end": 456.714,
+    "text": "Two: sampling at 20 kHz with a 1.5-sample delay, how much phase lag at 1 kHz?"
+   },
+   {
+    "id": "q4",
+    "start": 458.214,
+    "end": 463.673,
+    "text": "Three: a speed loop sits on top of this current loop. How much lower is its bandwidth, typically?"
+   },
+   {
+    "id": "q5",
+    "start": 465.173,
+    "end": 470.327,
+    "text": "Next time: field-oriented control, the whole cascade from speed down to these currents."
+   }
+  ],
+  "end": 472.4268333333331
+ }
+]
