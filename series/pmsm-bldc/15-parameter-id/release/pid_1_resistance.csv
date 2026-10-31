@@ -1,0 +1,6 @@
+# SYNTHETIC data generated from the d-q model of the series reference SPM motor (Lesson 15), not a recording
+# 4-wire, I = 2.000 A, winding temperature 24.0 C
+pair,V_mV
+ab,162.34
+bc,162.48
+ca,162.62

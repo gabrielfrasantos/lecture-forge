@@ -1,0 +1,435 @@
+1
+00:00:00,600 --> 00:00:05,743
+Every simulation so far has run on seven
+numbers: resistance, two inductances,
+
+2
+00:00:05,783 --> 00:00:10,262
+the magnet's flux linkage, inertia, and
+two kinds of friction.
+
+3
+00:00:10,302 --> 00:00:15,081
+But a real motor often arrives with three
+wires, a shaft, and no datasheet.
+
+4
+00:00:15,121 --> 00:00:17,850
+Today we measure all seven, with a bench
+supply,
+
+5
+00:00:17,890 --> 00:00:20,525
+a scope, a current probe and a drill.
+
+6
+00:00:21,625 --> 00:00:23,822
+First, Lesson 14's answers.
+
+7
+00:00:23,862 --> 00:00:36,461
+One: v_d = −ωe L i_q: −0.5 V; v_q = R i_q
++ ωe λm: 6.9 V.
+
+8
+00:00:36,501 --> 00:00:44,015
+Two: L over R, 0.05 mH over 40 mΩ:
+1.25 ms.
+
+9
+00:00:44,055 --> 00:00:48,728
+Three: R is V over I once the current
+settles; L is R times τ,
+
+10
+00:00:48,768 --> 00:00:53,144
+the time to reach 63 %. That's today's
+second test.
+
+11
+00:00:54,244 --> 00:00:58,773
+The parameters split in two: electrical,
+R, Ld, Lq and λm;
+
+12
+00:00:58,813 --> 00:01:04,765
+and mechanical: inertia J, viscous
+friction B, and Coulomb friction Tc.
+
+13
+00:01:04,805 --> 00:01:09,047
+Five tests find them: four-wire
+resistance, a voltage step with the
+
+14
+00:01:09,087 --> 00:01:13,729
+rotor locked, the open-circuit EMF, a run-
+down, and a torque check.
+
+15
+00:01:13,769 --> 00:01:17,186
+Every trace you'll see is synthetic:
+generated from our motor's
+
+16
+00:01:17,226 --> 00:01:21,184
+model with noise, so each fit can be
+checked against the truth.
+
+17
+00:01:22,284 --> 00:01:26,485
+Test one: drive 2 A into terminals a and
+b, and read the voltage
+
+18
+00:01:26,525 --> 00:01:31,259
+with separate leads at the terminals:
+Lesson 2's four-wire method.
+
+19
+00:01:31,299 --> 00:01:37,544
+In star, that's two phases in series:
+162.3 mV at 24 °C.
+
+20
+00:01:37,584 --> 00:01:42,883
+With the other pairs, R_LL averages
+81.2 mΩ.
+
+21
+00:01:42,923 --> 00:01:47,827
+Half of that is the star-equivalent phase
+resistance, even for a delta winding.
+
+22
+00:01:47,867 --> 00:01:57,379
+Correct to 20 °C: divide by 1 + 0.393 %/K
+× 4 K. R = 40.0 mΩ.
+
+23
+00:01:58,479 --> 00:02:04,069
+Test two: inductance. First, park the
+rotor: DC into a, out of b and c together.
+
+24
+00:02:04,109 --> 00:02:09,747
+Its field points along phase a, and the
+magnet's north pole swings onto it.
+
+25
+00:02:09,787 --> 00:02:12,991
+Now the d axis sits on phase a. Clamp the
+shaft there.
+
+26
+00:02:13,031 --> 00:02:18,530
+A voltage step from a to b and c drives
+current only along d:
+
+27
+00:02:18,570 --> 00:02:21,927
+the supply sees 1.5 R and 1.5 Ld.
+
+28
+00:02:21,967 --> 00:02:26,533
+A step from b to c, with a open, drives
+current only along q:
+
+29
+00:02:26,573 --> 00:02:31,982
+2R and 2Lq. But q current makes torque, so
+the clamp has to hold.
+
+30
+00:02:33,082 --> 00:02:38,606
+Apply 0.3 V from a to b and c, and record
+the voltage and the current.
+
+31
+00:02:38,646 --> 00:02:45,791
+The fit gives 5.0 A and τ = 1.25 ms: a
+60 mΩ loop,
+
+32
+00:02:45,831 --> 00:02:53,951
+and τ times that, 75 µH. Divide by 1.5: Ld
+= 0.050 mH.
+
+33
+00:02:53,991 --> 00:03:00,188
+The q step, 0.4 V from b to c, gives the
+same 1.25 ms:
+
+34
+00:03:00,228 --> 00:03:05,323
+Lq = 0.050 mH, as surface magnets should.
+
+35
+00:03:05,363 --> 00:03:10,158
+Without the clamp, the rotor turns, its
+back-EMF fights the supply,
+
+36
+00:03:10,198 --> 00:03:14,594
+and the current peaks at 2.7 A: no
+exponential to fit.
+
+37
+00:03:15,694 --> 00:03:17,622
+Test three: the magnet. Unclamp,
+
+38
+00:03:17,662 --> 00:03:21,343
+open all three leads, and spin the shaft
+with a drill.
+
+39
+00:03:21,383 --> 00:03:27,686
+Scope the line-to-line voltage. Nine
+periods take 92.4 ms:
+
+40
+00:03:27,726 --> 00:03:32,460
+97.4 Hz, so the shaft turns at 1461 rpm.
+
+41
+00:03:32,500 --> 00:03:37,871
+Fit the fundamental, not the raw peak:
+6.89 V.
+
+42
+00:03:37,911 --> 00:03:43,799
+Divide by √3 ωe: λm = 6.50 mWb, as in
+Lesson 7.
+
+43
+00:03:43,839 --> 00:03:49,968
+So the torque constant, 3/2 p λm, should
+be 39.0 mN·m per amp.
+
+44
+00:03:51,068 --> 00:03:55,753
+Test four: the mechanics. Spin the motor
+to 3000 rpm with any drive,
+
+45
+00:03:55,793 --> 00:03:58,654
+then disconnect it and let it coast.
+
+46
+00:03:58,694 --> 00:04:02,765
+With the leads open, no current flows,
+
+47
+00:04:02,805 --> 00:04:08,358
+so only friction slows it: J dω/dt = −(Bω
++ Tc).
+
+48
+00:04:08,398 --> 00:04:11,188
+Record the EMF all the way down:
+
+49
+00:04:11,228 --> 00:04:16,895
+each electrical period gives one speed
+sample, 238 in 2.6 s.
+
+50
+00:04:16,935 --> 00:04:21,056
+Viscous friction alone would decay
+exponentially, Coulomb alone in a
+
+51
+00:04:21,096 --> 00:04:25,818
+straight line; the real curve lies
+between, and stops in finite time.
+
+52
+00:04:26,918 --> 00:04:34,078
+To separate them, divide by J and plot
+deceleration against speed:
+
+53
+00:04:34,118 --> 00:04:38,951
+−dω/dt = (B/J) ω + Tc/J, a straight line.
+
+54
+00:04:38,991 --> 00:04:44,659
+Fitting the closed-form solution gives the
+slope, B/J:
+
+55
+00:04:44,699 --> 00:04:52,353
+0.333 per second, and the intercept at
+zero speed, Tc/J: 66.6 rad/s².
+
+56
+00:04:52,393 --> 00:04:54,341
+But every term is divided by J:
+
+57
+00:04:54,381 --> 00:04:59,114
+twice the inertia with twice the friction
+coasts down identically.
+
+58
+00:05:00,214 --> 00:05:03,979
+So we need one more fact: a known torque,
+or a known inertia.
+
+59
+00:05:04,019 --> 00:05:09,501
+Bolt on a steel disc, 50 mm across and
+10 mm thick:
+
+60
+00:05:09,541 --> 00:05:16,613
+½ m r² = 4.8 × 10⁻⁵ kg·m². Run down again:
+it now takes 7.4 s.
+
+61
+00:05:16,653 --> 00:05:22,745
+Friction hasn't changed, so both numbers
+fall by the inertia ratio.
+
+62
+00:05:22,785 --> 00:05:28,179
+J = 3.00 and B = 1.00, both × 10⁻⁵, and Tc
+= 2.00 mN·m.
+
+63
+00:05:28,219 --> 00:05:36,321
+Or use a drive that holds a known current:
+Kt i_q = J dω/dt + Bω + Tc.
+
+64
+00:05:37,421 --> 00:05:39,713
+Test five: park the rotor again,
+
+65
+00:05:39,753 --> 00:05:45,214
+hold it with a 10 cm arm on a kitchen
+scale, and drive DC from b to c.
+
+66
+00:05:45,254 --> 00:05:51,175
+That current is all on q: the torque is √3
+p λm, 45 mN·m per amp:
+
+67
+00:05:51,215 --> 00:05:56,527
+the line-to-line EMF constant, by energy
+conservation.
+
+68
+00:05:56,567 --> 00:06:01,996
+Measure with plus and minus currents and
+take half the difference:
+
+69
+00:06:02,036 --> 00:06:08,943
+cogging and scale offset cancel. λm =
+6.48 mWb, within 0.3 % of the drill test.
+
+70
+00:06:08,983 --> 00:06:16,432
+So Kt = 3/2 p λm holds: 38.9 mN·m per amp,
+against 39.0 from the EMF.
+
+71
+00:06:17,532 --> 00:06:20,782
+Here's the whole sequence, and what the
+records gave back.
+
+72
+00:06:20,822 --> 00:06:24,958
+Every parameter within 0.3 %: that's the
+fits on clean,
+
+73
+00:06:24,998 --> 00:06:29,459
+synthetic data. On a real motor, expect a
+few percent.
+
+74
+00:06:29,499 --> 00:06:33,610
+The release folder has the five records
+and a script that runs every fit,
+
+75
+00:06:33,650 --> 00:06:35,969
+ready for your own motor's data.
+
+76
+00:06:37,069 --> 00:06:40,469
+Where does this stop? Inductance depends
+on current:
+
+77
+00:06:40,509 --> 00:06:43,976
+iron saturates, and on d the magnet
+already loads it.
+
+78
+00:06:44,016 --> 00:06:48,941
+So step at a few currents, or inject a
+small sine, like an LCR meter.
+
+79
+00:06:48,981 --> 00:06:51,507
+Eddy currents in magnets and rotor iron
+bend
+
+80
+00:06:51,547 --> 00:06:54,647
+the start of the step away from an
+exponential.
+
+81
+00:06:54,687 --> 00:06:57,341
+The run-down's friction includes iron
+loss:
+
+82
+00:06:57,381 --> 00:07:01,875
+hysteresis acts like Coulomb friction,
+eddy currents like viscous.
+
+83
+00:07:01,915 --> 00:07:09,002
+Temperature changes R by 0.393 % and λm by
+about −0.12 % per kelvin.
+
+84
+00:07:09,042 --> 00:07:17,612
+Below 150 rpm, cogging and static friction
+take over, so the fit stops there.
+
+85
+00:07:18,712 --> 00:07:20,992
+Three predictions before next time.
+
+86
+00:07:21,032 --> 00:07:26,191
+One: with only viscous friction, a rotor
+coasts from 3000
+
+87
+00:07:26,231 --> 00:07:31,930
+to 1500 rpm in 2.0 s. With J = 3 × 10⁻⁵
+kg·m², what is B?
+
+88
+00:07:32,830 --> 00:07:39,776
+Two: the line-to-line EMF peaks at 14.1 V
+at 3000 rpm. What is λm?
+
+89
+00:07:40,676 --> 00:07:44,852
+Three: why do three Hall sensors suffice
+for a BLDC drive?
+
+90
+00:07:45,752 --> 00:07:51,708
+Next time: the BLDC six-step drive, where
+those Hall sensors decide when to switch.

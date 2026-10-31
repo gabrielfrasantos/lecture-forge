@@ -1,0 +1,88 @@
+;FFMETADATA1
+title=Parameter Identification — PMSM & BLDC, Lesson 15
+artist=lecture-forge
+language=eng
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=21325
+title=01 Seven numbers, no datasheet
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=21325
+END=53944
+title=02 Answers from Lesson 14
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=53944
+END=81984
+title=03 Seven parameters, five tests
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=81984
+END=118179
+title=04 Test 1: resistance, four wires
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=118179
+END=152782
+title=05 Test 2: park the rotor, pick an axis
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=152782
+END=195394
+title=06 Test 2: fitting the current rise
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=195394
+END=230768
+title=07 Test 3: λm from a drill
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=230768
+END=266618
+title=08 Test 4: the run-down
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=266618
+END=299914
+title=09 Separating viscous from Coulomb
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=299914
+END=337121
+title=10 One more fact: the inertia
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=337121
+END=377232
+title=11 Test 5: the torque check
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=377232
+END=396769
+title=12 The whole sequence
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=396769
+END=438412
+title=13 Where the method stops
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=438412
+END=473408
+title=14 Predict, then check

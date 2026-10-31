@@ -1,0 +1,11 @@
+# SYNTHETIC data generated from the d-q model of the series reference SPM motor (Lesson 15), not a recording
+# rotor parked (d on phase a) and held by a 10 cm arm on a scale; DC current from b to c
+I_A,scale_g
+-8.0,-363
+-6.0,-273
+-4.0,-183
+-2.0,-88
+2.0,94
+4.0,185
+6.0,278
+8.0,369

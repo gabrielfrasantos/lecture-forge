@@ -1,0 +1,166 @@
+{
+ "rep": {
+  "video": "h264 1920x1080 30/1 473.40s",
+  "audio": "aac 48000 Hz 1 ch 473.41s",
+  "subtitles": "1 track(s): mov_text/eng",
+  "chapters": 14,
+  "av_duration_diff_s": 0.008,
+  "integrated_LUFS": -16.1,
+  "true_peak_dBTP": -1.4,
+  "LRA_LU": 2.8,
+  "asr_word_error_rate": 0.066,
+  "captions": "90 cues, 0 cues mostly over silence, 0 overlaps, max 18.4 chars/s, last cue ends 471.7s"
+ },
+ "mism": [
+  [
+   "a2",
+   "One: the d voltage is minus omega E, times L, times IQ: minus 0.5 volts; the q voltage is R times IQ, plus omega E lambda M: 6.9 volts.",
+   "1, the d-voltage is minus omega e times l times iq minus 0.5 volts. The q-voltage is r times iq plus omega e lambda m, 6.9 volts."
+  ],
+  [
+   "a3",
+   "Two: L over R, 0.05 millihenries over 40 milliohms: 1.25 milliseconds.",
+   "2. L/R 0.05 millihenries over 40 milliomes 1.25 milliseconds"
+  ],
+  [
+   "a4",
+   "Three: R is V over I once the current settles; L is R times tau, the time to reach 63%. That's today's second test.",
+   "3. R is V over I once the current settles. L is R times tau, the time to reach 63%. That's today's second test."
+  ],
+  [
+   "p1",
+   "The parameters split in two: electrical, R, LD, LQ and lambda M; and mechanical: inertia J, viscous friction B, and Coulomb friction TC.",
+   "The parameters split in two, electrical, R, LD, LQ, and lambda M, and mechanical, inertia J, viscous friction B, and Coulomb friction TC. [BUZZER]"
+  ],
+  [
+   "p2",
+   "Five tests find them: four-wire resistance, a voltage step with the rotor locked, the open-circuit EMF, a run-down, and a torque check.",
+   "Five tests find them. Four wire resistance, a voltage step with the rotor locked, the open circuit EMF, a rundown, and a torque check."
+  ],
+  [
+   "r1",
+   "Test one: drive 2 amps into terminals A and B, and read the voltage with separate leads at the terminals: Lesson 2's four-wire method.",
+   "Test 1, drive 2 amps into terminals A and B, and read the voltage with separate leads at the terminals. Lesson 2's for wire method."
+  ],
+  [
+   "r2",
+   "In star, that's two phases in series: 162.3 millivolts at 24 degrees Celsius. With the other pairs, the average is 81.2 milliohms.",
+   "In star, that's two phases in series, 162.3 millivolts at 24 degrees Celsius. With the other pairs, the average is 81.2 milliomes."
+  ],
+  [
+   "r4",
+   "Correct to 20 degrees: divide by one plus 0.393% per kelvin, times the 4 degree rise. R is 40 milliohms.",
+   "Correct to 20 degrees. Divide by 1 plus 0.393% per Kelvin times the 4 degree rise. R is 40 milli ohms."
+  ],
+  [
+   "l1",
+   "Test two: inductance. First, park the rotor: DC into A, out of B and C together. Its field points along phase A, and the magnet's north pole swings onto it.",
+   "Test 2, inductance. First, park the rotor, DC into A out of B and C together. Its field points along phase A and the magnet's north pole swings onto it. [BEEPING]"
+  ],
+  [
+   "l3",
+   "Then a voltage step from A to B and C drives current only along d: the supply sees 1.5 R, and 1.5 LD.",
+   "then a voltage step from A to B and C drives current only along D. The supply sees 1.5R and 1.5LD."
+  ],
+  [
+   "l4",
+   "And a step from B to C, with A open, drives current only along q: 2 R, and 2 LQ. But q current makes torque, so the clamp has to hold.",
+   "and a step from B to C with A open drives current only along Q, 2R and 2LQ. But Q current makes torque so the clamp has to hold."
+  ],
+  [
+   "s1",
+   "Apply 0.3 volts from A to B and C, and record the voltage and the current.",
+   "Apply 0.3 volts from A to B and C, and record the voltage and the current. [buzzer]"
+  ],
+  [
+   "s2",
+   "The fit gives 5 amps, and a time constant of 1.25 milliseconds: a 60 milliohm loop, and tau times that, 75 microhenries. Divide by 1.5: LD is 0.05 millihenries.",
+   "The fit gives 5 amps and a time constant of 1.25 milliseconds, a 60-milliome loop, and tau times that 75 microhenries. Divide by 1.5, LD is 0.05 millionaries."
+  ],
+  [
+   "s3",
+   "The q step, 0.4 volts from B to C, gives the same 1.25 milliseconds: LQ is 0.05 millihenries, as surface magnets should.",
+   "The Q-step, 0.4 volts from B to C, gives the same 1.25 milliseconds. LQ is 0.05 millionaries, as surface magnets should. [BUZZER]"
+  ],
+  [
+   "e1",
+   "Test three: the magnet. Unclamp, open all three leads, and spin the shaft with a drill.",
+   "Test 3, the magnet. Unclamp, open all three leads and spin the shaft with a drill."
+  ],
+  [
+   "e4",
+   "So the torque constant, three halves P lambda M, should be 39 millinewton meters per amp.",
+   "So the torque constant, 3/2 P lambda m, should be 39 mN/A."
+  ],
+  [
+   "d1",
+   "Test four: the mechanics. Spin the motor to 3000 rpm with any drive, then disconnect it and let it coast.",
+   "Test 4, the mechanics. Spin the motor to 3000 RPM with any drive, then disconnect it and let it coast."
+  ],
+  [
+   "j2",
+   "Bolt on a steel disc, 50 millimeters across and 10 millimeters thick: 4.8 times 10 to the minus 5 kilogram meters squared. Run down again: it now takes 7.4 seconds.",
+   "Bolt on a steel disc, 50 mm across and 10 mm thick, 4.8 x 10 to -5 kg/m2. Run down again, it now takes 7.4 seconds."
+  ],
+  [
+   "j3",
+   "Friction hasn't changed, so both numbers fall by the inertia ratio. J is 3 and B is 1, both times 10 to the minus 5, and TC is 2 millinewton meters.",
+   "Friction hasn't changed, so both numbers fall by the inertia ratio. J is 3 and B is 1, both times 10 to the minus 5, and TC is 2 millinutin meters."
+  ],
+  [
+   "k1",
+   "Test five: park the rotor again, hold it with a 10 centimeter arm on a kitchen scale, and drive DC from B to C.",
+   "Test 5, park the rotor again, hold it with a 10 centimeter arm on a kitchen scale, and drive DC from B to C."
+  ],
+  [
+   "k2",
+   "That current is all on q: the torque is root 3 P lambda M, 45 millinewton meters per amp: the line-to-line EMF constant, by energy conservation.",
+   "That current is all on Q. The torque is root 3p lambda m, 45 mN m/A. The line-to-line EMF constant by energy conservation."
+  ],
+  [
+   "k4",
+   "So the torque constant holds: 38.9 millinewton meters per amp, against 39 from the EMF.",
+   "So the torque constant holds, 38.9 mN/A against 39 from the EMF."
+  ],
+  [
+   "x2",
+   "Every parameter within 0.3%: that's the fits on clean, synthetic data. On a real motor, expect a few percent.",
+   "Every parameter within 0.3 percent, that's the fits on clean, synthetic data. On a real motor, expect a few percent."
+  ],
+  [
+   "m1",
+   "Where does this stop? Inductance depends on current: iron saturates, and on d the magnet already loads it. So step at a few currents, or inject a small sine, like an LCR meter.",
+   "Where does this stop? Inductance depends on current, iron saturates, and on D the magnet already loads it. So step at a few currents or inject a small sign like an LCR meter."
+  ],
+  [
+   "m2",
+   "Eddy currents in magnets and rotor iron bend the start of the step away from an exponential.",
+   "Eddie Currants in Magnets and Roder Iron bend the start of the step away from an exponential."
+  ],
+  [
+   "m3",
+   "The run-down's friction includes iron loss: hysteresis acts like Coulomb friction, eddy currents like viscous.",
+   "The rundown's friction includes iron loss. Hysterysus acts like Coulomb friction, eddy currents like viscous."
+  ],
+  [
+   "q2",
+   "One: with only viscous friction, a rotor coasts from 3000 to 1500 rpm in 2 seconds. With J of 3 times 10 to the minus 5, what is B?",
+   "One, with only viscous friction, a rotor coasts from 3,000 to 1,500 RPM in two seconds. With J of 3 times 10 to the minus 5, what is B?"
+  ],
+  [
+   "q3",
+   "Two: the line-to-line EMF peaks at 14.1 volts at 3000 rpm. What is lambda M?",
+   "2. The line-to-line EMF peaks at 14.1 volts at 3,000 RPM. What is lambda m?"
+  ],
+  [
+   "q4",
+   "Three: why do three Hall sensors suffice for a BLDC drive?",
+   "3. Why do three hall sensors suffice for a BLDC drive?"
+  ],
+  [
+   "q5",
+   "Next time: the BLDC six-step drive, where those Hall sensors decide when to switch.",
+   "Next time, the BLDC 6-Step Drive, where those hall sensors decide when to switch."
+  ]
+ ]
+}

@@ -1,0 +1,432 @@
+[
+ {
+  "id": "hook",
+  "title": "Seven numbers, no datasheet",
+  "start": 0.0,
+  "beats": [
+   {
+    "id": "h1",
+    "start": 0.6,
+    "end": 9.902,
+    "text": "Every simulation so far has run on seven numbers: resistance, two inductances, the magnet's flux linkage, inertia, and two kinds of friction."
+   },
+   {
+    "id": "h2",
+    "start": 10.302,
+    "end": 14.721,
+    "text": "But a real motor often arrives with three wires, a shaft, and no datasheet."
+   },
+   {
+    "id": "h3",
+    "start": 15.121,
+    "end": 20.025,
+    "text": "Today we measure all seven, with a bench supply, a scope, a current probe and a drill."
+   }
+  ],
+  "end": 21.325041666666667
+ },
+ {
+  "id": "answers",
+  "title": "Answers from Lesson 14",
+  "start": 21.325041666666667,
+  "beats": [
+   {
+    "id": "a1",
+    "start": 21.625,
+    "end": 23.562,
+    "text": "First, Lesson 14's answers."
+   },
+   {
+    "id": "a2",
+    "start": 23.862,
+    "end": 36.101,
+    "text": "One: v_d = \u2212\u03c9e L i_q: \u22120.5 V; v_q = R i_q + \u03c9e \u03bbm: 6.9 V."
+   },
+   {
+    "id": "a3",
+    "start": 36.501,
+    "end": 43.655,
+    "text": "Two: L over R, 0.05 mH over 40 m\u03a9: 1.25 ms."
+   },
+   {
+    "id": "a4",
+    "start": 44.055,
+    "end": 52.644,
+    "text": "Three: R is V over I once the current settles; L is R times \u03c4, the time to reach 63 %. That's today's second test."
+   }
+  ],
+  "end": 53.943958333333335
+ },
+ {
+  "id": "plan",
+  "title": "Seven parameters, five tests",
+  "start": 53.943958333333335,
+  "beats": [
+   {
+    "id": "p1",
+    "start": 54.244,
+    "end": 64.405,
+    "text": "The parameters split in two: electrical, R, Ld, Lq and \u03bbm; and mechanical: inertia J, viscous friction B, and Coulomb friction Tc."
+   },
+   {
+    "id": "p2",
+    "start": 64.805,
+    "end": 73.369,
+    "text": "Five tests find them: four-wire resistance, a voltage step with the rotor locked, the open-circuit EMF, a run-down, and a torque check."
+   },
+   {
+    "id": "p3",
+    "start": 73.769,
+    "end": 80.684,
+    "text": "Every trace you'll see is synthetic: generated from our motor's model with noise, so each fit can be checked against the truth."
+   }
+  ],
+  "end": 81.98437500000001
+ },
+ {
+  "id": "resistance",
+  "title": "Test 1: resistance, four wires",
+  "start": 81.98437500000001,
+  "beats": [
+   {
+    "id": "r1",
+    "start": 82.284,
+    "end": 90.899,
+    "text": "Test one: drive 2 A into terminals a and b, and read the voltage with separate leads at the terminals: Lesson 2's four-wire method."
+   },
+   {
+    "id": "r2",
+    "start": 91.299,
+    "end": 102.523,
+    "text": "In star, that's two phases in series: 162.3 mV at 24 \u00b0C. With the other pairs, R_LL averages 81.2 m\u03a9."
+   },
+   {
+    "id": "r3",
+    "start": 102.923,
+    "end": 107.467,
+    "text": "Half of that is the star-equivalent phase resistance, even for a delta winding."
+   },
+   {
+    "id": "r4",
+    "start": 107.867,
+    "end": 116.879,
+    "text": "Correct to 20 \u00b0C: divide by 1 + 0.393 %/K \u00d7 4 K. R = 40.0 m\u03a9."
+   }
+  ],
+  "end": 118.17862500000003
+ },
+ {
+  "id": "park",
+  "title": "Test 2: park the rotor, pick an axis",
+  "start": 118.17862500000003,
+  "beats": [
+   {
+    "id": "l1",
+    "start": 118.479,
+    "end": 129.387,
+    "text": "Test two: inductance. First, park the rotor: DC into a, out of b and c together. Its field points along phase a, and the magnet's north pole swings onto it."
+   },
+   {
+    "id": "l2",
+    "start": 129.787,
+    "end": 132.631,
+    "text": "Now the d axis sits on phase a. Clamp the shaft there."
+   },
+   {
+    "id": "l3",
+    "start": 133.031,
+    "end": 141.567,
+    "text": "A voltage step from a to b and c drives current only along d: the supply sees 1.5 R and 1.5 Ld."
+   },
+   {
+    "id": "l4",
+    "start": 141.967,
+    "end": 151.482,
+    "text": "A step from b to c, with a open, drives current only along q: 2R and 2Lq. But q current makes torque, so the clamp has to hold."
+   }
+  ],
+  "end": 152.78195833333336
+ },
+ {
+  "id": "step",
+  "title": "Test 2: fitting the current rise",
+  "start": 152.78195833333336,
+  "beats": [
+   {
+    "id": "s1",
+    "start": 153.082,
+    "end": 158.246,
+    "text": "Apply 0.3 V from a to b and c, and record the voltage and the current."
+   },
+   {
+    "id": "s2",
+    "start": 158.646,
+    "end": 173.591,
+    "text": "The fit gives 5.0 A and \u03c4 = 1.25 ms: a 60 m\u03a9 loop, and \u03c4 times that, 75 \u00b5H. Divide by 1.5: Ld = 0.050 mH."
+   },
+   {
+    "id": "s3",
+    "start": 173.991,
+    "end": 184.963,
+    "text": "The q step, 0.4 V from b to c, gives the same 1.25 ms: Lq = 0.050 mH, as surface magnets should."
+   },
+   {
+    "id": "s4",
+    "start": 185.363,
+    "end": 194.094,
+    "text": "Without the clamp, the rotor turns, its back-EMF fights the supply, and the current peaks at 2.7 A: no exponential to fit."
+   }
+  ],
+  "end": 195.39425000000006
+ },
+ {
+  "id": "drill",
+  "title": "Test 3: \u03bbm from a drill",
+  "start": 195.39425000000006,
+  "beats": [
+   {
+    "id": "e1",
+    "start": 195.694,
+    "end": 200.983,
+    "text": "Test three: the magnet. Unclamp, open all three leads, and spin the shaft with a drill."
+   },
+   {
+    "id": "e2",
+    "start": 201.383,
+    "end": 212.1,
+    "text": "Scope the line-to-line voltage. Nine periods take 92.4 ms: 97.4 Hz, so the shaft turns at 1461 rpm."
+   },
+   {
+    "id": "e3",
+    "start": 212.5,
+    "end": 223.439,
+    "text": "Fit the fundamental, not the raw peak: 6.89 V. Divide by \u221a3 \u03c9e: \u03bbm = 6.50 mWb, as in Lesson 7."
+   },
+   {
+    "id": "e4",
+    "start": 223.839,
+    "end": 229.468,
+    "text": "So the torque constant, 3/2 p \u03bbm, should be 39.0 mN\u00b7m per amp."
+   }
+  ],
+  "end": 230.76775000000006
+ },
+ {
+  "id": "rundown",
+  "title": "Test 4: the run-down",
+  "start": 230.76775000000006,
+  "beats": [
+   {
+    "id": "d1",
+    "start": 231.068,
+    "end": 238.294,
+    "text": "Test four: the mechanics. Spin the motor to 3000 rpm with any drive, then disconnect it and let it coast."
+   },
+   {
+    "id": "d2",
+    "start": 238.694,
+    "end": 247.998,
+    "text": "With the leads open, no current flows, so only friction slows it: J d\u03c9/dt = \u2212(B\u03c9 + Tc)."
+   },
+   {
+    "id": "d3",
+    "start": 248.398,
+    "end": 256.535,
+    "text": "Record the EMF all the way down: each electrical period gives one speed sample, 238 in 2.6 s."
+   },
+   {
+    "id": "d4",
+    "start": 256.935,
+    "end": 265.318,
+    "text": "Viscous friction alone would decay exponentially, Coulomb alone in a straight line; the real curve lies between, and stops in finite time."
+   }
+  ],
+  "end": 266.617875
+ },
+ {
+  "id": "separate",
+  "title": "Separating viscous from Coulomb",
+  "start": 266.617875,
+  "beats": [
+   {
+    "id": "f1",
+    "start": 266.918,
+    "end": 278.591,
+    "text": "To separate them, divide by J and plot deceleration against speed: \u2212d\u03c9/dt = (B/J) \u03c9 + Tc/J, a straight line."
+   },
+   {
+    "id": "f2",
+    "start": 278.991,
+    "end": 291.993,
+    "text": "Fitting the closed-form solution gives the slope, B/J: 0.333 per second, and the intercept at zero speed, Tc/J: 66.6 rad/s\u00b2."
+   },
+   {
+    "id": "f4",
+    "start": 292.393,
+    "end": 298.614,
+    "text": "But every term is divided by J: twice the inertia with twice the friction coasts down identically."
+   }
+  ],
+  "end": 299.9142916666667
+ },
+ {
+  "id": "inertia",
+  "title": "One more fact: the inertia",
+  "start": 299.9142916666667,
+  "beats": [
+   {
+    "id": "j1",
+    "start": 300.214,
+    "end": 303.619,
+    "text": "So we need one more fact: a known torque, or a known inertia."
+   },
+   {
+    "id": "j2",
+    "start": 304.019,
+    "end": 316.253,
+    "text": "Bolt on a steel disc, 50 mm across and 10 mm thick: \u00bd m r\u00b2 = 4.8 \u00d7 10\u207b\u2075 kg\u00b7m\u00b2. Run down again: it now takes 7.4 s."
+   },
+   {
+    "id": "j3",
+    "start": 316.653,
+    "end": 327.819,
+    "text": "Friction hasn't changed, so both numbers fall by the inertia ratio. J = 3.00 and B = 1.00, both \u00d7 10\u207b\u2075, and Tc = 2.00 mN\u00b7m."
+   },
+   {
+    "id": "j4",
+    "start": 328.219,
+    "end": 335.821,
+    "text": "Or use a drive that holds a known current: Kt i_q = J d\u03c9/dt + B\u03c9 + Tc."
+   }
+  ],
+  "end": 337.1214166666666
+ },
+ {
+  "id": "torque",
+  "title": "Test 5: the torque check",
+  "start": 337.1214166666666,
+  "beats": [
+   {
+    "id": "k1",
+    "start": 337.421,
+    "end": 344.854,
+    "text": "Test five: park the rotor again, hold it with a 10 cm arm on a kitchen scale, and drive DC from b to c."
+   },
+   {
+    "id": "k2",
+    "start": 345.254,
+    "end": 356.167,
+    "text": "That current is all on q: the torque is \u221a3 p \u03bbm, 45 mN\u00b7m per amp: the line-to-line EMF constant, by energy conservation."
+   },
+   {
+    "id": "k3",
+    "start": 356.567,
+    "end": 368.583,
+    "text": "Measure with plus and minus currents and take half the difference: cogging and scale offset cancel. \u03bbm = 6.48 mWb, within 0.3 % of the drill test."
+   },
+   {
+    "id": "k4",
+    "start": 368.983,
+    "end": 375.932,
+    "text": "So Kt = 3/2 p \u03bbm holds: 38.9 mN\u00b7m per amp, against 39.0 from the EMF."
+   }
+  ],
+  "end": 377.2324166666666
+ },
+ {
+  "id": "summary",
+  "title": "The whole sequence",
+  "start": 377.2324166666666,
+  "beats": [
+   {
+    "id": "x1",
+    "start": 377.532,
+    "end": 380.422,
+    "text": "Here's the whole sequence, and what the records gave back."
+   },
+   {
+    "id": "x2",
+    "start": 380.822,
+    "end": 389.099,
+    "text": "Every parameter within 0.3 %: that's the fits on clean, synthetic data. On a real motor, expect a few percent."
+   },
+   {
+    "id": "x3",
+    "start": 389.499,
+    "end": 395.469,
+    "text": "The release folder has the five records and a script that runs every fit, ready for your own motor's data."
+   }
+  ],
+  "end": 396.76941666666653
+ },
+ {
+  "id": "limits",
+  "title": "Where the method stops",
+  "start": 396.76941666666653,
+  "beats": [
+   {
+    "id": "m1",
+    "start": 397.069,
+    "end": 408.581,
+    "text": "Where does this stop? Inductance depends on current: iron saturates, and on d the magnet already loads it. So step at a few currents, or inject a small sine, like an LCR meter."
+   },
+   {
+    "id": "m2",
+    "start": 408.981,
+    "end": 414.287,
+    "text": "Eddy currents in magnets and rotor iron bend the start of the step away from an exponential."
+   },
+   {
+    "id": "m3",
+    "start": 414.687,
+    "end": 421.515,
+    "text": "The run-down's friction includes iron loss: hysteresis acts like Coulomb friction, eddy currents like viscous."
+   },
+   {
+    "id": "m4",
+    "start": 421.915,
+    "end": 437.112,
+    "text": "Temperature changes R by 0.393 % and \u03bbm by about \u22120.12 % per kelvin. Below 150 rpm, cogging and static friction take over, so the fit stops there."
+   }
+  ],
+  "end": 438.4124166666665
+ },
+ {
+  "id": "predict",
+  "title": "Predict, then check",
+  "start": 438.4124166666665,
+  "beats": [
+   {
+    "id": "q1",
+    "start": 438.712,
+    "end": 440.632,
+    "text": "Three predictions before next time."
+   },
+   {
+    "id": "q2",
+    "start": 441.032,
+    "end": 451.43,
+    "text": "One: with only viscous friction, a rotor coasts from 3000 to 1500 rpm in 2.0 s. With J = 3 \u00d7 10\u207b\u2075 kg\u00b7m\u00b2, what is B?"
+   },
+   {
+    "id": "q3",
+    "start": 452.83,
+    "end": 459.276,
+    "text": "Two: the line-to-line EMF peaks at 14.1 V at 3000 rpm. What is \u03bbm?"
+   },
+   {
+    "id": "q4",
+    "start": 460.676,
+    "end": 464.352,
+    "text": "Three: why do three Hall sensors suffice for a BLDC drive?"
+   },
+   {
+    "id": "q5",
+    "start": 465.752,
+    "end": 471.208,
+    "text": "Next time: the BLDC six-step drive, where those Hall sensors decide when to switch."
+   }
+  ],
+  "end": 473.4084583333331
+ }
+]
