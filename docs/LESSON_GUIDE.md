@@ -17,6 +17,8 @@ they are the reference implementation.
 - End with three prediction questions (stored in `META["predictions"]`) and a one-sentence transition to the next lesson.
 - Open with a short hook. If the previous lesson asked a prediction this lesson can answer naturally, answer it in
   one or two sentences early on.
+- Series-wide notation, reference-motor numbers and the prediction questions that link lessons are fixed in
+  `series/<series>/PLAN.md` and `common/motor_params.py`: follow them exactly.
 - Length: 5–8 minutes, about 750–1150 spoken words, 10–14 scenes (each scene = one chapter).
 
 ## 2. Narration

@@ -375,7 +375,9 @@ def eq_alpha(latex, size):
             from PIL import Image
             png = sorted(glob.glob(os.path.join(d, "e*.png")))[0]
             g = np.asarray(Image.open(png).convert("L"), dtype=np.float32) / 255.0
-            np.save(npy, (1.0 - g).astype(np.float16))
+            tmp = f"{npy[:-4]}.{os.getpid()}.tmp.npy"  # same directory -> atomic rename (parallel renders)
+            np.save(tmp, (1.0 - g).astype(np.float16))
+            os.replace(tmp, npy)
     a = np.load(npy).astype(np.float32)
     _EQ_MEM[key] = a
     return a
