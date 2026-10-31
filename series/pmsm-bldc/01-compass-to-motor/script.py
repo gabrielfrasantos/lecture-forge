@@ -4,8 +4,25 @@ Beat start times become cue times that drive the animation."""
 
 META = dict(
     slug="from_a_compass_to_a_motor",
+    series="PMSM & BLDC motors from first principles", lesson=1,
     title="From a Compass to a Motor — PMSM & BLDC, Lesson 1",
     voice="af_heart", speed=0.98,
+    youtube_title="From a Compass to a Motor | How PMSM & BLDC Motors Make Torque — Lesson 1",
+    youtube_summary=(
+        "Where does a motor's torque come from? Starting from Ørsted's 1820 compass experiment, this lesson builds "
+        "the physics behind permanent-magnet synchronous (PMSM) and brushless DC (BLDC) motors: the field of a wire, "
+        "Ampère's law, a numerical compass prediction, the Biot–Savart field of a coil, dipole torque τ = m × B, "
+        "Faraday's 1821 rotation, and the rotating field of a three-phase stator."),
+    predictions=[
+        "A long wire carries 6 A. What is the field 3 cm away?",
+        "How far along a coil's axis does the field fall to half its centre value?",
+        "Swap two of the three phase leads. What does the rotating field do?",
+    ],
+    sources=[
+        "H. C. Ørsted, Experimenta circa effectum conflictus electrici in acum magneticam (Copenhagen, 21 July 1820)",
+        "M. Faraday, On some new electro-magnetical motions, Quarterly Journal of Science 12, 74–96 (1821); Royal Institution",
+        "Earth's field: World Magnetic Model 2025 (British Geological Survey); μ0: CODATA 2022 (NIST)",
+    ],
 )
 
 # Lesson-specific pronunciations (misaki phonemes, American English)

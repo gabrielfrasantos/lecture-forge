@@ -9,7 +9,7 @@ From a Compass to a Motor | How PMSM & BLDC Motors Make Torque — Lesson 1
 ```
 Where does a motor's torque come from? Starting from Ørsted's 1820 compass experiment, this lesson builds the physics behind permanent-magnet synchronous (PMSM) and brushless DC (BLDC) motors: the field of a wire, Ampère's law, a numerical compass prediction, the Biot–Savart field of a coil, dipole torque τ = m × B, Faraday's 1821 rotation, and the rotating field of a three-phase stator.
 
-Every field on screen is calculated (analytic, or a numerical Biot–Savart sum). Each figure is tagged as calculated, analytic, schematic or historical reconstruction.
+Every figure is tagged on screen as calculated, analytic, schematic or historical reconstruction.
 
 Chapters
 0:00 A look inside
@@ -36,6 +36,13 @@ Sources
 • M. Faraday, On some new electro-magnetical motions, Quarterly Journal of Science 12, 74–96 (1821); Royal Institution
 • Earth's field: World Magnetic Model 2025 (British Geological Survey); μ0: CODATA 2022 (NIST)
 
-Made with lecture-forge (code, captions and transcript): https://github.com/gabrielfrasantos/lecture-forge
+Code, captions and transcript (lecture-forge): https://github.com/gabrielfrasantos/lecture-forge
 Narration is a synthetic voice (Kokoro-82M). Visuals and calculations are generated from code.
 ```
+
+## Settings
+
+- Audience: not made for kids
+- Category: Education
+- Subtitles: upload `from_a_compass_to_a_motor.en.srt` (English, with timing)
+- Thumbnail: `thumbnail.jpg`

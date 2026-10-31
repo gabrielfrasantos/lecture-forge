@@ -22,11 +22,16 @@ core/            reusable pipeline
   render.py        one H.264 file per scene, frame-exact to the timeline
   post.py          captions (≤ 2 × 42 chars), chapters, EBU R128 loudness, concat + mux
   qc.py            container, A/V length, loudness, Whisper round-trip, caption timing
+  scenekit.py      shared scene helpers: 2D plots, arrows, labels, Scene base class with narration cues
+  thumbnail.py     YouTube thumbnail (3840x2160 JPEG < 2 MB) from a lesson's thumb.py
+  release.py       release/ folder: captions, chapters, QC report, transcript, YouTube title and description
 series/<topic>/<lesson>/
   script.py        META, LEXICON and narration beats (caption text, spoken form, pause)
   scenes.py        one class per scene: draw(ax, t) with cue times from the narration
-  release/         captions, transcript, chapters, QC report, upload text
+  thumb.py         thumbnail headline and hero visual
+  release/         captions, transcript, chapters, QC report, YouTube text, thumbnail
 docs/style-guide.md  colours, figure tags, voice and loudness targets
+docs/LESSON_GUIDE.md how to build a lesson end to end (brief, accuracy rules, toolkit, workflow, QC)
 forge.py         command line
 ```
 
@@ -38,7 +43,7 @@ pip install -r requirements.txt        # plus ffmpeg, pdflatex, pdftoppm and the
 python3 forge.py series/pmsm-bldc/01-compass-to-motor all
 ```
 
-Single steps: `audio`, `render [scene …]`, `still <scene> <t>`, `captions`, `master`, `mux`, `qc`.
+Single steps: `audio`, `render [scene …]`, `still <scene> <t>`, `captions`, `master`, `mux`, `qc`, `thumb`, `release`.
 The video lands in `<lesson>/out/<slug>_1080p.mp4`. Lesson 1 takes about 30 CPU-minutes to render.
 
 ## Make a new lesson

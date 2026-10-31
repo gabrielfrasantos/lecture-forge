@@ -1,6 +1,6 @@
 ;FFMETADATA1
-title=From a Compass to a Motor — PMSM & BLDC, Lesson 1 (pilot)
-artist=Pilot lesson
+title=From a Compass to a Motor — PMSM & BLDC, Lesson 1
+artist=lecture-forge
 language=eng
 
 [CHAPTER]
