@@ -13,7 +13,7 @@ Goal: intuition strong enough to derive the equations, predict behaviour and rea
 | 6 | [Winding factors and harmonics](06-winding-factors) | Distribution and pitch factors; concentrated vs distributed | Winding factors for 9s/6p, 12s/8p, 24s/4p | Rendered (7:59) |
 | 7 | [Back-EMF](07-back-emf) | Flux linkage, e = dλ/dt, Ke | Spin a motor with a drill; extract Ke from the scope | Rendered (8:07) |
 | 8 | [Energy and co-energy](08-energy-coenergy) | Force and torque from co-energy | Co-energy vs Maxwell stress on an actuator | Rendered (8:00) |
-| 9 | Torque in a PM machine | Alignment torque, cogging | Measure cogging torque with a lever and scale | Planned |
+| 9 | [Torque in a PM machine](09-pm-torque) | Alignment torque, cogging | Measure cogging torque with a lever and scale | Rendered (7:57) |
 | 10 | Saliency | Surface vs interior PM, Ld and Lq | Inductance vs rotor angle with an LCR meter | Planned |
 | 11 | [Space vectors](11-space-vectors) | Phasors vs space vectors, scaling conventions | Space vectors from logged currents | Rendered (7:54) |
 | 12 | [Clarke transformation](12-clarke) | abc → αβ, zero sequence | Plot the αβ locus of measured currents | Rendered (7:58) |
