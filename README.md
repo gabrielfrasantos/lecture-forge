@@ -10,7 +10,7 @@ The core is topic-neutral: the first series is about electric motors, and a math
 
 | Series | Lessons | Status |
 | --- | --- | --- |
-| [PMSM & BLDC motors from first principles](series/pmsm-bldc) | 2 of 21 | 2 rendered; lessons 2–21 in production |
+| [PMSM & BLDC motors from first principles](series/pmsm-bldc) | 3 of 21 | 3 rendered; lessons 2–21 in production |
 
 ## Layout
 

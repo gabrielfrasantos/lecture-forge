@@ -5,8 +5,8 @@ Goal: intuition strong enough to derive the equations, predict behaviour and rea
 
 | # | Lesson | Core idea | Exercise | Status |
 | --- | --- | --- | --- | --- |
-| 1 | [From a Compass to a Motor](01-compass-to-motor) | Ørsted, Ampère's law, Biot–Savart, τ = m × B, rotating field | Predict a compass deflection near a wire | Rendered |
-| 2 | Winding geometry | Coils in slots, MMF staircase, winding function | Script the MMF of a 12-slot/8-pole winding; measure phase resistance | Planned |
+| 1 | [From a Compass to a Motor](01-compass-to-motor) | Ørsted, Ampère's law, Biot–Savart, τ = m × B, rotating field | Predict a compass deflection near a wire | Rendered (5:24) |
+| 2 | [Winding geometry](02-winding-geometry) | Coils in slots, MMF staircase, winding function | Script the MMF of a 12-slot/8-pole winding; measure phase resistance | Rendered (7:52) |
 | 3 | Magnetic circuits | Reluctance, the air gap, magnet load line | Predict air-gap flux density; check with a Hall probe | Planned |
 | 4 | Iron: saturation and losses | B–H curves, hysteresis, laminations, eddy currents | Trace a B–H loop with an RC integrator | Planned |
 | 5 | The rotor's air-gap field | Surface-magnet flux density, slot openings, Carter coefficient | 2D FEA of the pilot motor, labelled as FEA | Planned |
