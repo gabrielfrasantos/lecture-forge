@@ -3,6 +3,9 @@
 Lessons are built in parallel, so this file fixes what must agree across them: notation, the reference motor,
 what each lesson covers, and the prediction questions that link one lesson to the next.
 
+Correction (2026-10-31): the reference SPM inductance is **0.05 mH** (was 0.20 mH), from Lesson 5's field solution.
+Predictions below already use it.
+
 ## Rules for every lesson
 - **Notation and numbers:** use `common/motor_params.py` (notation in its docstring; `GEOM`, `MAGNET`, `STEEL`, `SPM`, `IPM`).
   Never invent different values for the reference motor. If a calculation disagrees with a nominal value, show both and
@@ -62,8 +65,9 @@ Predictions: (1) Pitch factor of a 5/6 short-pitched coil, fundamental? → **si
 harmonic? → **0.259**. (3) Same turns and flux, kw1 = 0.866 vs 1: back-EMF ratio? → **0.866**.
 
 ### 7 Back-EMF
-Flux linkage λ(θ), e = dλ/dt = ω dλ/dθ; λm of the reference motor computed from geometry and turns (must land within
-±10 % of the nominal 6.5 mWb; explain the difference); sinusoidal vs trapezoidal EMF; phase vs line-to-line;
+Flux linkage λ(θ), e = dλ/dt = ω dλ/dθ; λm of the reference motor from Lesson 5's solver (`common/fd_magnetostatics.py`
+gives 5.94 mWb in 2D) vs the nominal "measured" 6.5 mWb used from here on — explain the 8.6 % gap (magnet Br tolerance:
+1.2 T assumed, N38 grades run higher; 3D end flux not in a 2D model); sinusoidal vs trapezoidal EMF; phase vs line-to-line;
 exercise: spin a motor with a drill, scope the line-to-line EMF, extract λm = V_LL,pk / (√3 ωe).
 Predictions: (1) 3000 rpm: phase EMF peak? → **8.17 V**. (2) Line-to-line peak? → **14.1 V**.
 (3) Short all three terminals while spinning: does it resist? → **yes, braking torque; energy goes to I²R**.
@@ -77,12 +81,14 @@ Predictions: (1) L(x) = L0 + kx at current I: force? → **½ I² k**. (2) Doubl
 ### 9 Torque in a PM machine
 Alignment torque from co-energy, summed over three phases → T = 3/2 p λm i_q; torque ripple; cogging torque from
 slotting with zero current (period from LCM(slots, poles); 24 periods/rev for 12s/8p), computed with the Lesson 5
-solver; exercise: measure cogging torque with lever arm and scale or force gauge.
+solver (≈ ±0.22 N·m unskewed — large, so show how skewing by one cogging period, 15° mechanical, cancels most of it); exercise: measure cogging torque with lever arm and scale or force gauge.
 Predictions: (1) Cogging periods per revolution, 9s/6p? → **18**. (2) Reference SPM motor, 15 A peak on q: torque? →
 **0.585 N·m**. (3) If Ld ≠ Lq, can a negative d-current add torque? → **yes, when Lq > Ld (reluctance torque)**.
 
 ### 10 Saliency
-Surface vs interior PM; Ld < Lq; inductance varying at 2θe; reluctance torque; IPM variant parameters; exercise:
+Surface vs interior PM; Ld < Lq; inductance varying at 2θe; reluctance torque; the IPM variant is a separate rotor
+design with its own nominal values (`IPM` in motor_params) — contrast with the SPM's 0.05 mH (Lesson 5's 2D solver
+gives 0.042 mH plus end-winding leakage); exercise:
 measure inductance vs rotor angle with an LCR meter to find Ld and Lq.
 Predictions: (1) 8-pole IPM: inductance cycles per mechanical revolution? → **8 (2p)**. (2) IPM variant, i_d = −10 A,
 i_q = 10 A: torque? → **0.396 N·m**. (3) What can bias an LCR-meter inductance reading on a stationary rotor? → **it is
@@ -112,8 +118,8 @@ of sin 10° ≈ 17 % appears). (2) Hall sensors without interpolation: worst ang
 ### 14 The d–q model · owns `common/pmsm_model.py`
 Voltage equations with cross-coupling, torque and power (the 3/2), mechanical equation; steady-state phasor diagram;
 simulated current step (ODE); exercise: simulate and draw the phasor diagram.
-Predictions (reference SPM): (1) ωe = 1000 rad/s, i_d = 0, i_q = 10 A, steady state: v_d, v_q? → **−2.0 V, 6.9 V**.
-(2) Electrical time constant? → **L/R = 5 ms**. (3) How do you get R and L from a locked-rotor DC step? → **R = V/I in
+Predictions (reference SPM): (1) ωe = 1000 rad/s, i_d = 0, i_q = 10 A, steady state: v_d, v_q? → **−0.5 V, 6.9 V**.
+(2) Electrical time constant? → **L/R = 1.25 ms**. (3) How do you get R and L from a locked-rotor DC step? → **R = V/I in
 steady state; L from the current's time constant**.
 
 ### 15 Parameter identification
@@ -142,7 +148,7 @@ overmodulation in one sentence; low-side shunt sampling in the 000 zero vector, 
 SVPWM in Python, then on a microcontroller.
 Predictions: (1) 24 V bus, linear SVPWM: max phase-voltage amplitude? → **13.9 V**. (2) Why sample low-side shunts in
 the middle of 000? → **all low-side switches conduct and switching edges are far away**. (3) Current-loop bandwidth
-1 kHz with L = 0.2 mH: Kp? → **ωc·L = 1.26 V/A**.
+1 kHz with L = 0.05 mH: Kp? → **ωc·L = 0.31 V/A**.
 
 ### 19 Current control in dq · owns `common/control.py`
 PI by pole–zero cancellation (Kp = ωc L, Ki = ωc R), decoupling feed-forward, voltage limits and anti-windup,
@@ -155,10 +161,10 @@ sampling, 1.5-sample delay: phase lag at 1 kHz? → **27°**. (3) Typical speed-
 The full cascade (speed PI → i_q*, i_d* = 0 for SPM, MTPA for IPM), current circle and voltage ellipse, block diagram;
 exercise: run FOC on a low-voltage kit and log i_d, i_q and speed.
 Predictions: (1) SPM at maximum current: best i_d? → **0**. (2) Reference SPM at 24 V, 20 A, R neglected: base speed? →
-**≈ 4330 rpm**. (3) Above base speed, what must i_d do? → **go negative (field weakening)**.
+**≈ 5030 rpm**. (3) Above base speed, what must i_d do? → **go negative (field weakening)**.
 
 ### 21 Field weakening, sensorless control, losses — series finale
-Voltage ellipse and field weakening; characteristic current λm/Ld (32.5 A for the SPM > 20 A, so finite maximum
-speed); back-EMF observer and PLL for sensorless angle; losses (copper, iron from Lesson 4, switching) and an efficiency
+Voltage ellipse and field weakening; characteristic current λm/Ld (130 A for the SPM, far above its 20 A, so only a
+narrow field-weakening range: ≈ 6000 rpm at i_d = −20 A, R neglected; the IPM variant does better); back-EMF observer and PLL for sensorless angle; losses (copper, iron from Lesson 4, switching) and an efficiency
 map; exercise: map efficiency and compare observer angle with an encoder. Close with a short series recap instead of a
 next-lesson transition; give three capstone questions with answers in `release/answers.md`.

@@ -34,22 +34,27 @@ MAGNET = dict(grade="sintered NdFeB, ~N38", Br=1.2, mu_rec=1.05, Hc_approx=-1.2 
 STEEL = dict(grade="0.35 mm non-oriented electrical steel (M270-35A class)", mu_r_linear=4000, B_sat_knee=1.5,
              lamination=0.35e-3)
 
-# Electrical parameters of the reference SPM motor (nominal / "measured" values used from Lesson 7 on)
+# Electrical parameters of the reference SPM motor (nominal / "measured" values used from Lesson 7 on).
+# Cross-checks against geometry: R from Lesson 2 (39.1 mOhm computed); lambda_m from Lesson 5's 2D solver
+# (5.94 mWb, -8.6 %: magnet Br tolerance and 3D end flux not in 2D); inductance from Lesson 5's 2D solver
+# (0.042 mH) plus end-winding leakage -> 0.05 mH nominal. (Corrected on 2026-10-31 from an earlier 0.20 mH.)
 SPM = dict(
-    p=4, R=0.040, Ld=0.20e-3, Lq=0.20e-3, lambda_m=6.5e-3,  # ohm (phase, 20 C), H, H, Wb
+    p=4, R=0.040, Ld=0.05e-3, Lq=0.05e-3, lambda_m=6.5e-3,  # ohm (phase, 20 C), H, H, Wb
     J=3.0e-5, B_visc=1.0e-5, T_coulomb=2.0e-3,              # kg m^2, N m s, N m
     I_max=20.0, V_dc=24.0, f_pwm=20e3,                      # A peak, V, Hz
 )
 SPM["Kt"] = 1.5 * SPM["p"] * SPM["lambda_m"]             # 0.039 N m / A
 SPM["V_max_phase"] = SPM["V_dc"] / math.sqrt(3)          # SVPWM linear limit, peak phase: 13.86 V
 
-# Interior-PM variant with saliency (Lessons 10, 20, 21)
+# Interior-PM variant with saliency (Lessons 10, 20, 21): a separate rotor design (buried magnets, more turns),
+# same frame, bus and current limit. Its own nominal values; not derived from the SPM geometry.
 IPM = dict(SPM, Ld=0.16e-3, Lq=0.32e-3, lambda_m=5.0e-3)
 IPM["Kt"] = 1.5 * IPM["p"] * IPM["lambda_m"]
 
 if __name__ == "__main__":
     s = SPM
     assert abs(s["Kt"] - 0.039) < 1e-9
+    assert abs(s["Ld"] / s["R"] - 1.25e-3) < 1e-12
     print("Kt", s["Kt"], "N m/A;  tau_e = L/R =", s["Ld"] / s["R"] * 1e3, "ms")
     print("phase EMF peak at 3000 rpm:", s["p"] * 3000 * 2 * math.pi / 60 * s["lambda_m"], "V")
     print("V_max phase:", s["V_max_phase"])
