@@ -1,0 +1,82 @@
+;FFMETADATA1
+title=Winding Factors and Harmonics — PMSM & BLDC, Lesson 6
+artist=lecture-forge
+language=eng
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=30569
+title=01 Same turns, different voltage
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=30569
+END=62169
+title=02 Answers from Lesson 5
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=62169
+END=106140
+title=03 What a winding factor measures
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=106140
+END=143711
+title=04 Distribution: spreading a phase
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=143711
+END=185461
+title=05 Pitch: shortening the coil
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=185461
+END=240814
+title=06 The star of slots
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=240814
+END=272444
+title=07 Harmonic winding factors
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=272444
+END=323109
+title=08 Filtering the back-EMF
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=323109
+END=355497
+title=09 The same factors shape the MMF
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=355497
+END=388079
+title=10 Why tooth coils anyway?
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=388079
+END=423938
+title=11 Exercise: compute the factors
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=423938
+END=447902
+title=12 Where this model stops
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=447902
+END=479298
+title=13 Predict, then check

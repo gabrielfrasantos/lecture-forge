@@ -1,0 +1,502 @@
+1
+00:00:00,400 --> 00:00:04,572
+Here's the voltage induced in one phase as
+a magnet rotor turns.
+
+2
+00:00:04,612 --> 00:00:09,710
+Two windings, same rotor, same number of
+turns: only their slots differ.
+
+3
+00:00:09,750 --> 00:00:12,312
+With each pole's turns in one pair of
+slots,
+
+4
+00:00:12,352 --> 00:00:15,550
+the voltage copies the flat-topped magnet
+field.
+
+5
+00:00:15,590 --> 00:00:19,227
+Spread them over neighbouring slots and
+shorten the coils,
+
+6
+00:00:19,267 --> 00:00:24,888
+and the flat top disappears: closer to a
+sine, with a fundamental about 7% smaller.
+
+7
+00:00:24,928 --> 00:00:29,969
+Today we'll predict both effects with one
+number per harmonic: the winding factor.
+
+8
+00:00:30,969 --> 00:00:33,452
+First, the answers from Lesson 5.
+
+9
+00:00:33,492 --> 00:00:36,827
+One: wider slot openings raise Carter's
+coefficient,
+
+10
+00:00:36,867 --> 00:00:39,694
+so the average gap flux density falls.
+
+11
+00:00:39,734 --> 00:00:45,636
+Two: a flat-topped wave of height B,
+spanning 160 electrical degrees,
+
+12
+00:00:45,676 --> 00:00:51,977
+has a fundamental of 4 over π, times sine
+80°, times B: about 1.25 B.
+
+13
+00:00:52,017 --> 00:00:56,378
+Three: at 1500 rpm the rotor turns 25
+times a second,
+
+14
+00:00:56,418 --> 00:01:01,569
+each turn bringing 4 pole pairs past a
+tooth: 100 hertz.
+
+15
+00:01:02,569 --> 00:01:07,447
+Start with one conductor in a slot. As the
+magnets sweep past, its voltage is
+
+16
+00:01:07,487 --> 00:01:12,829
+flux density, times length, times speed: a
+copy of the field's shape, in time.
+
+17
+00:01:12,869 --> 00:01:17,588
+A conductor further along gives the same
+wave, later. For the fundamental,
+
+18
+00:01:17,628 --> 00:01:21,511
+each voltage is a phasor, lagging by the
+conductor's position
+
+19
+00:01:21,551 --> 00:01:25,963
+in electrical degrees; for the fifth
+harmonic, five times that.
+
+20
+00:01:26,003 --> 00:01:29,570
+A full-pitch coil puts its sides exactly
+one pole apart.
+
+21
+00:01:29,610 --> 00:01:34,336
+The return side sees the opposite field
+and is connected the opposite way,
+
+22
+00:01:34,376 --> 00:01:37,828
+so the two phasors add straight: twice one
+side.
+
+23
+00:01:37,868 --> 00:01:41,618
+That's the ideal. A winding factor
+compares a real phase with it:
+
+24
+00:01:41,658 --> 00:01:45,540
+the length of the phasor sum, over the sum
+of the lengths.
+
+25
+00:01:46,540 --> 00:01:51,435
+Now spread each phase belt over q
+neighbouring slots. With 24 slots and
+
+26
+00:01:51,475 --> 00:01:56,840
+4 poles, q is 2, and neighbouring slots
+sit 30 electrical degrees apart.
+
+27
+00:01:56,880 --> 00:02:01,800
+Their phasors add head to tail, along an
+arc. The sum is the chord,
+
+28
+00:02:01,840 --> 00:02:06,790
+a little shorter than the arc: a
+distribution factor of 0.966.
+
+29
+00:02:06,830 --> 00:02:13,703
+Spread the belt ever more finely, and
+chord over arc tends to 3 over π: 0.955.
+
+30
+00:02:13,743 --> 00:02:19,369
+For the fifth harmonic, the two slots are
+150 degrees apart in phase,
+
+31
+00:02:19,409 --> 00:02:23,111
+and their phasors almost cancel: 0.259.
+
+32
+00:02:24,111 --> 00:02:28,471
+Next, shorten each coil to span 5 slots
+instead of 6.
+
+33
+00:02:28,511 --> 00:02:33,521
+Its sides are now 150 electrical degrees
+apart, not 180.
+
+34
+00:02:33,561 --> 00:02:36,754
+The two side phasors no longer line up.
+
+35
+00:02:36,794 --> 00:02:41,465
+The pitch factor is sine of 75 degrees:
+0.966 again.
+
+36
+00:02:41,505 --> 00:02:46,124
+For the fifth harmonic, 150 degrees
+becomes 750,
+
+37
+00:02:46,164 --> 00:02:51,378
+and the factor drops to sine of 15
+degrees: 0.259.
+
+38
+00:02:51,418 --> 00:02:56,106
+The winding factor is the product: 0.933
+for the fundamental,
+
+39
+00:02:56,146 --> 00:02:59,283
+but just 0.067 for the fifth and seventh.
+
+40
+00:02:59,323 --> 00:03:04,861
+Summing every phasor in the winding table
+gives the same numbers.
+
+41
+00:03:05,861 --> 00:03:09,664
+What about this motor's tooth coils? Here
+q is one half,
+
+42
+00:03:09,704 --> 00:03:14,594
+and the distribution formula breaks: it
+gives 1.15, more than one.
+
+43
+00:03:14,634 --> 00:03:19,926
+So go back to phasors: give each slot its
+electrical angle, slot number times
+
+44
+00:03:19,966 --> 00:03:25,519
+pole pairs times 360 degrees over the slot
+count. That's the star of slots.
+
+45
+00:03:25,559 --> 00:03:30,661
+With 12 slots and 4 pole pairs, each slot
+is 120 degrees on from the last,
+
+46
+00:03:30,701 --> 00:03:34,813
+so the star has just three spokes, four
+slots on each.
+
+47
+00:03:34,853 --> 00:03:38,101
+A tooth coil spans one slot, 120 degrees.
+
+48
+00:03:38,141 --> 00:03:43,393
+Its two sides add to root 3 instead of 2:
+a pitch factor of 0.866.
+
+49
+00:03:43,433 --> 00:03:50,449
+And all four coils of phase a sit on one
+spoke, so nothing is lost to distribution.
+
+50
+00:03:50,489 --> 00:03:55,699
+With 10 poles instead, the same 12 slots
+make a star of twelve spokes,
+
+51
+00:03:55,739 --> 00:04:00,214
+and grouping them into 60-degree sectors
+gives 0.933.
+
+52
+00:04:01,214 --> 00:04:04,349
+Now all four windings, harmonic by
+harmonic.
+
+53
+00:04:04,389 --> 00:04:07,180
+Short pitching cuts the fifth and seventh
+together.
+
+54
+00:04:07,220 --> 00:04:09,911
+That's why five-sixths pitch is so common.
+
+55
+00:04:09,951 --> 00:04:14,688
+But nothing touches the 11th and 13th:
+they keep the fundamental's factor.
+
+56
+00:04:14,728 --> 00:04:19,206
+They're slot harmonics, one either side of
+the 12 slots per pole pair.
+
+57
+00:04:19,246 --> 00:04:22,317
+Skewing by one slot pitch suppresses them.
+
+58
+00:04:22,357 --> 00:04:26,615
+And the tooth coils, 9 slots with 6 poles
+or 12 with 8,
+
+59
+00:04:26,655 --> 00:04:31,844
+keep 0.866 at every order shown. They
+filter almost nothing.
+
+60
+00:04:32,844 --> 00:04:36,053
+Now feed in Lesson 5's flat-topped field.
+
+61
+00:04:36,093 --> 00:04:41,367
+Its fifth harmonic is 13% of the
+fundamental; the seventh, 5%.
+
+62
+00:04:41,407 --> 00:04:46,023
+The fifth harmonic has five times as many
+poles, each a fifth as wide.
+
+63
+00:04:46,063 --> 00:04:52,077
+So its flux linkage is the winding factor,
+times the field harmonic, divided by five.
+
+64
+00:04:52,117 --> 00:04:57,297
+But it sweeps past five times as fast, and
+the time derivative multiplies by five
+
+65
+00:04:57,337 --> 00:05:03,046
+again. So the voltage harmonic is just the
+winding factor times the field harmonic.
+
+66
+00:05:03,086 --> 00:05:07,810
+A numerical check, differentiating the
+integrated flux linkage, agrees.
+
+67
+00:05:07,850 --> 00:05:11,928
+In this motor, the fifth stays at 13% of
+the fundamental;
+
+68
+00:05:11,968 --> 00:05:15,901
+the short-pitched distributed winding cuts
+it below 1%.
+
+69
+00:05:15,941 --> 00:05:22,509
+And with tooth coils spanning 120 degrees,
+the third harmonic cancels in each phase.
+
+70
+00:05:23,509 --> 00:05:27,474
+The factors work in both directions.
+Lesson 2's MMF staircase
+
+71
+00:05:27,514 --> 00:05:32,076
+has harmonics proportional to the winding
+factor over the order.
+
+72
+00:05:32,116 --> 00:05:34,516
+For the short-pitched distributed winding,
+
+73
+00:05:34,556 --> 00:05:38,054
+the fifth and seventh are under 2% of the
+fundamental.
+
+74
+00:05:38,094 --> 00:05:42,963
+The tooth coils also make harmonics no
+magnet rotor uses for steady torque,
+
+75
+00:05:43,003 --> 00:05:48,600
+like the second, Lesson 2's order 8: half
+the fundamental, travelling backwards.
+
+76
+00:05:48,640 --> 00:05:52,104
+They induce eddy currents in the magnets
+and rotor iron:
+
+77
+00:05:52,144 --> 00:05:54,897
+extra rotor loss, for later lessons.
+
+78
+00:05:55,897 --> 00:05:57,770
+So why use tooth coils at all?
+
+79
+00:05:57,810 --> 00:06:02,557
+Each coil wraps a single tooth. The end
+turns are short, so less copper and
+
+80
+00:06:02,597 --> 00:06:08,126
+resistance, and coils wound on separate
+teeth pack tightly, for a high slot fill.
+
+81
+00:06:08,166 --> 00:06:11,876
+Some slot-pole combinations, like 12 slots
+with 10 poles,
+
+82
+00:06:11,916 --> 00:06:16,553
+also give very low cogging torque, though
+not this one: Lesson 9.
+
+83
+00:06:16,593 --> 00:06:21,668
+The price is the 0.866: about 15% more
+turns for the same back-EMF
+
+84
+00:06:21,708 --> 00:06:27,479
+and torque per amp, plus those MMF
+harmonics and their rotor losses.
+
+85
+00:06:28,479 --> 00:06:33,245
+Your turn. Build each winding from the
+star of slots: give every coil its
+
+86
+00:06:33,285 --> 00:06:39,044
+electrical angle, assign it to a phase by
+60-degree sector, and fill a slot table.
+
+87
+00:06:39,084 --> 00:06:42,792
+For each harmonic, sum the slot phasors
+weighted by the turns,
+
+88
+00:06:42,832 --> 00:06:45,006
+and divide by the total turns.
+
+89
+00:06:45,046 --> 00:06:53,150
+Check: 0.966 and 0.259 full-pitch, 0.933
+and 0.067 short-pitched,
+
+90
+00:06:53,190 --> 00:07:03,338
+and 0.866 everywhere for the tooth coils.
+The back-EMF's fifth: 13% and 0.9%.
+
+91
+00:07:04,338 --> 00:07:07,098
+This picture puts each conductor at a slot
+centre,
+
+92
+00:07:07,138 --> 00:07:11,587
+and treats the rotor field as fixed in
+shape, as if the bore were smooth.
+
+93
+00:07:11,627 --> 00:07:16,440
+Real slot openings modulate the field
+itself, adding harmonics tied to the
+
+94
+00:07:16,480 --> 00:07:21,824
+slot count. Lesson 5's solver includes
+them; a winding factor alone doesn't.
+
+95
+00:07:21,864 --> 00:07:24,141
+The end turns, saturation and skew sit
+
+96
+00:07:24,181 --> 00:07:27,302
+outside this two-dimensional, linear
+model.
+
+97
+00:07:28,302 --> 00:07:30,582
+Three predictions before next time.
+
+98
+00:07:30,622 --> 00:07:33,006
+One: what's the pitch factor of a five-
+sixths
+
+99
+00:07:33,046 --> 00:07:35,700
+short-pitched coil, for the fundamental?
+
+100
+00:07:36,600 --> 00:07:39,404
+Two: the same coil, for the fifth
+harmonic?
+
+101
+00:07:40,304 --> 00:07:46,210
+Three: same turns, same flux, but a
+winding factor of 0.866 instead of 1.
+
+102
+00:07:46,250 --> 00:07:49,520
+What's the ratio of the back-EMFs?
+
+103
+00:07:50,420 --> 00:07:54,494
+Next time: back-EMF. Flux linkage, the
+reference motor's voltage,
+
+104
+00:07:54,534 --> 00:07:58,198
+and measuring it with a drill and an
+oscilloscope.

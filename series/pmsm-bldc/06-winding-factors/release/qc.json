@@ -1,0 +1,186 @@
+{
+ "rep": {
+  "video": "h264 1920x1080 30/1 479.30s",
+  "audio": "aac 48000 Hz 1 ch 479.30s",
+  "subtitles": "1 track(s): mov_text/eng",
+  "chapters": 13,
+  "av_duration_diff_s": 0.003,
+  "integrated_LUFS": -16.1,
+  "true_peak_dBTP": -1.4,
+  "LRA_LU": 2.8,
+  "asr_word_error_rate": 0.052,
+  "captions": "104 cues, 0 cues mostly over silence, 0 overlaps, max 19.3 chars/s, last cue ends 478.2s"
+ },
+ "mism": [
+  [
+   "h1",
+   "Here's the voltage induced in one phase as a magnet rotor turns. Two windings, same rotor, same number of turns: only their slots differ.",
+   "Here's the voltage induced in one phase as a magnet rotor turns. Two windings, same rotor, same number of turns, only their slots differ. [BUZZER]"
+  ],
+  [
+   "h3",
+   "Spread them over neighboring slots and shorten the coils, and the flat top disappears: closer to a sine, with a fundamental about 7% smaller.",
+   "Spread them over neighboring slots and shorten the coils, and the flat top disappears, closer to a sign with a fundamental about 7% smaller."
+  ],
+  [
+   "a2",
+   "One: wider slot openings raise Carter's coefficient, so the average gap flux density falls.",
+   "One, wider slot openings raise Carter's coefficient, so the average gap flux density falls. [buzzer]"
+  ],
+  [
+   "a3",
+   "Two: a flat-topped wave of height [B](/bˈi/), spanning 160 electrical degrees, has a fundamental of 4 over pi, times sine 80 degrees, times [B](/bˈi/): about 1.25 [B](/bˈi/).",
+   "Two, a flat-topped wave of height B, spanning 160 electrical degrees, has a fundamental of 4/pi. Times sine 80 degrees, times B. About 1.25b."
+  ],
+  [
+   "a4",
+   "Three: at 1500 RPM the rotor turns 25 times a second, each turn bringing 4 pole pairs past a tooth: 100 hertz.",
+   "Three, at 1500 RPM, the rotor turns 25 times a second, each turn bringing four pole pairs past a tooth. 100 hertz."
+  ],
+  [
+   "w1",
+   "Start with one conductor in a slot. As the magnets sweep past, its voltage is flux density, times length, times speed: a copy of the field's shape, in time.",
+   "Start with one conductor in a slot. As the magnet's sweep passed, its voltage is flux density, times length, times speed, a copy of the field's shape in time. [BUZZER]"
+  ],
+  [
+   "w2",
+   "A conductor further along gives the same wave, later. For the fundamental, each voltage is a phasor, lagging by the conductor's position in electrical degrees; for the fifth harmonic, five times that.",
+   "A conductor further along gives the same wave later. For the fundamental, each voltage is a phaser, lagging by the conductor's position in electrical degrees, for the fifth harmonic, five times that."
+  ],
+  [
+   "w3",
+   "A full-pitch coil puts its sides exactly one pole apart. The return side sees the opposite field and is connected the opposite way, so the two phasors add straight: twice one side.",
+   "A full pitch coil puts its sides exactly one pole apart. The return side sees the opposite field and is connected the opposite way, so the two phasers add straight, twice one side."
+  ],
+  [
+   "w4",
+   "That's the ideal. A winding factor compares a real phase with it: the length of the phasor sum, over the sum of the lengths.",
+   "That's the ideal. A winding factor compares a real phase with it. The length of the phase or sum over the sum of the lengths."
+  ],
+  [
+   "d1",
+   "Now spread each phase belt over [q](/kjˈu/) neighboring slots. With 24 slots and 4 poles, [q](/kjˈu/) is 2, and neighboring slots sit 30 electrical degrees apart.",
+   "Now spread each phase belt over Q neighboring slots. With 24 slots and 4 poles, Q is 2, and neighboring slots sit 30 electrical degrees apart."
+  ],
+  [
+   "d2",
+   "Their phasors add head to tail, along an arc. The sum is the chord, a little shorter than the arc: a distribution factor of 0.966.",
+   "their phasers add head to tail along an arc. The sum is the chord, a little shorter than the arc, a distribution factor of 0.966. [BUZZER]"
+  ],
+  [
+   "d3",
+   "Spread the belt ever more finely, and chord over arc tends to 3 over pi: 0.955.",
+   "Spread the belt ever more finely and cord over arc tens to 3 over pi. 0.955."
+  ],
+  [
+   "d4",
+   "For the fifth harmonic, the two slots are 150 degrees apart in phase, and their phasors almost cancel: 0.259.",
+   "For the fifth harmonic, the two slots are 150 degrees apart in phase and their phasers almost cancel. 0.259."
+  ],
+  [
+   "p1",
+   "Next, shorten each coil to span 5 slots instead of 6. Its sides are now 150 electrical degrees apart, not 180.",
+   "Next, shorten each coil to span five slots instead of six. Its sides are now 150 electrical degrees apart, not 180."
+  ],
+  [
+   "p2",
+   "The two side phasors no longer line up. The pitch factor is sine of 75 degrees: 0.966 again.",
+   "The two-side phasers no longer line up. The pitch factor is sine of 75 degrees, 0.966 again."
+  ],
+  [
+   "p3",
+   "For the fifth harmonic, 150 degrees becomes 750, and the factor drops to sine of 15 degrees: 0.259.",
+   "For the fifth harmonic, 150 degrees becomes 750, and the factor drops to sign of 15 degrees. 0.259."
+  ],
+  [
+   "p4",
+   "The winding factor is the product: 0.933 for the fundamental, but just 0.067 for the fifth and seventh. Summing every phasor in the winding table gives the same numbers.",
+   "The winding factor is the product. 0.933 for the fundamental, but just 0.067 for the fifth and seventh. Summing every phaser in the winding table gives the same numbers."
+  ],
+  [
+   "s1",
+   "What about this motor's tooth coils? Here [q](/kjˈu/) is one half, and the distribution formula breaks: it gives 1.15, more than one.",
+   "What about this motor's tooth coils? Here Q is one half and the distribution formula breaks. It gives 1.15 more than one."
+  ],
+  [
+   "s2",
+   "So go back to phasors: give each slot its electrical angle, slot number times pole pairs times 360 degrees over the slot count. That's the star of slots.",
+   "So go back to phasers. Give each slot its electrical angle, slot number times pole pairs times 360 degrees over the slot count. That's the star of slots."
+  ],
+  [
+   "s3",
+   "With 12 slots and 4 pole pairs, each slot is 120 degrees on from the last, so the star has just three spokes, four slots on each.",
+   "With 12 slots and 4 pole pairs, each slot is 120 degrees on from the last, so the star has just 3 spokes, 4 slots on each."
+  ],
+  [
+   "s4",
+   "A tooth coil spans one slot, 120 degrees. Its two sides add to root 3 instead of 2: a pitch factor of 0.866. And all four coils of phase [a](/ˈA/) sit on one spoke, so nothing is lost to distribution.",
+   "A tooth coil spans one slot, 120 degrees. Its two sides add to Route 3 instead of 2, a pitch factor of 0.866, and all four coils of phase a sit on one spoke, so nothing is lost to distribution."
+  ],
+  [
+   "t2",
+   "Short pitching cuts the fifth and seventh together. That's why five-sixths pitch is so common.",
+   "Short pitching cuts the fifth and seventh together. That's why 5/6 pitch is so common."
+  ],
+  [
+   "t3",
+   "But nothing touches the 11th and 13th: they keep the fundamental's factor. They're slot harmonics, one either side of the 12 slots per pole pair. Skewing by one slot pitch suppresses them.",
+   "but nothing touches the 11th and 13th. They keep the fundamentals factor. Their slot harmonics, one either side of the 12 slots per pole pair. Skewing by one slot pitch suppresses them."
+  ],
+  [
+   "t4",
+   "And the tooth coils, 9 slots with 6 poles or 12 with 8, keep 0.866 at every order shown. They filter almost nothing.",
+   "and the tooth coils, nine slots with six poles or 12 with eight, keep 0.866 at every order shown. They filter almost nothing."
+  ],
+  [
+   "e2",
+   "The fifth harmonic has five times as many poles, each a fifth as wide. So its flux linkage is the winding factor, times the field harmonic, divided by five.",
+   "The fifth harmonic has five times as many poles, each a fifth is wide. So its flux linkage is the winding factor times the field harmonic divided by five."
+  ],
+  [
+   "m2",
+   "For the short-pitched distributed winding, the fifth and seventh are under 2% of the fundamental.",
+   "For the short-pitched distributed winding, the 5th and 7th are under 2% of the fundamental."
+  ],
+  [
+   "c4",
+   "The price is the 0.866: about 15% more turns for the same back EMF and torque per amp, plus those MMF harmonics and their rotor losses.",
+   "The price is the 0.866. About 15% more turns for the same back-amp and torque per amp, plus those MMF harmonics and their rotor losses."
+  ],
+  [
+   "x1",
+   "Your turn. Build each winding from the star of slots: give every coil its electrical angle, assign it to a phase by 60-degree sector, and fill a slot table.",
+   "Your turn. Build each winding from the star of slots. Give every coil its electrical angle, assign it to a phase by 60 degree sector, and fill a slot table. [BUZZER]"
+  ],
+  [
+   "x2",
+   "For each harmonic, sum the slot phasors weighted by the turns, and divide by the total turns.",
+   "For each harmonic, some the slot phasers weighted by the turns and divide by the total turns."
+  ],
+  [
+   "x3",
+   "Check: 0.966 and 0.259 full-pitch, 0.933 and 0.067 short-pitched, and 0.866 everywhere for the tooth coils. Back EMF fifth harmonics: 13% and 0.9%.",
+   "Check 0.966 and 0.259 full pitch, 0.933 and 0.067 short-pitched, and 0.866 everywhere for the tooth coils. Back EMF 5th harmonics, 13% and 0.9%."
+  ],
+  [
+   "l3",
+   "Real slot openings modulate the field itself, adding harmonics tied to the slot count. Lesson 5's solver includes them; a winding factor alone doesn't.",
+   "Real slot openings modulate the field itself, adding harmonics tied to the slot count. Lesson 5's solver includes them. A winding factor alone doesn't. [BUZZER]"
+  ],
+  [
+   "y2",
+   "One: what's the pitch factor of a five-sixths short-pitched coil, for the fundamental?",
+   "One, what's the pitch factor of a 5/6 short-pitched coil for the fundamental?"
+  ],
+  [
+   "y3",
+   "Two: the same coil, for the fifth harmonic?",
+   "to the same coil for the fifth harmonic."
+  ],
+  [
+   "y4",
+   "Three: same turns, same flux, but a winding factor of 0.866 instead of 1. What's the ratio of the back-EMFs?",
+   "3. Same turns, same flux, but a winding factor of 0.866 instead of 1. What's the ratio of the back EMFs?"
+  ]
+ ]
+}

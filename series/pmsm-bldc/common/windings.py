@@ -301,5 +301,183 @@ def self_check(verbose=True):
     return True
 
 
+# ======================================================================= Lesson 6: winding factors and harmonics
+# Electrical harmonic order nu: nu cycles per pole pair (mechanical order nu * p). A magnet rotor with alternating
+# poles has only odd nu. All factors below are signed unless the name says otherwise; magnitudes via abs().
+#
+# Phasor convention: a conductor at electrical position alpha sees the rotor field later by alpha / omega_e, so its
+# EMF phasor for harmonic nu is e^{-j nu alpha} (it lags). The winding factor of phase x is
+#     k_w,nu = |sum_k C[x, k] e^{-j nu p theta_k}| / sum_k |C[x, k]|,
+# i.e. Winding.winding_factor(nu * p, x): the length of the phasor sum over the sum of the lengths.
+
+
+def slot_angles_elec(S, p, slot_offset=0.0):
+    """Star of slots: electrical angle (degrees, in [0, 360)) of slot k, alpha_k = (k + offset) * p * 360 / S."""
+    return ((np.arange(S) + slot_offset) * p * 360.0 / S) % 360.0
+
+
+def star_spokes(S, p):
+    """(number of distinct spokes, slots per spoke) of the star of slots: (S / t, t) with t = gcd(S, p)."""
+    t = math.gcd(S, p)
+    return S // t, t
+
+
+def distribution_factor(q, gamma, nu=1):
+    """Classical distribution factor for an integral number q of slots per pole per phase, slot angle gamma
+    (electrical, radians): k_d = sin(nu q gamma / 2) / (q sin(nu gamma / 2)). Signed. (Meaningless for fractional q:
+    see star of slots / Winding.winding_factor.)"""
+    x = nu * gamma / 2
+    if abs(math.sin(x)) < 1e-12:                 # all phasors aligned: limit of sin(q x) / (q sin x)
+        return float((-1) ** (round(x / math.pi) * (q - 1)))
+    return math.sin(q * x) / (q * math.sin(x))
+
+
+def distribution_factor_limit(belt=math.pi / 3, nu=1):
+    """q -> infinity at a fixed belt width (electrical, radians): chord over arc, sin(nu belt/2) / (nu belt/2)."""
+    x = nu * belt / 2
+    return math.sin(x) / x
+
+
+def pitch_factor(y_over_tau, nu=1):
+    """Pitch factor of a coil spanning y / tau of a pole pitch: k_p = sin(nu (y/tau) pi/2). Signed."""
+    return math.sin(nu * y_over_tau * math.pi / 2)
+
+
+def skew_factor(sigma, nu=1):
+    """Skew over an electrical angle sigma (radians, at the fundamental): k_sk = sin(nu sigma/2) / (nu sigma/2)."""
+    x = nu * sigma / 2
+    return 1.0 if abs(x) < 1e-15 else math.sin(x) / x
+
+
+def kw_elec(w, nu, x=0):
+    """|k_w| of phase x for electrical harmonic order nu (mechanical order nu * p)."""
+    return w.winding_factor(nu * w.p, x)
+
+
+def kw_signed(w, nu, x=0):
+    """Signed winding factor: cosine-series coefficient of harmonic nu of the winding function, taken about the phase
+    axis (where its fundamental peaks), in units of the |k_w| scale. Reproduces the classical signed products k_d k_p
+    of symmetric integral-slot windings, e.g. -0.707 for nu = 3 of a full-pitch q = 2 winding."""
+    n = nu * w.p
+    a = w.wf_coeff(n, x) * np.exp(1j * n * w.phase_axis(x))
+    return float(np.real(a) * np.pi * n / np.abs(w.C[x]).sum())
+
+
+def flat_top_field(theta_e, span_deg=160.0):
+    """Idealised magnet field b(theta_e) in units of its height: +1 over `span_deg` centred on each N pole
+    (theta_e = 0 mod 360), -1 centred on each S pole (180 mod 360), 0 in the gaps between magnets."""
+    d = (np.degrees(np.asarray(theta_e, float)) + 180.0) % 360.0 - 180.0     # (-180, 180]
+    h = span_deg / 2
+    return np.where(np.abs(d) < h, 1.0, 0.0) - np.where(np.abs(d) > 180.0 - h, 1.0, 0.0)
+
+
+def flat_top_harmonic(nu, span_deg=160.0):
+    """Fourier amplitude (signed, cosine series) of flat_top_field: 4/(pi nu) sin(nu span/2) for odd nu, else 0."""
+    if nu % 2 == 0:
+        return 0.0
+    return 4.0 / (math.pi * nu) * math.sin(math.radians(nu * span_deg / 2))
+
+
+def phase_flux_linkage(w, field, M=21600, x=0, r=1.0, L=1.0):
+    """lambda_x(theta_r) = r L * integral_0^{2pi} N_x(theta) B(theta - theta_r) dtheta for rotor angles
+    theta_r = j 2pi/M (mechanical), with B(theta) = field(p theta) (callable, electrical argument).
+    Midpoint rule on the same grid (exact for piecewise-constant N and B with breaks on grid nodes), evaluated
+    for every theta_r at once as a circular cross-correlation (FFT). Returns (theta_r, lambda)."""
+    dth = TWO_PI / M
+    th_mid = (np.arange(M) + 0.5) * dth
+    Nx = w.winding_function(th_mid, x)
+    Bm = field(w.p * th_mid)                  # B sampled at theta = (m + 1/2) dth, m = 0..M-1
+    # lambda_j = dth * sum_i N(theta_i) B(theta_i - theta_r,j) ; theta_i - theta_r,j = (i - j + 1/2) dth
+    lam = np.real(np.fft.ifft(np.fft.fft(Nx) * np.conj(np.fft.fft(Bm)))) * dth * r * L
+    return np.arange(M) * dth, lam
+
+
+def phase_emf_conductors(w, field, theta_r, x=0, r=1.0, L=1.0, omega_m=1.0):
+    """e_x(theta_r) = omega_m r L sum_k C[x, k] B(theta_k - theta_r): the 'B l v' sum over conductors at slot
+    centres. Equals d lambda_x / dt for a rotor turning at omega_m (theta_r = omega_m t)."""
+    th = np.asarray(theta_r, float)
+    return omega_m * r * L * (field(w.p * (w.theta_slot[None, :] - th[..., None])) @ w.C[x])
+
+
+def emf_harmonic_peak(w, nu, b_nu, x=0, r=1.0, L=1.0, omega_m=1.0):
+    """Closed form: peak of harmonic nu of the phase EMF, e_nu = 2 omega_m r L N_ph |k_w,nu b_nu|
+    (= nu omega_e lambda_nu with lambda_nu = 2 r L N_ph k_w,nu b_nu / (nu p))."""
+    return 2 * omega_m * r * L * w.series_turns(x) * kw_elec(w, nu, x) * abs(b_nu)
+
+
+def flux_linkage_harmonic_peak(w, nu, b_nu, x=0, r=1.0, L=1.0):
+    """Closed form: peak of harmonic nu of the phase flux linkage, 2 r L N_ph k_w,nu |b_nu| / (nu p)."""
+    return 2 * r * L * w.series_turns(x) * kw_elec(w, nu, x) * abs(b_nu) / (nu * w.p)
+
+
+def self_check_factors(verbose=True):
+    """Lesson 6 checks: classical factors vs the conductor-table phasor sum; star of slots; EMF relation checked
+    against a numerically differentiated flux linkage and the conductor sum."""
+    pr = print if verbose else (lambda *a, **k: None)
+    d30 = math.radians(30)
+    # classical factors
+    assert abs(distribution_factor(2, d30) - 0.96592583) < 1e-8
+    assert abs(distribution_factor(2, d30, 5) - 0.25881905) < 1e-8
+    assert abs(pitch_factor(5 / 6) - 0.96592583) < 1e-8 and abs(pitch_factor(5 / 6, 5) - 0.25881905) < 1e-8
+    assert abs(pitch_factor(5 / 6, 7) - 0.25881905) < 1e-8 and abs(pitch_factor(1.0, 5) - 1.0) < 1e-12
+    assert abs(distribution_factor_limit() - 3 / math.pi) < 1e-12
+    for q in (2, 3, 4, 6, 12):  # fixed 60-degree belt: decreasing toward 3/pi
+        assert distribution_factor(q, math.radians(60 / q)) > 3 / math.pi
+    # fractional q: the formula exceeds one (meaningless) for 12s/8p
+    assert distribution_factor(0.5, math.radians(120)) > 1.15
+    W = {"24s4p full": lap_winding(24, 2, 1), "24s4p 5/6": lap_winding(24, 2, 1, pitch=5),
+         "9s6p": tooth_coil_winding(9, 3, 1), "12s8p": tooth_coil_winding(12, 4, 1), "12s10p": tooth_coil_winding(12, 5, 1)}
+    for nu in (1, 3, 5, 7, 9, 11, 13, 17, 19, 23, 25):
+        kd, kpf, kps = distribution_factor(2, d30, nu), pitch_factor(1.0, nu), pitch_factor(5 / 6, nu)
+        assert abs(kw_elec(W["24s4p full"], nu) - abs(kd * kpf)) < 1e-12, nu
+        assert abs(kw_elec(W["24s4p 5/6"], nu) - abs(kd * kps)) < 1e-12, nu
+        assert abs(kw_signed(W["24s4p full"], nu) - kd * kpf) < 1e-12, nu
+        assert abs(kw_signed(W["24s4p 5/6"], nu) - kd * kps) < 1e-12, nu
+        for k in ("9s6p", "12s8p"):  # tooth coil spans 120 deg: k_p = sin(nu 60 deg), all coils of a phase in phase
+            assert abs(kw_elec(W[k], nu) - abs(math.sin(math.radians(60 * nu)))) < 1e-12, (k, nu)
+    # 12s/10p: k_d = cos 15 deg (two coil phasors at 0, two at -30 deg), k_p = sin 75 deg
+    assert abs(kw_elec(W["12s10p"], 1) - math.cos(math.radians(15)) * math.sin(math.radians(75))) < 1e-12
+    assert star_spokes(12, 4) == (3, 4) and star_spokes(12, 5) == (12, 1) and star_spokes(9, 3) == (3, 3)
+    assert star_spokes(24, 2) == (12, 2)
+    assert np.allclose(slot_angles_elec(12, 4)[:4], [0, 120, 240, 0])
+    # slot harmonics of the q = 2 windings: nu = S/p +- 1 keep the fundamental's factor; one-slot-pitch skew kills them
+    for k in ("24s4p full", "24s4p 5/6"):
+        for nu in (11, 13, 23, 25):
+            assert abs(kw_elec(W[k], nu) - kw_elec(W[k], 1)) < 1e-12
+    sk = {nu: skew_factor(d30, nu) for nu in (1, 11, 13)}
+    assert sk[1] > 0.98 and abs(sk[11]) < 0.1 and abs(sk[13]) < 0.1
+    pr("winding factors nu = 1, 5, 7, 11, 13:")
+    for k, w in W.items():
+        pr(f"  {k:11s} q = {w.q:.3g}:", " ".join(f"{kw_elec(w, nu):.4f}" for nu in (1, 5, 7, 11, 13)))
+    # flat-topped field: harmonics of the sampled wave match the closed form
+    M = 21600
+    th = (np.arange(M) + 0.5) * TWO_PI / M
+    A = spectrum(flat_top_field(th))
+    for nu in (1, 3, 5, 7, 11, 13):
+        assert abs(A[nu] - abs(flat_top_harmonic(nu))) < 2e-4, (nu, A[nu], flat_top_harmonic(nu))
+    assert abs(flat_top_harmonic(1) - 4 / math.pi * math.sin(math.radians(80))) < 1e-15
+    # EMF: d lambda / dt (numerical) == conductor B l v sum (exact at interval midpoints) ; spectrum == closed form
+    worst = 0.0
+    for k in ("24s4p full", "24s4p 5/6", "9s6p", "12s8p"):
+        w = W[k]
+        thr, lam = phase_flux_linkage(w, flat_top_field, M)
+        e_fd = (np.roll(lam, -1) - lam) / (TWO_PI / M)                      # forward difference at (j + 1/2)
+        e_bv = phase_emf_conductors(w, flat_top_field, thr + 0.5 * TWO_PI / M)
+        assert np.max(np.abs(e_fd - e_bv)) < 1e-9 * w.series_turns(), k
+        Ae, Al = spectrum(e_fd), spectrum(lam)
+        for nu in (1, 3, 5, 7, 11, 13):
+            b = flat_top_harmonic(nu)
+            ref_e = emf_harmonic_peak(w, nu, b)
+            ref_l = flux_linkage_harmonic_peak(w, nu, b)
+            ref1 = emf_harmonic_peak(w, 1, flat_top_harmonic(1))
+            assert abs(Ae[nu * w.p] - ref_e) < 1e-3 * ref1, (k, nu, Ae[nu * w.p], ref_e)
+            assert abs(Al[nu * w.p] - ref_l) < 1e-6 * w.series_turns(), (k, nu)
+            worst = max(worst, abs(Ae[nu * w.p] - ref_e) / ref1)
+    pr(f"EMF spectrum: numerical d(lambda)/dt vs 2 w r L N_ph k_w b_nu, worst deviation {worst:.1e} of the fundamental")
+    pr("all winding-factor checks passed")
+    return worst
+
+
 if __name__ == "__main__":
     self_check()
+    self_check_factors()
