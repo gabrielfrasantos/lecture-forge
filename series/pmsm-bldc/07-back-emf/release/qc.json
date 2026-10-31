@@ -1,0 +1,191 @@
+{
+ "rep": {
+  "video": "h264 1920x1080 30/1 486.63s",
+  "audio": "aac 48000 Hz 1 ch 486.62s",
+  "subtitles": "1 track(s): mov_text/eng",
+  "chapters": 13,
+  "av_duration_diff_s": 0.01,
+  "integrated_LUFS": -16.1,
+  "true_peak_dBTP": -1.4,
+  "LRA_LU": 2.5,
+  "asr_word_error_rate": 0.069,
+  "captions": "99 cues, 0 cues mostly over silence, 0 overlaps, max 18.7 chars/s, last cue ends 485.3s"
+ },
+ "mism": [
+  [
+   "a1",
+   "First, the answers from Lesson 6.",
+   "First, the answers from lesson six."
+  ],
+  [
+   "a2",
+   "One: a five-sixths pitch coil has a fundamental pitch factor of sine 75 degrees: 0.966.",
+   "1. A 5/6 pitch coil has a fundamental pitch factor of sine 75 degrees 0.966"
+  ],
+  [
+   "a3",
+   "Two: for the fifth harmonic, 75 degrees becomes 375, and the factor is sine 15 degrees: 0.259.",
+   "2. For the 5th harmonic, 75 degrees becomes 375 and the factor is signed 15 degrees. 0.259."
+  ],
+  [
+   "a4",
+   "Three: the back EMF scales with the winding factor, so the ratio is 0.866.",
+   "3. The back EMF scales with the winding factor, so the ratio is 0.866."
+  ],
+  [
+   "f4",
+   "For a motor, take current as positive into the terminal. The terminal voltage is then R [i](/ˈI/), plus the rate of change of lambda, and the back EMF is plus the rate of change of lambda.",
+   "For a motor, take current as positive into the terminal. The terminal voltage is then ri plus the rate of change of lambda, and the back emf is plus the rate of change of lambda."
+  ],
+  [
+   "l2",
+   "Here's Lesson 5's solver, with the four tooth coils of phase [a](/ˈA/) highlighted. At each rotor position, add the flux through those four teeth, times six turns.",
+   "Here's lesson five solver with the four tooth coils of phase A highlighted. At each rotor position, add the flux through those four teeth times six turns. [BUZZER]"
+  ],
+  [
+   "l3",
+   "Stepping the rotor a quarter degree at a time traces lambda [a](/ˈA/) against theta: largest with north magnets on those teeth, most negative with south magnets.",
+   "Stepping the road or a quarter degree at a time traces lambda A against theta. Largest with north magnets on those teeth, most negative with south magnets."
+  ],
+  [
+   "l4",
+   "Its fundamental has an amplitude of 5.94 milliwebers: lambda m, the magnet flux linkage, according to this 2D model.",
+   "Its fundamental has an amplitude of 5.94 m Webers. Lambda M, the magnet flux linkage, according to this 2D model."
+  ],
+  [
+   "d1",
+   "By the chain rule, the back EMF is the slope of lambda against theta, times the electrical speed, omega [e](/ˈi/).",
+   "By the chain rule, the back EMF is the slope of lambda against theta times the electrical speed omega e."
+  ],
+  [
+   "d3",
+   "Where lambda [a](/ˈA/) peaks, its slope is zero. The EMF peaks a quarter cycle earlier, where lambda [a](/ˈA/) climbs fastest through zero.",
+   "where lambda A peaks, its slope is zero. The EMF peaks a quarter cycle earlier, where lambda A climbs fastest through zero. (buzzer buzzes)"
+  ],
+  [
+   "d4",
+   "At 1500 RPM, omega [e](/ˈi/) is 4 pole pairs times 157: 628 radians per second. So the 2D model's fundamental is 3.73 volts.",
+   "At 1500 RPM, Omega E is 4 pole pairs times 157, 628 radians per second. So the 2D models fundamental is 3.73 volts."
+  ],
+  [
+   "s1",
+   "How close to a sine is it? Split it into harmonics.",
+   "How close to a sign is it? Split it into harmonics."
+  ],
+  [
+   "s2",
+   "From Lesson 6, each EMF harmonic is the winding factor times the field harmonic. Lesson 5's field at the bore has a third harmonic of 26%, and a fifth near 10%.",
+   "From lesson six, each EMF harmonic is the winding factor times the field harmonic. Lesson five's field at the bore has a third harmonic of 26% and a fifth near 10%."
+  ],
+  [
+   "s3",
+   "But a tooth coil spans 120 electrical degrees, exactly one wavelength of the third harmonic. Its positive and negative halves cancel: winding factor zero.",
+   "but a tooth coil spans 120 electrical degrees, exactly one wavelength of the third harmonic. Its positive and negative halves cancel, winding factor zero. [BUZZER]"
+  ],
+  [
+   "s5",
+   "The full solver, with slot openings, gives 8.5% and 1.9%: about 9% distortion. Close to a sine, with a slightly flattened top.",
+   "The full solver with slot openings gives 8.5% and 1.9% about 9% distortion, close to a sign with a slightly flattened top."
+  ],
+  [
+   "t1",
+   "Without a neutral, a scope sees line-to-line voltages: the EMF of phase [a](/ˈA/), minus the EMF of phase [b](/bˈi/).",
+   "Without a neutral, a scope sees line-to-line voltages. The EMF of phase A minus the EMF of phase B."
+  ],
+  [
+   "t2",
+   "For the fundamental, subtracting two phasors 120 degrees apart gives root 3 times one of them, leading by 30 degrees.",
+   "For the fundamental, subtracting two phasers 120 degrees apart gives root three times one of them, leading by 30 degrees."
+  ],
+  [
+   "t3",
+   "For the third harmonic, 120 degrees becomes 360: both phases carry the same third, and it cancels. So does every triplen, every multiple of three.",
+   "For the third harmonic, 120 degrees becomes 360. Both phases carry the same third and it cancels. So does every trip line, every multiple of three."
+  ],
+  [
+   "t5",
+   "The fifth and seventh survive, but shift differently from the fundamental, so the line wave's peak sits 7% above its fundamental.",
+   "The fifth and seventh survive, but shift differently from the fundamental. So the line waves peak sits 7% above its fundamental."
+  ],
+  [
+   "m1",
+   "The 2D solver gives lambda m equal to 5.94 milliwebers. From here on, the series uses a nominal 6.5, treated as measured: 8.6% more.",
+   "The 2D solver gives lambda m equal to 5.94 milliwebers. From here on, the series uses a nominal 6.5 treated as measured. 8.6% more. [BUZZER]"
+  ],
+  [
+   "m2",
+   "Part of the gap is the magnets. We assumed a remanence of 1.2 tesla, but an N 38 datasheet lists 1.22 minimum, and 1.26 typical.",
+   "Part of the gap is the magnets. We assumed a remnants of 1.2 Tesla, but an N38 datasheet lists 1.22 minimum and 1.26 typical."
+  ],
+  [
+   "m3",
+   "With linear steel and no current, lambda is exactly proportional to remanence. So 1.26 tesla gives 6.24 milliwebers: 5% more.",
+   "With linear steel and no current, lambda is exactly proportional to remnants. So 1.26 Tesla gives 6.24 milliwebers, 5% more."
+  ],
+  [
+   "m4",
+   "Closing the gap with remanence alone would take 1.31 tesla, beyond this grade. The other 4% belongs to the third dimension.",
+   "Closing the gap with remnants alone would take 1.31 Tesla beyond this grade. The other 4% belongs to the third dimension."
+  ],
+  [
+   "b2",
+   "With full-pitch coils under full-width magnets, the phase EMF stays flat for about 130 electrical degrees: a trapezoid.",
+   "With full-pitched coils under full-width magnets, the phase EMF stays flat for about 130 electrical degrees. A trapezoid."
+  ],
+  [
+   "b4",
+   "That's what a brushless DC drive wants: current in 120-degree blocks, timed to the flat tops, gives nearly constant torque. Lesson 16 compares the two drives.",
+   "That's what a brushless DC drive wants. Current in 120 degree blocks, timed to the flat tops, gives nearly constant torque. Lesson 16 compares the two drives. [BUZZER]"
+  ],
+  [
+   "k1",
+   "Datasheets fold lambda m into a back EMF constant, in several conventions.",
+   "Data sheets fold lambda m into a back emf constant in several conventions."
+  ],
+  [
+   "k2",
+   "Phase peak, per mechanical radian per second: [p](/pˈi/) times lambda m, 0.026 volt seconds. Line-to-line peak, per 1,000 RPM: 4.72 volts; in RMS, 3.33.",
+   "Phase peak per mechanical radian per second. P times lambda m 0.02 6 volt seconds. Line to line peak per 1000 rpm, 4.72 volts in RMS 3.33."
+  ],
+  [
+   "k3",
+   "The same number sets the torque. With current in phase with the back EMF, the power it absorbs, three halves [E](/ˈi/) [I](/ˈI/), leaves the shaft as torque times speed.",
+   "The same number sets the torque. With current in phase with the back EMF, the power it absorbs, 3/2's EI, leaves the shaft as torque times speed."
+  ],
+  [
+   "k4",
+   "So the torque constant is three halves [p](/pˈi/) lambda m: 0.039 newton meters per amp of peak current; Lesson 9 derives it. A no-current voltage test gives you the torque per amp.",
+   "So the torque constant is 3/2 P lambda m. 0.039 newton meters per amp of peak current, less than 9 derives it. A no-current voltage test gives you the torque per amp."
+  ],
+  [
+   "x4",
+   "Time several cycles: 10.26 milliseconds each, so 97.5 hertz. Times 60, over 4 pole pairs: 1462 RPM.",
+   "Time several cycles, 10.26 milliseconds each, so 97.5 hertz. Time 60 over four pole pairs, 14.62 RPM."
+  ],
+  [
+   "x5",
+   "For the amplitude, take the fundamental, from the scope's FFT, or a sine fit: 6.90 volts. Then lambda m is that, over root 3 times omega [e](/ˈi/): 6.50 milliwebers.",
+   "For the amplitude, take the fundamental from the scopes FFT or a sine fit, 6.9 volts. Then lambda M is that, over root 3 times omega E, 6.5 milliwebers."
+  ],
+  [
+   "w2",
+   "This is a 2D, linear, open-circuit model. Under load, armature reaction and tooth saturation shift the flux linkage.",
+   "This is a 2D linear open circuit model. Underload armature reaction and tooth saturation shift the flux linkage."
+  ],
+  [
+   "p2",
+   "One: at 3,000 RPM, what's the peak phase back EMF, fundamental only?",
+   "1 at 3000 RPM. What's the peak phase-back EMF fundamental only?"
+  ],
+  [
+   "p3",
+   "Two: and the peak line-to-line EMF?",
+   "2 and the peak line to line EMF."
+  ],
+  [
+   "p4",
+   "Three: spin the motor with all three leads shorted together. Does it resist, and where does the energy go?",
+   "3. Spin the motor with all three leads shorted together. Does it resist and where does the energy go?"
+  ]
+ ]
+}

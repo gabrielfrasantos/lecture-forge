@@ -1,0 +1,82 @@
+;FFMETADATA1
+title=Back-EMF — PMSM & BLDC, Lesson 7
+artist=lecture-forge
+language=eng
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=25687
+title=01 Spin it, and a voltage appears
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=25687
+END=53109
+title=02 Answers from Lesson 6
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=53109
+END=91836
+title=03 Faraday's law and a sign convention
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=91836
+END=124865
+title=04 Flux linkage versus rotor angle
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=124865
+END=157313
+title=05 The slope is the voltage
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=157313
+END=205722
+title=06 Why it's almost a sine
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=205722
+END=249136
+title=07 Line to line: triplens vanish
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=249136
+END=303687
+title=08 λm: 5.94 or 6.5 mWb?
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=303687
+END=339908
+title=09 Sinusoidal or trapezoidal?
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=339908
+END=383030
+title=10 Ke, Kt and their conventions
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=383030
+END=434412
+title=11 Bench: a drill and a scope
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=434412
+END=456764
+title=12 Where this model stops
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=456764
+END=486623
+title=13 Predict, then check

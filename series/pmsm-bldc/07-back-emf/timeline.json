@@ -1,0 +1,448 @@
+[
+ {
+  "id": "hook",
+  "title": "Spin it, and a voltage appears",
+  "start": 0.0,
+  "beats": [
+   {
+    "id": "h1",
+    "start": 0.6,
+    "end": 6.276,
+    "text": "Spin a permanent-magnet motor with nothing connected, and a voltage appears across its terminals."
+   },
+   {
+    "id": "h2",
+    "start": 6.726,
+    "end": 10.723,
+    "text": "Spin it twice as fast, and the voltage doubles, along with its frequency."
+   },
+   {
+    "id": "h3",
+    "start": 11.173,
+    "end": 18.865,
+    "text": "That's the back-EMF: the voltage a drive has to overcome, which decides how fast the motor can run on a given supply."
+   },
+   {
+    "id": "h4",
+    "start": 19.165,
+    "end": 24.637,
+    "text": "Today we'll compute it from Lesson 5's field solution, then measure it with a drill and a scope."
+   }
+  ],
+  "end": 25.686625000000003
+ },
+ {
+  "id": "answers",
+  "title": "Answers from Lesson 6",
+  "start": 25.686625000000003,
+  "beats": [
+   {
+    "id": "a1",
+    "start": 26.087,
+    "end": 28.204,
+    "text": "First, the answers from Lesson 6."
+   },
+   {
+    "id": "a2",
+    "start": 28.504,
+    "end": 35.97,
+    "text": "One: a five-sixths pitch coil has a fundamental pitch factor of sine 75\u00b0: 0.966."
+   },
+   {
+    "id": "a3",
+    "start": 36.27,
+    "end": 45.813,
+    "text": "Two: for the fifth harmonic, 75\u00b0 becomes 375\u00b0, and the factor is sine 15\u00b0: 0.259."
+   },
+   {
+    "id": "a4",
+    "start": 46.113,
+    "end": 52.059,
+    "text": "Three: the back-EMF scales with the winding factor, so the ratio is 0.866."
+   }
+  ],
+  "end": 53.108583333333335
+ },
+ {
+  "id": "faraday",
+  "title": "Faraday's law and a sign convention",
+  "start": 53.108583333333335,
+  "beats": [
+   {
+    "id": "f2",
+    "start": 53.509,
+    "end": 63.805,
+    "text": "In 1831, Faraday found that a changing flux through a coil induces a voltage in it. Add up the flux through every turn, and you get the flux linkage, \u03bb."
+   },
+   {
+    "id": "f3",
+    "start": 64.105,
+    "end": 74.409,
+    "text": "Faraday's law: the EMF induced around the coil is minus the rate of change of \u03bb. The minus sign is Lenz's law: the current it drives opposes the change."
+   },
+   {
+    "id": "f4",
+    "start": 74.709,
+    "end": 85.858,
+    "text": "For a motor, take current as positive into the terminal. The terminal voltage is then v = Ri + d\u03bb/dt, and the back-EMF is e = +d\u03bb/dt."
+   },
+   {
+    "id": "f5",
+    "start": 86.158,
+    "end": 90.786,
+    "text": "It's what a voltmeter reads across an open coil. We'll use this convention throughout."
+   }
+  ],
+  "end": 91.83641666666666
+ },
+ {
+  "id": "linkage",
+  "title": "Flux linkage versus rotor angle",
+  "start": 91.83641666666666,
+  "beats": [
+   {
+    "id": "l1",
+    "start": 92.236,
+    "end": 95.42,
+    "text": "In the motor, it's the rotor angle that changes the flux."
+   },
+   {
+    "id": "l2",
+    "start": 95.72,
+    "end": 105.177,
+    "text": "Here's Lesson 5's solver, with phase a's four tooth coils highlighted. At each rotor position, add the flux through those four teeth, times six turns."
+   },
+   {
+    "id": "l3",
+    "start": 105.477,
+    "end": 114.837,
+    "text": "Stepping the rotor a quarter degree at a time traces \u03bba against \u03b8: largest with north magnets on those teeth, most negative with south magnets."
+   },
+   {
+    "id": "l4",
+    "start": 115.137,
+    "end": 123.815,
+    "text": "Its fundamental has an amplitude of 5.94 milliwebers: \u03bbm, the magnet flux linkage, according to this 2D model."
+   }
+  ],
+  "end": 124.86508333333333
+ },
+ {
+  "id": "slope",
+  "title": "The slope is the voltage",
+  "start": 124.86508333333333,
+  "beats": [
+   {
+    "id": "d1",
+    "start": 125.265,
+    "end": 131.744,
+    "text": "By the chain rule, the back-EMF is the slope of \u03bb against \u03b8, times the electrical speed, \u03c9e."
+   },
+   {
+    "id": "d2",
+    "start": 132.044,
+    "end": 134.871,
+    "text": "The slope sets the shape; the speed sets the size."
+   },
+   {
+    "id": "d3",
+    "start": 135.171,
+    "end": 143.098,
+    "text": "Where \u03bba peaks, its slope is zero. The EMF peaks a quarter cycle earlier, where \u03bba climbs fastest through zero."
+   },
+   {
+    "id": "d4",
+    "start": 143.398,
+    "end": 156.263,
+    "text": "At 1500 rpm, \u03c9e is 4 pole pairs times 157: 628 radians per second. So the 2D model's fundamental, \u03c9e \u03bbm, is 3.73 volts."
+   }
+  ],
+  "end": 157.313125
+ },
+ {
+  "id": "harmonics",
+  "title": "Why it's almost a sine",
+  "start": 157.313125,
+  "beats": [
+   {
+    "id": "s1",
+    "start": 157.713,
+    "end": 160.642,
+    "text": "How close to a sine is it? Split it into harmonics."
+   },
+   {
+    "id": "s2",
+    "start": 160.942,
+    "end": 173.38,
+    "text": "From Lesson 6, each EMF harmonic is the winding factor times the field harmonic. Lesson 5's field at the bore has a third harmonic of 26%, and a fifth near 10%."
+   },
+   {
+    "id": "s3",
+    "start": 173.68,
+    "end": 184.581,
+    "text": "But a tooth coil spans 120 electrical degrees, exactly one wavelength of the third harmonic. Its positive and negative halves cancel: winding factor zero."
+   },
+   {
+    "id": "s4",
+    "start": 184.881,
+    "end": 193.964,
+    "text": "The fifth and seventh pass with 0.866, the same as the fundamental. Predicted: 9.7% and 3.1%."
+   },
+   {
+    "id": "s5",
+    "start": 194.264,
+    "end": 204.672,
+    "text": "The full solver, with slot openings, gives 8.5% and 1.9%: about 9% distortion. Close to a sine, with a slightly flattened top."
+   }
+  ],
+  "end": 205.72179166666672
+ },
+ {
+  "id": "lines",
+  "title": "Line to line: triplens vanish",
+  "start": 205.72179166666672,
+  "beats": [
+   {
+    "id": "t1",
+    "start": 206.122,
+    "end": 213.102,
+    "text": "Without a neutral, a scope sees line-to-line voltages: the EMF of phase a minus the EMF of phase b."
+   },
+   {
+    "id": "t2",
+    "start": 213.402,
+    "end": 221.666,
+    "text": "For the fundamental, subtracting two phasors 120\u00b0 apart gives \u221a3 times one of them, leading by 30\u00b0."
+   },
+   {
+    "id": "t3",
+    "start": 221.966,
+    "end": 233.31,
+    "text": "For the third harmonic, 120\u00b0 becomes 360\u00b0: both phases carry the same third, and it cancels. So does every triplen, every multiple of three."
+   },
+   {
+    "id": "t4",
+    "start": 233.61,
+    "end": 240.021,
+    "text": "That's the factor of a coil spanning 120\u00b0, so our tooth coils had no third harmonic to lose."
+   },
+   {
+    "id": "t5",
+    "start": 240.321,
+    "end": 248.086,
+    "text": "The fifth and seventh survive, but shift differently from the fundamental, so the line wave's peak sits 7% above its fundamental."
+   }
+  ],
+  "end": 249.13633333333343
+ },
+ {
+  "id": "lambda_m",
+  "title": "\u03bbm: 5.94 or 6.5 mWb?",
+  "start": 249.13633333333343,
+  "beats": [
+   {
+    "id": "m1",
+    "start": 249.536,
+    "end": 261.219,
+    "text": "The 2D solver gives \u03bbm = 5.94 milliwebers. From here on, the series uses a nominal 6.5, treated as measured: 8.6% more."
+   },
+   {
+    "id": "m2",
+    "start": 261.519,
+    "end": 272.021,
+    "text": "Part of the gap is the magnets. We assumed a remanence of 1.2 tesla, but an N38 datasheet lists 1.22 minimum, and 1.26 typical."
+   },
+   {
+    "id": "m3",
+    "start": 272.321,
+    "end": 282.83,
+    "text": "With linear steel and no current, \u03bb is exactly proportional to remanence. So 1.26 tesla gives 6.24 milliwebers: 5% more."
+   },
+   {
+    "id": "m4",
+    "start": 283.13,
+    "end": 291.522,
+    "text": "Closing the gap with remanence alone would take 1.31 tesla, beyond this grade. The other 4% belongs to the third dimension."
+   },
+   {
+    "id": "m5",
+    "start": 291.822,
+    "end": 302.637,
+    "text": "A 2D model treats the stack as infinitely long. Overhanging magnets add flux at the ends; end leakage removes some. A 3D solution, or the bench, decides."
+   }
+  ],
+  "end": 303.6870416666668
+ },
+ {
+  "id": "trapezoid",
+  "title": "Sinusoidal or trapezoidal?",
+  "start": 303.6870416666668,
+  "beats": [
+   {
+    "id": "b1",
+    "start": 304.087,
+    "end": 312.724,
+    "text": "The shape is a design choice. Here's a variant, not our reference motor: 180\u00b0 magnets, and 24 slots with full-pitch coils."
+   },
+   {
+    "id": "b2",
+    "start": 313.024,
+    "end": 321.451,
+    "text": "With full-pitch coils under full-width magnets, the phase EMF stays flat for about 130 electrical degrees: a trapezoid."
+   },
+   {
+    "id": "b3",
+    "start": 321.751,
+    "end": 327.454,
+    "text": "Its phase EMF has a 29% third harmonic; between the lines, it vanishes."
+   },
+   {
+    "id": "b4",
+    "start": 327.754,
+    "end": 338.858,
+    "text": "That's what a brushless DC drive wants: current in 120-degree blocks, timed to the flat tops, gives nearly constant torque. Lesson 16 compares the two drives."
+   }
+  ],
+  "end": 339.90804166666686
+ },
+ {
+  "id": "constants",
+  "title": "Ke, Kt and their conventions",
+  "start": 339.90804166666686,
+  "beats": [
+   {
+    "id": "k1",
+    "start": 340.308,
+    "end": 345.233,
+    "text": "Datasheets fold \u03bbm into a back-EMF constant, in several conventions."
+   },
+   {
+    "id": "k2",
+    "start": 345.533,
+    "end": 359.895,
+    "text": "Phase peak per mechanical radian per second: p \u03bbm, 0.026 volt-seconds. Line-to-line peak per 1000 rpm: 4.72 volts; in rms, 3.33."
+   },
+   {
+    "id": "k3",
+    "start": 360.195,
+    "end": 369.488,
+    "text": "The same number sets the torque. With current in phase with the back-EMF, the power it absorbs, 3/2 E I, leaves the shaft as torque times speed."
+   },
+   {
+    "id": "k4",
+    "start": 369.788,
+    "end": 381.98,
+    "text": "So Kt = 3/2 p \u03bbm: 0.039 newton-metres per amp of peak current; Lesson 9 derives it. A no-current voltage test gives you the torque per amp."
+   }
+  ],
+  "end": 383.03016666666684
+ },
+ {
+  "id": "bench",
+  "title": "Bench: a drill and a scope",
+  "start": 383.03016666666684,
+  "beats": [
+   {
+    "id": "x1",
+    "start": 383.43,
+    "end": 388.253,
+    "text": "To measure it, chuck the shaft in a drill, with the leads disconnected from any driver."
+   },
+   {
+    "id": "x2",
+    "start": 388.553,
+    "end": 394.965,
+    "text": "Clip a scope probe across two leads. The motor floats, so the ground clip can go on one. Hold the speed steady."
+   },
+   {
+    "id": "x3",
+    "start": 395.265,
+    "end": 405.458,
+    "text": "Here's a synthetic trace, generated from the model, of what to expect near 1500 rpm: about 7 volts peak, one cycle every 10 milliseconds."
+   },
+   {
+    "id": "x4",
+    "start": 405.758,
+    "end": 416.82,
+    "text": "Time several cycles: 10.26 milliseconds each, so 97.5 hertz. Times 60, over 4 pole pairs: 1462 rpm."
+   },
+   {
+    "id": "x5",
+    "start": 417.12,
+    "end": 429.406,
+    "text": "For the amplitude, take the fundamental, from the scope's FFT or a sine fit: 6.90 volts. Then \u03bbm is that, over \u221a3 times \u03c9e: 6.50 milliwebers."
+   },
+   {
+    "id": "x6",
+    "start": 429.706,
+    "end": 433.362,
+    "text": "Not the raw peak: on this wave, it reads about 9% high."
+   }
+  ],
+  "end": 434.4122083333336
+ },
+ {
+  "id": "limits",
+  "title": "Where this model stops",
+  "start": 434.4122083333336,
+  "beats": [
+   {
+    "id": "w2",
+    "start": 434.812,
+    "end": 442.549,
+    "text": "This is a 2D, linear, open-circuit model. Under load, armature reaction and tooth saturation shift the flux linkage."
+   },
+   {
+    "id": "w3",
+    "start": 442.849,
+    "end": 452.232,
+    "text": "Magnets also weaken as they warm, about 0.12% per kelvin: 50 kelvin hotter, 6% less \u03bbm. Note the temperature."
+   },
+   {
+    "id": "w4",
+    "start": 452.532,
+    "end": 455.714,
+    "text": "And the 3D share of the gap was argued, not computed."
+   }
+  ],
+  "end": 456.76400000000024
+ },
+ {
+  "id": "predict",
+  "title": "Predict, then check",
+  "start": 456.76400000000024,
+  "beats": [
+   {
+    "id": "p1",
+    "start": 457.164,
+    "end": 462.546,
+    "text": "Three predictions before next time, with \u03bbm = 6.5 milliwebers."
+   },
+   {
+    "id": "p2",
+    "start": 462.846,
+    "end": 467.962,
+    "text": "One: at 3000 rpm, what's the peak phase back-EMF, fundamental only?"
+   },
+   {
+    "id": "p3",
+    "start": 469.162,
+    "end": 471.243,
+    "text": "Two: and the peak line-to-line EMF?"
+   },
+   {
+    "id": "p4",
+    "start": 472.443,
+    "end": 478.55,
+    "text": "Three: spin the motor with all three leads shorted together. Does it resist, and where does the energy go?"
+   },
+   {
+    "id": "p5",
+    "start": 479.75,
+    "end": 484.823,
+    "text": "Next time: energy and co-energy, and how stored magnetic energy becomes torque."
+   }
+  ],
+  "end": 486.6234166666668
+ }
+]
