@@ -1,0 +1,486 @@
+[
+ {
+  "id": "hook",
+  "title": "A step that goes sideways",
+  "start": 0.0,
+  "beats": [
+   {
+    "id": "h1",
+    "start": 0.6,
+    "end": 7.942,
+    "text": "Put a 0.4 V step on the q axis of our motor, rotor locked, and the current climbs to 10 A, all on q."
+   },
+   {
+    "id": "h2",
+    "start": 8.342,
+    "end": 13.461,
+    "text": "Now spin it at 1500 rpm, back-EMF balanced, and add the same step."
+   },
+   {
+    "id": "h3",
+    "start": 13.761,
+    "end": 19.93,
+    "text": "This time q settles at 6.2 A, and 4.9 A appear on d, where we applied nothing."
+   },
+   {
+    "id": "h4",
+    "start": 20.43,
+    "end": 24.693,
+    "text": "Two voltage equations and a torque equation explain both: the d\u2013q model."
+   }
+  ],
+  "end": 25.99325
+ },
+ {
+  "id": "answers",
+  "title": "Answers from Lesson 13",
+  "start": 25.99325,
+  "beats": [
+   {
+    "id": "a1",
+    "start": 26.293,
+    "end": 28.205,
+    "text": "First, Lesson 13's answers."
+   },
+   {
+    "id": "a2",
+    "start": 28.505,
+    "end": 37.289,
+    "text": "One: a 10\u00b0 angle error leaves cos 10\u00b0, 98.5 % of the torque, and 1.74 A on d."
+   },
+   {
+    "id": "a3",
+    "start": 37.689,
+    "end": 43.353,
+    "text": "Two: Hall sensors without interpolation are off by up to \u00b130\u00b0."
+   },
+   {
+    "id": "a4",
+    "start": 43.753,
+    "end": 52.807,
+    "text": "Three: the back-EMF is DC: \u03c9e \u03bbm on q, 4.08 V at 1500 rpm, and zero on d."
+   }
+  ],
+  "end": 54.10670833333333
+ },
+ {
+  "id": "phases",
+  "title": "Start from the phases",
+  "start": 54.10670833333333,
+  "beats": [
+   {
+    "id": "p1",
+    "start": 54.407,
+    "end": 60.915,
+    "text": "Start with the physics: each phase's voltage is its resistive drop plus the rate of change of its flux linkage."
+   },
+   {
+    "id": "p2",
+    "start": 61.315,
+    "end": 69.168,
+    "text": "It links the phase's own current, the other phases' currents through mutual inductance, and the magnet's share, \u03bbm cos \u03b8e."
+   },
+   {
+    "id": "p3",
+    "start": 69.568,
+    "end": 77.403,
+    "text": "With the currents adding to zero, the mutual part folds in: one inductance, L, 0.05 mH for our motor."
+   },
+   {
+    "id": "p4",
+    "start": 77.803,
+    "end": 84.007,
+    "text": "As a space vector, the magnet's flux becomes \u03bbm e^j\u03b8e, turning with the rotor."
+   }
+  ],
+  "end": 85.3065
+ },
+ {
+  "id": "frame",
+  "title": "The derivative of a turning frame",
+  "start": 85.3065,
+  "beats": [
+   {
+    "id": "d1",
+    "start": 85.606,
+    "end": 91.079,
+    "text": "Now look from the rotor: every stator-frame vector is its dq version, turned by \u03b8e."
+   },
+   {
+    "id": "d2",
+    "start": 91.479,
+    "end": 97.427,
+    "text": "Differentiate that product, and two terms appear. The first is the change you'd see riding on the rotor."
+   },
+   {
+    "id": "d3",
+    "start": 97.828,
+    "end": 106.905,
+    "text": "The second exists even if nothing changes on the rotor: a vector turning at \u03c9e moves at \u03c9e times its length, a quarter turn ahead."
+   },
+   {
+    "id": "d4",
+    "start": 107.205,
+    "end": 109.941,
+    "text": "That's j \u03c9e \u03bb, the speed voltage."
+   },
+   {
+    "id": "d5",
+    "start": 110.341,
+    "end": 117.728,
+    "text": "Undo the rotation, and in the rotor frame the voltage is R i, plus d\u03bb/dt, plus j \u03c9e \u03bb."
+   }
+  ],
+  "end": 119.02825
+ },
+ {
+  "id": "dqeq",
+  "title": "The d and q voltage equations",
+  "start": 119.02825,
+  "beats": [
+   {
+    "id": "v1",
+    "start": 119.328,
+    "end": 125.785,
+    "text": "Split the flux linkage: on d, Ld i_d plus \u03bbm; on q, Lq i_q."
+   },
+   {
+    "id": "v2",
+    "start": 126.185,
+    "end": 129.944,
+    "text": "Multiplying by j turns d into q, and q into minus d."
+   },
+   {
+    "id": "v3",
+    "start": 130.344,
+    "end": 138.509,
+    "text": "So the d equation gains minus \u03c9e Lq i_q, and the q equation gains \u03c9e times the d flux."
+   },
+   {
+    "id": "v4",
+    "start": 138.909,
+    "end": 148.946,
+    "text": "Its magnet part is Lesson 13's back-EMF. The rest is cross-coupling: current on one axis induces voltage on the other, in proportion to speed."
+   },
+   {
+    "id": "v5",
+    "start": 149.346,
+    "end": 154.301,
+    "text": "In an interior-magnet motor, Ld and Lq differ, and each term keeps its own."
+   }
+  ],
+  "end": 155.6005
+ },
+ {
+  "id": "circuits",
+  "title": "Two circuits, coupled",
+  "start": 155.6005,
+  "beats": [
+   {
+    "id": "c1",
+    "start": 155.901,
+    "end": 163.247,
+    "text": "Each equation is a circuit: the applied voltage, a resistance, an inductance, and a source driven by the other axis."
+   },
+   {
+    "id": "c2",
+    "start": 163.647,
+    "end": 170.757,
+    "text": "At standstill, they're two separate RL circuits with time constant L over R: 1.25 ms."
+   },
+   {
+    "id": "c3",
+    "start": 171.157,
+    "end": 179.322,
+    "text": "At 1500 rpm, the coupling, \u03c9e L, is 31 mV per amp, close to the 40 m\u03a9 resistance."
+   },
+   {
+    "id": "c4",
+    "start": 179.722,
+    "end": 186.328,
+    "text": "And q carries the back-EMF: 4.08 V, ten times the resistive drop at 10 A."
+   }
+  ],
+  "end": 187.6276666666667
+ },
+ {
+  "id": "step",
+  "title": "The step, simulated",
+  "start": 187.6276666666667,
+  "beats": [
+   {
+    "id": "s1",
+    "start": 187.928,
+    "end": 199.905,
+    "text": "Now simulate the opening step, locked rotor first: i_q rises as one minus e to the minus t over \u03c4, 63 % at 1.25 ms, then 10 A."
+   },
+   {
+    "id": "s2",
+    "start": 200.305,
+    "end": 203.962,
+    "text": "i_d stays exactly zero: without speed, nothing couples."
+   },
+   {
+    "id": "s3",
+    "start": 204.362,
+    "end": 213.762,
+    "text": "At 1500 rpm, held by a dynamometer, \u03c9e Lq i_q pushes i_d up as i_q rises; then \u03c9e Ld i_d pulls i_q back down."
+   },
+   {
+    "id": "s4",
+    "start": 214.162,
+    "end": 224.141,
+    "text": "The current spirals in to 6.18 A on q and 4.86 on d, 38\u00b0 off the axis: the arctangent of \u03c9e \u03c4."
+   },
+   {
+    "id": "s5",
+    "start": 224.541,
+    "end": 228.894,
+    "text": "Lesson 19's decoupling feed-forward cancels exactly these terms."
+   }
+  ],
+  "end": 230.1942083333334
+ },
+ {
+  "id": "power",
+  "title": "Power and the three-halves",
+  "start": 230.1942083333334,
+  "beats": [
+   {
+    "id": "w1",
+    "start": 230.494,
+    "end": 239.071,
+    "text": "Power is three-halves of v_d i_d plus v_q i_q: three phases, each carrying half of peak volts times peak amps."
+   },
+   {
+    "id": "w2",
+    "start": 239.471,
+    "end": 247.266,
+    "text": "Substitute the voltage equations, and the power splits three ways: copper loss, stored magnetic energy, and the speed voltages."
+   },
+   {
+    "id": "w3",
+    "start": 247.666,
+    "end": 254.919,
+    "text": "Those can only leave as mechanical power. Divide by the shaft speed, \u03c9e over p, and out comes the torque:"
+   },
+   {
+    "id": "w4",
+    "start": 255.219,
+    "end": 264.28,
+    "text": "three-halves p, times \u03bbm i_q plus (Ld \u2212 Lq) i_d i_q. Magnet torque, plus reluctance torque."
+   },
+   {
+    "id": "w5",
+    "start": 264.68,
+    "end": 274.429,
+    "text": "At 3000 rpm and 15 A: 197 W in, 13.5 W of copper loss, and 184 W at the shaft."
+   }
+  ],
+  "end": 275.7288750000001
+ },
+ {
+  "id": "mech",
+  "title": "The mechanical equation",
+  "start": 275.7288750000001,
+  "beats": [
+   {
+    "id": "m1",
+    "start": 276.029,
+    "end": 280.459,
+    "text": "Torque accelerates the rotor, against viscous and Coulomb friction and the load."
+   },
+   {
+    "id": "m2",
+    "start": 280.859,
+    "end": 290.013,
+    "text": "Free the shaft and apply 1 V on q. The current jumps to 13.5 A, the rotor accelerates, and the rising back-EMF chokes it off."
+   },
+   {
+    "id": "m3",
+    "start": 290.413,
+    "end": 299.585,
+    "text": "The speed overshoots to 427 rpm, i_q turns briefly negative to brake it, and it settles at 366 rpm."
+   },
+   {
+    "id": "m4",
+    "start": 299.985,
+    "end": 309.231,
+    "text": "The back-EMF acts as a damper, with a 1.2 ms time constant, as short as the electrical one; any real load adds inertia."
+   }
+  ],
+  "end": 309.955625
+ },
+ {
+  "id": "phasor",
+  "title": "Steady state: the phasor diagram",
+  "start": 309.955625,
+  "beats": [
+   {
+    "id": "f1",
+    "start": 310.256,
+    "end": 318.803,
+    "text": "In steady state the derivatives vanish, and the voltage is a vector sum: R i, plus j \u03c9e L i, plus j \u03c9e \u03bbm."
+   },
+   {
+    "id": "f2",
+    "start": 319.203,
+    "end": 333.289,
+    "text": "At 3000 rpm and 15 A on q: 8.17 V of back-EMF, 0.6 V of R i along the current, and 0.94 V of j \u03c9e L i along minus d."
+   },
+   {
+    "id": "f3",
+    "start": 333.689,
+    "end": 343.352,
+    "text": "The sum, 8.82 V, leads the current by 6.1\u00b0, well inside the 13.9 V a 24 V bus can supply."
+   },
+   {
+    "id": "f4",
+    "start": 343.752,
+    "end": 348.919,
+    "text": "Since dq values are phase amplitudes, it's also the phasor diagram of phase a."
+   },
+   {
+    "id": "f5",
+    "start": 349.319,
+    "end": 357.217,
+    "text": "Minus 10 A on d would lower v_q by only 0.63 V: keep that in mind for Lesson 21."
+   }
+  ],
+  "end": 358.5171249999999
+ },
+ {
+  "id": "abc",
+  "title": "Cross-check in phase coordinates",
+  "start": 358.5171249999999,
+  "beats": [
+   {
+    "id": "x1",
+    "start": 358.817,
+    "end": 363.854,
+    "text": "Did the transformation hide a mistake? Solve the same motor in phase coordinates instead."
+   },
+   {
+    "id": "x2",
+    "start": 364.254,
+    "end": 370.774,
+    "text": "Use the interior-magnet variant, whose phase inductances vary at twice \u03b8e, starting from standstill."
+   },
+   {
+    "id": "x3",
+    "start": 371.174,
+    "end": 377.781,
+    "text": "Clarke and Park of its phase currents land on the dq simulation, within a few nanoamps; the torques agree too."
+   },
+   {
+    "id": "x4",
+    "start": 378.181,
+    "end": 383.439,
+    "text": "The dq model isn't an approximation: it's the same equations, seen from the rotor."
+   }
+  ],
+  "end": 384.73945833333323
+ },
+ {
+  "id": "limits",
+  "title": "Where the model stops",
+  "start": 384.73945833333323,
+  "beats": [
+   {
+    "id": "l1",
+    "start": 385.039,
+    "end": 390.778,
+    "text": "Now its limits. Linear magnetics: real iron saturates, so Lq falls at high current."
+   },
+   {
+    "id": "l2",
+    "start": 391.178,
+    "end": 398.044,
+    "text": "Sinusoidal back-EMF: harmonics and cogging return as ripple, at six times the electrical frequency."
+   },
+   {
+    "id": "l3",
+    "start": 398.444,
+    "end": 404.191,
+    "text": "No iron loss: Lesson 4's hysteresis and eddy currents take power the equations don't see."
+   },
+   {
+    "id": "l4",
+    "start": 404.591,
+    "end": 413.905,
+    "text": "Constant parameters: from 20 to 80 \u00b0C, copper resistance rises 24 %, and the magnet's flux falls about 7 %."
+   },
+   {
+    "id": "l5",
+    "start": 414.305,
+    "end": 419.574,
+    "text": "And no inverter: PWM ripple and dead time come in Lessons 17 and 18."
+   }
+  ],
+  "end": 420.8742916666665
+ },
+ {
+  "id": "exercise",
+  "title": "Exercise: your own motor",
+  "start": 420.8742916666665,
+  "beats": [
+   {
+    "id": "e1",
+    "start": 421.174,
+    "end": 428.343,
+    "text": "Your turn. The release folder has a script that takes your motor's pole pairs, resistance, inductances and flux linkage."
+   },
+   {
+    "id": "e2",
+    "start": 428.743,
+    "end": 434.25,
+    "text": "It simulates the step, measures the time constant, and draws the phasor diagram to scale."
+   },
+   {
+    "id": "e3",
+    "start": 434.65,
+    "end": 442.921,
+    "text": "For our motor, it prints 1.25 ms, 4.86 and 6.18 A, and 8.82 V."
+   }
+  ],
+  "end": 444.22079166666646
+ },
+ {
+  "id": "predict",
+  "title": "Predict, then check",
+  "start": 444.22079166666646,
+  "beats": [
+   {
+    "id": "q1",
+    "start": 444.521,
+    "end": 446.441,
+    "text": "Three predictions before next time."
+   },
+   {
+    "id": "q2",
+    "start": 446.841,
+    "end": 456.249,
+    "text": "One: at \u03c9e = 1000 rad/s, with i_d = 0 and i_q = 10 A, in steady state, what are v_d and v_q?"
+   },
+   {
+    "id": "q3",
+    "start": 457.649,
+    "end": 461.896,
+    "text": "Two: what sets the electrical time constant, and what is it for our motor?"
+   },
+   {
+    "id": "q4",
+    "start": 463.296,
+    "end": 466.742,
+    "text": "Three: how would you get R and L from a locked-rotor DC step?"
+   },
+   {
+    "id": "q5",
+    "start": 468.142,
+    "end": 473.361,
+    "text": "Next time: parameter identification, measuring each of these parameters on the bench."
+   }
+  ],
+  "end": 475.5607083333331
+ }
+]

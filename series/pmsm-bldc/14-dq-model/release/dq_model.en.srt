@@ -1,0 +1,466 @@
+1
+00:00:00,600 --> 00:00:03,823
+Put a 0.4 V step on the q axis of our
+motor,
+
+2
+00:00:03,863 --> 00:00:08,302
+rotor locked, and the current climbs to 10
+A, all on q.
+
+3
+00:00:08,342 --> 00:00:13,721
+Now spin it at 1500 rpm, back-EMF
+balanced, and add the same step.
+
+4
+00:00:13,761 --> 00:00:20,390
+This time q settles at 6.2 A, and 4.9 A
+appear on d, where we applied nothing.
+
+5
+00:00:20,430 --> 00:00:25,193
+Two voltage equations and a torque
+equation explain both: the d–q model.
+
+6
+00:00:26,293 --> 00:00:28,465
+First, Lesson 13's answers.
+
+7
+00:00:28,505 --> 00:00:37,649
+One: a 10° angle error leaves cos 10°,
+98.5 % of the torque, and 1.74 A on d.
+
+8
+00:00:37,689 --> 00:00:43,713
+Two: Hall sensors without interpolation
+are off by up to ±30°.
+
+9
+00:00:43,753 --> 00:00:53,307
+Three: the back-EMF is DC: ωe λm on q,
+4.08 V at 1500 rpm, and zero on d.
+
+10
+00:00:54,407 --> 00:00:57,384
+Start with the physics: each phase's
+voltage is its
+
+11
+00:00:57,424 --> 00:01:01,275
+resistive drop plus the rate of change of
+its flux linkage.
+
+12
+00:01:01,315 --> 00:01:05,169
+It links the phase's own current, the
+other phases' currents
+
+13
+00:01:05,209 --> 00:01:09,528
+through mutual inductance, and the
+magnet's share, λm cos θe.
+
+14
+00:01:09,568 --> 00:01:14,151
+With the currents adding to zero, the
+mutual part folds in:
+
+15
+00:01:14,191 --> 00:01:17,763
+one inductance, L, 0.05 mH for our motor.
+
+16
+00:01:17,803 --> 00:01:24,507
+As a space vector, the magnet's flux
+becomes λm e^jθe, turning with the rotor.
+
+17
+00:01:25,606 --> 00:01:27,168
+Now look from the rotor:
+
+18
+00:01:27,208 --> 00:01:31,439
+every stator-frame vector is its dq
+version, turned by θe.
+
+19
+00:01:31,479 --> 00:01:34,269
+Differentiate that product, and two terms
+appear.
+
+20
+00:01:34,309 --> 00:01:37,788
+The first is the change you'd see riding
+on the rotor.
+
+21
+00:01:37,828 --> 00:01:41,658
+The second exists even if nothing changes
+on the rotor:
+
+22
+00:01:41,698 --> 00:01:47,165
+a vector turning at ωe moves at ωe times
+its length, a quarter turn ahead.
+
+23
+00:01:47,205 --> 00:01:50,301
+That's j ωe λ, the speed voltage.
+
+24
+00:01:50,341 --> 00:01:55,602
+Undo the rotation, and in the rotor frame
+the voltage is R i,
+
+25
+00:01:55,642 --> 00:01:58,228
+plus dλ/dt, plus j ωe λ.
+
+26
+00:01:59,328 --> 00:02:06,145
+Split the flux linkage: on d, Ld i_d plus
+λm; on q, Lq i_q.
+
+27
+00:02:06,185 --> 00:02:10,304
+Multiplying by j turns d into q, and q
+into minus d.
+
+28
+00:02:10,344 --> 00:02:14,146
+So the d equation gains minus ωe Lq i_q,
+
+29
+00:02:14,186 --> 00:02:18,869
+and the q equation gains ωe times the d
+flux.
+
+30
+00:02:18,909 --> 00:02:23,710
+Its magnet part is Lesson 13's back-EMF.
+The rest is cross-coupling:
+
+31
+00:02:23,750 --> 00:02:29,306
+current on one axis induces voltage on the
+other, in proportion to speed.
+
+32
+00:02:29,346 --> 00:02:34,801
+In an interior-magnet motor, Ld and Lq
+differ, and each term keeps its own.
+
+33
+00:02:35,901 --> 00:02:39,821
+Each equation is a circuit: the applied
+voltage, a resistance,
+
+34
+00:02:39,861 --> 00:02:43,607
+an inductance, and a source driven by the
+other axis.
+
+35
+00:02:43,647 --> 00:02:46,823
+At standstill, they're two separate RL
+
+36
+00:02:46,863 --> 00:02:51,117
+circuits with time constant L over R: 1.25
+ms.
+
+37
+00:02:51,157 --> 00:02:59,682
+At 1500 rpm, the coupling, ωe L, is 31 mV
+per amp, close to the 40 mΩ resistance.
+
+38
+00:02:59,722 --> 00:03:06,828
+And q carries the back-EMF: 4.08 V, ten
+times the resistive drop at 10 A.
+
+39
+00:03:07,928 --> 00:03:12,679
+Now simulate the opening step, locked
+rotor first:
+
+40
+00:03:12,719 --> 00:03:20,265
+i_q rises as one minus e to the minus t
+over τ, 63 % at 1.25 ms, then 10 A.
+
+41
+00:03:20,305 --> 00:03:24,322
+i_d stays exactly zero: without speed,
+nothing couples.
+
+42
+00:03:24,362 --> 00:03:27,368
+At 1500 rpm, held by a dynamometer,
+
+43
+00:03:27,408 --> 00:03:34,122
+ωe Lq i_q pushes i_d up as i_q rises; then
+ωe Ld i_d pulls i_q back down.
+
+44
+00:03:34,162 --> 00:03:39,702
+The current spirals in to 6.18 A on q and
+4.86 on d,
+
+45
+00:03:39,742 --> 00:03:44,501
+38° off the axis: the arctangent of ωe τ.
+
+46
+00:03:44,541 --> 00:03:49,394
+Lesson 19's decoupling feed-forward
+cancels exactly these terms.
+
+47
+00:03:50,494 --> 00:03:55,175
+Power is three-halves of v_d i_d plus v_q
+i_q: three phases,
+
+48
+00:03:55,215 --> 00:03:59,431
+each carrying half of peak volts times
+peak amps.
+
+49
+00:03:59,471 --> 00:04:03,514
+Substitute the voltage equations, and the
+power splits three ways:
+
+50
+00:04:03,554 --> 00:04:07,626
+copper loss, stored magnetic energy, and
+the speed voltages.
+
+51
+00:04:07,666 --> 00:04:10,485
+Those can only leave as mechanical power.
+
+52
+00:04:10,525 --> 00:04:15,179
+Divide by the shaft speed, ωe over p, and
+out comes the torque:
+
+53
+00:04:15,219 --> 00:04:20,414
+three-halves p, times λm i_q plus (Ld −
+Lq) i_d i_q.
+
+54
+00:04:20,454 --> 00:04:24,640
+Magnet torque, plus reluctance torque.
+
+55
+00:04:24,680 --> 00:04:34,929
+At 3000 rpm and 15 A: 197 W in, 13.5 W of
+copper loss, and 184 W at the shaft.
+
+56
+00:04:36,029 --> 00:04:40,819
+Torque accelerates the rotor, against
+viscous and Coulomb friction and the load.
+
+57
+00:04:40,859 --> 00:04:45,470
+Free the shaft and apply 1 V on q. The
+current jumps to 13.5 A,
+
+58
+00:04:45,510 --> 00:04:50,373
+the rotor accelerates, and the rising
+back-EMF chokes it off.
+
+59
+00:04:50,413 --> 00:04:53,368
+The speed overshoots to 427 rpm,
+
+60
+00:04:53,408 --> 00:04:59,945
+i_q turns briefly negative to brake it,
+and it settles at 366 rpm.
+
+61
+00:04:59,985 --> 00:05:04,568
+The back-EMF acts as a damper, with a 1.2
+ms time constant,
+
+62
+00:05:04,608 --> 00:05:09,731
+as short as the electrical one; any real
+load adds inertia.
+
+63
+00:05:10,256 --> 00:05:13,391
+In steady state the derivatives vanish,
+
+64
+00:05:13,431 --> 00:05:19,163
+and the voltage is a vector sum: R i, plus
+j ωe L i, plus j ωe λm.
+
+65
+00:05:19,203 --> 00:05:24,797
+At 3000 rpm and 15 A on q: 8.17 V of back-
+EMF,
+
+66
+00:05:24,837 --> 00:05:33,649
+0.6 V of R i along the current, and 0.94 V
+of j ωe L i along minus d.
+
+67
+00:05:33,689 --> 00:05:38,371
+The sum, 8.82 V, leads the current by
+6.1°,
+
+68
+00:05:38,411 --> 00:05:43,712
+well inside the 13.9 V a 24 V bus can
+supply.
+
+69
+00:05:43,752 --> 00:05:49,279
+Since dq values are phase amplitudes, it's
+also the phasor diagram of phase a.
+
+70
+00:05:49,319 --> 00:05:57,717
+Minus 10 A on d would lower v_q by only
+0.63 V: keep that in mind for Lesson 21.
+
+71
+00:05:58,817 --> 00:06:00,952
+Did the transformation hide a mistake?
+
+72
+00:06:00,992 --> 00:06:04,214
+Solve the same motor in phase coordinates
+instead.
+
+73
+00:06:04,254 --> 00:06:06,321
+Use the interior-magnet variant,
+
+74
+00:06:06,361 --> 00:06:11,134
+whose phase inductances vary at twice θe,
+starting from standstill.
+
+75
+00:06:11,174 --> 00:06:15,013
+Clarke and Park of its phase currents land
+on the dq simulation,
+
+76
+00:06:15,053 --> 00:06:18,141
+within a few nanoamps; the torques agree
+too.
+
+77
+00:06:18,181 --> 00:06:23,939
+The dq model isn't an approximation: it's
+the same equations, seen from the rotor.
+
+78
+00:06:25,039 --> 00:06:27,309
+Now its limits. Linear magnetics:
+
+79
+00:06:27,349 --> 00:06:31,138
+real iron saturates, so Lq falls at high
+current.
+
+80
+00:06:31,178 --> 00:06:35,342
+Sinusoidal back-EMF: harmonics and cogging
+return as ripple,
+
+81
+00:06:35,382 --> 00:06:38,404
+at six times the electrical frequency.
+
+82
+00:06:38,444 --> 00:06:41,278
+No iron loss: Lesson 4's hysteresis and
+eddy
+
+83
+00:06:41,318 --> 00:06:44,551
+currents take power the equations don't
+see.
+
+84
+00:06:44,591 --> 00:06:47,890
+Constant parameters: from 20 to 80 °C,
+
+85
+00:06:47,930 --> 00:06:54,265
+copper resistance rises 24 %, and the
+magnet's flux falls about 7 %.
+
+86
+00:06:54,305 --> 00:07:00,074
+And no inverter: PWM ripple and dead time
+come in Lessons 17 and 18.
+
+87
+00:07:01,174 --> 00:07:05,833
+Your turn. The release folder has a script
+that takes your motor's pole pairs,
+
+88
+00:07:05,873 --> 00:07:08,703
+resistance, inductances and flux linkage.
+
+89
+00:07:08,743 --> 00:07:11,832
+It simulates the step, measures the time
+constant,
+
+90
+00:07:11,872 --> 00:07:14,610
+and draws the phasor diagram to scale.
+
+91
+00:07:14,650 --> 00:07:23,421
+For our motor, it prints 1.25 ms, 4.86 and
+6.18 A, and 8.82 V.
+
+92
+00:07:24,521 --> 00:07:26,801
+Three predictions before next time.
+
+93
+00:07:26,841 --> 00:07:32,280
+One: at ωe = 1000 rad/s, with i_d = 0 and
+i_q = 10 A,
+
+94
+00:07:32,320 --> 00:07:36,749
+in steady state, what are v_d and v_q?
+
+95
+00:07:37,649 --> 00:07:42,396
+Two: what sets the electrical time
+constant, and what is it for our motor?
+
+96
+00:07:43,296 --> 00:07:47,242
+Three: how would you get R and L from a
+locked-rotor DC step?
+
+97
+00:07:48,142 --> 00:07:50,339
+Next time: parameter identification,
+
+98
+00:07:50,379 --> 00:07:53,861
+measuring each of these parameters on the
+bench.

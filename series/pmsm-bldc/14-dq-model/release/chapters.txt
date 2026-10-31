@@ -1,0 +1,88 @@
+;FFMETADATA1
+title=The d–q Model — PMSM & BLDC, Lesson 14
+artist=lecture-forge
+language=eng
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=25993
+title=01 A step that goes sideways
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=25993
+END=54107
+title=02 Answers from Lesson 13
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=54107
+END=85306
+title=03 Start from the phases
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=85306
+END=119028
+title=04 The derivative of a turning frame
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=119028
+END=155600
+title=05 The d and q voltage equations
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=155600
+END=187628
+title=06 Two circuits, coupled
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=187628
+END=230194
+title=07 The step, simulated
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=230194
+END=275729
+title=08 Power and the three-halves
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=275729
+END=309956
+title=09 The mechanical equation
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=309956
+END=358517
+title=10 Steady state: the phasor diagram
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=358517
+END=384739
+title=11 Cross-check in phase coordinates
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=384739
+END=420874
+title=12 Where the model stops
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=420874
+END=444221
+title=13 Exercise: your own motor
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=444221
+END=475561
+title=14 Predict, then check

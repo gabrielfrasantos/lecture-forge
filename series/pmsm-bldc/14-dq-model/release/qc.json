@@ -1,0 +1,171 @@
+{
+ "rep": {
+  "video": "h264 1920x1080 30/1 475.57s",
+  "audio": "aac 48000 Hz 1 ch 475.56s",
+  "subtitles": "1 track(s): mov_text/eng",
+  "chapters": 14,
+  "av_duration_diff_s": 0.006,
+  "integrated_LUFS": -16.1,
+  "true_peak_dBTP": -1.3,
+  "LRA_LU": 2.6,
+  "asr_word_error_rate": 0.057,
+  "captions": "98 cues, 0 cues mostly over silence, 0 overlaps, max 17.8 chars/s, last cue ends 473.9s"
+ },
+ "mism": [
+  [
+   "a2",
+   "One: a 10 degree angle error leaves cosine 10 degrees, 98.5% of the torque, and 1.74 amps on d.",
+   "1. A 10-degree angle error leaves cosine 10 degrees, 98.5% of the torque, and 1.74 amps on D."
+  ],
+  [
+   "a4",
+   "Three: the back EMF is DC: omega E lambda M on q, 4.08 volts at 1500 rpm, and zero on d.",
+   "3. The back EMF is DC. Omega E-LAMDA M on Q, 4.08V at 1500 RPM and 0 on D."
+  ],
+  [
+   "p2",
+   "It links the phase's own current, the other phases' currents through mutual inductance, and the magnet's share, lambda M cosine theta E.",
+   "It links the phase's own current, the other phase's currents through mutual inductance, and the magnet's share, lambda m cosine theta e."
+  ],
+  [
+   "p3",
+   "With the currents adding to zero, the mutual part folds in: one inductance, L, 0.05 millihenries for our motor.",
+   "With the currents adding to zero, the mutual part folds in. 1 inductance, L, 0.05 millihenries for our motor."
+  ],
+  [
+   "d5",
+   "Undo the rotation, and in the rotor frame the voltage is R I, plus the rate of change of lambda, plus j omega E lambda.",
+   "Undo the rotation, and in the rotor frame the voltage is ri, plus the rate of change of lambda, plus j omega e lambda."
+  ],
+  [
+   "v1",
+   "Split the flux linkage: on d, LD times ID, plus lambda M; on q, LQ times IQ.",
+   "Split the flux linkage on DLD times ID plus lambda m on QLQ times IQ."
+  ],
+  [
+   "v4",
+   "Its magnet part is Lesson 13's back EMF. The rest is cross coupling: current on one axis induces voltage on the other, in proportion to speed.",
+   "Its magnet part is less than 13's back EMF. The rest is cross coupling. Current on one axis induces voltage on the other in proportion to speed."
+  ],
+  [
+   "c1",
+   "Each equation is a circuit: the applied voltage, a resistance, an inductance, and a source driven by the other axis.",
+   "Each equation is a circuit, the applied voltage, a resistance, an inductance, and a source driven by the other axis. [buzzer]"
+  ],
+  [
+   "c2",
+   "At standstill, they're two separate R L circuits with time constant L over R: 1.25 milliseconds.",
+   "At Stanstil, they're two separate RL circuits with time constant L/R. 1.25 milliseconds."
+  ],
+  [
+   "c3",
+   "At 1500 rpm, the coupling, omega E L, is 31 millivolts per amp, close to the 40 milliohm resistance.",
+   "At 1500 RPM, the coupling, Omega EL, is 31 millivolts per amp, close to the 40 milliohm resistance. [BUZZER]"
+  ],
+  [
+   "c4",
+   "And q carries the back EMF: 4.08 volts, ten times the resistive drop at 10 amps.",
+   "and Q carries the back EMF. 4.08 volts, 10 times the resistive drop at 10 amps."
+  ],
+  [
+   "s1",
+   "Now simulate the opening step, locked rotor first: IQ rises as one minus e to the minus T over tau, 63% at 1.25 milliseconds, then 10 amps.",
+   "Now simulate the opening step, locked rotor first. IQ rises as 1 minus e to the minus t over tau, 63% at 1.25 milliseconds, then 10 amps."
+  ],
+  [
+   "s4",
+   "The current spirals in to 6.18 amps on q and 4.86 on d, 38 degrees off the axis: the arc tangent of omega E tau.",
+   "The current spirals into 6.18 amps on Q and 4.86 on D, 38 degrees off the axis, the arc tangent of Omega et al."
+  ],
+  [
+   "s5",
+   "Lesson 19's decoupling feed forward cancels exactly these terms.",
+   "Lesson 19s decoupling feed forward cancels exactly these terms."
+  ],
+  [
+   "w1",
+   "Power is three halves of VD times ID, plus VQ times IQ: three phases, each carrying half of peak volts times peak amps.",
+   "Power is 3/2 of Vd times id plus Vq times iq. Three phases, each carrying half of peak volts times peak amps."
+  ],
+  [
+   "w4",
+   "three halves P, times lambda M times IQ, plus LD minus LQ, times ID times IQ. Magnet torque, plus reluctance torque.",
+   "3/2 p times lambda m times iq plus ld minus lq times id times iq. Magnet torque plus reluctance torque."
+  ],
+  [
+   "w5",
+   "At 3000 rpm and 15 amps: 197 watts in, 13.5 watts of copper loss, and 184 watts at the shaft.",
+   "at 3000 RPM and 15 amps, 197 watts in, 13.5 watts of copper loss, and 184 watts at the shaft. (buzzer buzzes)"
+  ],
+  [
+   "m2",
+   "Free the shaft and apply 1 volt on q. The current jumps to 13.5 amps, the rotor accelerates, and the rising back EMF chokes it off.",
+   "Free the shaft and apply 1 volt on cue the current jumps to 13.5 amps, the rotor accelerates, and the rising back EMF chokes it off."
+  ],
+  [
+   "m3",
+   "The speed overshoots to 427 rpm, IQ turns briefly negative to brake it, and it settles at 366 rpm.",
+   "The speed overshoots to 427 RPM, IQ turns briefly negative to break it, and it settles at 366 RPM."
+  ],
+  [
+   "f1",
+   "In steady state the derivatives vanish, and the voltage is a vector sum: R I, plus j omega E L I, plus j omega E lambda M.",
+   "In steady state, the derivatives vanish, and the voltage is a vector sum. Ri plus j omega ELI plus j omega ELAM to M."
+  ],
+  [
+   "f2",
+   "At 3000 rpm and 15 amps on q: 8.17 volts of back EMF, 0.6 volts of R I along the current, and 0.94 volts of j omega E L I along minus d.",
+   "at 3000 RPM and 15 amps on Q, 8.17 volts of back EMF, 0.6 volts of RI along the current, and 0.94 volts of J omega ELI along minus D."
+  ],
+  [
+   "f4",
+   "Since DQ values are phase amplitudes, it's also the phasor diagram of phase A.",
+   "Since DQ values are phase amplitudes, it's also the phaser diagram of phase A."
+  ],
+  [
+   "f5",
+   "Minus 10 amps on d would lower the q voltage by only 0.63 volts: keep that in mind for Lesson 21.",
+   "-10 amps on D would lower the Q voltage by only 0.63 volts. Keep that in mind for lesson 21."
+  ],
+  [
+   "x1",
+   "Did the transformation hide a mistake? Solve the same motor in phase coordinates instead.",
+   "Did the transformation hide a mistake? Solve the same motor and phase coordinates instead."
+  ],
+  [
+   "x3",
+   "Clark and Park of its phase currents land on the DQ simulation, within a few nanoamps; the torques agree too.",
+   "Clark and Park of its phase currents land on the DQ simulation within a few nanowamps. The Torques agree too."
+  ],
+  [
+   "l1",
+   "Now its limits. Linear magnetics: real iron saturates, so LQ falls at high current.",
+   "Now it's limits. Linear magnetics, real iron saturates, so LQ falls at high current."
+  ],
+  [
+   "e1",
+   "Your turn. The release folder has a script that takes your motor's pole pairs, resistance, inductances and flux linkage.",
+   "Your turn. The release folder has a script that takes your motor's pole pairs, resistance, inductances, and flux linkage. [BUZZER]"
+  ],
+  [
+   "e2",
+   "It simulates the step, measures the time constant, and draws the phasor diagram to scale.",
+   "It simulates the step, measures the time constant, and draws the phaser diagram to scale."
+  ],
+  [
+   "q2",
+   "One: at omega E of 1000 radians per second, with zero on d and 10 amps on q, in steady state, what are the d and q voltages?",
+   "1 at omega e of 1,000 radians per second, with 0 on d and 10 amps on Q in steady state. What are the d and Q voltages?"
+  ],
+  [
+   "q3",
+   "Two: what sets the electrical time constant, and what is it for our motor?",
+   "2. What sets the electrical time constant? And what is it for our motor?"
+  ],
+  [
+   "q4",
+   "Three: how would you get R and L from a locked rotor DC step?",
+   "3. How would you get R&L from a locked rotor DC step?"
+  ]
+ ]
+}
