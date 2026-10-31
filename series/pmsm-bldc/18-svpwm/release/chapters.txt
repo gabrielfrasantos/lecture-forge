@@ -1,0 +1,82 @@
+;FFMETADATA1
+title=Space-Vector PWM and Current Sensing — PMSM & BLDC, Lesson 18
+artist=lecture-forge
+language=eng
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=30965
+title=01 Any vector from eight states
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=30965
+END=62343
+title=02 Answers from Lesson 17
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=62343
+END=93023
+title=03 The hexagon and its sectors
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=93023
+END=143516
+title=04 Dwell times
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=143516
+END=187174
+title=05 One period, seven steps
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=187174
+END=229121
+title=06 The linear limit
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=229121
+END=266870
+title=07 Same as min–max injection
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=266870
+END=302927
+title=08 Shunts and the middle of 000
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=302927
+END=330277
+title=09 The sample is the average
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=330277
+END=373860
+title=10 When the window closes
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=373860
+END=391882
+title=11 SVPWM in Python
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=391882
+END=432303
+title=12 On a microcontroller
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=432303
+END=467701
+title=13 Predict, then check

@@ -65,6 +65,14 @@ API
   pwm_line_amplitude(mc, n, M, V_dc, sampling, ratio) closed form (Bessel) of one leg's harmonic lines
 Run this file to execute the self-tests.
 
+API added by Lesson 18 (space-vector PWM and current sampling; see the section at the end of the file)
+  svpwm_sector(v_ref), svpwm_dwell(v_ref, V_dc, f_sw)  sector 1..6 and dwell times T1, T2, T0
+  svpwm_duties(v_ref, V_dc, f_sw)                     leg duties, zero time split equally between 000 and 111
+  svpwm_sequence(v_ref, V_dc, f_sw)                   centre-aligned 0-x-y-7-y-x-0 segments of one period
+  timer_count(t, f_sw, arr), timer_compare(d, arr)    up-down counter and compare values of a PWM timer
+  low_side_windows(d, f_sw), zero_vector_window(d, f_sw), best_two_legs(d, f_sw)   shunt sampling windows
+  reconstruct_third(i_x, i_y), dc_link_current(S, i_abc), window_average(t, x, t0, t1)
+
 References: N. Mohan, T. M. Undeland, W. P. Robbins, Power Electronics: Converters, Applications, and Design, 3rd ed.,
 Wiley 2003 (switch-mode dc-ac inverters, blanking time); D. G. Holmes, T. A. Lipo, Pulse Width Modulation for Power
 Converters: Principles and Practice, IEEE Press / Wiley 2003 (closed-form harmonic solutions used in the self-test,
@@ -505,7 +513,206 @@ def _self_test(verbose=False):
     return True
 
 
+# ---------------------------------------------------------------------------------------------- space-vector PWM (Lesson 18)
+# Sector s (1..6) spans [(s-1) 60, s 60) degrees, between the active vectors V_s and V_{s+1} (V7 -> V1), STATES order.
+# Volt-seconds over one period T:  v_ref T = V_s T1 + V_{s+1} T2 + (V0 or V7) T0.
+# Centre-aligned sequence (the Lesson 17 carrier convention: 000 at the period edges, 111 in the middle):
+#   0 - Vx - Vy - 7 - Vy - Vx - 0  with T0/4, Tx/2, Ty/2, T0/2, Ty/2, Tx/2, T0/4, where Vx is the active vector with ONE
+#   upper switch on (V1, V3, V5), so each step changes exactly one leg: 6 transitions per period, one on and one off per
+#   leg. With the zero time split equally, d_max + d_min = 1: exactly the min-max zero-sequence rule (inject "minmax").
+# Low-side shunts: shunt k carries phase current k only while the lower switch (or lower diode) of leg k conducts,
+#   (1 - d_k) T per period, centred on the period boundary; all three conduct in 000, (1 - max d) T.
+def svpwm_sector(v_ref):
+    """Sector number 1..6 of complex reference(s) v_ref."""
+    th = np.mod(np.angle(np.asarray(v_ref, complex)), 2 * np.pi)
+    return (np.floor(th / (np.pi / 3)).astype(int) % 6) + 1
+
+
+def svpwm_dwell(v_ref, V_dc=SPM["V_dc"], f_sw=SPM["f_pwm"]):
+    """(sector, T1, T2, T0) in seconds. T1 belongs to V_s (the vector at the start of the sector), T2 to V_{s+1}:
+        T1 = sqrt3 |v|/V_dc T sin(60 deg - th_s),  T2 = sqrt3 |v|/V_dc T sin(th_s),  T0 = T - T1 - T2,
+    th_s = angle of v_ref measured from the start of its sector. T0 >= 0 everywhere for |v| <= V_dc/sqrt3 (linear)."""
+    v = np.asarray(v_ref, complex)
+    T = 1.0 / f_sw
+    s = svpwm_sector(v)
+    ths = np.mod(np.angle(v), 2 * np.pi) - (s - 1) * np.pi / 3
+    k = SQ3 * np.abs(v) / V_dc * T
+    T1 = k * np.sin(np.pi / 3 - ths)
+    T2 = k * np.sin(ths)
+    return s, T1, T2, T - T1 - T2
+
+
+def svpwm_duties(v_ref, V_dc=SPM["V_dc"], f_sw=SPM["f_pwm"]):
+    """Leg duties (3, ...) of SVPWM with the zero time split equally between 000 and 111:
+    d_k = (S_k(V_s) T1 + S_k(V_{s+1}) T2 + T0/2) / T. Not clipped (beyond the inscribed circle T0 < 0 somewhere)."""
+    s, T1, T2, T0 = svpwm_dwell(v_ref, V_dc, f_sw)
+    S1 = STATES[s]                       # (..., 3)
+    S2 = STATES[s % 6 + 1]
+    d = (S1 * T1[..., None] + S2 * T2[..., None] + 0.5 * T0[..., None]) * f_sw
+    return np.moveaxis(d, -1, 0)
+
+
+def svpwm_sequence(v_ref, V_dc=SPM["V_dc"], f_sw=SPM["f_pwm"]):
+    """Centre-aligned seven-segment sequence of one period for ONE reference: list of (state index, t_start, t_end),
+    t from 0 (period start = middle of 000) to T = 1/f_sw."""
+    s, T1, T2, T0 = (float(x) for x in svpwm_dwell(complex(v_ref), V_dc, f_sw))
+    s = int(s)
+    a, b = s, s % 6 + 1
+    (x, Tx), (y, Ty) = ((a, T1), (b, T2)) if a % 2 == 1 else ((b, T2), (a, T1))
+    out, t = [], 0.0
+    for k, d in ((0, T0 / 4), (x, Tx / 2), (y, Ty / 2), (7, T0 / 2), (y, Ty / 2), (x, Tx / 2), (0, T0 / 4)):
+        out.append((k, t, t + d))
+        t += d
+    return out
+
+
+def timer_count(t, f_sw=SPM["f_pwm"], arr=2500):
+    """Up-down (centre-aligned) PWM counter: 0 at t = nT (period start, middle of 000), arr at (n + 1/2) T.
+    It is the Lesson 17 carrier rescaled: count = arr (1 - carrier)/2."""
+    return arr * (1.0 - carrier(t, f_sw)) / 2.0
+
+
+def timer_compare(d, arr=2500, integer=True):
+    """Compare value(s) for 'upper switch on while count > compare' with timer_count(): arr (1 - d).
+    Reproduces 'on while u > carrier' of pwm_edges(); integer=True rounds to whole counts (the timer's resolution)."""
+    c = arr * (1.0 - np.asarray(d, float))
+    return np.rint(c).astype(int) if integer else c
+
+
+def low_side_windows(d, f_sw=SPM["f_pwm"]):
+    """Time (s) each leg's lower switch conducts per period, (1 - d_k) T, centred on the period boundary: the window
+    in which a low-side shunt shows that phase's current (ideal switches; dead time and settling not deducted)."""
+    return (1.0 - np.asarray(d, float)) / f_sw
+
+
+def zero_vector_window(d, f_sw=SPM["f_pwm"]):
+    """Duration (s) of 000 around the period boundary, (1 - max_k d_k) T: all three shunts conduct."""
+    return (1.0 - np.asarray(d, float).max(axis=0)) / f_sw
+
+
+def best_two_legs(d, f_sw=SPM["f_pwm"]):
+    """For three low-side shunts: skip the leg with the largest duty, read the other two.
+    Returns (legs (2, ...) sorted by window, longest first; the shorter of the two windows (s))."""
+    d = np.asarray(d, float)
+    order = np.argsort(d, axis=0)                  # ascending duty = descending low-side window
+    legs = order[:2]
+    d_second = np.take_along_axis(d, order[1:2], axis=0)[0]
+    return legs, (1.0 - d_second) / f_sw
+
+
+def reconstruct_third(i_x, i_y):
+    """Third phase current of a star winding without neutral: i_z = -(i_x + i_y)."""
+    return -(np.asarray(i_x) + np.asarray(i_y))
+
+
+def dc_link_current(S, i_abc):
+    """Current in a single DC-link shunt for switching state(s) S (3, ...) and phase currents i_abc (3, ...):
+    sum_k S_k i_k (100 -> i_a, 110 -> -i_c; zero vectors -> 0)."""
+    S = np.asarray(S, float)
+    return np.sum(S * np.asarray(i_abc, float), axis=0)
+
+
+def window_average(t, x, t0, t1):
+    """Mean over each window [t0, t1] of the piecewise-linear real signal through the points (t, x) (t increasing).
+    Exact for straight segments; for simulate() currents the segments are far shorter than L/R."""
+    t = np.asarray(t, float); x = np.asarray(x, float)
+    cum = np.concatenate([[0.0], np.cumsum(np.diff(t) * (x[1:] + x[:-1]) / 2)])
+
+    def integ(tq):
+        tq = np.asarray(tq, float)
+        j = np.clip(np.searchsorted(t, tq, side="right") - 1, 0, len(t) - 2)
+        xq = np.interp(tq, t, x)
+        return cum[j] + (tq - t[j]) * (x[j] + xq) / 2
+
+    t0 = np.asarray(t0, float); t1 = np.asarray(t1, float)
+    return (integ(t1) - integ(t0)) / (t1 - t0)
+
+
+def _self_test_svpwm(verbose=False):
+    Vdc, fsw = SPM["V_dc"], SPM["f_pwm"]
+    T = 1 / fsw
+    lim = Vdc / SQ3
+    rng = np.random.default_rng(18)
+    th = rng.uniform(0, 2 * np.pi, 4000)
+    mag = rng.uniform(0, 1, 4000) * lim
+    v = mag * np.exp(1j * th)
+    s, T1, T2, T0 = svpwm_dwell(v, Vdc, fsw)
+    assert (T1 >= -1e-15).all() and (T2 >= -1e-15).all() and (T0 >= -1e-15).all()     # linear inside the circle
+    # volt-seconds: V_s T1 + V_{s+1} T2 = v T
+    Vs, Vs1 = state_vector(STATES[s], Vdc), state_vector(STATES[s % 6 + 1], Vdc)
+    assert np.allclose(Vs * T1 + Vs1 * T2, v * T, atol=1e-12)
+    # duties: their space vector is the reference, and they equal carrier PWM with min-max injection
+    d = svpwm_duties(v, Vdc, fsw)
+    assert np.allclose(Vdc * space_vector(*d), v, atol=1e-9)
+    u_mm = sine_references(np.abs(v) / (Vdc / 2), np.angle(v), "minmax")
+    assert np.abs(d - (1 + u_mm) / 2).max() < 1e-12
+    assert np.allclose(d.max(axis=0) + d.min(axis=0), 1.0)                         # centred: max + min = 1
+    # linear limit: on the inscribed circle T0 = 0 at the middle of each sector, > 0 elsewhere
+    for k in range(6):
+        _, a1, a2, a0 = svpwm_dwell(lim * np.exp(1j * (30 + 60 * k) * np.pi / 180), Vdc, fsw)
+        assert abs(a0) < 1e-15 and np.isclose(a1, T / 2) and np.isclose(a2, T / 2)
+    assert svpwm_dwell(1.01 * lim * np.exp(1j * np.pi / 6), Vdc, fsw)[3] < 0
+    # sequence: one leg per step, six transitions, durations match the duties and the volt-seconds
+    for vv in (v[:200]):
+        seq = svpwm_sequence(vv, Vdc, fsw)
+        assert abs(seq[-1][2] - T) < 1e-15 and [q[0] for q in seq][::3] == [0, seq[3][0], 0] and seq[3][0] == 7
+        St = np.array([STATES[q[0]] for q in seq])
+        assert (np.abs(np.diff(St, axis=0)).sum(axis=1) == 1).all()                # 6 single-leg steps
+        dur = np.array([q[2] - q[1] for q in seq])
+        assert np.allclose((St * dur[:, None]).sum(axis=0) * fsw, svpwm_duties(vv, Vdc, fsw), atol=1e-12)
+        assert abs(np.sum(state_vector(St, Vdc) * dur) - vv * T) < 1e-12
+        assert np.allclose(dur, dur[::-1])                                           # symmetric about T/2
+    # timer: 'count > compare' reproduces 'u > carrier'
+    arr = 2500
+    tt = np.linspace(0, T, 20001)[:-1] + T / 40000
+    dd = svpwm_duties(8.0 * np.exp(0.7j), Vdc, fsw)
+    cc = timer_compare(dd, arr, integer=False)
+    on_t = timer_count(tt, fsw, arr)[None, :] > cc[:, None]
+    on_c = (2 * dd - 1)[:, None] > carrier(tt, fsw)[None, :]
+    assert (on_t == on_c).all() and np.allclose(on_t.mean(axis=1), dd, atol=1e-4)
+    assert timer_count(0.0, fsw, arr) == 0 and np.isclose(timer_count(T / 2, fsw, arr), arr)
+    assert (timer_compare([0.0, 0.5, 1.0], arr) == [arr, arr // 2, 0]).all()
+    # sampling windows: the two legs with the smallest duties are never shorter than (T/2)(1 - sqrt3/2 m), m = |v|/lim
+    legs, w2 = best_two_legs(d, fsw)
+    w0 = zero_vector_window(d, fsw)
+    assert np.allclose(w0, T0 / 2) and (w2 >= w0 - 1e-15).all()
+    assert (w2 >= T / 2 * (1 - SQ3 / 2 * mag / lim) - 1e-12).all()
+    assert np.allclose(np.take_along_axis(low_side_windows(d, fsw), legs[1:2], axis=0)[0], w2)
+    ia, ib = 3.0, -1.0
+    assert reconstruct_third(ia, ib) == -2.0
+    i3 = np.array([4.0, -1.5, -2.5])
+    assert np.allclose(dc_link_current(STATES[[0, 1, 2, 7]].T, i3[:, None]), [0, 4.0, 2.5, 0])
+    # window average of a straight line and of a sine
+    tq = np.linspace(0, 1, 1001)
+    assert np.isclose(window_average(tq, 2 * tq + 1, 0.2, 0.6), 1.8)
+    assert np.isclose(window_average(tq, np.sin(2 * np.pi * tq), 0.0, 0.5), 2 / np.pi, rtol=1e-5)
+    # switched simulation with min-max injection: its duties are the SVPWM duties of the sampled reference, and the
+    # current sampled in the middle of 000 is close to the average over the period centred on it (the ripple is odd
+    # about the middle of each period; the residual comes from the duties stepping between periods and from R/L)
+    we = SPM["p"] * 3000 * 2 * np.pi / 60
+    vd, vq = steady_state_voltage(0.0, 10.0, we)
+    vr = lambda t: (vd + 1j * vq) * np.exp(1j * we * np.asarray(t))
+    r = simulate(vr, 0.005, omega_e=we, i0=10j, injection="minmax")
+    n = r.t_on.shape[1]
+    tc = (np.arange(n) + 0.5) * T
+    assert np.allclose((r.t_off - r.t_on) * fsw, svpwm_duties(vr(tc), Vdc, fsw), atol=1e-12)
+    ia = r.phase_currents()[0]
+    k = np.arange(1, n)
+    avg = window_average(r.t, ia, k * T - T / 2, k * T + T / 2)
+    ripple = max(np.ptp(ia[(r.t >= j * T) & (r.t <= (j + 1) * T)]) for j in range(n))
+    err = np.abs(np.real(r.i_sample[1:]) - avg).max()
+    assert err < 0.04 * ripple, (err, ripple)
+    tg = np.linspace(T, (n - 1) * T, 40001)                       # any instant: up to about half the ripple
+    dev = np.abs(np.interp(tg, r.t, ia) - window_average(r.t, ia, tg - T / 2, tg + T / 2)).max()
+    assert dev > 10 * err and dev > 0.4 * ripple, (dev, ripple)
+    if verbose:
+        print(f"SVPWM: duty = min-max to {np.abs(d - (1 + u_mm) / 2).max():.1e}; sample vs period mean {err * 1e3:.1f} mA"
+              f" (ripple {ripple:.2f} A p-p)")
+    return True
+
+
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
     print("inverter self-test:", _self_test(verbose=True))
+    print("SVPWM self-test:", _self_test_svpwm(verbose=True))

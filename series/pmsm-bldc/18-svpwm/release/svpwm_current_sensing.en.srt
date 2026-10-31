@@ -1,0 +1,497 @@
+1
+00:00:00,600 --> 00:00:04,459
+The inverter of Lesson 17 has eight
+switching states:
+
+2
+00:00:04,499 --> 00:00:08,685
+six fixed voltage vectors, 60° apart, and
+two zeros.
+
+3
+00:00:08,725 --> 00:00:11,591
+Yet the motor needs a voltage vector of
+any length,
+
+4
+00:00:11,631 --> 00:00:13,758
+at any angle, turning smoothly.
+
+5
+00:00:13,798 --> 00:00:18,525
+The trick: in each 50 µs period, split the
+time between the two nearest
+
+6
+00:00:18,565 --> 00:00:23,624
+states and zero. On average, you get
+exactly the vector you asked for.
+
+7
+00:00:23,664 --> 00:00:25,279
+Today: space-vector PWM,
+
+8
+00:00:25,319 --> 00:00:30,165
+and how the same timer tells the ADC when
+to read the currents.
+
+9
+00:00:31,265 --> 00:00:33,921
+First, the answers from Lesson 17.
+
+10
+00:00:33,961 --> 00:00:37,254
+One: 24 V × 500 ns × 20 kHz.
+
+11
+00:00:37,294 --> 00:00:44,083
+Each leg loses 0.24 V on average, against
+its current.
+
+12
+00:00:44,123 --> 00:00:48,596
+Two: only the two zero vectors, 000 and
+111, with every terminal on the same rail,
+
+13
+00:00:48,636 --> 00:00:51,583
+put zero volts between every pair of
+terminals.
+
+14
+00:00:51,623 --> 00:00:57,064
+Three: a sixth of third harmonic flattens
+the peaks just enough.
+
+15
+00:00:57,104 --> 00:01:01,543
+2/√3, 15.5 % more, exactly what min–max
+gives.
+
+16
+00:01:02,643 --> 00:01:05,375
+Here are the eight states as space
+vectors:
+
+17
+00:01:05,415 --> 00:01:09,128
+each active one is two-thirds of the bus,
+16 V long.
+
+18
+00:01:09,168 --> 00:01:14,032
+Project a vector onto a phase axis to get
+that phase's voltage: with only
+
+19
+00:01:14,072 --> 00:01:19,537
+the upper switch of phase a on (100),
+that's 16 V on a, and −8 V on b and c.
+
+20
+00:01:19,577 --> 00:01:22,978
+Six active vectors make six sectors of
+60°.
+
+21
+00:01:23,018 --> 00:01:27,780
+Divide the reference's angle by 60° to
+find its sector.
+
+22
+00:01:27,820 --> 00:01:32,223
+This one sits in sector 1, between the
+first two active vectors, 100 and 110.
+
+23
+00:01:33,323 --> 00:01:37,132
+The winding's inductance filters anything
+faster than a period,
+
+24
+00:01:37,172 --> 00:01:41,137
+so what moves the current is the average:
+the volt-seconds.
+
+25
+00:01:41,177 --> 00:01:46,221
+So ask for the same volt-seconds: time on
+the first neighbour times its vector, plus
+
+26
+00:01:46,261 --> 00:01:51,583
+time on the second times its vector. The
+zero vectors fill the rest of the period.
+
+27
+00:01:51,623 --> 00:01:56,731
+Split the reference along the two sector
+edges. The triangle gives
+
+28
+00:01:56,771 --> 00:02:01,878
+the first dwell time: √3 times the
+reference over the bus voltage,
+
+29
+00:02:01,918 --> 00:02:07,582
+times the period, times sin(60° − θ). The
+second uses sin θ instead.
+
+30
+00:02:07,622 --> 00:02:15,127
+Take Lesson 17's operating point, 8.59 V,
+caught at 20°: the first neighbour
+
+31
+00:02:15,167 --> 00:02:22,716
+gets 19.9 µs, the second 10.6, and the
+zero vectors the remaining 19.5.
+
+32
+00:02:23,816 --> 00:02:29,592
+Now order them in time. Start with all
+lower switches on (000), switch leg a up,
+
+33
+00:02:29,632 --> 00:02:35,736
+then leg b, then leg c, and come back the
+same way: states 0, 1, 2, 7, 2, 1, 0.
+
+34
+00:02:35,776 --> 00:02:39,498
+Each step changes just one leg: six
+transitions per period,
+
+35
+00:02:39,538 --> 00:02:43,978
+one on and one off per leg, the minimum
+when every leg switches.
+
+36
+00:02:44,018 --> 00:02:46,642
+The zero time is split equally between
+all-low
+
+37
+00:02:46,682 --> 00:02:49,653
+(000) at the edges and all-high (111) in
+the middle,
+
+38
+00:02:49,693 --> 00:02:53,644
+so the pulses are centred, just like the
+carrier in Lesson 17.
+
+39
+00:02:53,684 --> 00:02:57,965
+Add up the volt-seconds as the period
+runs: along the first vector,
+
+40
+00:02:58,005 --> 00:03:02,738
+then the second, a pause at all-high, then
+the second and the first again.
+
+41
+00:03:02,778 --> 00:03:06,374
+Divided by T, they end exactly on the
+reference.
+
+42
+00:03:07,474 --> 00:03:12,310
+How long can the reference get? The two
+dwell times must fit inside the period.
+
+43
+00:03:12,350 --> 00:03:19,097
+That holds on and inside the circle
+inscribed in the hexagon. Its radius
+
+44
+00:03:19,137 --> 00:03:26,096
+is 16 V × cos 30°, the bus voltage over
+√3: 13.9 V of phase amplitude.
+
+45
+00:03:26,136 --> 00:03:31,555
+On that circle, in the middle of each
+sector, the zero time drops to zero.
+
+46
+00:03:31,595 --> 00:03:37,635
+That's 15.5 % more than sine-triangle's
+12 V, and the full 24 V line-to-line.
+
+47
+00:03:37,675 --> 00:03:42,708
+Beyond it is overmodulation: the vector
+gets cut back to the hexagon,
+
+48
+00:03:42,748 --> 00:03:48,321
+adding low-order harmonics, up to six-step
+with a 15.3 V fundamental.
+
+49
+00:03:49,421 --> 00:03:52,508
+Plot one leg's duty from the seven-step
+pattern over
+
+50
+00:03:52,548 --> 00:03:55,974
+an electrical cycle, and a familiar saddle
+appears.
+
+51
+00:03:56,014 --> 00:04:00,186
+Lay Lesson 17's carrier with min–max
+injection on top:
+
+52
+00:04:00,226 --> 00:04:04,642
+identical, for all 4000 references our
+code checked.
+
+53
+00:04:04,682 --> 00:04:09,279
+Why? With the zeros split equally, the
+largest duty gets half the zero
+
+54
+00:04:09,319 --> 00:04:13,783
+time plus both active times; the smallest,
+half the zero time alone.
+
+55
+00:04:13,823 --> 00:04:17,893
+Together: exactly one period, so the
+pulses are centred.
+
+56
+00:04:17,933 --> 00:04:22,314
+In carrier terms, the largest and smallest
+references add to zero:
+
+57
+00:04:22,354 --> 00:04:26,070
+the min–max rule. One modulator, built two
+ways.
+
+58
+00:04:27,170 --> 00:04:30,264
+Now the currents. Low-cost drives put a
+small shunt
+
+59
+00:04:30,304 --> 00:04:34,043
+resistor under each lower switch, to the
+negative rail.
+
+60
+00:04:34,083 --> 00:04:36,738
+Each shunt carries its phase current only
+while
+
+61
+00:04:36,778 --> 00:04:39,891
+that leg's lower switch, or its diode,
+conducts.
+
+62
+00:04:39,931 --> 00:04:43,380
+In 000, all three lower switches conduct,
+
+63
+00:04:43,420 --> 00:04:49,396
+so all three shunts show their currents at
+once, as −R_sh times i.
+
+64
+00:04:49,436 --> 00:04:51,987
+Its middle is farthest from the switching
+edges,
+
+65
+00:04:52,027 --> 00:04:54,654
+with their ringing and amplifier settling.
+
+66
+00:04:54,694 --> 00:04:57,049
+The timer marks that instant for free:
+
+67
+00:04:57,089 --> 00:05:02,127
+its counter turns around at zero there,
+and that event triggers the ADC.
+
+68
+00:05:03,227 --> 00:05:07,666
+There's a bonus. Here's phase a's current
+at the operating point,
+
+69
+00:05:07,706 --> 00:05:11,167
+simulated edge by edge, with 2.8 A of
+ripple.
+
+70
+00:05:11,207 --> 00:05:14,473
+The pulses are symmetric about the middle
+of each period,
+
+71
+00:05:14,513 --> 00:05:18,874
+so the ripple crosses its average in the
+middle of both zero vectors.
+
+72
+00:05:18,914 --> 00:05:24,555
+So the samples sit on the average, off by
+at most 0.08 A over a cycle.
+
+73
+00:05:24,595 --> 00:05:29,477
+At an arbitrary instant, the error could
+reach 1.25 A.
+
+74
+00:05:30,577 --> 00:05:34,650
+At high modulation, though, the zero
+vectors shrink.
+
+75
+00:05:34,690 --> 00:05:41,457
+At 95 % of the linear limit, the all-low
+vector (000) lasts as little as 1.25 µs.
+
+76
+00:05:41,497 --> 00:05:46,136
+But a shunt reading needs more: dead time,
+about a microsecond of
+
+77
+00:05:46,176 --> 00:05:51,215
+ringing and settling each side, and the
+ADC's sampling. Say 3 µs.
+
+78
+00:05:51,255 --> 00:05:55,166
+The way out: the currents add to zero, so
+two are enough.
+
+79
+00:05:55,206 --> 00:06:00,488
+Skip the leg with the largest duty; the
+other two keep at least 4.4 µs.
+
+80
+00:06:00,528 --> 00:06:05,063
+Two-shunt boards can't choose, so they cap
+the modulation or estimate the
+
+81
+00:06:05,103 --> 00:06:10,013
+missing sample. A single DC-link shunt
+reads during the active vectors instead,
+
+82
+00:06:10,053 --> 00:06:13,060
+shifting edges when those are too short.
+
+83
+00:06:14,160 --> 00:06:18,361
+Your turn. The exercise script is the
+whole modulator in ten lines:
+
+84
+00:06:18,401 --> 00:06:23,445
+it finds the sector, computes the two
+dwell times, and returns the duties.
+
+85
+00:06:23,485 --> 00:06:25,831
+Run it and check this lesson's numbers.
+
+86
+00:06:25,871 --> 00:06:31,082
+Then push the reference past the circle,
+and watch the zero time go negative.
+
+87
+00:06:32,182 --> 00:06:37,742
+On a microcontroller, the modulator is a
+timer in centre-aligned mode.
+
+88
+00:06:37,782 --> 00:06:43,582
+It counts up and down: at 100 MHz, 2500
+counts each way make 20 kHz.
+
+89
+00:06:43,622 --> 00:06:48,628
+Each leg's compare register gets 2500 × (1
+− d); the upper switch is
+
+90
+00:06:48,668 --> 00:06:53,925
+on while the count is above it, with dead
+time added by the timer.
+
+91
+00:06:53,965 --> 00:06:57,900
+New compare values load at zero, so no
+pulse is cut in half.
+
+92
+00:06:57,940 --> 00:07:03,070
+The same zero event starts the ADC, in the
+middle of the all-low vector.
+
+93
+00:07:03,110 --> 00:07:07,016
+On the bench, bring the ADC trigger out on
+a spare pin: on the scope,
+
+94
+00:07:07,056 --> 00:07:11,503
+it must sit midway through the stretch
+where all three poles are low.
+
+95
+00:07:12,603 --> 00:07:14,818
+Three questions before next time.
+
+96
+00:07:14,858 --> 00:07:18,069
+One: on a 24 V bus with linear SVPWM,
+
+97
+00:07:18,109 --> 00:07:22,387
+what's the largest phase-voltage
+amplitude?
+
+98
+00:07:23,387 --> 00:07:27,943
+Two: why are low-side shunts sampled in
+the middle of 000?
+
+99
+00:07:28,943 --> 00:07:32,914
+Three: a current loop with 1 kHz of
+bandwidth,
+
+100
+00:07:32,954 --> 00:07:39,121
+on a motor with L = 0.05 mH. What
+proportional gain does it take?
+
+101
+00:07:40,121 --> 00:07:42,113
+Next time: current control in dq,
+
+102
+00:07:42,153 --> 00:07:46,101
+with PI controllers tuned straight from
+the motor model.

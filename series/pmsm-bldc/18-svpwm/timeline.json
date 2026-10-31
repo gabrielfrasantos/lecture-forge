@@ -1,0 +1,412 @@
+[
+ {
+  "id": "hook",
+  "title": "Any vector from eight states",
+  "start": 0.0,
+  "beats": [
+   {
+    "id": "h1",
+    "start": 0.6,
+    "end": 8.325,
+    "text": "The inverter of Lesson 17 has eight switching states: six fixed voltage vectors, 60\u00b0 apart, and two zeros."
+   },
+   {
+    "id": "h2",
+    "start": 8.725,
+    "end": 13.398,
+    "text": "Yet the motor needs a voltage vector of any length, at any angle, turning smoothly."
+   },
+   {
+    "id": "h3",
+    "start": 13.798,
+    "end": 23.264,
+    "text": "The trick: in each 50 \u00b5s period, split the time between the two nearest states and zero. On average, you get exactly the vector you asked for."
+   },
+   {
+    "id": "h4",
+    "start": 23.664,
+    "end": 29.665,
+    "text": "Today: space-vector PWM, and how the same timer tells the ADC when to read the currents."
+   }
+  ],
+  "end": 30.964958333333332
+ },
+ {
+  "id": "answers",
+  "title": "Answers from Lesson 17",
+  "start": 30.964958333333332,
+  "beats": [
+   {
+    "id": "a1",
+    "start": 31.265,
+    "end": 33.661,
+    "text": "First, the answers from Lesson 17."
+   },
+   {
+    "id": "a2",
+    "start": 33.961,
+    "end": 43.723,
+    "text": "One: 24 V \u00d7 500 ns \u00d7 20 kHz. Each leg loses 0.24 V on average, against its current."
+   },
+   {
+    "id": "a3",
+    "start": 44.123,
+    "end": 51.223,
+    "text": "Two: only the two zero vectors, 000 and 111, with every terminal on the same rail, put zero volts between every pair of terminals."
+   },
+   {
+    "id": "a4",
+    "start": 51.623,
+    "end": 61.043,
+    "text": "Three: a sixth of third harmonic flattens the peaks just enough. 2/\u221a3, 15.5 % more, exactly what min\u2013max gives."
+   }
+  ],
+  "end": 62.342666666666666
+ },
+ {
+  "id": "hexagon",
+  "title": "The hexagon and its sectors",
+  "start": 62.342666666666666,
+  "beats": [
+   {
+    "id": "x1",
+    "start": 62.643,
+    "end": 68.768,
+    "text": "Here are the eight states as space vectors: each active one is two-thirds of the bus, 16 V long."
+   },
+   {
+    "id": "x2",
+    "start": 69.168,
+    "end": 79.177,
+    "text": "Project a vector onto a phase axis to get that phase's voltage: with only the upper switch of phase a on (100), that's 16 V on a, and \u22128 V on b and c."
+   },
+   {
+    "id": "x3",
+    "start": 79.577,
+    "end": 87.42,
+    "text": "Six active vectors make six sectors of 60\u00b0. Divide the reference's angle by 60\u00b0 to find its sector."
+   },
+   {
+    "id": "x4",
+    "start": 87.82,
+    "end": 91.723,
+    "text": "This one sits in sector 1, between the first two active vectors, 100 and 110."
+   }
+  ],
+  "end": 93.02270833333336
+ },
+ {
+  "id": "dwell",
+  "title": "Dwell times",
+  "start": 93.02270833333336,
+  "beats": [
+   {
+    "id": "d1",
+    "start": 93.323,
+    "end": 100.777,
+    "text": "The winding's inductance filters anything faster than a period, so what moves the current is the average: the volt-seconds."
+   },
+   {
+    "id": "d2",
+    "start": 101.177,
+    "end": 111.223,
+    "text": "So ask for the same volt-seconds: time on the first neighbour times its vector, plus time on the second times its vector. The zero vectors fill the rest of the period."
+   },
+   {
+    "id": "d3",
+    "start": 111.623,
+    "end": 127.222,
+    "text": "Split the reference along the two sector edges. The triangle gives the first dwell time: \u221a3 times the reference over the bus voltage, times the period, times sin(60\u00b0 \u2212 \u03b8). The second uses sin \u03b8 instead."
+   },
+   {
+    "id": "d4",
+    "start": 127.622,
+    "end": 142.216,
+    "text": "Take Lesson 17's operating point, 8.59 V, caught at 20\u00b0: the first neighbour gets 19.9 \u00b5s, the second 10.6, and the zero vectors the remaining 19.5."
+   }
+  ],
+  "end": 143.51575000000003
+ },
+ {
+  "id": "period",
+  "title": "One period, seven steps",
+  "start": 143.51575000000003,
+  "beats": [
+   {
+    "id": "p1",
+    "start": 143.816,
+    "end": 155.376,
+    "text": "Now order them in time. Start with all lower switches on (000), switch leg a up, then leg b, then leg c, and come back the same way: states 0, 1, 2, 7, 2, 1, 0."
+   },
+   {
+    "id": "p2",
+    "start": 155.776,
+    "end": 163.618,
+    "text": "Each step changes just one leg: six transitions per period, one on and one off per leg, the minimum when every leg switches."
+   },
+   {
+    "id": "p3",
+    "start": 164.018,
+    "end": 173.284,
+    "text": "The zero time is split equally between all-low (000) at the edges and all-high (111) in the middle, so the pulses are centred, just like the carrier in Lesson 17."
+   },
+   {
+    "id": "p4",
+    "start": 173.684,
+    "end": 185.874,
+    "text": "Add up the volt-seconds as the period runs: along the first vector, then the second, a pause at all-high, then the second and the first again. Divided by T, they end exactly on the reference."
+   }
+  ],
+  "end": 187.17408333333333
+ },
+ {
+  "id": "limit",
+  "title": "The linear limit",
+  "start": 187.17408333333333,
+  "beats": [
+   {
+    "id": "l1",
+    "start": 187.474,
+    "end": 191.95,
+    "text": "How long can the reference get? The two dwell times must fit inside the period."
+   },
+   {
+    "id": "l2",
+    "start": 192.35,
+    "end": 205.736,
+    "text": "That holds on and inside the circle inscribed in the hexagon. Its radius is 16 V \u00d7 cos 30\u00b0, the bus voltage over \u221a3: 13.9 V of phase amplitude."
+   },
+   {
+    "id": "l3",
+    "start": 206.136,
+    "end": 217.275,
+    "text": "On that circle, in the middle of each sector, the zero time drops to zero. That's 15.5 % more than sine-triangle's 12 V, and the full 24 V line-to-line."
+   },
+   {
+    "id": "l4",
+    "start": 217.675,
+    "end": 227.821,
+    "text": "Beyond it is overmodulation: the vector gets cut back to the hexagon, adding low-order harmonics, up to six-step with a 15.3 V fundamental."
+   }
+  ],
+  "end": 229.1209166666667
+ },
+ {
+  "id": "minmax",
+  "title": "Same as min\u2013max injection",
+  "start": 229.1209166666667,
+  "beats": [
+   {
+    "id": "e1",
+    "start": 229.421,
+    "end": 235.614,
+    "text": "Plot one leg's duty from the seven-step pattern over an electrical cycle, and a familiar saddle appears."
+   },
+   {
+    "id": "e2",
+    "start": 236.014,
+    "end": 244.282,
+    "text": "Lay Lesson 17's carrier with min\u2013max injection on top: identical, for all 4000 references our code checked."
+   },
+   {
+    "id": "e3",
+    "start": 244.682,
+    "end": 257.533,
+    "text": "Why? With the zeros split equally, the largest duty gets half the zero time plus both active times; the smallest, half the zero time alone. Together: exactly one period, so the pulses are centred."
+   },
+   {
+    "id": "e4",
+    "start": 257.933,
+    "end": 265.57,
+    "text": "In carrier terms, the largest and smallest references add to zero: the min\u2013max rule. One modulator, built two ways."
+   }
+  ],
+  "end": 266.8704166666667
+ },
+ {
+  "id": "shunts",
+  "title": "Shunts and the middle of 000",
+  "start": 266.8704166666667,
+  "beats": [
+   {
+    "id": "s1",
+    "start": 267.17,
+    "end": 273.683,
+    "text": "Now the currents. Low-cost drives put a small shunt resistor under each lower switch, to the negative rail."
+   },
+   {
+    "id": "s2",
+    "start": 274.083,
+    "end": 279.531,
+    "text": "Each shunt carries its phase current only while that leg's lower switch, or its diode, conducts."
+   },
+   {
+    "id": "s3",
+    "start": 279.931,
+    "end": 289.036,
+    "text": "In 000, all three lower switches conduct, so all three shunts show their currents at once, as \u2212R_sh times i."
+   },
+   {
+    "id": "s4",
+    "start": 289.436,
+    "end": 294.294,
+    "text": "Its middle is farthest from the switching edges, with their ringing and amplifier settling."
+   },
+   {
+    "id": "s5",
+    "start": 294.694,
+    "end": 301.627,
+    "text": "The timer marks that instant for free: its counter turns around at zero there, and that event triggers the ADC."
+   }
+  ],
+  "end": 302.92725
+ },
+ {
+  "id": "average",
+  "title": "The sample is the average",
+  "start": 302.92725,
+  "beats": [
+   {
+    "id": "v1",
+    "start": 303.227,
+    "end": 310.807,
+    "text": "There's a bonus. Here's phase a's current at the operating point, simulated edge by edge, with 2.8 A of ripple."
+   },
+   {
+    "id": "v2",
+    "start": 311.207,
+    "end": 318.514,
+    "text": "The pulses are symmetric about the middle of each period, so the ripple crosses its average in the middle of both zero vectors."
+   },
+   {
+    "id": "v3",
+    "start": 318.914,
+    "end": 328.977,
+    "text": "So the samples sit on the average, off by at most 0.08 A over a cycle. At an arbitrary instant, the error could reach 1.25 A."
+   }
+  ],
+  "end": 330.27720833333336
+ },
+ {
+  "id": "window",
+  "title": "When the window closes",
+  "start": 330.27720833333336,
+  "beats": [
+   {
+    "id": "w1",
+    "start": 330.577,
+    "end": 341.097,
+    "text": "At high modulation, though, the zero vectors shrink. At 95 % of the linear limit, the all-low vector (000) lasts as little as 1.25 \u00b5s."
+   },
+   {
+    "id": "w2",
+    "start": 341.497,
+    "end": 350.855,
+    "text": "But a shunt reading needs more: dead time, about a microsecond of ringing and settling each side, and the ADC's sampling. Say 3 \u00b5s."
+   },
+   {
+    "id": "w3",
+    "start": 351.255,
+    "end": 360.128,
+    "text": "The way out: the currents add to zero, so two are enough. Skip the leg with the largest duty; the other two keep at least 4.4 \u00b5s."
+   },
+   {
+    "id": "w4",
+    "start": 360.528,
+    "end": 372.56,
+    "text": "Two-shunt boards can't choose, so they cap the modulation or estimate the missing sample. A single DC-link shunt reads during the active vectors instead, shifting edges when those are too short."
+   }
+  ],
+  "end": 373.860125
+ },
+ {
+  "id": "python",
+  "title": "SVPWM in Python",
+  "start": 373.860125,
+  "beats": [
+   {
+    "id": "c1",
+    "start": 374.16,
+    "end": 383.085,
+    "text": "Your turn. The exercise script is the whole modulator in ten lines: it finds the sector, computes the two dwell times, and returns the duties."
+   },
+   {
+    "id": "c2",
+    "start": 383.485,
+    "end": 390.582,
+    "text": "Run it and check this lesson's numbers. Then push the reference past the circle, and watch the zero time go negative."
+   }
+  ],
+  "end": 391.88170833333334
+ },
+ {
+  "id": "timer",
+  "title": "On a microcontroller",
+  "start": 391.88170833333334,
+  "beats": [
+   {
+    "id": "m1",
+    "start": 392.182,
+    "end": 403.222,
+    "text": "On a microcontroller, the modulator is a timer in centre-aligned mode. It counts up and down: at 100 MHz, 2500 counts each way make 20 kHz."
+   },
+   {
+    "id": "m2",
+    "start": 403.622,
+    "end": 413.565,
+    "text": "Each leg's compare register gets 2500 \u00d7 (1 \u2212 d); the upper switch is on while the count is above it, with dead time added by the timer."
+   },
+   {
+    "id": "m3",
+    "start": 413.965,
+    "end": 422.71,
+    "text": "New compare values load at zero, so no pulse is cut in half. The same zero event starts the ADC, in the middle of the all-low vector."
+   },
+   {
+    "id": "m4",
+    "start": 423.11,
+    "end": 431.003,
+    "text": "On the bench, bring the ADC trigger out on a spare pin: on the scope, it must sit midway through the stretch where all three poles are low."
+   }
+  ],
+  "end": 432.30312499999997
+ },
+ {
+  "id": "predict",
+  "title": "Predict, then check",
+  "start": 432.30312499999997,
+  "beats": [
+   {
+    "id": "q1",
+    "start": 432.603,
+    "end": 434.458,
+    "text": "Three questions before next time."
+   },
+   {
+    "id": "q2",
+    "start": 434.858,
+    "end": 441.887,
+    "text": "One: on a 24 V bus with linear SVPWM, what's the largest phase-voltage amplitude?"
+   },
+   {
+    "id": "q3",
+    "start": 443.387,
+    "end": 447.443,
+    "text": "Two: why are low-side shunts sampled in the middle of 000?"
+   },
+   {
+    "id": "q4",
+    "start": 448.943,
+    "end": 458.621,
+    "text": "Three: a current loop with 1 kHz of bandwidth, on a motor with L = 0.05 mH. What proportional gain does it take?"
+   },
+   {
+    "id": "q5",
+    "start": 460.121,
+    "end": 465.601,
+    "text": "Next time: current control in dq, with PI controllers tuned straight from the motor model."
+   }
+  ],
+  "end": 467.70116666666667
+ }
+]

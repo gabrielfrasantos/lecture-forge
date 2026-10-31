@@ -1,0 +1,156 @@
+{
+ "rep": {
+  "video": "h264 1920x1080 30/1 467.70s",
+  "audio": "aac 48000 Hz 1 ch 467.70s",
+  "subtitles": "1 track(s): mov_text/eng",
+  "chapters": 13,
+  "av_duration_diff_s": 0.001,
+  "integrated_LUFS": -16.1,
+  "true_peak_dBTP": -1.3,
+  "LRA_LU": 2.9,
+  "asr_word_error_rate": 0.046,
+  "captions": "102 cues, 0 cues mostly over silence, 0 overlaps, max 18.8 chars/s, last cue ends 466.1s"
+ },
+ "mism": [
+  [
+   "h1",
+   "The inverter of Lesson 17 has eight switching states: six fixed voltage vectors, 60 degrees apart, and two zeros.",
+   "The inverter of lesson 17 has eight switching states. Six fixed voltage vectors, 60 degrees apart, and two zeros. [BUZZER]"
+  ],
+  [
+   "h3",
+   "The trick: in each 50 microsecond period, split the time between the two nearest states and zero. On average, you get exactly the vector you asked for.",
+   "The trick, in each 50 microsecond period, split the time between the two nearest states and zero. On average, you get exactly the vector you asked for. [BUZZER]"
+  ],
+  [
+   "a2",
+   "One: 24 volts, times 500 nanoseconds, times 20 kilohertz. Each leg loses 0.24 volts on average, against its current.",
+   "1, 24 volts times 500 nanoseconds times 20 kilohertz. Each leg loses 0.24 volts on average against its current. [BUZZER]"
+  ],
+  [
+   "a4",
+   "Three: a sixth of third harmonic flattens the peaks just enough. 2 over root 3, 15.5% more, exactly what min max gives.",
+   "3. A sixth of third harmonic flattens the peaks just enough. 2. Overroot 3. 15.5% more. Exactly what Minne Max gives."
+  ],
+  [
+   "x1",
+   "Here are the eight states as space vectors: each active one is two thirds of the bus, 16 volts long.",
+   "Here are the eight states of space vectors. Each active one is two-thirds of the bus, 16 volts long. [buzzer]"
+  ],
+  [
+   "x2",
+   "Project a vector onto a phase axis to get that phase's voltage: with only the upper switch of phase A on, that's 16 volts on A, and minus 8 on B and C.",
+   "Project a vector onto a phase axis to get that phase's voltage. With only the upper switch of phase A on, that's 16 volts on A and minus 8 on B and C. [BUZZER]"
+  ],
+  [
+   "x3",
+   "Six active vectors make six sectors of 60 degrees. Divide the reference's angle by 60 degrees to find its sector.",
+   "Six active vectors make six sectors of 60 degrees. Divide the references angle by 60 degrees to find its sector."
+  ],
+  [
+   "d1",
+   "The winding's inductance filters anything faster than a period, so what moves the current is the average: the volt seconds.",
+   "The windings inductance filters anything faster than a period, so what moves the current is the average, the volt seconds."
+  ],
+  [
+   "d2",
+   "So ask for the same volt seconds: time on the first neighbour times its vector, plus time on the second times its vector. The zero vectors fill the rest of the period.",
+   "So ask for the same volt seconds. Time on the first neighbor times its vector, plus time on the second times its vector. The zero vectors fill the rest of the period."
+  ],
+  [
+   "d3",
+   "Split the reference along the two sector edges. The triangle gives the first dwell time: root 3, times the reference over the bus voltage, times the period, times the sine of 60 degrees minus theta. The second uses sine theta instead.",
+   "split the reference along the two sector edges. The triangle gives the first dwell time. Route three times the reference over the bus voltage times the period times the sign of 60 degrees minus theta. The second uses sine theta instead."
+  ],
+  [
+   "d4",
+   "Take Lesson 17's operating point, 8.59 volts, caught at 20 degrees: the first neighbour gets 19.9 microseconds, the second 10.6, and the zero vectors the remaining 19.5.",
+   "Take lesson 17's operating point, 8.59 volts, caught at 20 degrees. The first neighbor gets 19.9 microseconds, the second 10.6, and the zero vectors the remaining 19.5."
+  ],
+  [
+   "p1",
+   "Now order them in time. Start with all lower switches on, then switch on leg A, then leg B, then leg C, and come back the same way: states 0, 1, 2, 7, 2, 1, 0.",
+   "Now order them in time. Start with all lower switches on, then switch on leg A, then leg B, then leg C, and come back the same way. State zero, one, two, seven, two, one, zero. (buzzer buzzes)"
+  ],
+  [
+   "p3",
+   "The zero time is split equally between all low at the edges and all high in the middle, so the pulses are centered, just like the carrier in Lesson 17.",
+   "The zero time is split equally between all low at the edges and all high in the middle. So the pulses are centered, just like the carrier in lesson 17. [BUZZER]"
+  ],
+  [
+   "l3",
+   "On that circle, in the middle of each sector, the zero time drops to zero. That's 15.5% more than sine triangle's 12 volts, and the full 24 volts line to line.",
+   "On that circle, in the middle of each sector, the zero time drops to zero. That's 15.5% more than sine triangles 12 volts and the full 24 volts line to line."
+  ],
+  [
+   "l4",
+   "Beyond it is overmodulation: the vector gets cut back to the hexagon, adding low order harmonics, up to six step, with a 15.3 volt fundamental.",
+   "Beyond it is overmodulation. The vector gets cut back to the hexagon, adding low-order harmonics up to six-step with a 15.3-volt fundamental. [BUZZER]"
+  ],
+  [
+   "e1",
+   "Plot one leg's duty from the seven step pattern over an electrical cycle, and a familiar saddle appears.",
+   "Plot one legs duty from the seven step pattern over an electrical cycle, and a familiar saddle appears."
+  ],
+  [
+   "e2",
+   "Lay Lesson 17's carrier with min max injection on top: identical, for all 4000 references our code checked.",
+   "Lay Lesson 17's Carrier with Min Max Injection on Top. Identical, for all 4,000 references our code checked."
+  ],
+  [
+   "s2",
+   "Each shunt carries its phase current only while that leg's lower switch, or its diode, conducts.",
+   "Each shunt carries its phase current only while that legs lower switch, or its diode, conducts. [BUZZER]"
+  ],
+  [
+   "s3",
+   "In zero zero zero, all three lower switches conduct, so all three shunts show their currents at once, as minus the shunt resistance times the current.",
+   "In 0, 0, 0, all three lower switches conduct, so all three shunts show their currents at once, as minus the shunt resistance times the current."
+  ],
+  [
+   "v3",
+   "So the samples sit on the average, off by at most 0.08 amps over a cycle. At an arbitrary instant, the error could reach 1.25 amps.",
+   "So the samples sit on the average, off by at most 0.08 amps over a cycle. At an arbitrary instant, the error could reach 1.25 amps. [BUZZER]"
+  ],
+  [
+   "w1",
+   "At high modulation, though, the zero vectors shrink. At 95% of the linear limit, the all low vector lasts as little as 1.25 microseconds.",
+   "At high modulation, though, the zero vectors shrink. At 95% of the linear limit, the all-low vector lasts as little as 1.25 microseconds. [BUZZER]"
+  ],
+  [
+   "w2",
+   "But a shunt reading needs more: dead time, about a microsecond of ringing and settling each side, and the ADC's sampling. Say 3 microseconds.",
+   "but a shunt reading needs more. Dead time, about a microsecond of ringing and settling each side, and the ADC's sampling. Say three microseconds. [BUZZER]"
+  ],
+  [
+   "m1",
+   "On a microcontroller, the modulator is a timer in center aligned mode. It counts up and down: at 100 megahertz, 2500 counts each way make 20 kilohertz.",
+   "On a microcontroller, the modulator is a timer in center-aligned mode. It counts up and down. At 100 MHz, 2500 counts each way make 20 kHz."
+  ],
+  [
+   "m2",
+   "Each leg's compare register gets 2500 times one minus its duty; the upper switch is on while the count is above it, with dead time added by the timer.",
+   "Each legs compare register gets 2500 times 1 minus its duty. The upper switch is on while the count is above it, with dead time added by the timer."
+  ],
+  [
+   "m3",
+   "New compare values load at zero, so no pulse is cut in half. The same zero event starts the ADC, in the middle of the all low vector.",
+   "New compare values load at zero, so no pulse is cut in half. The same zero event starts the ADC in the middle of the all-low vector. [BUZZER]"
+  ],
+  [
+   "q3",
+   "Two: why are low side shunts sampled in the middle of zero zero zero?",
+   "2. Why are low side shunts, sampled in the middle of 0-0-0-0."
+  ],
+  [
+   "q4",
+   "Three: a current loop with 1 kilohertz of bandwidth, on a motor with an inductance of 0.05 millihenry. What proportional gain does it take?",
+   "3. A current loop with 1 kilohertz of bandwidth on a motor with an inductance of 0.05 millihenry. What proportional gain does it take?"
+  ],
+  [
+   "q5",
+   "Next time: current control in DQ, with PI controllers tuned straight from the motor model.",
+   "Next time, current control in DQ, with PI controllers tuned straight from the motor model. [BUZZER]"
+  ]
+ ]
+}
