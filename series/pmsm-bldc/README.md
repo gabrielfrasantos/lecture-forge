@@ -23,6 +23,6 @@ Goal: intuition strong enough to derive the equations, predict behaviour and rea
 | 16 | [BLDC six-step drive](16-bldc-six-step) | Trapezoidal EMF, Hall commutation, torque ripple | Scope Hall signals and phase currents | Rendered (7:28) |
 | 17 | [The three-phase inverter](17-inverter) | Switching states, dead time, PWM | Simulate the bridge; measure phase voltages | Rendered (8:11) |
 | 18 | [SVPWM and current sensing](18-svpwm) | Space-vector modulation, shunt sampling | Implement SVPWM in Python, then on a microcontroller | Rendered (7:48) |
-| 19 | Current control in dq | PI design, decoupling, bandwidth | Tune the current loop; measure the step response | Planned |
+| 19 | [Current control in dq](19-current-control) | PI design, decoupling, bandwidth | Tune the current loop; measure the step response | Rendered (7:52) |
 | 20 | Field-oriented control | Speed loop, MTPA, voltage and current limits | Run FOC on a low-voltage kit; log id, iq, speed | Planned |
 | 21 | Field weakening, sensorless control, losses | Above base speed, observers, efficiency maps | Map efficiency; compare observer angle with encoder | Planned |
