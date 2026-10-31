@@ -196,6 +196,96 @@ def _self_test():
     return True
 
 
+# ---------------------------------------------------------------- Park transformation (added by Lesson 13)
+# x_d + j x_q = (x_alpha + j x_beta) e^{-j theta_e}: the same space vector seen from a frame turning with the rotor.
+# d sits on the rotor magnet's N axis (electrical angle theta_e from the phase-a axis), q leads d by 90 deg electrical.
+#   [x_d]   [ cos th   sin th] [x_alpha]          [x_alpha]   [cos th  -sin th] [x_d]
+#   [x_q] = [-sin th   cos th] [x_beta ]          [x_beta ] = [sin th   cos th] [x_q]     (inverse = transpose)
+# Park is a pure rotation, so it keeps lengths and dot products in either Clarke scaling: the power formulas of the
+# Clarke section hold unchanged with (d, q) in place of (alpha, beta). The zero sequence passes through untouched.
+# abc_to_dq = Clarke then Park; amplitude-invariant, it is the classic
+#   x_d =  2/3 [x_a cos th + x_b cos(th - 120) + x_c cos(th + 120)]
+#   x_q = -2/3 [x_a sin th + x_b sin(th - 120) + x_c sin(th + 120)]
+# The checks in _park_self_test() run as a doctest of park() when this file is executed.
+
+def park_matrix(theta):
+    """2x2 rotation matrix P(theta) with (x_d, x_q) = P @ (x_alpha, x_beta) (scalar theta)."""
+    c, s = np.cos(theta), np.sin(theta)
+    return np.array([[c, s], [-s, c]])
+
+
+def park(x_alpha, x_beta, theta):
+    """(x_d, x_q) of (x_alpha, x_beta) in a frame whose d axis sits at electrical angle theta (scalars or arrays).
+
+    >>> xd, xq = park(0.0, 10.0, 0.0)
+    >>> float(xd), float(xq)
+    (0.0, 10.0)
+    >>> _park_self_test()
+    True
+    """
+    al, be, th = np.asarray(x_alpha, float), np.asarray(x_beta, float), np.asarray(theta, float)
+    c, s = np.cos(th), np.sin(th)
+    return c * al + s * be, -s * al + c * be
+
+
+def inverse_park(x_d, x_q, theta):
+    """(x_alpha, x_beta) from (x_d, x_q) and the frame angle theta: rotation by +theta."""
+    xd, xq, th = np.asarray(x_d, float), np.asarray(x_q, float), np.asarray(theta, float)
+    c, s = np.cos(th), np.sin(th)
+    return c * xd - s * xq, s * xd + c * xq
+
+
+def abc_to_dq(xa, xb, xc, theta, scaling="amplitude"):
+    """(x_d, x_q, x_0) of three phase quantities: Clarke, then Park at electrical angle theta."""
+    al, be, x0 = clarke(xa, xb, xc, scaling)
+    xd, xq = park(al, be, theta)
+    return xd, xq, x0
+
+
+def dq_to_abc(x_d, x_q, theta, x0=0.0, scaling="amplitude"):
+    """(x_a, x_b, x_c) from (x_d, x_q, x_0): inverse Park, then inverse Clarke."""
+    return inverse_clarke(*inverse_park(x_d, x_q, theta), x0, scaling)
+
+
+def _park_self_test():
+    rng = np.random.default_rng(13)
+    al, be, th = rng.normal(size=(3, 50)) * np.array([[5.0], [5.0], [3.0]])
+    xd, xq = park(al, be, th)
+    z = (al + 1j * be) * np.exp(-1j * th)
+    assert np.allclose(xd, z.real) and np.allclose(xq, z.imag)                     # = multiplication by e^{-j th}
+    assert np.allclose(inverse_park(xd, xq, th), (al, be))                         # inverse
+    assert np.allclose(np.hypot(xd, xq), np.hypot(al, be))                         # lengths kept
+    for t in th[:5]:
+        P = park_matrix(t)
+        assert np.allclose(P @ P.T, np.eye(2)) and np.isclose(np.linalg.det(P), 1.0)
+        assert np.allclose(P @ np.stack([al, be]), np.stack(park(al, be, t)))
+    # d on the frame angle, q 90 degrees ahead
+    assert np.allclose(park(np.cos(0.7), np.sin(0.7), 0.7), (1.0, 0.0))
+    assert np.allclose(park(np.cos(0.7 + np.pi / 2), np.sin(0.7 + np.pi / 2), 0.7), (0.0, 1.0))
+    # balanced currents locked to the frame are constant; any amplitude and angle
+    wt = np.linspace(0, 4 * np.pi, 301)
+    I, gam = 10.0, 1.2
+    ph = [I * np.cos(wt + gam - k * 2 * np.pi / 3) for k in range(3)]
+    d_, q_, z_ = abc_to_dq(*ph, wt)
+    assert np.allclose(d_, I * np.cos(gam)) and np.allclose(q_, I * np.sin(gam)) and np.allclose(z_, 0)
+    # the classic cosine form of abc -> dq (amplitude-invariant)
+    xa, xb, xc = rng.normal(size=(3, 50))
+    d1, q1, z1 = abc_to_dq(xa, xb, xc, th)
+    sh = 2 * np.pi / 3
+    assert np.allclose(d1, 2 / 3 * (xa * np.cos(th) + xb * np.cos(th - sh) + xc * np.cos(th + sh)))
+    assert np.allclose(q1, -2 / 3 * (xa * np.sin(th) + xb * np.sin(th - sh) + xc * np.sin(th + sh)))
+    assert np.allclose(z1, zero_sequence(xa, xb, xc))
+    assert np.allclose(dq_to_abc(d1, q1, th, z1), (xa, xb, xc))                    # round trip
+    for s in SCALINGS:
+        assert np.allclose(dq_to_abc(*abc_to_dq(xa, xb, xc, th, s)[:2], th, abc_to_dq(xa, xb, xc, th, s)[2], s),
+                           (xa, xb, xc))
+    # power is frame-independent: 3/2 (v_d i_d + v_q i_q) + 3 v_0 i_0 = sum v_k i_k (amplitude-invariant)
+    va, vb, vc = rng.normal(size=(3, 50))
+    vd, vq, v0 = abc_to_dq(va, vb, vc, th)
+    assert np.allclose(1.5 * (vd * d1 + vq * q1) + 3 * v0 * z1, va * xa + vb * xb + vc * xc)
+    return True
+
+
 if __name__ == "__main__":
     import doctest
     doctest.testmod()

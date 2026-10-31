@@ -1,0 +1,480 @@
+[
+ {
+  "id": "hook",
+  "title": "A camera on the rotor",
+  "start": 0.0,
+  "beats": [
+   {
+    "id": "h1",
+    "start": 0.6,
+    "end": 9.237,
+    "text": "At 1500 rpm, our 8-pole motor's phase currents are 100 Hz sine waves: three moving targets for a current controller."
+   },
+   {
+    "id": "h2",
+    "start": 9.637,
+    "end": 14.08,
+    "text": "In the \u03b1\u2013\u03b2 plane of Lesson 12, they're one vector, sweeping a circle."
+   },
+   {
+    "id": "h3",
+    "start": 14.48,
+    "end": 19.751,
+    "text": "Now turn the camera with the rotor. The circle collapses to a point: two constant numbers."
+   },
+   {
+    "id": "h4",
+    "start": 20.351,
+    "end": 23.145,
+    "text": "That change of viewpoint is the Park transformation."
+   }
+  ],
+  "end": 24.445458333333335
+ },
+ {
+  "id": "answers",
+  "title": "Answers from Lesson 12",
+  "start": 24.445458333333335,
+  "beats": [
+   {
+    "id": "a1",
+    "start": 24.745,
+    "end": 26.951,
+    "text": "First, the answers from Lesson 12."
+   },
+   {
+    "id": "a2",
+    "start": 27.251,
+    "end": 35.834,
+    "text": "One: with three sensors, phase a reading 5% high stretches the locus along \u03b1 only, to 10.33 by 10 A."
+   },
+   {
+    "id": "a3",
+    "start": 36.234,
+    "end": 44.146,
+    "text": "Two: a 0.3 A offset on channel b shifts the circle straight up the \u03b2 axis, by 0.35 A."
+   },
+   {
+    "id": "a4",
+    "start": 44.546,
+    "end": 47.982,
+    "text": "Three: a frame turning with the current. That's today's subject."
+   }
+  ],
+  "end": 49.28245833333334
+ },
+ {
+  "id": "rotor",
+  "title": "Ride with the rotor",
+  "start": 49.28245833333334,
+  "beats": [
+   {
+    "id": "r1",
+    "start": 49.582,
+    "end": 57.028,
+    "text": "Here's a two-pole picture, so all angles are electrical: fixed phase axes, and the rotor magnet at angle \u03b8e."
+   },
+   {
+    "id": "r2",
+    "start": 57.428,
+    "end": 60.981,
+    "text": "The current vector turns with it, a quarter turn ahead of the magnet."
+   },
+   {
+    "id": "r3",
+    "start": 61.381,
+    "end": 68.353,
+    "text": "Now turn the camera too. As it catches up, one cycle of the trail shrinks from a circle to an arc, then to a point."
+   },
+   {
+    "id": "r4",
+    "start": 68.953,
+    "end": 73.02,
+    "text": "The stator axes now spin backward; the rotor and the current stand still."
+   },
+   {
+    "id": "r5",
+    "start": 73.42,
+    "end": 81.023,
+    "text": "The rotor's axes: d, the direct axis, on the magnet's north pole; q, the quadrature axis, 90\u00b0 ahead."
+   }
+  ],
+  "end": 82.32316666666667
+ },
+ {
+  "id": "matrix",
+  "title": "One multiplication",
+  "start": 82.32316666666667,
+  "beats": [
+   {
+    "id": "m1",
+    "start": 82.623,
+    "end": 90.108,
+    "text": "Turning the camera forward by \u03b8e turns every vector back by \u03b8e: multiply by e to the minus j \u03b8e."
+   },
+   {
+    "id": "m2",
+    "start": 90.508,
+    "end": 101.548,
+    "text": "In real numbers, a rotation matrix: i_d is cos \u03b8 i_\u03b1 plus sin \u03b8 i_\u03b2; i_q is minus sin \u03b8 i_\u03b1 plus cos \u03b8 i_\u03b2."
+   },
+   {
+    "id": "m3",
+    "start": 101.948,
+    "end": 107.107,
+    "text": "Its inverse is its transpose: the drive uses it on the way out, before inverse Clarke."
+   },
+   {
+    "id": "m4",
+    "start": 107.507,
+    "end": 116.111,
+    "text": "Robert Park, at General Electric, published this in 1929, for synchronous machines. Conventions vary; here, q leads d."
+   }
+  ],
+  "end": 117.41116666666667
+ },
+ {
+  "id": "torque",
+  "title": "d on the magnet, q for torque",
+  "start": 117.41116666666667,
+  "beats": [
+   {
+    "id": "t1",
+    "start": 117.711,
+    "end": 124.294,
+    "text": "Why put d on the magnet? Because then the magnet's flux, seen from the windings, is a constant on d: \u03bbm."
+   },
+   {
+    "id": "t2",
+    "start": 124.694,
+    "end": 130.383,
+    "text": "Current on d makes a field along the magnet's axis, which can't turn it: think of a compass needle."
+   },
+   {
+    "id": "t3",
+    "start": 130.783,
+    "end": 138.372,
+    "text": "Current on q acts at right angles: the most torque per amp. Lesson 9 derived it: T is three-halves p \u03bbm i_q."
+   },
+   {
+    "id": "t4",
+    "start": 138.772,
+    "end": 147.546,
+    "text": "For our motor, 10 A on q gives 0.39 N\u00b7m; swing that current around, and torque follows the sine of its angle from d."
+   },
+   {
+    "id": "t5",
+    "start": 147.946,
+    "end": 154.237,
+    "text": "So in a surface-magnet motor, i_q alone sets the torque, and drives normally hold i_d at zero."
+   }
+  ],
+  "end": 155.53712500000003
+ },
+ {
+  "id": "dc",
+  "title": "Steady state is DC",
+  "start": 155.53712500000003,
+  "beats": [
+   {
+    "id": "s1",
+    "start": 155.837,
+    "end": 161.116,
+    "text": "In steady state, the currents turn exactly with the rotor, so i_d and i_q are DC."
+   },
+   {
+    "id": "s2",
+    "start": 161.516,
+    "end": 167.939,
+    "text": "Watch a start-up at 5 A on q: the phases show a sine wave speeding up; dq shows flat lines."
+   },
+   {
+    "id": "s3",
+    "start": 168.339,
+    "end": 177.598,
+    "text": "Then the command steps to 10 A: in dq, a clean step, with a 0.16 ms time constant for a 1 kHz current loop."
+   },
+   {
+    "id": "s4",
+    "start": 177.998,
+    "end": 184.776,
+    "text": "Integral action tracks a constant with no steady-state error, at any speed. That's why current loops run in dq."
+   }
+  ],
+  "end": 186.07562500000003
+ },
+ {
+  "id": "harmonics",
+  "title": "Harmonics: 5th and 7th become 6th",
+  "start": 186.07562500000003,
+  "beats": [
+   {
+    "id": "k1",
+    "start": 186.376,
+    "end": 192.822,
+    "text": "What isn't DC in dq is just as telling: add 5 % fifth and 3 % seventh harmonic."
+   },
+   {
+    "id": "k2",
+    "start": 193.222,
+    "end": 200.08,
+    "text": "As in Lesson 11, the fifth turns backward at 5 times the frequency, the seventh forward at 7 times."
+   },
+   {
+    "id": "k3",
+    "start": 200.48,
+    "end": 209.334,
+    "text": "Multiplying by e to the minus j \u03b8e shifts every line of the complex spectrum down by one: plus one lands on zero, the DC."
+   },
+   {
+    "id": "k4",
+    "start": 209.734,
+    "end": 219.421,
+    "text": "Minus five goes to minus six, and plus seven to plus six: both become a 600 Hz ripple, 1.4 A peak to peak on i_q."
+   }
+  ],
+  "end": 220.72137500000005
+ },
+ {
+  "id": "offset",
+  "title": "Lesson 12's offset, in dq",
+  "start": 220.72137500000005,
+  "beats": [
+   {
+    "id": "o1",
+    "start": 221.021,
+    "end": 228.786,
+    "text": "Now Lesson 12's sensor offset: 0.2 A on channel a moved the circle's centre by 0.23 A."
+   },
+   {
+    "id": "o2",
+    "start": 229.186,
+    "end": 238.96,
+    "text": "In the rotating frame, that fixed vector turns backward once per cycle: a 0.23 A ripple on i_d and i_q, at the electrical frequency."
+   },
+   {
+    "id": "o3",
+    "start": 239.36,
+    "end": 244.568,
+    "text": "Gain mismatch ripples at twice that frequency instead: the frequency names the culprit."
+   },
+   {
+    "id": "o4",
+    "start": 244.968,
+    "end": 254.464,
+    "text": "With the loop closed, the real current carries the ripple instead: 9 mN\u00b7m on 0.39 N\u00b7m, 2.3 % at 100 Hz."
+   }
+  ],
+  "end": 255.76437500000006
+ },
+ {
+  "id": "encoder",
+  "title": "The angle: an encoder",
+  "start": 255.76437500000006,
+  "beats": [
+   {
+    "id": "n1",
+    "start": 256.064,
+    "end": 261.69,
+    "text": "All this needs \u03b8e, the rotor's electrical angle. The most accurate source is an encoder."
+   },
+   {
+    "id": "n2",
+    "start": 262.09,
+    "end": 272.202,
+    "text": "Take a 1024-line quadrature encoder: 4096 counts per turn. With 4 pole pairs, multiply the count by 4 and wrap at 4096."
+   },
+   {
+    "id": "n3",
+    "start": 272.602,
+    "end": 283.72,
+    "text": "Count 1000, for example, is 351.56 electrical degrees. One count, 0.35 electrical degrees, is negligible for torque."
+   },
+   {
+    "id": "n4",
+    "start": 284.12,
+    "end": 290.476,
+    "text": "An incremental encoder also needs a reference, like an index pulse, and an offset that puts zero on d."
+   }
+  ],
+  "end": 291.77579166666663
+ },
+ {
+  "id": "hall",
+  "title": "The angle: Hall sensors",
+  "start": 291.77579166666663,
+  "beats": [
+   {
+    "id": "l1",
+    "start": 292.076,
+    "end": 297.988,
+    "text": "Cheaper drives use three Hall sensors, which split each cycle into six sectors of 60\u00b0."
+   },
+   {
+    "id": "l2",
+    "start": 298.388,
+    "end": 306.865,
+    "text": "Without interpolation, the drive knows only the sector. Take its centre, and the error is a sawtooth between plus and minus 30\u00b0."
+   },
+   {
+    "id": "l3",
+    "start": 307.265,
+    "end": 313.432,
+    "text": "Interpolation estimates the speed from the last sector, and advances the angle smoothly from each edge."
+   },
+   {
+    "id": "l4",
+    "start": 313.832,
+    "end": 326.077,
+    "text": "At steady speed, with ideal sensors, it's exact; ramping from 300 to 1500 rpm in 0.1 s, it lags up to 11\u00b0 early on, and under 1\u00b0 by the end."
+   }
+  ],
+  "end": 327.3989166666666
+ },
+ {
+  "id": "error",
+  "title": "Angle error: a misaligned frame",
+  "start": 327.3989166666666,
+  "beats": [
+   {
+    "id": "d1",
+    "start": 327.699,
+    "end": 331.78,
+    "text": "What does an angle error do? Say the drive's angle runs 10\u00b0 ahead."
+   },
+   {
+    "id": "d2",
+    "start": 332.18,
+    "end": 340.734,
+    "text": "Its frame turns with it: 10 A on the true q axis reads as 9.85 A on q, and 1.74 A on d."
+   },
+   {
+    "id": "d3",
+    "start": 341.134,
+    "end": 350.99,
+    "text": "Close the loop, and the controller pulls the current onto its own q axis: really 9.85 A on q, and minus 1.74 A on d."
+   },
+   {
+    "id": "d4",
+    "start": 351.39,
+    "end": 359.093,
+    "text": "Torque is 98.5 % of the command: 0.384 instead of 0.39 N\u00b7m."
+   },
+   {
+    "id": "d5",
+    "start": 359.493,
+    "end": 369.397,
+    "text": "Unaided Hall sensors dip to 86.6 % at sector edges. And past 90\u00b0, torque reverses: the classic sign of a wrong offset."
+   }
+  ],
+  "end": 370.69716666666653
+ },
+ {
+  "id": "emf",
+  "title": "Back-EMF in dq",
+  "start": 370.69716666666653,
+  "beats": [
+   {
+    "id": "b1",
+    "start": 370.997,
+    "end": 377.629,
+    "text": "The magnet's flux linkage sits on d, so the back-EMF, its rate of change, points a quarter turn ahead: on q."
+   },
+   {
+    "id": "b2",
+    "start": 378.029,
+    "end": 391.11,
+    "text": "At constant speed, with a sinusoidal EMF, e_q is \u03c9e \u03bbm, and e_d is zero: DC again. For our motor, 4.08 V at 1500 rpm."
+   },
+   {
+    "id": "b3",
+    "start": 391.51,
+    "end": 398.464,
+    "text": "That's a bench check of the encoder offset: spin the motor from outside, inverter off, and log two line voltages."
+   },
+   {
+    "id": "b4",
+    "start": 398.864,
+    "end": 408.838,
+    "text": "Clarke, then Park with the encoder angle; trim the offset until e_d averages zero with e_q positive. Each degree leaves 71 mV on d."
+   }
+  ],
+  "end": 410.1383333333332
+ },
+ {
+  "id": "exercise",
+  "title": "Exercise: Park a log",
+  "start": 410.1383333333332,
+  "beats": [
+   {
+    "id": "e1",
+    "start": 410.438,
+    "end": 417.387,
+    "text": "Now the exercise. A synthetic log: 10 A on q, harmonics, an offset, noise, and encoder counts."
+   },
+   {
+    "id": "e2",
+    "start": 417.787,
+    "end": 422.559,
+    "text": "Counts become the angle, and one complex multiplication gives i_d and i_q."
+   },
+   {
+    "id": "e3",
+    "start": 422.959,
+    "end": 433.687,
+    "text": "With the encoder angle, i_d averages zero and i_q 10 A; the spectrum shows the offset at \u2212100 Hz and the harmonics at \u00b1600."
+   },
+   {
+    "id": "e4",
+    "start": 434.087,
+    "end": 440.56,
+    "text": "Add a deliberate 10\u00b0 error: i_d moves to 1.74 A, i_q to 9.85."
+   },
+   {
+    "id": "e5",
+    "start": 440.96,
+    "end": 447.927,
+    "text": "With Hall sectors only, i_q averages 9.6 A and i_d swings nearly 10 A peak to peak."
+   }
+  ],
+  "end": 449.2274166666665
+ },
+ {
+  "id": "predict",
+  "title": "Predict, then check",
+  "start": 449.2274166666665,
+  "beats": [
+   {
+    "id": "q1",
+    "start": 449.527,
+    "end": 451.447,
+    "text": "Three predictions before next time."
+   },
+   {
+    "id": "q2",
+    "start": 451.847,
+    "end": 457.396,
+    "text": "One: with a 10\u00b0 electrical angle error, what torque do you get for the same commanded i_q?"
+   },
+   {
+    "id": "q3",
+    "start": 458.796,
+    "end": 463.048,
+    "text": "Two: Hall sensors without interpolation. What's the worst angle error?"
+   },
+   {
+    "id": "q4",
+    "start": 464.448,
+    "end": 468.72,
+    "text": "Three: at constant speed, what does the back-EMF look like in dq?"
+   },
+   {
+    "id": "q5",
+    "start": 470.12,
+    "end": 475.467,
+    "text": "Next time: the d\u2013q model, with its voltage equations, cross-coupling, and the three-halves."
+   }
+  ],
+  "end": 477.66658333333316
+ }
+]

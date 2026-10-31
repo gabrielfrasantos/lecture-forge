@@ -1,0 +1,88 @@
+;FFMETADATA1
+title=Park Transformation — PMSM & BLDC, Lesson 13
+artist=lecture-forge
+language=eng
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=24445
+title=01 A camera on the rotor
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=24445
+END=49282
+title=02 Answers from Lesson 12
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=49282
+END=82323
+title=03 Ride with the rotor
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=82323
+END=117411
+title=04 One multiplication
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=117411
+END=155537
+title=05 d on the magnet, q for torque
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=155537
+END=186076
+title=06 Steady state is DC
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=186076
+END=220721
+title=07 Harmonics: 5th and 7th become 6th
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=220721
+END=255764
+title=08 Lesson 12's offset, in dq
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=255764
+END=291776
+title=09 The angle: an encoder
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=291776
+END=327399
+title=10 The angle: Hall sensors
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=327399
+END=370697
+title=11 Angle error: a misaligned frame
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=370697
+END=410138
+title=12 Back-EMF in dq
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=410138
+END=449227
+title=13 Exercise: Park a log
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=449227
+END=477667
+title=14 Predict, then check

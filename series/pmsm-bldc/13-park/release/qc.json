@@ -1,0 +1,186 @@
+{
+ "rep": {
+  "video": "h264 1920x1080 30/1 477.67s",
+  "audio": "aac 48000 Hz 1 ch 477.67s",
+  "subtitles": "1 track(s): mov_text/eng",
+  "chapters": 14,
+  "av_duration_diff_s": 0.001,
+  "integrated_LUFS": -16.1,
+  "true_peak_dBTP": -1.4,
+  "LRA_LU": 2.7,
+  "asr_word_error_rate": 0.045,
+  "captions": "106 cues, 0 cues mostly over silence, 0 overlaps, max 17.6 chars/s, last cue ends 476.0s"
+ },
+ "mism": [
+  [
+   "h1",
+   "At 1500 rpm, our 8 pole motor's phase currents are 100 hertz sine waves: three moving targets for a current controller.",
+   "At 1500 RPM, our eight pole motors phase currents are 100 Hz sine waves. Three moving targets for a current controller."
+  ],
+  [
+   "h2",
+   "In the alpha beta plane of Lesson 12, they're one vector, sweeping a circle.",
+   "In the alpha beta plane of lesson 12, there one vector sweeping a circle."
+  ],
+  [
+   "a3",
+   "Two: a 0.3 amp offset on channel B shifts the circle straight up the beta axis, by 0.35 amps.",
+   "2. A 0.3-amp offset on channel B shifts the circle straight up the beta axis by 0.35 amps."
+  ],
+  [
+   "a4",
+   "Three: a frame turning with the current. That's today's subject.",
+   "3. A frame turning with the current. That's today's subject."
+  ],
+  [
+   "r1",
+   "Here's a two pole picture, so all angles are electrical: fixed phase axes, and the rotor magnet at angle theta E.",
+   "Here's a two-pole picture, so all angles are electrical, fixed-phase axes, and the rotor magnet at angle theta E. [buzzer]"
+  ],
+  [
+   "r3",
+   "Now turn the camera too. As it catches up, one cycle of the trail shrinks from a circle to an arc, then to a point.",
+   "Now turn the camera to. As it catches up, one cycle of the trail shrinks from a circle to an arc, then to a point."
+  ],
+  [
+   "r4",
+   "The stator axes now spin backward; the rotor and the current stand still.",
+   "The stator axes now spin backward. The rotor and the current stand still. [BUZZER]"
+  ],
+  [
+   "r5",
+   "The rotor's axes: d, the direct axis, on the magnet's north pole; q, the quadrature axis, 90 degrees ahead.",
+   "The rotor's axis, D, the direct axis on the magnet's north pole, Q, the quadrature axis, 90 degrees ahead."
+  ],
+  [
+   "m3",
+   "Its inverse is its transpose: the drive uses it on the way out, before inverse Clark.",
+   "It's inverse is its transpose. The drive uses it on the way out before inverse Clark."
+  ],
+  [
+   "t2",
+   "Current on d makes a field along the magnet's axis, which can't turn it: think of a compass needle.",
+   "Current on D makes a field along the magnet's axis, which can't turn it. Think of a compass needle. [BEEP]"
+  ],
+  [
+   "t3",
+   "Current on q acts at right angles: the most torque per amp. Lesson 9 derived it: T is three halves P lambda M IQ.",
+   "Current on Q acts at right angles, the most torque per amp. Lesson 9 derived it. T is 3/2 P lambda m iq."
+  ],
+  [
+   "t4",
+   "For our motor, 10 amps on q gives 0.39 newton meters; swing that current around, and torque follows the sine of its angle from d.",
+   "For our motor, 10 amps on Q gives 0.39 newton meters. Swing that current around, and torque follows the sign of its angle from D."
+  ],
+  [
+   "s1",
+   "In steady state, the currents turn exactly with the rotor, so ID and IQ are DC.",
+   "In study state, the currents turn exactly with the rotor, so ID and IQ are DC."
+  ],
+  [
+   "s2",
+   "Watch a start up at 5 amps on q: the phases show a sine wave speeding up; DQ shows flat lines.",
+   "Watch a startup at 5 amps on cue. The phases show a sine wave speeding up. DQ shows flat lines."
+  ],
+  [
+   "k1",
+   "What isn't DC in DQ is just as telling: add 5% fifth and 3% seventh harmonic.",
+   "What isn't DC and DQ is just as telling. Add 5% 5th and 3% 7th harmonic."
+  ],
+  [
+   "k2",
+   "As in Lesson 11, the fifth turns backward at 5 times the frequency, the seventh forward at 7 times.",
+   "As in lesson 11, the fifth turns backward at five times the frequency, the seventh forward at seven times."
+  ],
+  [
+   "k3",
+   "Multiplying by e to the minus j theta E shifts every line of the complex spectrum down by one: plus one lands on zero, the DC.",
+   "multiplying by e to the minus j theta e shifts every line of the complex spectrum down by 1. Plus 1 lands on 0, the DC."
+  ],
+  [
+   "k4",
+   "Minus five goes to minus six, and plus seven to plus six: both harmonics become a 600 hertz ripple, 1.4 amps peak to peak on IQ.",
+   "minus 5 goes to minus 6, and plus 7 to plus 6. Both harmonics become a 600 Hz ripple, 1.4 amps peak to peak on IQ."
+  ],
+  [
+   "o1",
+   "Now Lesson 12's sensor offset: 0.2 amps on channel A moved the circle's center by 0.23 amps.",
+   "Now lesson 12 sensor offset. 0.2 amps on channel A moved the circle center by 0.23 amps."
+  ],
+  [
+   "o2",
+   "In the rotating frame, that fixed vector turns backward once per cycle: a 0.23 amp ripple on ID and IQ, at the electrical frequency.",
+   "In the rotating frame, that fixed vector turns backward once per cycle, a 0.23 amp ripple on ID and IQ at the electrical frequency. [BUZZER]"
+  ],
+  [
+   "o4",
+   "With the loop closed, the real current carries the ripple instead: 9 millinewton meters on 0.39, 2.3% at 100 hertz.",
+   "With the loop closed, the real current carries the ripple instead. 9 millinutens meters on 0.39, 2.3% at 100 Hz."
+  ],
+  [
+   "n1",
+   "All this needs theta E, the rotor's electrical angle. The most accurate source is an encoder.",
+   "All this needs theta e, the rotor's electrical angle. The most accurate source is an encoder. [BUZZER]"
+  ],
+  [
+   "n2",
+   "Take a 1024 line quadrature encoder: 4096 counts per turn. With 4 pole pairs, multiply the count by 4 and wrap at 4096.",
+   "Take a 1024-line quadrature encoder, 4096 counts per turn. With four pole pairs, multiply the count by 4 and wrap at 4096."
+  ],
+  [
+   "l1",
+   "Cheaper drives use three Hall sensors, which split each cycle into six sectors of 60 degrees.",
+   "Cheaper drives use three-haul sensors, which split each cycle into six sectors of 60 degrees."
+  ],
+  [
+   "l4",
+   "At steady speed, with ideal sensors, it's exact; ramping from 300 to 1500 rpm in a tenth of a second, it lags up to 11 degrees early on, and under 1 degree by the end.",
+   "At steady speed, with ideal sensors, it's exact. Ramping from 300 to 1500 RPM in a tenth of a second, it lags up to 11 degrees early on and under one degree by the end."
+  ],
+  [
+   "d1",
+   "What does an angle error do? Say the drive's angle runs 10 degrees ahead.",
+   "What does an angle error do? Say the drives angle runs 10 degrees ahead."
+  ],
+  [
+   "d2",
+   "Its frame turns with it: 10 amps on the true q axis reads as 9.85 amps on q, and 1.74 amps on d.",
+   "Its frame turns with it. 10 amps on the TrueQ axis reads as 9.85 amps on Q and 1.74 amps on D."
+  ],
+  [
+   "d3",
+   "Close the loop, and the controller pulls the current onto its own q axis: really 9.85 amps on q, and minus 1.74 amps on d.",
+   "Close the loop, and the controller pulls the current onto its own Q-axis. Really 9.85 amps on Q, and -1.74 amps on D."
+  ],
+  [
+   "d5",
+   "Unaided Hall sensors dip to 86.6% at sector edges. And past 90 degrees, torque reverses: the classic sign of a wrong offset.",
+   "Unaided Hall sensors dipped to 86.6% at sector edges, and passed 90 degrees, torque reverses, the classic sign of a wrong offset."
+  ],
+  [
+   "b2",
+   "At constant speed, with a sinusoidal EMF, the back EMF on q is omega E lambda M, and on d it's zero: DC again. For our motor, 4.08 volts at 1500 rpm.",
+   "At constant speed with a sinusoidal EMF, the back EMF on Q is omega e-lambda m and on d at 0, dC again. For our motor, 4.08 volts at 1500 RPM."
+  ],
+  [
+   "e2",
+   "Counts become the angle, and one complex multiplication gives ID and IQ.",
+   "counts become the angle, and one complex multiplication gives ID and IQ. [BUZZER]"
+  ],
+  [
+   "e3",
+   "With the encoder angle, ID averages zero and IQ 10 amps; the spectrum shows the offset at minus 100 hertz and the harmonics at plus and minus 600.",
+   "with the encoder angle, ID averages 0 and IQ 10 amps. The spectrum shows the offset at minus 100 hertz and the harmonics at plus and minus 600."
+  ],
+  [
+   "q2",
+   "One: with a 10 degree electrical angle error, what torque do you get for the same commanded IQ?",
+   "1. With a 10 degree electrical angle error, what torque do you get for the same commanded IQ?"
+  ],
+  [
+   "q4",
+   "Three: at constant speed, what does the back EMF look like in DQ?",
+   "3. At constant speed, what does the back EMF look like in DQ?"
+  ]
+ ]
+}
