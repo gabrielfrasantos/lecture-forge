@@ -15,9 +15,20 @@ def ts(t):
     return f"{h:02d}:{m:02d}:{s:02d},{ms:03d}"
 
 
+NBSP = "\u00a0"
+_UNIT = (r"(?:%|°C?|N·m/A|N·m|V/A|A/s|rad/s|kS/s|LUFS|dBTP|dB|rpm|"
+         r"[kMmcµμ]?(?:Hz|Wb|Ω|A|V|W|s|H|T|m|g))")
+_NUM_UNIT = re.compile(r"(?<=\d) +(?=" + _UNIT + r"(?![A-Za-z]))")
+
+
+def glue_units(text):
+    """Join a number and its unit with a no-break space so captions never split '10 / A' across lines."""
+    return _NUM_UNIT.sub(NBSP, text)
+
+
 def split_caption(text):
     """Split a sentence into balanced cues of ≤2 lines × 42 chars, preferring clause boundaries (DP)."""
-    words = text.split()
+    words = [w for w in text.split(" ") if w]
     n = len(words)
     fits = lambda i, j: len(textwrap.wrap(" ".join(words[i:j]), MAXL)) <= MAXLINES
     if fits(0, n):
@@ -53,7 +64,7 @@ def build_srt():
     rows = []
     for sc in TL:
         for b in sc["beats"]:
-            chunks = split_caption(b["text"])
+            chunks = split_caption(glue_units(b["text"]))
             L = sum(len(c) for c in chunks)
             t = b["start"]; dur = b["end"] - b["start"]
             for c in chunks:
