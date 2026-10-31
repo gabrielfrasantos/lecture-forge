@@ -1,0 +1,166 @@
+{
+ "rep": {
+  "video": "h264 1920x1080 30/1 448.47s",
+  "audio": "aac 48000 Hz 1 ch 448.45s",
+  "subtitles": "1 track(s): mov_text/eng",
+  "chapters": 13,
+  "av_duration_diff_s": 0.013,
+  "integrated_LUFS": -16.1,
+  "true_peak_dBTP": -1.4,
+  "LRA_LU": 2.9,
+  "asr_word_error_rate": 0.08,
+  "captions": "89 cues, 0 cues mostly over silence, 0 overlaps, max 18.4 chars/s, last cue ends 446.9s"
+ },
+ "mism": [
+  [
+   "h2",
+   "Every 60 electrical degrees, move on to the next pair, timed by three Hall sensors.",
+   "Every 60 electrical degrees move on to the next pair, timed by three-hole sensors."
+  ],
+  [
+   "h3",
+   "That's six step, the classic brushless DC drive. Today: why it works, what it costs in torque ripple, and how to scope one.",
+   "That's six-step the classic brushless DC drive. Today, why it works, what it costs in torque ripple, and how to scope one. [BUZZER]"
+  ],
+  [
+   "a2",
+   "One: a viscous run down halves the speed in 2 seconds, so B is J times log 2, over 2 seconds: 1.04 times ten to the minus 5 newton meter seconds.",
+   "1, a viscous rundown, halves the speed in 2 seconds, so b is j times log 2 over 2 seconds. 1.04 times 10 to the minus 5 newton meter seconds."
+  ],
+  [
+   "a3",
+   "Two: 14.1 volts, over root 3 times 1257 radians per second, gives 6.5 milliwebers.",
+   "2, 14.1 volts, over route 3 times 1257 radians per second, gives 6.5 milliwebers."
+  ],
+  [
+   "b2",
+   "It gets the reference motor's resistance, inductance and inertia, and the same 6.5 milliweber fundamental, so only the shape differs.",
+   "It gets the reference motor's resistance, inductance, and inertia, and the same 6.5 milliweber fundamental. So only the shape differs. [BUZZER]"
+  ],
+  [
+   "b4",
+   "The power is each EMF times its current, summed. With two phases conducting, that's E times I, twice: at 3000 RPM and 10 amps, 131 watts, a steady 0.416 newton meters.",
+   "The power is each EMF times its current summed. With two phases conducting, that's E times I twice. At 3,000 RPM and 10 amps, 131 watts, a steady 0.416 Newton meters."
+  ],
+  [
+   "b5",
+   "The inverter does the job of a DC motor's commutator: that's brushless DC.",
+   "The inverter does the job of a DC motor's commutator. That's brushless DC. [BUZZER]"
+  ],
+  [
+   "c1",
+   "To find the rotor, the drive uses Hall sensors at the bore: each reads 1 while a north pole faces it, and 0 for a south pole.",
+   "To find the rotor, the drive uses hull sensors at the bore. Each reads one while a North Pole faces it and zero for a South Pole."
+  ],
+  [
+   "c2",
+   "Three sit 120 electrical degrees apart, so their square waves are shifted by a third of a cycle.",
+   "3-sit 120 electrical degrees apart, so their square waves are shifted by a third of a cycle."
+  ],
+  [
+   "c3",
+   "Together they make six codes, each lasting 60 degrees: one zero zero, one one zero, zero one zero, zero one one, zero zero one, one zero one. All zeros and all ones never occur.",
+   "Together they make six codes, each lasting 60 degrees. 1 0 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 All zeros and all ones never occur."
+  ],
+  [
+   "c4",
+   "Placed like this, each code also says where the north pole points, within 30 degrees either way: one zero zero means near the axis of phase A.",
+   "Placed like this, each code also says where the North Pole points, within 30 degrees either way. 1-0-0 means near the axis of phase A."
+  ],
+  [
+   "d2",
+   "Evaluating each back EMF at the center of each sector gives the commutation table: one zero zero, B plus, C minus; one one zero, B plus, A minus; and so on around.",
+   "Evaluating each back EMF at the center of each sector gives the commutation table. 1 0 0, b plus c minus, 1 1 0, b plus a minus, and so on around."
+  ],
+  [
+   "d3",
+   "The floating phase is always the one whose EMF crosses zero mid sector, so each commutation comes 30 degrees after a zero crossing.",
+   "The floating phase is always the one whose EMF crosses zero mid-sector, so each commutation comes 30 degrees after zero crossing."
+  ],
+  [
+   "e1",
+   "In the bridge, each sector closes two switches: the upper one of the high phase, and the lower one of the low phase. The third leg is open, so that phase floats.",
+   "In the bridge, each sector closes two switches, the upper one of the high phase and the lower one of the low phase. The third leg is open, so that phase floats. [buzzer]"
+  ],
+  [
+   "e2",
+   "Each phase conducts 120 degrees positive, floats 60, conducts 120 negative, and floats 60 again; each switch is on for a third of the cycle.",
+   "Each phase conducts 120 degrees positive, float 60, conducts 120 negative, and float 60 again. Each switch is on for a third of the cycle."
+  ],
+  [
+   "f2",
+   "The blocks can't switch instantly: the outgoing current decays through a diode while the incoming one builds, taking 39 microseconds with 0.05 millihenries per phase.",
+   "The blocks can't switch instantly. The outgoing current decays through a diode while the incoming one builds, taking 39 microseconds with 0.05 millihenries per phase. [BUZZER]"
+  ],
+  [
+   "f4",
+   "It crosses 12 volts exactly at the zero crossing, 30 degrees before the next commutation. Sensorless six step drives time their switching from that crossing.",
+   "It crosses 12 volts exactly at the zero crossing, 30 degrees before the next commutation. Sensorless six-step drives time they're switching from that crossing. [BUZZER]"
+  ],
+  [
+   "g3",
+   "Near top speed, there's no voltage to spare. During the overlap, the third phase's current changes at V minus 4 E, over 3 L: negative once the EMF passes a quarter of the bus.",
+   "Near top speed, there's no voltage to spare. During the overlap, the third phase's current changes at V-4E over 3L. Negative once the EMF passes a quarter of the bus."
+  ],
+  [
+   "g4",
+   "At full duty and 5000 RPM, it loses 44% at every commutation. Carlson and colleagues analyzed this in 1992.",
+   "At full duty and 5,000 RPM, it loses 44% at every commutation. Carlson and colleagues analyzed this in 1992. (buzzer buzzes)"
+  ],
+  [
+   "s2",
+   "Its line to line EMF is an arch, not a plateau, so even ideal blocks give 26% torque ripple. For a pure sine, it would be 14.",
+   "It's line to line EMF is an arch, not a plateau, so even ideal blocks give 26% torque ripple. For a pure sign, it would be 14."
+  ],
+  [
+   "i2",
+   "Unloaded, nearly all of it balances the pair's back EMF, so speed is proportional to duty: 5530 RPM at full duty, or 231 RPM per volt, the K V on hobby datasheets.",
+   "Unloaded, nearly all of it balances the pair's back EMF, so speed is proportional to duty. 5530 RPM at full duty, or 231 RPM per volt, the KV on hobby data sheets."
+  ],
+  [
+   "i3",
+   "Simulated start ups settle on that line. At full duty, 10 amps of load costs about 470 RPM: 185 for the resistance, the rest for the commutations.",
+   "simulated startup settle on that line. At full duty, 10 amps of load costs about 470 RPM, 185 for the resistance, the rest for the commutations. [BUZZER]"
+  ],
+  [
+   "j1",
+   "So, six step or sinusoidal drive? Six step needs three Hall sensors, one current sensor in the DC link, and a six row table.",
+   "So, six-step or sinusoidal drive. Six-step needs three-haul sensors, one current sensor in the DC link, and a six-row table."
+  ],
+  [
+   "j2",
+   "Sinusoidal drive needs a continuous angle, two phase currents, Clarke, Park and P I loops, but gives a sinusoidal motor smooth torque.",
+   "Sinusoidal drive needs a continuous angle. Two-phase currents, Clark, Park, and PI loops, but gives a sinusoidal motor smooth torque."
+  ],
+  [
+   "k1",
+   "On the bench: a Hall sensored motor, clamped down, its six step controller, and a current limited 24 volt supply.",
+   "On the bench, a hull-sensored motor, clamped down, its six-step controller, and a current-limited 24-volt supply."
+  ],
+  [
+   "k2",
+   "Scope the three Hall outputs against the controller's ground. Expect the six codes in order, or in reverse, with an edge every 833 microseconds at 3000 RPM.",
+   "scope the three-haul outputs against the controller's ground. Expect the six codes in order or in reverse with an edge every 833 microseconds at 3,000 RPM."
+  ],
+  [
+   "p2",
+   "One: how many conduction states does six step use per electrical cycle?",
+   "1. How many conduction states does 6-step use per electrical cycle?"
+  ],
+  [
+   "p3",
+   "Two: on our 8 pole motor, how many mechanical degrees are there between commutations?",
+   "Two, on our eight pole motor. How many mechanical degrees are there between commutations?"
+  ],
+  [
+   "p4",
+   "Three: on a 24 volt bus, what line to line peak does six step apply, and what can sine triangle P W M reach?",
+   "3. On a 24 volt bus, what line to line peak does 6 step apply, and what can sign triangle PWM reach?"
+  ],
+  [
+   "p5",
+   "Next time: the three phase inverter, and how P W M turns 24 volt pulses into sine waves.",
+   "Next time, the three-phase inverter and how PWM turns 24 volt pulses into sine waves."
+  ]
+ ]
+}

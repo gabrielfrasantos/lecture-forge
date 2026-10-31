@@ -1,0 +1,394 @@
+[
+ {
+  "id": "hook",
+  "title": "Two switches at a time",
+  "start": 0.0,
+  "beats": [
+   {
+    "id": "h1",
+    "start": 0.6,
+    "end": 8.249,
+    "text": "The simplest way to run a permanent-magnet motor: connect two of its three leads across the supply, and leave the third one open."
+   },
+   {
+    "id": "h2",
+    "start": 8.649,
+    "end": 14.095,
+    "text": "Every 60 electrical degrees, move on to the next pair, timed by three Hall sensors."
+   },
+   {
+    "id": "h3",
+    "start": 14.495,
+    "end": 21.769,
+    "text": "That's six-step, the classic brushless DC drive. Today: why it works, what it costs in torque ripple, and how to scope one."
+   }
+  ],
+  "end": 23.06941666666667
+ },
+ {
+  "id": "answers",
+  "title": "Answers from Lesson 15",
+  "start": 23.06941666666667,
+  "beats": [
+   {
+    "id": "a1",
+    "start": 23.369,
+    "end": 25.646,
+    "text": "First, the answers from Lesson 15."
+   },
+   {
+    "id": "a2",
+    "start": 25.946,
+    "end": 37.549,
+    "text": "One: a viscous run-down halves the speed in 2 s, so B = J ln 2 / 2 s = 1.04 \u00d7 10\u207b\u2075 N\u00b7m\u00b7s."
+   },
+   {
+    "id": "a3",
+    "start": 37.949,
+    "end": 45.712,
+    "text": "Two: 14.1 V / (\u221a3 \u00d7 1257 rad/s) = 6.48 mWb, so \u03bbm = 6.5 mWb."
+   },
+   {
+    "id": "a4",
+    "start": 46.112,
+    "end": 53.999,
+    "text": "Three: three Hall sensors give six sectors of 60\u00b0 per electrical cycle, one per commutation step: today's drive."
+   }
+  ],
+  "end": 55.299166666666665
+ },
+ {
+  "id": "bldc",
+  "title": "What brushless DC means",
+  "start": 55.299166666666665,
+  "beats": [
+   {
+    "id": "b1",
+    "start": 55.599,
+    "end": 68.178,
+    "text": "For our BLDC motor, take the variant from Lesson 7: 180\u00b0 magnets and full-pitch coils in a smooth bore. Its back-EMF has flat tops about 130\u00b0 wide."
+   },
+   {
+    "id": "b2",
+    "start": 68.478,
+    "end": 77.381,
+    "text": "It gets the reference motor's R, L and inertia, and the same 6.5 mWb fundamental, so only the shape differs."
+   },
+   {
+    "id": "b3",
+    "start": 77.781,
+    "end": 86.826,
+    "text": "Now drive rectangular currents: +I into the phase on its positive flat, \u2212I out of the one on its negative flat, none in the third."
+   },
+   {
+    "id": "b4",
+    "start": 87.226,
+    "end": 101.315,
+    "text": "The power is e_a i_a + e_b i_b + e_c i_c. With two phases conducting, that's EI twice: at 3000 rpm and 10 A, 2 \u00d7 6.54 V \u00d7 10 A = 131 W, a steady 0.416 N\u00b7m."
+   },
+   {
+    "id": "b5",
+    "start": 101.715,
+    "end": 106.494,
+    "text": "The inverter does the job of a DC motor's commutator: that's brushless DC."
+   }
+  ],
+  "end": 107.79375000000002
+ },
+ {
+  "id": "hall",
+  "title": "Three Hall sensors",
+  "start": 107.79375000000002,
+  "beats": [
+   {
+    "id": "c1",
+    "start": 108.094,
+    "end": 116.241,
+    "text": "To find the rotor, the drive uses Hall sensors at the bore: each reads 1 while a north pole faces it, and 0 for a south pole."
+   },
+   {
+    "id": "c2",
+    "start": 116.541,
+    "end": 122.746,
+    "text": "Three sit 120 electrical degrees apart, so their square waves are shifted by a third of a cycle."
+   },
+   {
+    "id": "c3",
+    "start": 123.046,
+    "end": 135.697,
+    "text": "Together they make six codes, each lasting 60\u00b0: 100, 110, 010, 011, 001, 101. 000 and 111 never occur."
+   },
+   {
+    "id": "c4",
+    "start": 136.097,
+    "end": 145.107,
+    "text": "Placed like this, each code also says where the north pole points, within \u00b130\u00b0: 100 means near phase a's axis."
+   }
+  ],
+  "end": 146.40658333333332
+ },
+ {
+  "id": "table",
+  "title": "The commutation table",
+  "start": 146.40658333333332,
+  "beats": [
+   {
+    "id": "d1",
+    "start": 146.707,
+    "end": 154.412,
+    "text": "Which pair should conduct? For the most torque, push current into the phase with the most positive EMF, and pull it out of the most negative."
+   },
+   {
+    "id": "d2",
+    "start": 154.712,
+    "end": 166.555,
+    "text": "Evaluating the EMFs at the centre of each sector gives the table: 100 \u2192 B+ C\u2212; 110 \u2192 B+ A\u2212; and so on around."
+   },
+   {
+    "id": "d3",
+    "start": 166.955,
+    "end": 175.689,
+    "text": "The floating phase is always the one whose EMF crosses zero mid-sector, so each commutation comes 30\u00b0 after a zero crossing."
+   },
+   {
+    "id": "d4",
+    "start": 175.989,
+    "end": 180.562,
+    "text": "The current vector then sits 90\u00b0 ahead of the rotor, give or take 30\u00b0."
+   }
+  ],
+  "end": 181.8615
+ },
+ {
+  "id": "bridge",
+  "title": "120\u00b0 conduction in the bridge",
+  "start": 181.8615,
+  "beats": [
+   {
+    "id": "e1",
+    "start": 182.162,
+    "end": 191.701,
+    "text": "In the bridge, each sector closes two switches: the upper one of the high phase, and the lower one of the low phase. The third leg is open, so that phase floats."
+   },
+   {
+    "id": "e2",
+    "start": 192.101,
+    "end": 202.345,
+    "text": "Each phase conducts 120\u00b0 positive, floats 60\u00b0, conducts 120\u00b0 negative, floats 60\u00b0 again; each switch is on for a third of the cycle."
+   }
+  ],
+  "end": 203.64545833333332
+ },
+ {
+  "id": "circuit",
+  "title": "The switched circuit, simulated",
+  "start": 203.64545833333332,
+  "beats": [
+   {
+    "id": "f1",
+    "start": 203.945,
+    "end": 213.095,
+    "text": "Here's the circuit, simulated at 3000 rpm, with a current loop chopping the conducting pair at about 25 kHz to hold 10 A."
+   },
+   {
+    "id": "f2",
+    "start": 213.495,
+    "end": 225.28,
+    "text": "The blocks can't switch instantly: the outgoing current decays through a diode while the incoming one builds, taking 39 \u00b5s with 0.05 mH per phase."
+   },
+   {
+    "id": "f3",
+    "start": 225.68,
+    "end": 235.322,
+    "text": "The floating terminal carries no current, so it shows the back-EMF: half the bus, plus 3/2 of its EMF less the part common to all three phases."
+   },
+   {
+    "id": "f4",
+    "start": 235.622,
+    "end": 245.802,
+    "text": "It crosses 12 V exactly at the zero crossing, 30\u00b0 before the next commutation. Sensorless six-step drives time their switching from that crossing."
+   }
+  ],
+  "end": 247.10216666666668
+ },
+ {
+  "id": "torque",
+  "title": "Torque: ideal and real",
+  "start": 247.10216666666668,
+  "beats": [
+   {
+    "id": "g1",
+    "start": 247.402,
+    "end": 253.418,
+    "text": "With ideal blocks, the rounded corners of this EMF leave only 1.3% torque ripple."
+   },
+   {
+    "id": "g2",
+    "start": 253.718,
+    "end": 261.784,
+    "text": "The simulation adds chopping ripple and a short notch at each commutation; the mean stays at 0.412 N\u00b7m."
+   },
+   {
+    "id": "g3",
+    "start": 262.184,
+    "end": 274.409,
+    "text": "Near top speed, there's no voltage to spare. During the overlap, the third phase's current changes at (V \u2212 4E)/3L: negative once the EMF passes a quarter of the bus."
+   },
+   {
+    "id": "g4",
+    "start": 274.709,
+    "end": 284.427,
+    "text": "At full duty and 5000 rpm, it loses 44% at every commutation. Carlson and colleagues analysed this in 1992."
+   }
+  ],
+  "end": 285.7272500000001
+ },
+ {
+  "id": "sine",
+  "title": "Six-stepping a sinusoidal motor",
+  "start": 285.7272500000001,
+  "beats": [
+   {
+    "id": "s1",
+    "start": 286.027,
+    "end": 290.194,
+    "text": "Now six-step our reference motor, whose EMF is nearly sinusoidal."
+   },
+   {
+    "id": "s2",
+    "start": 290.494,
+    "end": 300.002,
+    "text": "Its line-to-line EMF is an arch, not a plateau, so even ideal blocks give 26% torque ripple. For a pure sine, it would be 14%."
+   },
+   {
+    "id": "s3",
+    "start": 300.302,
+    "end": 307.986,
+    "text": "That's Lesson 13's Hall-sensor angle error, up to 30\u00b0 either way, swept six times per electrical cycle."
+   }
+  ],
+  "end": 309.2863750000002
+ },
+ {
+  "id": "speed",
+  "title": "Speed control by duty",
+  "start": 309.2863750000002,
+  "beats": [
+   {
+    "id": "i1",
+    "start": 309.586,
+    "end": 320.868,
+    "text": "Without a current loop, the duty sets the speed. Chop the upper switch at 20 kHz, with the lower one of that leg filling the gaps, and the pair sees d \u00d7 24 V on average."
+   },
+   {
+    "id": "i2",
+    "start": 321.168,
+    "end": 334.951,
+    "text": "Unloaded, nearly all of it balances the pair's back-EMF, so speed is proportional to duty: 5530 rpm at full duty, or 231 rpm per volt, the Kv on hobby datasheets."
+   },
+   {
+    "id": "i3",
+    "start": 335.251,
+    "end": 346.964,
+    "text": "Simulated start-ups settle on that line. At full duty, 10 A of load costs about 470 rpm: 185 for the resistance, the rest for the commutations."
+   }
+  ],
+  "end": 348.26420833333356
+ },
+ {
+  "id": "compare",
+  "title": "Six-step or sinusoidal drive?",
+  "start": 348.26420833333356,
+  "beats": [
+   {
+    "id": "j1",
+    "start": 348.564,
+    "end": 357.075,
+    "text": "So, six-step or sinusoidal drive? Six-step needs three Hall sensors, one current sensor in the DC link, and a six-row table."
+   },
+   {
+    "id": "j2",
+    "start": 357.375,
+    "end": 366.029,
+    "text": "Sinusoidal drive needs a continuous angle, two phase currents, Clarke, Park and PI loops, but gives a sinusoidal motor smooth torque."
+   },
+   {
+    "id": "j3",
+    "start": 366.329,
+    "end": 374.443,
+    "text": "Our simulations assume ideal switches and Hall sensors, no dead time, constant speed, linear inductance, and no cogging torque."
+   }
+  ],
+  "end": 375.7430833333336
+ },
+ {
+  "id": "bench",
+  "title": "On the bench: Halls and currents",
+  "start": 375.7430833333336,
+  "beats": [
+   {
+    "id": "k1",
+    "start": 376.043,
+    "end": 383.463,
+    "text": "On the bench: a Hall-sensored motor, clamped down, its six-step controller, and a current-limited 24 V supply."
+   },
+   {
+    "id": "k2",
+    "start": 383.763,
+    "end": 395.642,
+    "text": "Scope the three Hall outputs against the controller's ground. Expect the six codes in order, or in reverse, with an edge every 833 \u00b5s at 3000 rpm."
+   },
+   {
+    "id": "k3",
+    "start": 395.942,
+    "end": 405.525,
+    "text": "Clamp current probes on two phase leads: 120\u00b0 blocks with chopping ripple, a 60\u00b0 gap, and a short transition at every commutation."
+   },
+   {
+    "id": "k5",
+    "start": 405.825,
+    "end": 414.365,
+    "text": "Safety: no propellers, fingers clear of the rotor, and never clip a scope ground to a phase lead; use differential probes for phase voltages."
+   }
+  ],
+  "end": 415.66466666666696
+ },
+ {
+  "id": "predict",
+  "title": "Predict, then check",
+  "start": 415.66466666666696,
+  "beats": [
+   {
+    "id": "p1",
+    "start": 415.965,
+    "end": 417.885,
+    "text": "Three predictions before next time."
+   },
+   {
+    "id": "p2",
+    "start": 418.285,
+    "end": 422.363,
+    "text": "One: how many conduction states does six-step use per electrical cycle?"
+   },
+   {
+    "id": "p3",
+    "start": 423.863,
+    "end": 429.061,
+    "text": "Two: on our 8-pole motor, how many mechanical degrees are there between commutations?"
+   },
+   {
+    "id": "p4",
+    "start": 430.561,
+    "end": 438.224,
+    "text": "Three: on a 24 V bus, what line-to-line peak does six-step apply, and what can sine-triangle PWM reach?"
+   },
+   {
+    "id": "p5",
+    "start": 439.724,
+    "end": 446.355,
+    "text": "Next time: the three-phase inverter, and how PWM turns 24 V pulses into sine waves."
+   }
+  ],
+  "end": 448.4545000000003
+ }
+]

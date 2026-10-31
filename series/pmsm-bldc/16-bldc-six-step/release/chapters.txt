@@ -1,0 +1,82 @@
+;FFMETADATA1
+title=BLDC Six-Step Drive — PMSM & BLDC, Lesson 16
+artist=lecture-forge
+language=eng
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=23069
+title=01 Two switches at a time
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=23069
+END=55299
+title=02 Answers from Lesson 15
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=55299
+END=107794
+title=03 What brushless DC means
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=107794
+END=146407
+title=04 Three Hall sensors
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=146407
+END=181862
+title=05 The commutation table
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=181862
+END=203645
+title=06 120° conduction in the bridge
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=203645
+END=247102
+title=07 The switched circuit, simulated
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=247102
+END=285727
+title=08 Torque: ideal and real
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=285727
+END=309286
+title=09 Six-stepping a sinusoidal motor
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=309286
+END=348264
+title=10 Speed control by duty
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=348264
+END=375743
+title=11 Six-step or sinusoidal drive?
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=375743
+END=415665
+title=12 On the bench: Halls and currents
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=415665
+END=448455
+title=13 Predict, then check

@@ -1,0 +1,436 @@
+1
+00:00:00,600 --> 00:00:03,488
+The simplest way to run a permanent-magnet
+motor:
+
+2
+00:00:03,528 --> 00:00:08,609
+connect two of its three leads across the
+supply, and leave the third one open.
+
+3
+00:00:08,649 --> 00:00:10,469
+Every 60 electrical degrees,
+
+4
+00:00:10,509 --> 00:00:14,455
+move on to the next pair, timed by three
+Hall sensors.
+
+5
+00:00:14,495 --> 00:00:17,734
+That's six-step, the classic brushless DC
+drive. Today:
+
+6
+00:00:17,774 --> 00:00:22,269
+why it works, what it costs in torque
+ripple, and how to scope one.
+
+7
+00:00:23,369 --> 00:00:25,906
+First, the answers from Lesson 15.
+
+8
+00:00:25,946 --> 00:00:32,235
+One: a viscous run-down halves the speed
+in 2 s,
+
+9
+00:00:32,275 --> 00:00:37,909
+so B = J ln 2 / 2 s = 1.04 × 10⁻⁵ N·m·s.
+
+10
+00:00:37,949 --> 00:00:46,072
+Two: 14.1 V / (√3 × 1257 rad/s) = 6.48
+mWb, so λm = 6.5 mWb.
+
+11
+00:00:46,112 --> 00:00:51,117
+Three: three Hall sensors give six sectors
+of 60° per electrical cycle,
+
+12
+00:00:51,157 --> 00:00:54,499
+one per commutation step: today's drive.
+
+13
+00:00:55,599 --> 00:01:01,418
+For our BLDC motor, take the variant from
+Lesson 7: 180° magnets and
+
+14
+00:01:01,458 --> 00:01:08,438
+full-pitch coils in a smooth bore. Its
+back-EMF has flat tops about 130° wide.
+
+15
+00:01:08,478 --> 00:01:12,349
+It gets the reference motor's R, L and
+inertia,
+
+16
+00:01:12,389 --> 00:01:17,741
+and the same 6.5 mWb fundamental, so only
+the shape differs.
+
+17
+00:01:17,781 --> 00:01:22,719
+Now drive rectangular currents: +I into
+the phase on its positive flat,
+
+18
+00:01:22,759 --> 00:01:27,186
+−I out of the one on its negative flat,
+none in the third.
+
+19
+00:01:27,226 --> 00:01:33,499
+The power is e_a i_a + e_b i_b + e_c i_c.
+With two phases conducting,
+
+20
+00:01:33,539 --> 00:01:41,675
+that's EI twice: at 3000 rpm and 10 A, 2 ×
+6.54 V × 10 A = 131 W, a steady 0.416 N·m.
+
+21
+00:01:41,715 --> 00:01:46,994
+The inverter does the job of a DC motor's
+commutator: that's brushless DC.
+
+22
+00:01:48,094 --> 00:01:51,930
+To find the rotor, the drive uses Hall
+sensors at the bore:
+
+23
+00:01:51,970 --> 00:01:56,501
+each reads 1 while a north pole faces it,
+and 0 for a south pole.
+
+24
+00:01:56,541 --> 00:01:59,048
+Three sit 120 electrical degrees apart,
+
+25
+00:01:59,088 --> 00:02:03,006
+so their square waves are shifted by a
+third of a cycle.
+
+26
+00:02:03,046 --> 00:02:09,519
+Together they make six codes, each lasting
+60°: 100,
+
+27
+00:02:09,559 --> 00:02:16,057
+110, 010, 011, 001, 101. 000 and 111 never
+occur.
+
+28
+00:02:16,097 --> 00:02:21,513
+Placed like this, each code also says
+where the north pole points,
+
+29
+00:02:21,553 --> 00:02:25,607
+within ±30°: 100 means near phase a's
+axis.
+
+30
+00:02:26,707 --> 00:02:30,464
+Which pair should conduct? For the most
+torque, push current into the
+
+31
+00:02:30,504 --> 00:02:34,672
+phase with the most positive EMF, and pull
+it out of the most negative.
+
+32
+00:02:34,712 --> 00:02:41,800
+Evaluating the EMFs at the centre of each
+sector gives the table:
+
+33
+00:02:41,840 --> 00:02:46,915
+100 → B+ C−; 110 → B+ A−; and so on
+around.
+
+34
+00:02:46,955 --> 00:02:51,957
+The floating phase is always the one whose
+EMF crosses zero mid-sector,
+
+35
+00:02:51,997 --> 00:02:55,949
+so each commutation comes 30° after a zero
+crossing.
+
+36
+00:02:55,989 --> 00:03:01,062
+The current vector then sits 90° ahead of
+the rotor, give or take 30°.
+
+37
+00:03:02,162 --> 00:03:06,892
+In the bridge, each sector closes two
+switches: the upper one of the high phase,
+
+38
+00:03:06,932 --> 00:03:12,061
+and the lower one of the low phase. The
+third leg is open, so that phase floats.
+
+39
+00:03:12,101 --> 00:03:17,535
+Each phase conducts 120° positive, floats
+60°, conducts 120° negative,
+
+40
+00:03:17,575 --> 00:03:22,845
+floats 60° again; each switch is on for a
+third of the cycle.
+
+41
+00:03:23,945 --> 00:03:28,632
+Here's the circuit, simulated at 3000 rpm,
+with a current loop
+
+42
+00:03:28,672 --> 00:03:33,455
+chopping the conducting pair at about 25
+kHz to hold 10 A.
+
+43
+00:03:33,495 --> 00:03:39,307
+The blocks can't switch instantly: the
+outgoing current decays through a
+
+44
+00:03:39,347 --> 00:03:45,640
+diode while the incoming one builds,
+taking 39 µs with 0.05 mH per phase.
+
+45
+00:03:45,680 --> 00:03:50,189
+The floating terminal carries no current,
+so it shows the back-EMF:
+
+46
+00:03:50,229 --> 00:03:55,582
+half the bus, plus 3/2 of its EMF less the
+part common to all three phases.
+
+47
+00:03:55,622 --> 00:04:01,058
+It crosses 12 V exactly at the zero
+crossing, 30° before the next commutation.
+
+48
+00:04:01,098 --> 00:04:06,302
+Sensorless six-step drives time their
+switching from that crossing.
+
+49
+00:04:07,402 --> 00:04:13,678
+With ideal blocks, the rounded corners of
+this EMF leave only 1.3% torque ripple.
+
+50
+00:04:13,718 --> 00:04:17,869
+The simulation adds chopping ripple and a
+short notch
+
+51
+00:04:17,909 --> 00:04:22,144
+at each commutation; the mean stays at
+0.412 N·m.
+
+52
+00:04:22,184 --> 00:04:26,944
+Near top speed, there's no voltage to
+spare. During the overlap,
+
+53
+00:04:26,984 --> 00:04:30,619
+the third phase's current changes at (V −
+4E)/3L:
+
+54
+00:04:30,659 --> 00:04:34,669
+negative once the EMF passes a quarter of
+the bus.
+
+55
+00:04:34,709 --> 00:04:40,261
+At full duty and 5000 rpm, it loses 44% at
+every commutation.
+
+56
+00:04:40,301 --> 00:04:44,927
+Carlson and colleagues analysed this in
+1992.
+
+57
+00:04:46,027 --> 00:04:50,454
+Now six-step our reference motor, whose
+EMF is nearly sinusoidal.
+
+58
+00:04:50,494 --> 00:04:54,029
+Its line-to-line EMF is an arch, not a
+plateau,
+
+59
+00:04:54,069 --> 00:05:00,262
+so even ideal blocks give 26% torque
+ripple. For a pure sine, it would be 14%.
+
+60
+00:05:00,302 --> 00:05:03,501
+That's Lesson 13's Hall-sensor angle
+error,
+
+61
+00:05:03,541 --> 00:05:08,486
+up to 30° either way, swept six times per
+electrical cycle.
+
+62
+00:05:09,586 --> 00:05:12,789
+Without a current loop, the duty sets the
+speed.
+
+63
+00:05:12,829 --> 00:05:16,775
+Chop the upper switch at 20 kHz, with the
+lower one of that
+
+64
+00:05:16,815 --> 00:05:21,128
+leg filling the gaps, and the pair sees d
+× 24 V on average.
+
+65
+00:05:21,168 --> 00:05:28,062
+Unloaded, nearly all of it balances the
+pair's back-EMF, so speed is proportional
+
+66
+00:05:28,102 --> 00:05:35,211
+to duty: 5530 rpm at full duty, or 231 rpm
+per volt, the Kv on hobby datasheets.
+
+67
+00:05:35,251 --> 00:05:41,232
+Simulated start-ups settle on that line.
+At full duty, 10 A of load costs
+
+68
+00:05:41,272 --> 00:05:47,464
+about 470 rpm: 185 for the resistance, the
+rest for the commutations.
+
+69
+00:05:48,564 --> 00:05:53,229
+So, six-step or sinusoidal drive? Six-step
+needs three Hall sensors,
+
+70
+00:05:53,269 --> 00:05:57,335
+one current sensor in the DC link, and a
+six-row table.
+
+71
+00:05:57,375 --> 00:06:01,400
+Sinusoidal drive needs a continuous angle,
+two phase currents,
+
+72
+00:06:01,440 --> 00:06:06,289
+Clarke, Park and PI loops, but gives a
+sinusoidal motor smooth torque.
+
+73
+00:06:06,329 --> 00:06:10,732
+Our simulations assume ideal switches and
+Hall sensors, no dead time,
+
+74
+00:06:10,772 --> 00:06:14,943
+constant speed, linear inductance, and no
+cogging torque.
+
+75
+00:06:16,043 --> 00:06:19,407
+On the bench: a Hall-sensored motor,
+clamped down,
+
+76
+00:06:19,447 --> 00:06:23,723
+its six-step controller, and a current-
+limited 24 V supply.
+
+77
+00:06:23,763 --> 00:06:29,622
+Scope the three Hall outputs against the
+controller's ground. Expect the
+
+78
+00:06:29,662 --> 00:06:35,902
+six codes in order, or in reverse, with an
+edge every 833 µs at 3000 rpm.
+
+79
+00:06:35,942 --> 00:06:41,399
+Clamp current probes on two phase leads:
+120° blocks with chopping ripple,
+
+80
+00:06:41,439 --> 00:06:45,785
+a 60° gap, and a short transition at every
+commutation.
+
+81
+00:06:45,825 --> 00:06:49,872
+Safety: no propellers, fingers clear of
+the rotor, and never clip a
+
+82
+00:06:49,912 --> 00:06:54,865
+scope ground to a phase lead; use
+differential probes for phase voltages.
+
+83
+00:06:55,965 --> 00:06:58,245
+Three predictions before next time.
+
+84
+00:06:58,285 --> 00:07:02,863
+One: how many conduction states does six-
+step use per electrical cycle?
+
+85
+00:07:03,863 --> 00:07:05,370
+Two: on our 8-pole motor,
+
+86
+00:07:05,410 --> 00:07:09,561
+how many mechanical degrees are there
+between commutations?
+
+87
+00:07:10,561 --> 00:07:15,404
+Three: on a 24 V bus, what line-to-line
+peak does six-step apply,
+
+88
+00:07:15,444 --> 00:07:18,724
+and what can sine-triangle PWM reach?
+
+89
+00:07:19,724 --> 00:07:26,855
+Next time: the three-phase inverter, and
+how PWM turns 24 V pulses into sine waves.
