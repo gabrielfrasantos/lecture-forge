@@ -9,7 +9,7 @@ Goal: intuition strong enough to derive the equations, predict behaviour and rea
 | 2 | [Winding geometry](02-winding-geometry) | Coils in slots, MMF staircase, winding function | Script the MMF of a 12-slot/8-pole winding; measure phase resistance | Rendered (7:52) |
 | 3 | [Magnetic circuits](03-magnetic-circuits) | Reluctance, the air gap, magnet load line | Predict air-gap flux density; check with a Hall probe | Rendered (7:24) |
 | 4 | [Iron: saturation and losses](04-iron) | B–H curves, hysteresis, laminations, eddy currents | Trace a B–H loop with an RC integrator | Rendered (7:59) |
-| 5 | The rotor's air-gap field | Surface-magnet flux density, slot openings, Carter coefficient | 2D FEA of the pilot motor, labelled as FEA | Planned |
+| 5 | [The rotor's air-gap field](05-air-gap-field) | Surface-magnet flux density, slot openings, Carter coefficient | 2D FEA of the pilot motor, labelled as FEA | Rendered (7:59) |
 | 6 | [Winding factors and harmonics](06-winding-factors) | Distribution and pitch factors; concentrated vs distributed | Winding factors for 9s/6p, 12s/8p, 24s/4p | Rendered (7:59) |
 | 7 | Back-EMF | Flux linkage, e = dλ/dt, Ke | Spin a motor with a drill; extract Ke from the scope | Planned |
 | 8 | Energy and co-energy | Force and torque from co-energy | Co-energy vs Maxwell stress on an actuator | Planned |
