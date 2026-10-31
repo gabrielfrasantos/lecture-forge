@@ -1,0 +1,445 @@
+1
+00:00:00,600 --> 00:00:05,248
+Command 3000 rpm, and this motor gets
+there in under 10 ms,
+
+2
+00:00:05,288 --> 00:00:08,429
+its current held at the 20 A limit.
+
+3
+00:00:08,469 --> 00:00:14,503
+Load the shaft with 0.4 N·m: the speed
+dips 155 rpm and comes back,
+
+4
+00:00:14,543 --> 00:00:17,985
+while i_q rises to carry the load.
+
+5
+00:00:18,025 --> 00:00:21,102
+Two nested loops do this, a speed loop on
+top of
+
+6
+00:00:21,142 --> 00:00:24,824
+Lesson 19's current loop: field-oriented
+control.
+
+7
+00:00:25,924 --> 00:00:28,191
+First, Lesson 19's answers.
+
+8
+00:00:28,231 --> 00:00:36,135
+One: first order, with time constant 1/ωc:
+159 µs at 1 kHz.
+
+9
+00:00:36,175 --> 00:00:43,543
+Two: 1.5 samples, 75 µs, is 27° of phase
+lag at 1 kHz.
+
+10
+00:00:43,583 --> 00:00:48,266
+Three: 5 to 10 times slower than the
+current loop. Today we'll see why.
+
+11
+00:00:49,366 --> 00:00:53,721
+Field orientation means steering the
+stator current relative to the magnet's
+
+12
+00:00:53,761 --> 00:00:58,748
+flux; on our motor, at right angles to it,
+where each amp makes the most torque.
+
+13
+00:00:58,788 --> 00:01:02,903
+The encoder gives the rotor angle, and
+Park's transform turns the
+
+14
+00:01:02,943 --> 00:01:07,649
+three phase currents into i_d, along the
+magnet, and i_q, across it.
+
+15
+00:01:07,689 --> 00:01:12,003
+At 3000 rpm the phase currents alternate
+at 200 Hz,
+
+16
+00:01:12,043 --> 00:01:17,782
+but in the rotor's frame they're constant:
+i_d = 0, i_q = 10 A.
+
+17
+00:01:17,822 --> 00:01:22,595
+The idea came from induction motors:
+Hasse's 1969 dissertation,
+
+18
+00:01:22,635 --> 00:01:27,560
+and Blaschke's 1972 Transvector control at
+Siemens. With magnets,
+
+19
+00:01:27,600 --> 00:01:32,454
+the flux turns with the rotor: an angle
+sensor is enough.
+
+20
+00:01:33,554 --> 00:01:37,123
+Inside the drive sits Lesson 19's current
+loop:
+
+21
+00:01:37,163 --> 00:01:43,896
+every 50 µs it measures the currents and
+sets the voltages, with a 1 kHz bandwidth.
+
+22
+00:01:43,936 --> 00:01:46,362
+Around it, the speed loop compares the
+measured
+
+23
+00:01:46,402 --> 00:01:49,176
+speed with the command, and asks for a
+torque.
+
+24
+00:01:49,216 --> 00:01:54,427
+Next, a reference block turns that torque
+into current commands:
+
+25
+00:01:54,467 --> 00:01:59,504
+for our surface-magnet motor, i_q* =
+T*/Kt, and i_d* = 0.
+
+26
+00:01:59,544 --> 00:02:02,010
+Each loop treats the one inside it as
+ideal,
+
+27
+00:02:02,050 --> 00:02:04,714
+so the inner loop must be much faster.
+
+28
+00:02:05,814 --> 00:02:10,457
+What does the speed loop control? Newton's
+law for rotation:
+
+29
+00:02:10,497 --> 00:02:14,993
+J dω/dt is the motor torque, minus load
+and friction.
+
+30
+00:02:15,033 --> 00:02:19,737
+With the current loop doing its job,
+torque is Kt times i_q*,
+
+31
+00:02:19,777 --> 00:02:24,958
+so from i_q* to speed the plant is an
+integrator: Kt over J s.
+
+32
+00:02:24,998 --> 00:02:33,643
+So 20 A, or 0.78 N·m, accelerates our
+rotor at 26,000 rad/s²:
+
+33
+00:02:33,683 --> 00:02:37,458
+0 to 3000 rpm in 12 ms.
+
+34
+00:02:38,558 --> 00:02:42,522
+Put a PI controller on that integrator.
+
+35
+00:02:42,562 --> 00:02:50,315
+The proportional gain sets the crossover,
+Kp Kt/J = ωs, so Kp = J ωs/Kt.
+
+36
+00:02:50,355 --> 00:02:55,088
+The integral gain removes the steady error
+a load would leave;
+
+37
+00:02:55,128 --> 00:02:58,875
+put its zero four times lower: Ki = Kp
+ωs/4.
+
+38
+00:02:58,915 --> 00:03:03,302
+As the gain rises, the closed-loop poles
+leave the origin on a
+
+39
+00:03:03,342 --> 00:03:08,129
+circle around that zero, and meet at
+−ωs/2: critically damped.
+
+40
+00:03:08,169 --> 00:03:13,260
+For 100 Hz, ten times below the current
+loop:
+
+41
+00:03:13,300 --> 00:03:19,476
+Kp = 0.483 A per rad/s, and Ki = 75.9 A
+per radian.
+
+42
+00:03:19,516 --> 00:03:25,291
+One price: the PI's zero alone makes a
+speed step overshoot 13.5 %.
+
+43
+00:03:26,391 --> 00:03:31,300
+Why 5 to 10 times slower? Because the
+speed loop expects its torque at once.
+
+44
+00:03:31,340 --> 00:03:34,087
+Here's a small speed step at four
+bandwidths,
+
+45
+00:03:34,127 --> 00:03:37,770
+time scaled to each. Dashed: an instant
+current loop.
+
+46
+00:03:37,810 --> 00:03:43,703
+At 100 Hz, the current loop lags just 6°
+at the crossover:
+
+47
+00:03:43,743 --> 00:03:49,423
+14.7 % overshoot, close to ideal. At
+200 Hz, 16.2 %.
+
+48
+00:03:49,463 --> 00:03:56,887
+At 500 Hz, 29 %. At 1 kHz, its 59° of lag
+leave 17° of phase margin,
+
+49
+00:03:56,927 --> 00:04:00,940
+and the step overshoots by 83 %.
+
+50
+00:04:02,040 --> 00:04:08,317
+Now a big step, 1000 to 3000 rpm. The PI
+asks for far more than 20 A,
+
+51
+00:04:08,357 --> 00:04:15,583
+so its command is clamped, and the speed
+climbs at a steady 247 rpm per ms.
+
+52
+00:04:15,623 --> 00:04:20,453
+If the integrator keeps integrating while
+the command is clamped,
+
+53
+00:04:20,493 --> 00:04:25,424
+it winds up to 2.6 N·m, and the speed
+overshoots to 3950 rpm.
+
+54
+00:04:25,464 --> 00:04:30,197
+Anti-windup fixes it, as in Lesson 19.
+Here, simply holding the
+
+55
+00:04:30,237 --> 00:04:35,748
+integrator while the command is clamped
+works best: 2.6 % overshoot.
+
+56
+00:04:35,788 --> 00:04:41,130
+At 50 ms, a 0.4 N·m load: the speed dips
+155 rpm,
+
+57
+00:04:41,170 --> 00:04:49,578
+and the integrator raises i_q to 10.4 A to
+recover. i_d stays near zero.
+
+58
+00:04:50,678 --> 00:04:53,286
+Why i_d* = 0? In the current plane,
+
+59
+00:04:53,326 --> 00:04:58,074
+i_d across and i_q up, the 20 A current
+limit is a circle.
+
+60
+00:04:58,114 --> 00:05:03,033
+With surface magnets, Ld equals Lq, so
+torque depends on i_q alone:
+
+61
+00:05:03,073 --> 00:05:06,394
+lines of constant torque are horizontal.
+
+62
+00:05:06,434 --> 00:05:13,772
+The circle's highest point is all 20 A on
+q: 0.78 N·m. Put 10 A on d,
+
+63
+00:05:13,812 --> 00:05:20,727
+and i_q drops to 17.3 A: 13 % less torque,
+same copper loss.
+
+64
+00:05:21,827 --> 00:05:26,543
+Buried magnets change that: the IPM
+variant has Lq twice Ld,
+
+65
+00:05:26,583 --> 00:05:30,035
+so negative i_d adds reluctance torque.
+
+66
+00:05:30,075 --> 00:05:37,944
+The torque lines bend, and the best point
+on the circle moves to 114.7°:
+
+67
+00:05:37,984 --> 00:05:45,924
+i_d = -8.3 A, i_q = 18.2 A, 0.691 N·m,
+15 % more than with i_q alone.
+
+68
+00:05:45,964 --> 00:05:51,160
+Doing that at every torque traces the MTPA
+curve, maximum torque per amp,
+
+69
+00:05:51,200 --> 00:05:55,290
+and the reference block reads i_d* and
+i_q* from it.
+
+70
+00:05:55,330 --> 00:06:02,366
+With MTPA in the cascade, the IPM reaches
+3000 rpm 11 % sooner,
+
+71
+00:06:02,406 --> 00:06:08,185
+and carries 0.4 N·m with 13 % less copper
+loss.
+
+72
+00:06:09,285 --> 00:06:15,464
+One more limit: voltage. With R neglected,
+the steady-state voltage
+
+73
+00:06:15,504 --> 00:06:21,527
+is ωe times the flux linkage, and linear
+SVPWM allows 13.9 V.
+
+74
+00:06:21,567 --> 00:06:24,440
+In the current plane, that's an ellipse,
+
+75
+00:06:24,480 --> 00:06:28,699
+centred at −λm/Ld, and it shrinks as the
+speed rises.
+
+76
+00:06:28,739 --> 00:06:34,700
+For our surface-magnet motor it's a circle
+around −130 A:
+
+77
+00:06:34,740 --> 00:06:41,839
+at 3000 rpm its edge is 91 A from the
+origin; at 4500 rpm, 17 A.
+
+78
+00:06:41,879 --> 00:06:49,427
+The IPM's ellipse is centred at −31 A. At
+4810 rpm it reaches the 20 A MTPA point:
+
+79
+00:06:49,467 --> 00:06:54,964
+that's its base speed, the top speed with
+full torque.
+
+80
+00:06:56,089 --> 00:06:59,918
+Your turn: a low-voltage FOC kit, the
+motor with an encoder,
+
+81
+00:06:59,958 --> 00:07:03,027
+and a brake or a second motor as the load.
+
+82
+00:07:03,067 --> 00:07:10,331
+Use R, L, λm and J from Lesson 15, and
+tune the loops for 1 kHz and 100 Hz.
+
+83
+00:07:10,371 --> 00:07:15,959
+Step from 1000 to 2000 rpm, and log speed,
+i_d and i_q.
+
+84
+00:07:15,999 --> 00:07:22,908
+At the 20 A limit, the slope gives J: Kt
+times 20 A, over dω/dt.
+
+85
+00:07:22,948 --> 00:07:28,158
+Expect 2.6 ms at the limit, 5.2 %
+overshoot,
+
+86
+00:07:28,198 --> 00:07:35,500
+and with 0.2 N·m of load, a 77 rpm dip and
+5.23 A of i_q.
+
+87
+00:07:36,600 --> 00:07:38,880
+Three predictions before next time.
+
+88
+00:07:38,920 --> 00:07:43,794
+One: the surface-magnet motor at its 20 A
+limit. What's the best i_d?
+
+89
+00:07:44,794 --> 00:07:52,288
+Two: the reference SPM at 24 V and 20 A, R
+neglected. What's its base speed?
+
+90
+00:07:53,288 --> 00:07:56,436
+Three: above base speed, what must i_d do?
+
+91
+00:07:57,436 --> 00:08:00,192
+Next time, the series finale: field
+weakening,
+
+92
+00:08:00,232 --> 00:08:03,406
+sensorless control, and where the losses
+go.

@@ -1,0 +1,156 @@
+{
+ "rep": {
+  "video": "h264 1920x1080 30/1 485.00s",
+  "audio": "aac 48000 Hz 1 ch 485.01s",
+  "subtitles": "1 track(s): mov_text/eng",
+  "chapters": 13,
+  "av_duration_diff_s": 0.006,
+  "integrated_LUFS": -16.1,
+  "true_peak_dBTP": -1.4,
+  "LRA_LU": 2.7,
+  "asr_word_error_rate": 0.055,
+  "captions": "92 cues, 0 cues mostly over silence, 0 overlaps, max 19.4 chars/s, last cue ends 483.4s"
+ },
+ "mism": [
+  [
+   "h1",
+   "Command 3000 rpm, and this motor gets there in under 10 milliseconds, its current held at the 20 amp limit.",
+   "Command 3000 RPM and this motor gets there in under 10 milliseconds. It's current held at the 20 amp limit."
+  ],
+  [
+   "h2",
+   "Load the shaft with 0.4 newton meters: the speed dips 155 rpm and comes back, while IQ rises to carry the load.",
+   "Load the shaft with 0.4Nm. The speed dips 155RPM and comes back, while IQ rises to carry the load."
+  ],
+  [
+   "a2",
+   "One: first order, with a time constant of one over omega C: 159 microseconds at 1 kilohertz.",
+   "1 first order with a time constant of 1 over omega c. 159 microseconds at 1 kilohertz."
+  ],
+  [
+   "a3",
+   "Two: one and a half samples, 75 microseconds, is 27 degrees of phase lag at 1 kilohertz.",
+   "Two 1.5 samples, 75 microseconds, is 27 degrees of phase lag at 1 kilohertz."
+  ],
+  [
+   "a4",
+   "Three: 5 to 10 times slower than the current loop. Today we'll see why.",
+   "3, 5 to 10 times slower than the current loop. Today we'll see why."
+  ],
+  [
+   "o2",
+   "The encoder gives the rotor angle, and Park's transform turns the three phase currents into ID, along the magnet, and IQ, across it.",
+   "The encoder gives the rotor angle, and Park's transform turns the three-phase currents into I.D., along the magnet and I.Q. across it."
+  ],
+  [
+   "o3",
+   "At 3000 rpm, the phase currents alternate at 200 hertz, but in the rotor's frame they're constant: ID is zero, and IQ is 10 amps.",
+   "At 3000 RPM, the phase currents alternate at 200 Hz, but in the rotors frame their constant. ID is zero and IQ is 10 amps."
+  ],
+  [
+   "o4",
+   "The idea came from induction motors: Hasse's 1969 dissertation, and Blaschke's 1972 Transvector control at Siemens. With magnets, the flux turns with the rotor: an angle sensor is enough.",
+   "The idea came from induction motors, Hoss's 1969 dissertation, and Bloschka's 1972 Transfector Control at Siemens. With magnets, the flux turns with the rotor, and angle sensor is enough."
+  ],
+  [
+   "c2",
+   "Around it, the speed loop compares the measured speed with the command, and asks for a torque.",
+   "Around it, the speed loop compares the measured speed with the command and asks for a torque. [BUZZER]"
+  ],
+  [
+   "c3",
+   "Next, a reference block turns that torque into current commands: for our surface magnet motor, IQ star is the torque over KT, and ID star is zero.",
+   "Next, a reference block turns that torque into current commands. For our surface magnet motor, IQ* is the torque over KT, and ID* is zero."
+  ],
+  [
+   "p2",
+   "With the current loop doing its job, torque is KT times IQ star, so from IQ star to speed, the plant is an integrator: KT over J S.",
+   "With the current loop doing its job, torque is KT times IQ star. So from IQ star to speed, the plant is an integrator. KT over JS."
+  ],
+  [
+   "p3",
+   "So 20 amps, or 0.78 newton meters, accelerates our rotor at 26,000 radians per second squared: zero to 3000 rpm in 12 milliseconds.",
+   "So 20 amps, or 0.78 newton meters, accelerates our rotor at 26,000 radians per second squared. Zero to 3,000 RPM in 12 milliseconds."
+  ],
+  [
+   "s2",
+   "The integral gain removes the steady error a load would leave; put its zero four times lower: KI is KP omega S over 4.",
+   "The integral gain removes the steady error a load would leave, put its 0 4 times lower. K i is K p omega s over 4."
+  ],
+  [
+   "s4",
+   "For 100 hertz, ten times below the current loop: KP is 0.483 amps per radian per second, and KI is 75.9 amps per radian.",
+   "For 100 Hertz, 10 times below the current loop. KP is 0.483 amps per radian per second, and KI is 75.9 amps per radian."
+  ],
+  [
+   "s5",
+   "One price: the PI's zero alone makes a speed step overshoot 13.5%.",
+   "One price, the Pi Zero alone makes a speed step overshoot 13.5%."
+  ],
+  [
+   "r1",
+   "Why 5 to 10 times slower? Because the speed loop expects its torque at once.",
+   "Y5 to 10 times slower, because the speed loop expects its torque at once."
+  ],
+  [
+   "r4",
+   "At 500 hertz, 29%. At 1 kilohertz, its 59 degrees of lag leave 17 degrees of phase margin, and the step overshoots by 83%.",
+   "at 500 Hz, 29%. At 1 kHz, its 59 degrees of lag leaves 17 degrees of phase margin, and the step overshoots by 83%."
+  ],
+  [
+   "t1",
+   "Now a big step, 1000 to 3000 rpm. The PI asks for far more than 20 amps, so its command is clamped, and the speed climbs at a steady 247 rpm per millisecond.",
+   "Now a big step, 1,000 to 3,000 RPM. The PI asks for far more than 20 amps, so its command is clamped, and the speed climbs at a steady 247 RPM per millisecond."
+  ],
+  [
+   "t3",
+   "Anti windup fixes it, as in Lesson 19. Here, simply holding the integrator while the command is clamped works best: 2.6% overshoot.",
+   "anti-wind-up fixes it as in lesson 19. Here, simply holding the integrator while the command is clamped works best, 2.6% overshoot."
+  ],
+  [
+   "d1",
+   "Why is ID star zero? In the current plane, ID across and IQ up, the 20 amp current limit is a circle.",
+   "Why is ID star zero? In the current plane, ID across and IQ up, the 20 amp current limit is a circle. [BUZZER]"
+  ],
+  [
+   "m2",
+   "The torque lines bend, and the best point on the circle moves to 114.7 degrees: minus 8.3 amps on D, 18.2 on Q, 0.691 newton meters, 15% more than with Q current alone.",
+   "The torque lines bend, and the best point on the circle moves to 114.7 degrees, minus 8.3 amps on D, 18.2 on Q, 0.69 1 newton meters, 15% more than with Q current alone."
+  ],
+  [
+   "v3",
+   "For our surface magnet motor, it's a circle around minus 130 amps: at 3000 rpm, its edge is 91 amps from the origin; at 4500 rpm, 17 amps.",
+   "For our surface magnet motor, it's a circle around -130 amps. At 3000 RPM, its edge is 91 amps from the origin, at 4500 RPM, 17 amps."
+  ],
+  [
+   "v4",
+   "The interior magnet motor's ellipse is centered at minus 31 amps. At 4810 rpm, it reaches the 20 amp MTPA point: that's its base speed, the top speed with full torque.",
+   "The interior magnet motor's ellipse is centered at -31 amps. At 4810 RPM, it reaches the 20 amp MTPA point. That's its base speed, the top speed with full torque."
+  ],
+  [
+   "e1",
+   "Your turn: a low voltage FOC kit, the motor with an encoder, and a brake or a second motor as the load.",
+   "Your turn, a low voltage FOC kit, the motor with an encoder, and a brake or a second motor as the load. [BUZZER]"
+  ],
+  [
+   "e3",
+   "Step from 1000 to 2000 rpm, and log speed, ID and IQ. At the 20 amp limit, the slope gives J: KT times 20 amps, over the rate of change of omega.",
+   "Step from 1,000 to 2,000 RPM and log speed, ID and IQ. At the 20 amp limit, the slope gives J, KT times 20 amps over the rate of change of omega."
+  ],
+  [
+   "q2",
+   "One: the surface magnet motor at its 20 amp limit. What's the best ID?",
+   "1. The Surface Magnet Motor at its 20 amp limit. What's the best ID?"
+  ],
+  [
+   "q3",
+   "Two: the reference surface magnet motor, at 24 volts and 20 amps, R neglected. What's its base speed?",
+   "Two, the reference surface magnet motor at 24 volts and 20 amps are neglected. What's its base speed?"
+  ],
+  [
+   "q4",
+   "Three: above base speed, what must ID do?",
+   "3. Above base speed, what must ID do?"
+  ]
+ ]
+}

@@ -1,0 +1,82 @@
+;FFMETADATA1
+title=Field-Oriented Control — PMSM & BLDC, Lesson 20
+artist=lecture-forge
+language=eng
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=25624
+title=01 Speed on command
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=25624
+END=49066
+title=02 Answers from Lesson 19
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=49066
+END=93254
+title=03 Field orientation
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=93254
+END=125514
+title=04 The cascade
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=125514
+END=158258
+title=05 What the speed loop sees
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=158258
+END=206091
+title=06 Tuning the speed PI
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=206091
+END=241740
+title=07 Why 5–10× slower?
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=241740
+END=290378
+title=08 A speed step under load
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=290378
+END=321527
+title=09 Surface magnets: i_d* = 0
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=321527
+END=368985
+title=10 Buried magnets: MTPA
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=368985
+END=415789
+title=11 The voltage ellipse and base speed
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=415789
+END=456300
+title=12 Run it on a kit
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=456300
+END=485006
+title=13 Predict, then check

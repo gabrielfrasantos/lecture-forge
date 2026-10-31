@@ -1,0 +1,412 @@
+[
+ {
+  "id": "hook",
+  "title": "Speed on command",
+  "start": 0.0,
+  "beats": [
+   {
+    "id": "h1",
+    "start": 0.6,
+    "end": 8.069,
+    "text": "Command 3000 rpm, and this motor gets there in under 10 ms, its current held at the 20 A limit."
+   },
+   {
+    "id": "h2",
+    "start": 8.469,
+    "end": 17.625,
+    "text": "Load the shaft with 0.4 N\u00b7m: the speed dips 155 rpm and comes back, while i_q rises to carry the load."
+   },
+   {
+    "id": "h3",
+    "start": 18.025,
+    "end": 24.324,
+    "text": "Two nested loops do this, a speed loop on top of Lesson 19's current loop: field-oriented control."
+   }
+  ],
+  "end": 25.62441666666667
+ },
+ {
+  "id": "answers",
+  "title": "Answers from Lesson 19",
+  "start": 25.62441666666667,
+  "beats": [
+   {
+    "id": "a1",
+    "start": 25.924,
+    "end": 27.931,
+    "text": "First, Lesson 19's answers."
+   },
+   {
+    "id": "a2",
+    "start": 28.231,
+    "end": 35.775,
+    "text": "One: first order, with time constant 1/\u03c9c: 159 \u00b5s at 1 kHz."
+   },
+   {
+    "id": "a3",
+    "start": 36.175,
+    "end": 43.183,
+    "text": "Two: 1.5 samples, 75 \u00b5s, is 27\u00b0 of phase lag at 1 kHz."
+   },
+   {
+    "id": "a4",
+    "start": 43.583,
+    "end": 47.766,
+    "text": "Three: 5 to 10 times slower than the current loop. Today we'll see why."
+   }
+  ],
+  "end": 49.06641666666667
+ },
+ {
+  "id": "orient",
+  "title": "Field orientation",
+  "start": 49.06641666666667,
+  "beats": [
+   {
+    "id": "o1",
+    "start": 49.366,
+    "end": 58.388,
+    "text": "Field orientation means steering the stator current relative to the magnet's flux; on our motor, at right angles to it, where each amp makes the most torque."
+   },
+   {
+    "id": "o2",
+    "start": 58.788,
+    "end": 67.289,
+    "text": "The encoder gives the rotor angle, and Park's transform turns the three phase currents into i_d, along the magnet, and i_q, across it."
+   },
+   {
+    "id": "o3",
+    "start": 67.689,
+    "end": 77.422,
+    "text": "At 3000 rpm the phase currents alternate at 200 Hz, but in the rotor's frame they're constant: i_d = 0, i_q = 10 A."
+   },
+   {
+    "id": "o4",
+    "start": 77.822,
+    "end": 91.954,
+    "text": "The idea came from induction motors: Hasse's 1969 dissertation, and Blaschke's 1972 Transvector control at Siemens. With magnets, the flux turns with the rotor: an angle sensor is enough."
+   }
+  ],
+  "end": 93.25441666666667
+ },
+ {
+  "id": "cascade",
+  "title": "The cascade",
+  "start": 93.25441666666667,
+  "beats": [
+   {
+    "id": "c1",
+    "start": 93.554,
+    "end": 103.536,
+    "text": "Inside the drive sits Lesson 19's current loop: every 50 \u00b5s it measures the currents and sets the voltages, with a 1 kHz bandwidth."
+   },
+   {
+    "id": "c2",
+    "start": 103.936,
+    "end": 108.816,
+    "text": "Around it, the speed loop compares the measured speed with the command, and asks for a torque."
+   },
+   {
+    "id": "c3",
+    "start": 109.216,
+    "end": 119.144,
+    "text": "Next, a reference block turns that torque into current commands: for our surface-magnet motor, i_q* = T*/Kt, and i_d* = 0."
+   },
+   {
+    "id": "c4",
+    "start": 119.544,
+    "end": 124.214,
+    "text": "Each loop treats the one inside it as ideal, so the inner loop must be much faster."
+   }
+  ],
+  "end": 125.51370833333335
+ },
+ {
+  "id": "plant",
+  "title": "What the speed loop sees",
+  "start": 125.51370833333335,
+  "beats": [
+   {
+    "id": "p1",
+    "start": 125.814,
+    "end": 134.633,
+    "text": "What does the speed loop control? Newton's law for rotation: J d\u03c9/dt is the motor torque, minus load and friction."
+   },
+   {
+    "id": "p2",
+    "start": 135.033,
+    "end": 144.598,
+    "text": "With the current loop doing its job, torque is Kt times i_q*, so from i_q* to speed the plant is an integrator: Kt over J s."
+   },
+   {
+    "id": "p3",
+    "start": 144.998,
+    "end": 156.958,
+    "text": "So 20 A, or 0.78 N\u00b7m, accelerates our rotor at 26,000 rad/s\u00b2: 0 to 3000 rpm in 12 ms."
+   }
+  ],
+  "end": 158.25766666666667
+ },
+ {
+  "id": "tuning",
+  "title": "Tuning the speed PI",
+  "start": 158.25766666666667,
+  "beats": [
+   {
+    "id": "s1",
+    "start": 158.558,
+    "end": 169.955,
+    "text": "Put a PI controller on that integrator. The proportional gain sets the crossover, Kp Kt/J = \u03c9s, so Kp = J \u03c9s/Kt."
+   },
+   {
+    "id": "s2",
+    "start": 170.355,
+    "end": 178.515,
+    "text": "The integral gain removes the steady error a load would leave; put its zero four times lower: Ki = Kp \u03c9s/4."
+   },
+   {
+    "id": "s3",
+    "start": 178.915,
+    "end": 187.769,
+    "text": "As the gain rises, the closed-loop poles leave the origin on a circle around that zero, and meet at \u2212\u03c9s/2: critically damped."
+   },
+   {
+    "id": "s4",
+    "start": 188.169,
+    "end": 199.116,
+    "text": "For 100 Hz, ten times below the current loop: Kp = 0.483 A per rad/s, and Ki = 75.9 A per radian."
+   },
+   {
+    "id": "s5",
+    "start": 199.516,
+    "end": 204.791,
+    "text": "One price: the PI's zero alone makes a speed step overshoot 13.5 %."
+   }
+  ],
+  "end": 206.09133333333335
+ },
+ {
+  "id": "ratio",
+  "title": "Why 5\u201310\u00d7 slower?",
+  "start": 206.09133333333335,
+  "beats": [
+   {
+    "id": "r1",
+    "start": 206.391,
+    "end": 210.94,
+    "text": "Why 5 to 10 times slower? Because the speed loop expects its torque at once."
+   },
+   {
+    "id": "r2",
+    "start": 211.34,
+    "end": 217.41,
+    "text": "Here's a small speed step at four bandwidths, time scaled to each. Dashed: an instant current loop."
+   },
+   {
+    "id": "r3",
+    "start": 217.81,
+    "end": 229.063,
+    "text": "At 100 Hz, the current loop lags just 6\u00b0 at the crossover: 14.7 % overshoot, close to ideal. At 200 Hz, 16.2 %."
+   },
+   {
+    "id": "r4",
+    "start": 229.463,
+    "end": 240.44,
+    "text": "At 500 Hz, 29 %. At 1 kHz, its 59\u00b0 of lag leave 17\u00b0 of phase margin, and the step overshoots by 83 %."
+   }
+  ],
+  "end": 241.74029166666668
+ },
+ {
+  "id": "step",
+  "title": "A speed step under load",
+  "start": 241.74029166666668,
+  "beats": [
+   {
+    "id": "t1",
+    "start": 242.04,
+    "end": 255.223,
+    "text": "Now a big step, 1000 to 3000 rpm. The PI asks for far more than 20 A, so its command is clamped, and the speed climbs at a steady 247 rpm per ms."
+   },
+   {
+    "id": "t2",
+    "start": 255.623,
+    "end": 265.064,
+    "text": "If the integrator keeps integrating while the command is clamped, it winds up to 2.6 N\u00b7m, and the speed overshoots to 3950 rpm."
+   },
+   {
+    "id": "t3",
+    "start": 265.464,
+    "end": 275.388,
+    "text": "Anti-windup fixes it, as in Lesson 19. Here, simply holding the integrator while the command is clamped works best: 2.6 % overshoot."
+   },
+   {
+    "id": "t4",
+    "start": 275.788,
+    "end": 289.078,
+    "text": "At 50 ms, a 0.4 N\u00b7m load: the speed dips 155 rpm, and the integrator raises i_q to 10.4 A to recover. i_d stays near zero."
+   }
+  ],
+  "end": 290.37791666666664
+ },
+ {
+  "id": "spm",
+  "title": "Surface magnets: i_d* = 0",
+  "start": 290.37791666666664,
+  "beats": [
+   {
+    "id": "d1",
+    "start": 290.678,
+    "end": 297.714,
+    "text": "Why i_d* = 0? In the current plane, i_d across and i_q up, the 20 A current limit is a circle."
+   },
+   {
+    "id": "d2",
+    "start": 298.114,
+    "end": 306.034,
+    "text": "With surface magnets, Ld equals Lq, so torque depends on i_q alone: lines of constant torque are horizontal."
+   },
+   {
+    "id": "d3",
+    "start": 306.434,
+    "end": 320.227,
+    "text": "The circle's highest point is all 20 A on q: 0.78 N\u00b7m. Put 10 A on d, and i_q drops to 17.3 A: 13 % less torque, same copper loss."
+   }
+  ],
+  "end": 321.5271249999999
+ },
+ {
+  "id": "mtpa",
+  "title": "Buried magnets: MTPA",
+  "start": 321.5271249999999,
+  "beats": [
+   {
+    "id": "m1",
+    "start": 321.827,
+    "end": 329.675,
+    "text": "Buried magnets change that: the IPM variant has Lq twice Ld, so negative i_d adds reluctance torque."
+   },
+   {
+    "id": "m2",
+    "start": 330.075,
+    "end": 345.564,
+    "text": "The torque lines bend, and the best point on the circle moves to 114.7\u00b0: i_d = -8.3 A, i_q = 18.2 A, 0.691 N\u00b7m, 15 % more than with i_q alone."
+   },
+   {
+    "id": "m3",
+    "start": 345.964,
+    "end": 354.93,
+    "text": "Doing that at every torque traces the MTPA curve, maximum torque per amp, and the reference block reads i_d* and i_q* from it."
+   },
+   {
+    "id": "m4",
+    "start": 355.33,
+    "end": 367.685,
+    "text": "With MTPA in the cascade, the IPM reaches 3000 rpm 11 % sooner, and carries 0.4 N\u00b7m with 13 % less copper loss."
+   }
+  ],
+  "end": 368.9853749999998
+ },
+ {
+  "id": "voltage",
+  "title": "The voltage ellipse and base speed",
+  "start": 368.9853749999998,
+  "beats": [
+   {
+    "id": "v1",
+    "start": 369.285,
+    "end": 381.167,
+    "text": "One more limit: voltage. With R neglected, the steady-state voltage is \u03c9e times the flux linkage, and linear SVPWM allows 13.9 V."
+   },
+   {
+    "id": "v2",
+    "start": 381.567,
+    "end": 388.339,
+    "text": "In the current plane, that's an ellipse, centred at \u2212\u03bbm/Ld, and it shrinks as the speed rises."
+   },
+   {
+    "id": "v3",
+    "start": 388.739,
+    "end": 401.479,
+    "text": "For our surface-magnet motor it's a circle around \u2212130 A: at 3000 rpm its edge is 91 A from the origin; at 4500 rpm, 17 A."
+   },
+   {
+    "id": "v4",
+    "start": 401.879,
+    "end": 414.464,
+    "text": "The IPM's ellipse is centred at \u221231 A. At 4810 rpm it reaches the 20 A MTPA point: that's its base speed, the top speed with full torque."
+   }
+  ],
+  "end": 415.78916666666646
+ },
+ {
+  "id": "exercise",
+  "title": "Run it on a kit",
+  "start": 415.78916666666646,
+  "beats": [
+   {
+    "id": "e1",
+    "start": 416.089,
+    "end": 422.667,
+    "text": "Your turn: a low-voltage FOC kit, the motor with an encoder, and a brake or a second motor as the load."
+   },
+   {
+    "id": "e2",
+    "start": 423.067,
+    "end": 429.971,
+    "text": "Use R, L, \u03bbm and J from Lesson 15, and tune the loops for 1 kHz and 100 Hz."
+   },
+   {
+    "id": "e3",
+    "start": 430.371,
+    "end": 442.548,
+    "text": "Step from 1000 to 2000 rpm, and log speed, i_d and i_q. At the 20 A limit, the slope gives J: Kt times 20 A, over d\u03c9/dt."
+   },
+   {
+    "id": "e4",
+    "start": 442.948,
+    "end": 455.0,
+    "text": "Expect 2.6 ms at the limit, 5.2 % overshoot, and with 0.2 N\u00b7m of load, a 77 rpm dip and 5.23 A of i_q."
+   }
+  ],
+  "end": 456.29995833333305
+ },
+ {
+  "id": "predict",
+  "title": "Predict, then check",
+  "start": 456.29995833333305,
+  "beats": [
+   {
+    "id": "q1",
+    "start": 456.6,
+    "end": 458.52,
+    "text": "Three predictions before next time."
+   },
+   {
+    "id": "q2",
+    "start": 458.92,
+    "end": 463.294,
+    "text": "One: the surface-magnet motor at its 20 A limit. What's the best i_d?"
+   },
+   {
+    "id": "q3",
+    "start": 464.794,
+    "end": 471.788,
+    "text": "Two: the reference SPM at 24 V and 20 A, R neglected. What's its base speed?"
+   },
+   {
+    "id": "q4",
+    "start": 473.288,
+    "end": 475.936,
+    "text": "Three: above base speed, what must i_d do?"
+   },
+   {
+    "id": "q5",
+    "start": 477.436,
+    "end": 482.906,
+    "text": "Next time, the series finale: field weakening, sensorless control, and where the losses go."
+   }
+  ],
+  "end": 485.00574999999975
+ }
+]
