@@ -10,9 +10,9 @@ MAXL, MAXLINES = 42, 2
 
 
 def ts(t):
-    t = max(0.0, t)
-    h = int(t // 3600); m = int(t % 3600 // 60); s = t % 60
-    return f"{h:02d}:{m:02d}:{int(s):02d},{int(round((s - int(s)) * 1000)) % 1000:03d}"
+    ms = int(round(max(0.0, t) * 1000))  # round once, then split, so 59.9996 s -> 00:01:00,000
+    h, ms = divmod(ms, 3_600_000); m, ms = divmod(ms, 60_000); s, ms = divmod(ms, 1000)
+    return f"{h:02d}:{m:02d}:{s:02d},{ms:03d}"
 
 
 def split_caption(text):
