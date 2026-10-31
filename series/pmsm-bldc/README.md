@@ -18,7 +18,7 @@ Goal: intuition strong enough to derive the equations, predict behaviour and rea
 | 11 | [Space vectors](11-space-vectors) | Phasors vs space vectors, scaling conventions | Space vectors from logged currents | Rendered (7:54) |
 | 12 | [Clarke transformation](12-clarke) | abc → αβ, zero sequence | Plot the αβ locus of measured currents | Rendered (7:58) |
 | 13 | [Park transformation](13-park) | Rotating frames; angle from Hall sensors or encoder | Effect of angle error on d and q | Rendered (7:58) |
-| 14 | The d–q model | Voltage and torque equations | Simulate a current step; steady-state phasor diagram | Planned |
+| 14 | [The d–q model](14-dq-model) | Voltage and torque equations | Simulate a current step; steady-state phasor diagram | Rendered (7:56) |
 | 15 | Parameter identification | R, Ld, Lq, λm, J, friction | Locked-rotor, back-EMF and run-down tests | Planned |
 | 16 | BLDC six-step drive | Trapezoidal EMF, Hall commutation, torque ripple | Scope Hall signals and phase currents | Planned |
 | 17 | [The three-phase inverter](17-inverter) | Switching states, dead time, PWM | Simulate the bridge; measure phase voltages | Rendered (8:11) |
