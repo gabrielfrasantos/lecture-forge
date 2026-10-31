@@ -1,0 +1,505 @@
+1
+00:00:00,600 --> 00:00:04,199
+Turn this motor's shaft by hand, with
+nothing connected,
+
+2
+00:00:04,239 --> 00:00:07,589
+and it catches at 24 positions per
+revolution.
+
+3
+00:00:07,629 --> 00:00:13,250
+Feed it 20 A, timed to the rotor, and
+Lesson 5's field solution
+
+4
+00:00:13,290 --> 00:00:18,593
+gives 0.71 N·m on average, swinging by
+0.22 either way.
+
+5
+00:00:18,633 --> 00:00:22,499
+Both come from one function, the co-
+energy. Today we take it apart:
+
+6
+00:00:22,539 --> 00:00:26,536
+the steady torque, the ripple, and how to
+remove most of it.
+
+7
+00:00:27,436 --> 00:00:29,715
+First, the answers from Lesson 8.
+
+8
+00:00:29,755 --> 00:00:36,309
+One: with L = L0 + kx, at constant
+current, the force is ½ I² k.
+
+9
+00:00:36,349 --> 00:00:40,773
+Two: with linear iron, double the current,
+and the force grows four times.
+
+10
+00:00:40,813 --> 00:00:44,995
+Three: the co-energy holds each current
+times the magnet's flux linkage,
+
+11
+00:00:45,035 --> 00:00:48,174
+so its slope, i dλm/dθ, is linear in
+current.
+
+12
+00:00:49,024 --> 00:00:51,567
+Here's the reference motor, solved in 2D:
+
+13
+00:00:51,607 --> 00:00:55,772
+twelve tooth coils in three phases, and
+eight surface magnets.
+
+14
+00:00:55,812 --> 00:00:58,939
+With linear iron, its co-energy has three
+parts.
+
+15
+00:00:58,979 --> 00:01:05,267
+½ iᵀ L i, from the self and mutual
+inductances; iᵀ λm(θ), the magnet flux
+
+16
+00:01:05,307 --> 00:01:11,722
+linking each phase times its current; and
+W′pm, from the magnets alone.
+
+17
+00:01:11,762 --> 00:01:15,332
+Differentiate with respect to rotor angle
+at constant current,
+
+18
+00:01:15,372 --> 00:01:19,657
+and each part gives a torque: reluctance,
+alignment, and cogging.
+
+19
+00:01:20,507 --> 00:01:24,679
+Start with alignment. Take sinusoidal
+linkages:
+
+20
+00:01:24,719 --> 00:01:30,176
+λm cos θe for the first phase, the others
+lagging by 120°.
+
+21
+00:01:30,216 --> 00:01:34,048
+The slope with mechanical angle brings out
+p, the pole pairs.
+
+22
+00:01:34,088 --> 00:01:37,572
+Put the current on the q axis, 90° ahead
+of the magnet,
+
+23
+00:01:37,612 --> 00:01:41,588
+and each phase current follows the same
+sine as its slope.
+
+24
+00:01:41,628 --> 00:01:45,645
+Each phase's torque pulses as sine
+squared, but the three pulses,
+
+25
+00:01:45,685 --> 00:01:49,565
+a third of a cycle apart, add to a
+constant: three halves.
+
+26
+00:01:49,605 --> 00:01:56,848
+So T = 3/2 p λm i_q. Current on the d axis
+adds nothing: its terms cancel.
+
+27
+00:01:57,699 --> 00:02:05,408
+Energy gives a second route. Each back-EMF
+is ωm times the slope of its linkage,
+
+28
+00:02:05,448 --> 00:02:10,163
+so the power, Σ e·i, is ωm times the same
+sum.
+
+29
+00:02:10,203 --> 00:02:13,833
+Power is torque times speed, so the torque
+is that sum again.
+
+30
+00:02:13,873 --> 00:02:20,696
+At 3000 rpm and 20 A on q, the EMF peak is
+8.17 V:
+
+31
+00:02:20,736 --> 00:02:28,820
+3/2 × 8.17 × 20 = 245 W. Divided by 314
+rad/s: 0.780 N·m.
+
+32
+00:02:28,860 --> 00:02:32,356
+That's the torque constant, Kt = 3/2 p λm:
+
+33
+00:02:32,396 --> 00:02:36,600
+0.039 N·m per amp, with the nominal 6.5
+mWb.
+
+34
+00:02:37,450 --> 00:02:42,596
+Now the solver. Hold 20 A, and swing the
+current away from the magnet's d axis,
+
+35
+00:02:42,636 --> 00:02:46,047
+averaging over one cogging period at each
+angle.
+
+36
+00:02:46,087 --> 00:02:49,095
+The points fall on a sine: zero on d,
+
+37
+00:02:49,135 --> 00:02:53,267
+a peak at 90°, all on q, and braking past
+180°.
+
+38
+00:02:53,307 --> 00:03:01,578
+The peak is 0.713 N·m, not 0.78: the 2D
+flux linkage is 5.94 mWb,
+
+39
+00:03:01,618 --> 00:03:08,782
+8.6% low, with no end flux and an assumed
+Br of 1.2 T.
+
+40
+00:03:08,822 --> 00:03:12,620
+A sin 2γ term would mean reluctance
+torque.
+
+41
+00:03:12,660 --> 00:03:18,338
+It's under 0.01%: in a surface-magnet
+motor, Ld equals Lq.
+
+42
+00:03:19,188 --> 00:03:23,543
+Against q current, the torque is a
+straight line,
+
+43
+00:03:23,583 --> 00:03:27,431
+0.0357 N·m per amp, all the way to 60 A.
+
+44
+00:03:27,471 --> 00:03:30,294
+That's built in: this iron is linear.
+
+45
+00:03:30,334 --> 00:03:35,159
+Real steel bends past its knee, about 1.5
+T, from Lesson 4.
+
+46
+00:03:35,199 --> 00:03:39,491
+The magnets alone put 1.49 T through the
+teeth,
+
+47
+00:03:39,531 --> 00:03:45,413
+and current on q adds little: 1.52 T at 20
+A, 1.59 T at 40 A.
+
+48
+00:03:45,453 --> 00:03:49,871
+So expect the real torque per amp to droop
+gently beyond rated current.
+
+49
+00:03:49,911 --> 00:03:54,367
+By how much needs a nonlinear solution,
+which this model isn't.
+
+50
+00:03:55,217 --> 00:03:58,264
+Nor is the flux linkage a pure sine.
+
+51
+00:03:58,304 --> 00:04:04,909
+The solver's back-EMF has a fifth harmonic
+of 8.5%, and a seventh of 1.9%.
+
+52
+00:04:04,949 --> 00:04:08,547
+With sinusoidal currents, both make torque
+at six times
+
+53
+00:04:08,587 --> 00:04:12,749
+the electrical frequency: once every 15
+mechanical degrees.
+
+54
+00:04:12,789 --> 00:04:18,087
+Its size is the seventh minus the fifth,
+with their signs,
+
+55
+00:04:18,127 --> 00:04:23,818
+over the fundamental: ±6.5% of the mean,
+0.046 N·m at 20 A.
+
+56
+00:04:23,858 --> 00:04:27,743
+Lesson 6's ideal flat-topped field would
+give 8.1%;
+
+57
+00:04:27,783 --> 00:04:31,208
+the solver's softer magnet edges help.
+
+58
+00:04:32,058 --> 00:04:37,618
+Now switch the current off. The solver
+still finds torque:
+
+59
+00:04:37,658 --> 00:04:41,491
+±0.219 N·m, 24 cycles per revolution.
+
+60
+00:04:41,531 --> 00:04:45,174
+Field lines from each magnet edge lean
+toward the nearest tooth
+
+61
+00:04:45,214 --> 00:04:49,156
+corner and pull on it. Over a cycle, the
+pulls average to zero.
+
+62
+00:04:49,196 --> 00:04:51,226
+That's 31% of the torque at 20 A:
+
+63
+00:04:51,266 --> 00:04:54,475
+the biggest part of the ripple we started
+with.
+
+64
+00:04:54,515 --> 00:04:58,766
+Subtract it from the loaded torque, and
+the rest matches the
+
+65
+00:04:58,806 --> 00:05:03,382
+alignment term within 0.02%: the
+reluctance term is tiny.
+
+66
+00:05:04,232 --> 00:05:09,257
+Why 24? Each magnet alone would cog with
+the slot pitch, 30 degrees.
+
+67
+00:05:09,297 --> 00:05:13,013
+With 12 slots and 8 poles, neighbouring
+magnets sit half a slot
+
+68
+00:05:13,053 --> 00:05:16,887
+pitch apart relative to the teeth: their
+slot-pitch parts cancel,
+
+69
+00:05:16,927 --> 00:05:19,870
+and their half-pitch parts add, in all
+eight.
+
+70
+00:05:19,910 --> 00:05:24,054
+That's 24 per turn: the least common
+multiple of 12 and 8.
+
+71
+00:05:24,094 --> 00:05:27,633
+With 10 poles, the magnets spread over
+five positions,
+
+72
+00:05:27,673 --> 00:05:32,704
+so only every fifth part survives: 60 per
+turn, and usually much weaker.
+
+73
+00:05:32,744 --> 00:05:37,208
+Zhu and Howe showed that a large LCM,
+relative to slots times poles,
+
+74
+00:05:37,248 --> 00:05:41,722
+tends to mean low cogging. Our wide slot
+openings add to it.
+
+75
+00:05:42,572 --> 00:05:45,921
+The standard fix is skew: twist the slots
+along the stack,
+
+76
+00:05:45,961 --> 00:05:50,370
+or step the magnets, so each slice sees
+the teeth at a different angle.
+
+77
+00:05:50,410 --> 00:05:55,475
+In a slice model, torque is the 2D curve
+averaged over the skew. Skew by
+
+78
+00:05:55,515 --> 00:06:01,164
+one cogging period, 15 degrees, and every
+cogging harmonic averages to zero.
+
+79
+00:06:01,204 --> 00:06:09,945
+Half a period leaves ±0.126 N·m; three
+magnet segments, 5° apart, leave ±0.014.
+
+80
+00:06:09,985 --> 00:06:15,782
+The cost: the skew factor, 0.955, trims
+the torque by 4.5%,
+
+81
+00:06:15,822 --> 00:06:21,425
+and the sixth-harmonic ripple drops from
+6.5% to 2.0%.
+
+82
+00:06:21,465 --> 00:06:26,067
+Real skewed motors keep some cogging from
+tolerances and end effects.
+
+83
+00:06:26,917 --> 00:06:29,050
+Other fixes, in one line each.
+
+84
+00:06:29,090 --> 00:06:32,408
+Shape the magnets, tuning their arc or
+thinning their edges,
+
+85
+00:06:32,448 --> 00:06:35,562
+so the field changes gently past each
+tooth corner.
+
+86
+00:06:35,602 --> 00:06:39,614
+Choose slots and poles with a large LCM,
+like 12 and 10.
+
+87
+00:06:39,654 --> 00:06:43,585
+Or notch the tooth faces: the rotor sees
+more, smaller openings,
+
+88
+00:06:43,625 --> 00:06:47,599
+and cogging moves to a higher, usually
+weaker, harmonic.
+
+89
+00:06:48,449 --> 00:06:51,097
+To measure cogging, leave the windings
+open,
+
+90
+00:06:51,137 --> 00:06:55,369
+and clamp the motor body in an indexing
+head, or on a protractor.
+
+91
+00:06:55,409 --> 00:06:59,508
+Fix a 100 mm arm to the shaft, resting on
+a kitchen scale.
+
+92
+00:06:59,548 --> 00:07:03,733
+Step the body by half a degree: 30
+readings per period.
+
+93
+00:07:03,773 --> 00:07:08,126
+Hang a 300 g weight at the tip so it never
+lifts, and subtract the
+
+94
+00:07:08,166 --> 00:07:13,019
+average over a period. Torque is the
+reading, times g, times the arm.
+
+95
+00:07:13,059 --> 00:07:17,912
+This model predicts ±2.19 N at the tip,
+±223 g.
+
+96
+00:07:17,952 --> 00:07:22,584
+Bearing friction is only about 1% of that.
+
+97
+00:07:22,624 --> 00:07:25,530
+Expect less on a real motor: many are
+skewed,
+
+98
+00:07:25,570 --> 00:07:28,492
+and this 2D model has no end effects.
+
+99
+00:07:29,342 --> 00:07:31,622
+Three predictions before next time.
+
+100
+00:07:31,662 --> 00:07:34,626
+One: how many cogging periods per
+revolution
+
+101
+00:07:34,666 --> 00:07:38,102
+does a motor with 9 slots and 6 poles
+have?
+
+102
+00:07:39,002 --> 00:07:44,175
+Two: the reference motor, with 15 A peak
+on the q axis. What torque?
+
+103
+00:07:45,075 --> 00:07:50,213
+Three: if Ld and Lq differ, can a negative
+d-axis current add torque?
+
+104
+00:07:51,113 --> 00:07:55,650
+Next time: saliency, where the reluctance
+term stops averaging out.

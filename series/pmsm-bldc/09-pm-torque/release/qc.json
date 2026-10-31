@@ -1,0 +1,151 @@
+{
+ "rep": {
+  "video": "h264 1920x1080 30/1 476.93s",
+  "audio": "aac 48000 Hz 1 ch 476.95s",
+  "subtitles": "1 track(s): mov_text/eng",
+  "chapters": 14,
+  "av_duration_diff_s": 0.017,
+  "integrated_LUFS": -16.1,
+  "true_peak_dBTP": -1.4,
+  "LRA_LU": 2.7,
+  "asr_word_error_rate": 0.05,
+  "captions": "104 cues, 0 cues mostly over silence, 0 overlaps, max 18.1 chars/s, last cue ends 475.6s"
+ },
+ "mism": [
+  [
+   "h2",
+   "Feed it 20 amps, timed to the rotor, and Lesson 5's field solution gives 0.71 newton meters on average, swinging by 0.22 either way.",
+   "Feed at 20 amps, time to the rotor. And less in five's field solution gives 0.71 Newton meters on average, swinging by 0.22 either way."
+  ],
+  [
+   "a2",
+   "One: with L equal to L nought plus k [x](/ˈɛks/), at constant current, the force is one half, I squared, k.",
+   "1 with L equal to L naught plus Kx. At constant current, the force is 1/2 I squared K."
+  ],
+  [
+   "a3",
+   "Two: with linear iron, double the current, and the force grows four times.",
+   "2, with linear iron double the current, and the force grows four times."
+  ],
+  [
+   "a4",
+   "Three: the co-energy holds each current times the magnet's flux linkage, so its slope with angle is linear in current.",
+   "3. The co-energy holds each current times the magnet's flux linkage, so its slope with angle is linear and current."
+  ],
+  [
+   "c1",
+   "Here's the reference motor, solved in 2D: twelve tooth coils in three phases, and eight surface magnets.",
+   "Here's the reference motor, solved in 2D, 12 tooth coils in 3 phases and 8 surface magnets."
+  ],
+  [
+   "c3",
+   "One half, i transpose L i, from the self and mutual inductances. Then i transpose lambda M: the magnet flux linking each phase, times its current. And a term from the magnets alone.",
+   "1/2 eye transpose Li from the self and mutual inductances, then eye transpose lambda m, the magnet flux linking each phase times its current, and a term from the magnets alone."
+  ],
+  [
+   "l1",
+   "Start with alignment. Take sinusoidal linkages: lambda M, cos theta E, for the first phase, with the others lagging by 120 degrees.",
+   "Start with alignment. Take sinusoidal linkages, lambda m, cos theta e for the first phase, with the others lagging by 120 degrees. [buzzer]"
+  ],
+  [
+   "l3",
+   "Put the current on the Q axis, 90 degrees ahead of the magnet, and each phase current follows the same sine as its slope.",
+   "Put the current on the Q-axis, 90 degrees ahead of the magnet, and each phase current follows the same sign as its slope."
+  ],
+  [
+   "l4",
+   "Each phase's torque pulses as sine squared, but the three pulses, a third of a cycle apart, add to a constant: three halves.",
+   "Each phase is torque pulses as sine squared, but the three pulses, a third of a cycle apart, add to a constant. Three halves."
+  ],
+  [
+   "l5",
+   "So the torque is three halves, p, lambda M, IQ. Current on the D axis adds nothing: its terms cancel.",
+   "So the torque is 3/2, P, lambda, M, IQ. Current on the D-axis adds nothing. Its terms cancel. [buzzer]"
+  ],
+  [
+   "w1",
+   "Energy gives a second route. Each back EMF is omega M times the slope of its linkage, so the power, EMF times current summed over the phases, is omega M times the same sum.",
+   "Energy gives a second root. Each back emf is omega m times the slope of its linkage, so the power, emf times current summed over the phases, is omega m times the same sum."
+  ],
+  [
+   "w2",
+   "Power is torque times speed, so the torque is that sum again.",
+   "Power is torque time speed, so the torque is that sum again."
+  ],
+  [
+   "w3",
+   "At 3,000 rpm and 20 amps on Q, the EMF peak is 8.17 volts, so 245 watts. Divided by 314 radians per second: 0.780 newton meters.",
+   "At 3000 RPM and 20 amps on Q, the EMF peak is 8.17 volts, so 245 watts. Divided by 314 radians per second, 0.78 newton meters."
+  ],
+  [
+   "g2",
+   "The points fall on a sine: zero on D, a peak at 90 degrees, all on Q, and braking past 180.",
+   "The points fall on a sign. Zero on D, a peak at 90 degrees all on Q, and braking past 180."
+  ],
+  [
+   "g4",
+   "A sine two gamma term would mean reluctance torque. It's under 0.01%: in a surface magnet motor, LD equals LQ.",
+   "A sine 2 gamma term would mean reluctance torque. It's under 0.01 percent. In a surface magnet motor, LD equals LQ."
+  ],
+  [
+   "n1",
+   "Against Q current, the torque is a straight line, 0.0357 newton meters per amp, all the way to 60 amps.",
+   "Against Q-current, the torque is a straight line. 0.0357 Nm/A, all the way to 60A."
+  ],
+  [
+   "r1",
+   "Nor is the flux linkage a pure sine. The solver's back EMF has a fifth harmonic of 8.5%, and a seventh of 1.9%.",
+   "Nor is the flux linkage a pure sign. The solver's back EMF has a fifth harmonic of 8.5% and a seventh of 1.9%."
+  ],
+  [
+   "r4",
+   "Lesson 6's ideal flat-topped field would give 8.1%; the solver's softer magnet edges help.",
+   "Lesson 6s, ideal flat-topped field would give 8.1%. The solver's softer magnet edges help."
+  ],
+  [
+   "k2",
+   "Field lines from each magnet edge lean toward the nearest tooth corner and pull on it. Over a cycle, the pulls average to zero.",
+   "Field lines from each magnet edge lean toward the nearest tooth corner and pull on it. Overcycle, the pulls average to zero."
+  ],
+  [
+   "y1",
+   "Why 24? Each magnet alone would cog with the slot pitch, 30 degrees.",
+   "Y24. Each magnet alone would cog with a slot pitch 30 degrees."
+  ],
+  [
+   "y2",
+   "With 12 slots and 8 poles, neighboring magnets sit half a slot pitch apart relative to the teeth: their slot pitch parts cancel, and their half pitch parts add, in all eight.",
+   "With 12 slots and eight poles, neighboring magnets sit half a slot pitch apart relative to the teeth. Their slot pitch parts cancel, and their half pitch parts add in all eight."
+  ],
+  [
+   "y5",
+   "Zhu and Howe showed that a large LCM, relative to slots times poles, tends to mean low cogging. Our wide slot openings add to it.",
+   "Zhu and Hao showed that a large LCM, relative to slots times poles, tends to mean low cogging. Our wide slot openings add to it."
+  ],
+  [
+   "s3",
+   "Half a period leaves 0.126 newton meters; three magnet segments, 5 degrees apart, leave 0.014.",
+   "Half a period leaves 0.126 Newton meters. Three magnet segments, five degrees apart, leave 0.014."
+  ],
+  [
+   "s4",
+   "The cost: the skew factor, 0.955, trims the torque by 4.5%, and the sixth harmonic ripple drops from 6.5% to 2%.",
+   "The cost, the SKU factor, 0.955, trims the torque by 4.5%, and the sixth harmonic ripple drops from 6.5% to 2%."
+  ],
+  [
+   "q2",
+   "One: how many cogging periods per revolution does a motor with 9 slots and 6 poles have?",
+   "1. How many cogging periods per revolution? Does a motor with 9 slots and 6 poles have?"
+  ],
+  [
+   "q3",
+   "Two: the reference motor, with 15 amps peak on the Q axis. What torque?",
+   "2. The reference motor with 15 amps peak on the Q-axis. What torque?"
+  ],
+  [
+   "q4",
+   "Three: if LD and LQ differ, can a negative D axis current add torque?",
+   "3. If LD and LQ differ, can a negative D-axis current add torque?"
+  ]
+ ]
+}

@@ -1,0 +1,88 @@
+;FFMETADATA1
+title=Torque in a PM Machine — PMSM & BLDC, Lesson 9
+artist=lecture-forge
+language=eng
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=27136
+title=01 Two kinds of torque
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=27136
+END=48724
+title=02 Answers from Lesson 8
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=48724
+END=80207
+title=03 Three windings and a magnet
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=80207
+END=117399
+title=04 Alignment torque, phase by phase
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=117399
+END=157150
+title=05 The same result from power
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=157150
+END=198888
+title=06 Torque vs current angle
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=198888
+END=234917
+title=07 Linear, until the steel saturates
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=234917
+END=271758
+title=08 Ripple from EMF harmonics
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=271758
+END=303932
+title=09 Cogging: torque with no current
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=303932
+END=342272
+title=10 Why 24, and why so large?
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=342272
+END=386617
+title=11 Skew: average over one period
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=386617
+END=408149
+title=12 Other remedies
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=408149
+END=449042
+title=13 Bench: measure the cogging
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=449042
+END=476950
+title=14 Predict, then check

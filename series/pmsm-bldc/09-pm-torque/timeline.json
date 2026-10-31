@@ -1,0 +1,474 @@
+[
+ {
+  "id": "hook",
+  "title": "Two kinds of torque",
+  "start": 0.0,
+  "beats": [
+   {
+    "id": "h1",
+    "start": 0.6,
+    "end": 7.229,
+    "text": "Turn this motor's shaft by hand, with nothing connected, and it catches at 24 positions per revolution."
+   },
+   {
+    "id": "h2",
+    "start": 7.629,
+    "end": 18.233,
+    "text": "Feed it 20 A, timed to the rotor, and Lesson 5's field solution gives 0.71 N\u00b7m on average, swinging by 0.22 either way."
+   },
+   {
+    "id": "h3",
+    "start": 18.633,
+    "end": 26.036,
+    "text": "Both come from one function, the co-energy. Today we take it apart: the steady torque, the ripple, and how to remove most of it."
+   }
+  ],
+  "end": 27.135583333333336
+ },
+ {
+  "id": "answers",
+  "title": "Answers from Lesson 8",
+  "start": 27.135583333333336,
+  "beats": [
+   {
+    "id": "a1",
+    "start": 27.436,
+    "end": 29.455,
+    "text": "First, the answers from Lesson 8."
+   },
+   {
+    "id": "a2",
+    "start": 29.755,
+    "end": 36.049,
+    "text": "One: with L = L0 + kx, at constant current, the force is \u00bd I\u00b2 k."
+   },
+   {
+    "id": "a3",
+    "start": 36.349,
+    "end": 40.513,
+    "text": "Two: with linear iron, double the current, and the force grows four times."
+   },
+   {
+    "id": "a4",
+    "start": 40.813,
+    "end": 47.674,
+    "text": "Three: the co-energy holds each current times the magnet's flux linkage, so its slope, i d\u03bbm/d\u03b8, is linear in current."
+   }
+  ],
+  "end": 48.724
+ },
+ {
+  "id": "coenergy",
+  "title": "Three windings and a magnet",
+  "start": 48.724,
+  "beats": [
+   {
+    "id": "c1",
+    "start": 49.024,
+    "end": 55.512,
+    "text": "Here's the reference motor, solved in 2D: twelve tooth coils in three phases, and eight surface magnets."
+   },
+   {
+    "id": "c2",
+    "start": 55.812,
+    "end": 58.679,
+    "text": "With linear iron, its co-energy has three parts."
+   },
+   {
+    "id": "c3",
+    "start": 58.979,
+    "end": 71.462,
+    "text": "\u00bd i\u1d40 L i, from the self and mutual inductances; i\u1d40 \u03bbm(\u03b8), the magnet flux linking each phase times its current; and W\u2032pm, from the magnets alone."
+   },
+   {
+    "id": "c4",
+    "start": 71.762,
+    "end": 79.157,
+    "text": "Differentiate with respect to rotor angle at constant current, and each part gives a torque: reluctance, alignment, and cogging."
+   }
+  ],
+  "end": 80.20666666666665
+ },
+ {
+  "id": "alignment",
+  "title": "Alignment torque, phase by phase",
+  "start": 80.20666666666665,
+  "beats": [
+   {
+    "id": "l1",
+    "start": 80.507,
+    "end": 89.916,
+    "text": "Start with alignment. Take sinusoidal linkages: \u03bbm cos \u03b8e for the first phase, the others lagging by 120\u00b0."
+   },
+   {
+    "id": "l2",
+    "start": 90.216,
+    "end": 93.788,
+    "text": "The slope with mechanical angle brings out p, the pole pairs."
+   },
+   {
+    "id": "l3",
+    "start": 94.088,
+    "end": 101.328,
+    "text": "Put the current on the q axis, 90\u00b0 ahead of the magnet, and each phase current follows the same sine as its slope."
+   },
+   {
+    "id": "l4",
+    "start": 101.628,
+    "end": 109.305,
+    "text": "Each phase's torque pulses as sine squared, but the three pulses, a third of a cycle apart, add to a constant: three halves."
+   },
+   {
+    "id": "l5",
+    "start": 109.605,
+    "end": 116.348,
+    "text": "So T = 3/2 p \u03bbm i_q. Current on the d axis adds nothing: its terms cancel."
+   }
+  ],
+  "end": 117.39874999999999
+ },
+ {
+  "id": "power",
+  "title": "The same result from power",
+  "start": 117.39874999999999,
+  "beats": [
+   {
+    "id": "w1",
+    "start": 117.699,
+    "end": 129.903,
+    "text": "Energy gives a second route. Each back-EMF is \u03c9m times the slope of its linkage, so the power, \u03a3 e\u00b7i, is \u03c9m times the same sum."
+   },
+   {
+    "id": "w2",
+    "start": 130.203,
+    "end": 133.573,
+    "text": "Power is torque times speed, so the torque is that sum again."
+   },
+   {
+    "id": "w3",
+    "start": 133.873,
+    "end": 148.56,
+    "text": "At 3000 rpm and 20 A on q, the EMF peak is 8.17 V: 3/2 \u00d7 8.17 \u00d7 20 = 245 W. Divided by 314 rad/s: 0.780 N\u00b7m."
+   },
+   {
+    "id": "w4",
+    "start": 148.86,
+    "end": 156.1,
+    "text": "That's the torque constant, Kt = 3/2 p \u03bbm: 0.039 N\u00b7m per amp, with the nominal 6.5 mWb."
+   }
+  ],
+  "end": 157.14995833333333
+ },
+ {
+  "id": "angle",
+  "title": "Torque vs current angle",
+  "start": 157.14995833333333,
+  "beats": [
+   {
+    "id": "g1",
+    "start": 157.45,
+    "end": 165.787,
+    "text": "Now the solver. Hold 20 A, and swing the current away from the magnet's d axis, averaging over one cogging period at each angle."
+   },
+   {
+    "id": "g2",
+    "start": 166.087,
+    "end": 173.007,
+    "text": "The points fall on a sine: zero on d, a peak at 90\u00b0, all on q, and braking past 180\u00b0."
+   },
+   {
+    "id": "g3",
+    "start": 173.307,
+    "end": 188.522,
+    "text": "The peak is 0.713 N\u00b7m, not 0.78: the 2D flux linkage is 5.94 mWb, 8.6% low, with no end flux and an assumed Br of 1.2 T."
+   },
+   {
+    "id": "g4",
+    "start": 188.822,
+    "end": 197.838,
+    "text": "A sin 2\u03b3 term would mean reluctance torque. It's under 0.01%: in a surface-magnet motor, Ld equals Lq."
+   }
+  ],
+  "end": 198.8876666666667
+ },
+ {
+  "id": "linear",
+  "title": "Linear, until the steel saturates",
+  "start": 198.8876666666667,
+  "beats": [
+   {
+    "id": "n1",
+    "start": 199.188,
+    "end": 207.171,
+    "text": "Against q current, the torque is a straight line, 0.0357 N\u00b7m per amp, all the way to 60 A."
+   },
+   {
+    "id": "n2",
+    "start": 207.471,
+    "end": 214.899,
+    "text": "That's built in: this iron is linear. Real steel bends past its knee, about 1.5 T, from Lesson 4."
+   },
+   {
+    "id": "n3",
+    "start": 215.199,
+    "end": 225.153,
+    "text": "The magnets alone put 1.49 T through the teeth, and current on q adds little: 1.52 T at 20 A, 1.59 T at 40 A."
+   },
+   {
+    "id": "n4",
+    "start": 225.453,
+    "end": 233.867,
+    "text": "So expect the real torque per amp to droop gently beyond rated current. By how much needs a nonlinear solution, which this model isn't."
+   }
+  ],
+  "end": 234.91745833333337
+ },
+ {
+  "id": "ripple",
+  "title": "Ripple from EMF harmonics",
+  "start": 234.91745833333337,
+  "beats": [
+   {
+    "id": "r1",
+    "start": 235.217,
+    "end": 244.649,
+    "text": "Nor is the flux linkage a pure sine. The solver's back-EMF has a fifth harmonic of 8.5%, and a seventh of 1.9%."
+   },
+   {
+    "id": "r2",
+    "start": 244.949,
+    "end": 252.489,
+    "text": "With sinusoidal currents, both make torque at six times the electrical frequency: once every 15 mechanical degrees."
+   },
+   {
+    "id": "r3",
+    "start": 252.789,
+    "end": 263.558,
+    "text": "Its size is the seventh minus the fifth, with their signs, over the fundamental: \u00b16.5% of the mean, 0.046 N\u00b7m at 20 A."
+   },
+   {
+    "id": "r4",
+    "start": 263.858,
+    "end": 270.708,
+    "text": "Lesson 6's ideal flat-topped field would give 8.1%; the solver's softer magnet edges help."
+   }
+  ],
+  "end": 271.7575416666668
+ },
+ {
+  "id": "cogging",
+  "title": "Cogging: torque with no current",
+  "start": 271.7575416666668,
+  "beats": [
+   {
+    "id": "k1",
+    "start": 272.058,
+    "end": 281.231,
+    "text": "Now switch the current off. The solver still finds torque: \u00b10.219 N\u00b7m, 24 cycles per revolution."
+   },
+   {
+    "id": "k2",
+    "start": 281.531,
+    "end": 288.896,
+    "text": "Field lines from each magnet edge lean toward the nearest tooth corner and pull on it. Over a cycle, the pulls average to zero."
+   },
+   {
+    "id": "k3",
+    "start": 289.196,
+    "end": 294.215,
+    "text": "That's 31% of the torque at 20 A: the biggest part of the ripple we started with."
+   },
+   {
+    "id": "k4",
+    "start": 294.515,
+    "end": 302.882,
+    "text": "Subtract it from the loaded torque, and the rest matches the alignment term within 0.02%: the reluctance term is tiny."
+   }
+  ],
+  "end": 303.9318333333335
+ },
+ {
+  "id": "why",
+  "title": "Why 24, and why so large?",
+  "start": 303.9318333333335,
+  "beats": [
+   {
+    "id": "y1",
+    "start": 304.232,
+    "end": 308.997,
+    "text": "Why 24? Each magnet alone would cog with the slot pitch, 30 degrees."
+   },
+   {
+    "id": "y2",
+    "start": 309.297,
+    "end": 319.61,
+    "text": "With 12 slots and 8 poles, neighbouring magnets sit half a slot pitch apart relative to the teeth: their slot-pitch parts cancel, and their half-pitch parts add, in all eight."
+   },
+   {
+    "id": "y3",
+    "start": 319.91,
+    "end": 323.794,
+    "text": "That's 24 per turn: the least common multiple of 12 and 8."
+   },
+   {
+    "id": "y4",
+    "start": 324.094,
+    "end": 332.444,
+    "text": "With 10 poles, the magnets spread over five positions, so only every fifth part survives: 60 per turn, and usually much weaker."
+   },
+   {
+    "id": "y5",
+    "start": 332.744,
+    "end": 341.222,
+    "text": "Zhu and Howe showed that a large LCM, relative to slots times poles, tends to mean low cogging. Our wide slot openings add to it."
+   }
+  ],
+  "end": 342.2715833333335
+ },
+ {
+  "id": "skew",
+  "title": "Skew: average over one period",
+  "start": 342.2715833333335,
+  "beats": [
+   {
+    "id": "s1",
+    "start": 342.572,
+    "end": 350.11,
+    "text": "The standard fix is skew: twist the slots along the stack, or step the magnets, so each slice sees the teeth at a different angle."
+   },
+   {
+    "id": "s2",
+    "start": 350.41,
+    "end": 360.904,
+    "text": "In a slice model, torque is the 2D curve averaged over the skew. Skew by one cogging period, 15 degrees, and every cogging harmonic averages to zero."
+   },
+   {
+    "id": "s3",
+    "start": 361.204,
+    "end": 369.685,
+    "text": "Half a period leaves \u00b10.126 N\u00b7m; three magnet segments, 5\u00b0 apart, leave \u00b10.014."
+   },
+   {
+    "id": "s4",
+    "start": 369.985,
+    "end": 381.165,
+    "text": "The cost: the skew factor, 0.955, trims the torque by 4.5%, and the sixth-harmonic ripple drops from 6.5% to 2.0%."
+   },
+   {
+    "id": "s5",
+    "start": 381.465,
+    "end": 385.567,
+    "text": "Real skewed motors keep some cogging from tolerances and end effects."
+   }
+  ],
+  "end": 386.61741666666694
+ },
+ {
+  "id": "remedies",
+  "title": "Other remedies",
+  "start": 386.61741666666694,
+  "beats": [
+   {
+    "id": "o1",
+    "start": 386.917,
+    "end": 388.79,
+    "text": "Other fixes, in one line each."
+   },
+   {
+    "id": "o2",
+    "start": 389.09,
+    "end": 395.302,
+    "text": "Shape the magnets, tuning their arc or thinning their edges, so the field changes gently past each tooth corner."
+   },
+   {
+    "id": "o3",
+    "start": 395.602,
+    "end": 399.354,
+    "text": "Choose slots and poles with a large LCM, like 12 and 10."
+   },
+   {
+    "id": "o4",
+    "start": 399.654,
+    "end": 407.099,
+    "text": "Or notch the tooth faces: the rotor sees more, smaller openings, and cogging moves to a higher, usually weaker, harmonic."
+   }
+  ],
+  "end": 408.1486250000003
+ },
+ {
+  "id": "bench",
+  "title": "Bench: measure the cogging",
+  "start": 408.1486250000003,
+  "beats": [
+   {
+    "id": "b1",
+    "start": 408.449,
+    "end": 415.109,
+    "text": "To measure cogging, leave the windings open, and clamp the motor body in an indexing head, or on a protractor."
+   },
+   {
+    "id": "b2",
+    "start": 415.409,
+    "end": 423.473,
+    "text": "Fix a 100 mm arm to the shaft, resting on a kitchen scale. Step the body by half a degree: 30 readings per period."
+   },
+   {
+    "id": "b3",
+    "start": 423.773,
+    "end": 432.759,
+    "text": "Hang a 300 g weight at the tip so it never lifts, and subtract the average over a period. Torque is the reading, times g, times the arm."
+   },
+   {
+    "id": "b4",
+    "start": 433.059,
+    "end": 442.324,
+    "text": "This model predicts \u00b12.19 N at the tip, \u00b1223 g. Bearing friction is only about 1% of that."
+   },
+   {
+    "id": "b5",
+    "start": 442.624,
+    "end": 447.992,
+    "text": "Expect less on a real motor: many are skewed, and this 2D model has no end effects."
+   }
+  ],
+  "end": 449.042041666667
+ },
+ {
+  "id": "predict",
+  "title": "Predict, then check",
+  "start": 449.042041666667,
+  "beats": [
+   {
+    "id": "q1",
+    "start": 449.342,
+    "end": 451.262,
+    "text": "Three predictions before next time."
+   },
+   {
+    "id": "q2",
+    "start": 451.662,
+    "end": 457.602,
+    "text": "One: how many cogging periods per revolution does a motor with 9 slots and 6 poles have?"
+   },
+   {
+    "id": "q3",
+    "start": 459.002,
+    "end": 463.675,
+    "text": "Two: the reference motor, with 15 A peak on the q axis. What torque?"
+   },
+   {
+    "id": "q4",
+    "start": 465.075,
+    "end": 469.713,
+    "text": "Three: if Ld and Lq differ, can a negative d-axis current add torque?"
+   },
+   {
+    "id": "q5",
+    "start": 471.113,
+    "end": 475.15,
+    "text": "Next time: saliency, where the reluctance term stops averaging out."
+   }
+  ],
+  "end": 476.9497916666669
+ }
+]
