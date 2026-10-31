@@ -19,7 +19,7 @@ Goal: intuition strong enough to derive the equations, predict behaviour and rea
 | 12 | [Clarke transformation](12-clarke) | abc → αβ, zero sequence | Plot the αβ locus of measured currents | Rendered (7:58) |
 | 13 | [Park transformation](13-park) | Rotating frames; angle from Hall sensors or encoder | Effect of angle error on d and q | Rendered (7:58) |
 | 14 | [The d–q model](14-dq-model) | Voltage and torque equations | Simulate a current step; steady-state phasor diagram | Rendered (7:56) |
-| 15 | Parameter identification | R, Ld, Lq, λm, J, friction | Locked-rotor, back-EMF and run-down tests | Planned |
+| 15 | [Parameter identification](15-parameter-id) | R, Ld, Lq, λm, J, friction | Locked-rotor, back-EMF and run-down tests | Rendered (7:53) |
 | 16 | [BLDC six-step drive](16-bldc-six-step) | Trapezoidal EMF, Hall commutation, torque ripple | Scope Hall signals and phase currents | Rendered (7:28) |
 | 17 | [The three-phase inverter](17-inverter) | Switching states, dead time, PWM | Simulate the bridge; measure phase voltages | Rendered (8:11) |
 | 18 | [SVPWM and current sensing](18-svpwm) | Space-vector modulation, shunt sampling | Implement SVPWM in Python, then on a microcontroller | Rendered (7:48) |
