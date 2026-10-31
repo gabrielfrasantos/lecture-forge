@@ -16,7 +16,7 @@ Goal: intuition strong enough to derive the equations, predict behaviour and rea
 | 9 | Torque in a PM machine | Alignment torque, cogging | Measure cogging torque with a lever and scale | Planned |
 | 10 | Saliency | Surface vs interior PM, Ld and Lq | Inductance vs rotor angle with an LCR meter | Planned |
 | 11 | [Space vectors](11-space-vectors) | Phasors vs space vectors, scaling conventions | Space vectors from logged currents | Rendered (7:54) |
-| 12 | Clarke transformation | abc → αβ, zero sequence | Plot the αβ locus of measured currents | Planned |
+| 12 | [Clarke transformation](12-clarke) | abc → αβ, zero sequence | Plot the αβ locus of measured currents | Rendered (7:58) |
 | 13 | Park transformation | Rotating frames; angle from Hall sensors or encoder | Effect of angle error on d and q | Planned |
 | 14 | The d–q model | Voltage and torque equations | Simulate a current step; steady-state phasor diagram | Planned |
 | 15 | Parameter identification | R, Ld, Lq, λm, J, friction | Locked-rotor, back-EMF and run-down tests | Planned |
