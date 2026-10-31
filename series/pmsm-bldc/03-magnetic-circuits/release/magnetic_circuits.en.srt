@@ -1,0 +1,502 @@
+1
+00:00:00,600 --> 00:00:04,996
+Here's our reference motor again: twelve
+slots, eight magnet poles.
+
+2
+00:00:05,036 --> 00:00:10,084
+Between the magnets and the stator teeth
+is an air gap just half a millimetre wide.
+
+3
+00:00:10,124 --> 00:00:14,574
+The magnets' flux crosses it twice, and
+runs through centimetres of steel.
+
+4
+00:00:14,614 --> 00:00:18,021
+Yet, after the magnet itself, it's that
+thin layer of air,
+
+5
+00:00:18,061 --> 00:00:20,501
+not the steel, that sets the field.
+
+6
+00:00:20,541 --> 00:00:22,793
+Today we'll see why, and predict that
+field
+
+7
+00:00:22,833 --> 00:00:25,465
+from a magnet datasheet and two lengths.
+
+8
+00:00:26,765 --> 00:00:28,913
+First, last lesson's answers.
+
+9
+00:00:28,953 --> 00:00:33,769
+One: a coil of N turns carrying I makes an
+MMF step of N·I,
+
+10
+00:00:33,809 --> 00:00:37,132
+a square wave from −N·I/2 to +N·I/2.
+
+11
+00:00:37,172 --> 00:00:39,724
+Two: balanced three-phase currents give a
+
+12
+00:00:39,764 --> 00:00:42,969
+rotating fundamental 3/2 of one phase's
+peak.
+
+13
+00:00:43,009 --> 00:00:48,916
+Three: with ideal iron, B in the gap is
+μ₀F/g, so doubling the gap halves it.
+
+14
+00:00:48,956 --> 00:00:51,849
+Today we'll see what 'ideal iron' really
+means.
+
+15
+00:00:53,149 --> 00:00:57,283
+Take a steel ring with a coil of N turns,
+and cut a narrow gap in it.
+
+16
+00:00:57,323 --> 00:01:02,391
+Around the centre line of the core,
+Ampère's law says the line integral
+
+17
+00:01:02,431 --> 00:01:07,899
+of H equals the enclosed current, N·I: the
+magnetomotive force, or MMF.
+
+18
+00:01:07,939 --> 00:01:11,459
+Field lines never end, so if no flux
+escapes, the flux,
+
+19
+00:01:11,499 --> 00:01:15,290
+B times the area, is the same in every
+cross-section.
+
+20
+00:01:15,330 --> 00:01:19,171
+In each part, H is B over μ. So N·I equals
+the flux,
+
+21
+00:01:19,211 --> 00:01:22,979
+times a sum of terms: length over μ times
+area.
+
+22
+00:01:23,019 --> 00:01:24,976
+Each term is a reluctance.
+
+23
+00:01:26,276 --> 00:01:29,867
+That's Ohm's law in magnetic form: MMF
+plays voltage,
+
+24
+00:01:29,907 --> 00:01:33,829
+flux plays current, and reluctance plays
+resistance.
+
+25
+00:01:33,869 --> 00:01:38,592
+Reluctances in series add, and high
+permeability means low reluctance.
+
+26
+00:01:38,632 --> 00:01:43,212
+In 1886, John and Edward Hopkinson used
+magnetic-circuit equations
+
+27
+00:01:43,252 --> 00:01:47,201
+to predict a dynamo's characteristic from
+its dimensions.
+
+28
+00:01:47,241 --> 00:01:49,911
+Designers still start this way.
+
+29
+00:01:51,211 --> 00:01:56,100
+Let's put in numbers: 200 turns at 2 amps,
+400 ampere-turns.
+
+30
+00:01:56,140 --> 00:01:59,263
+A steel path about 320 millimetres long,
+
+31
+00:01:59,303 --> 00:02:03,695
+relative permeability 4000, and a
+1-millimetre gap.
+
+32
+00:02:03,735 --> 00:02:10,477
+B in the gap is 0.47 tesla, and the gap
+alone takes 93 percent of the MMF.
+
+33
+00:02:10,517 --> 00:02:13,871
+Shrink the gap and B rises roughly as one
+over g.
+
+34
+00:02:13,911 --> 00:02:17,690
+But at about a quarter of a millimetre it
+passes 1.5 tesla,
+
+35
+00:02:17,730 --> 00:02:21,984
+the steel saturates, and this linear model
+stops applying.
+
+36
+00:02:23,284 --> 00:02:27,199
+Here's why. Divide each length of steel by
+its relative permeability:
+
+37
+00:02:27,239 --> 00:02:30,465
+that's the length of air with the same
+reluctance.
+
+38
+00:02:30,505 --> 00:02:34,731
+Unroll the core: 319 millimetres of steel
+shrink to
+
+39
+00:02:34,771 --> 00:02:39,581
+0.08 millimetres of air, next to a
+1-millimetre gap.
+
+40
+00:02:39,621 --> 00:02:44,073
+With good steel, the gap sets the field.
+That's what 'ideal iron' meant.
+
+41
+00:02:44,113 --> 00:02:48,382
+But μr isn't constant. Near saturation it
+can fall to a few hundred,
+
+42
+00:02:48,422 --> 00:02:50,696
+and the steel's share grows.
+
+43
+00:02:51,996 --> 00:02:56,296
+The analogy has a weak spot: there's no
+practical insulator for flux.
+
+44
+00:02:56,336 --> 00:03:00,911
+Air carries flux only a few thousand times
+less readily than steel.
+
+45
+00:03:00,951 --> 00:03:04,851
+Here's a two-dimensional finite-difference
+solution of the same core,
+
+46
+00:03:04,891 --> 00:03:08,164
+with a 6-millimetre gap to make the effect
+visible.
+
+47
+00:03:08,204 --> 00:03:10,223
+Some flux leaks across the window,
+
+48
+00:03:10,263 --> 00:03:14,621
+and around the gap the field bulges
+outward: leakage and fringing.
+
+49
+00:03:14,661 --> 00:03:18,742
+B at the centre of the gap still matches
+the circuit within 1 percent,
+
+50
+00:03:18,782 --> 00:03:23,970
+because Ampère's law along the centre line
+doesn't care where the other flux goes.
+
+51
+00:03:24,010 --> 00:03:27,360
+But the coil drives more flux than the
+circuit predicts:
+
+52
+00:03:27,400 --> 00:03:31,593
+a quarter more with a 1-millimetre gap,
+twice as much with 6.
+
+53
+00:03:32,893 --> 00:03:35,718
+Now replace the coil with a permanent
+magnet.
+
+54
+00:03:35,758 --> 00:03:39,218
+Driving flux through a gap, it works in
+the second
+
+55
+00:03:39,258 --> 00:03:43,118
+quadrant of its B–H curve: B positive, H
+negative.
+
+56
+00:03:43,158 --> 00:03:48,633
+For sintered neodymium, that's nearly a
+straight line,
+
+57
+00:03:48,673 --> 00:03:52,607
+the recoil line: B = Br + μ₀μrec H.
+
+58
+00:03:52,647 --> 00:03:58,304
+We'll use Br = 1.2 T and μrec = 1.05,
+barely more than air.
+
+59
+00:03:58,344 --> 00:04:02,374
+The line crosses B = 0 near −910 kA/m.
+
+60
+00:04:02,414 --> 00:04:05,606
+It only holds above a knee. Push the
+magnet past it,
+
+61
+00:04:05,646 --> 00:04:10,310
+more easily when it's hot, and some
+magnetisation is lost for good.
+
+62
+00:04:11,610 --> 00:04:15,407
+Put a magnet in series with a gap, and
+take the steel as ideal.
+
+63
+00:04:15,447 --> 00:04:19,646
+With no current, Ampère's law gives zero:
+
+64
+00:04:19,686 --> 00:04:25,318
+Hm·hm + Hg·g = 0. So the magnet runs at
+negative H.
+
+65
+00:04:25,358 --> 00:04:27,646
+With equal areas, B is the same in both,
+
+66
+00:04:27,686 --> 00:04:31,555
+which gives a straight line through the
+origin: the load line.
+
+67
+00:04:31,595 --> 00:04:35,111
+Its slope is set by the permeance
+coefficient:
+
+68
+00:04:35,151 --> 00:04:37,985
+hm over g, times the area ratio.
+
+69
+00:04:38,025 --> 00:04:40,660
+The magnet works where the two lines
+cross.
+
+70
+00:04:40,700 --> 00:04:44,543
+Close the gap, and the operating point
+climbs toward Br.
+
+71
+00:04:44,583 --> 00:04:48,478
+A 5-millimetre magnet and a 2-millimetre
+gap:
+
+72
+00:04:48,518 --> 00:04:52,691
+permeance coefficient 2.5, and 0.85 tesla.
+
+73
+00:04:53,991 --> 00:04:57,554
+Now the reference motor. Follow one loop
+of magnet flux:
+
+74
+00:04:57,594 --> 00:05:00,547
+out of a north magnet, across the gap,
+down a tooth,
+
+75
+00:05:00,587 --> 00:05:03,827
+along the stator yoke, up the next tooth,
+across the gap,
+
+76
+00:05:03,867 --> 00:05:07,507
+through a south magnet, and home through
+the rotor steel.
+
+77
+00:05:07,547 --> 00:05:13,164
+Each magnet is an MMF source, Hc·hm, with
+an internal reluctance.
+
+78
+00:05:13,204 --> 00:05:17,032
+Gaps and steel are reluctances in series.
+
+79
+00:05:17,072 --> 00:05:21,373
+By symmetry, each pole sees one magnet,
+one gap, and half the steel.
+
+80
+00:05:22,673 --> 00:05:25,635
+Magnets 3 millimetres thick, a half-
+millimetre gap,
+
+81
+00:05:25,675 --> 00:05:28,172
+and two refinements to the flat model.
+
+82
+00:05:28,212 --> 00:05:30,006
+The flux spreads out with radius,
+
+83
+00:05:30,046 --> 00:05:33,862
+so the gap's area is almost 10 percent
+larger than the magnet's.
+
+84
+00:05:33,902 --> 00:05:38,782
+And the steel adds only 0.015 millimetres
+of equivalent air.
+
+85
+00:05:38,822 --> 00:05:42,147
+The result: about 0.94 tesla in the gap.
+
+86
+00:05:42,187 --> 00:05:46,837
+An exact radial solution agrees within 0.2
+percent.
+
+87
+00:05:46,877 --> 00:05:49,740
+Teeth and yoke then carry about 1.5 tesla,
+
+88
+00:05:49,780 --> 00:05:53,595
+near the knee, so linear steel is
+optimistic here.
+
+89
+00:05:53,635 --> 00:05:58,492
+Leakage between magnets and the slot
+openings lower the gap field further.
+
+90
+00:05:58,532 --> 00:06:02,208
+Lesson 5 computes them with a 2D field
+solution.
+
+91
+00:06:03,508 --> 00:06:08,008
+Check it on the bench. Put an N38 block
+magnet, 5 millimetres thick,
+
+92
+00:06:08,048 --> 00:06:13,215
+on one jaw of a steel C-yoke; steel plates
+on the other jaw set the gap.
+
+93
+00:06:13,255 --> 00:06:17,519
+Slide a transverse Hall probe, flat, into
+the middle of the gap.
+
+94
+00:06:17,559 --> 00:06:22,761
+Probes are 1 to 1.5 millimetres thick, so
+start with a 2-millimetre gap.
+
+95
+00:06:22,801 --> 00:06:28,938
+The circuit predicts 0.85 tesla at 2
+millimetres, and 0.49 at 7.
+
+96
+00:06:28,978 --> 00:06:33,847
+A 2D solution with mild steel and fringing
+expects 3 to 7 percent less,
+
+97
+00:06:33,887 --> 00:06:37,704
+and your magnet's own remanence scales
+everything.
+
+98
+00:06:37,744 --> 00:06:43,047
+Zero the meter away from magnets, and keep
+fingers clear: the plates snap on hard.
+
+99
+00:06:44,369 --> 00:06:46,649
+Three predictions before next time.
+
+100
+00:06:46,689 --> 00:06:52,879
+One: flat geometry, ideal iron. A
+3-millimetre magnet, Br = 1.2 T,
+
+101
+00:06:52,919 --> 00:07:00,782
+μrec = 1.05, drives a half-millimetre gap.
+What's the flux density in the gap?
+
+102
+00:07:02,082 --> 00:07:05,642
+Two: double the magnet's thickness. What
+does B become?
+
+103
+00:07:06,942 --> 00:07:10,898
+Three: a 40-millimetre steel path with μr
+= 4000
+
+104
+00:07:10,938 --> 00:07:15,101
+is worth how much air gap? And with μr =
+40?
+
+105
+00:07:16,401 --> 00:07:22,013
+Next time: inside the steel itself, with
+saturation, hysteresis and eddy currents.

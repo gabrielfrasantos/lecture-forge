@@ -1,0 +1,82 @@
+;FFMETADATA1
+title=Magnetic circuits — PMSM & BLDC, Lesson 3
+artist=lecture-forge
+language=eng
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=26365
+title=01 Half a millimetre of air
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=26365
+END=52749
+title=02 Answers from Lesson 2
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=52749
+END=85876
+title=03 Ampère's law around a core
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=85876
+END=110811
+title=04 The circuit analogy
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=110811
+END=142884
+title=05 A gapped core, computed
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=142884
+END=171596
+title=06 Why the air gap dominates
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=171596
+END=212493
+title=07 Where the analogy breaks
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=212493
+END=251210
+title=08 The magnet's second quadrant
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=251210
+END=293591
+title=09 Load line and operating point
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=293591
+END=322273
+title=10 The reference motor's flux path
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=322273
+END=363108
+title=11 Air-gap flux density of the reference motor
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=363108
+END=403969
+title=12 Bench check with a Hall probe
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=403969
+END=443713
+title=13 Predict, then check

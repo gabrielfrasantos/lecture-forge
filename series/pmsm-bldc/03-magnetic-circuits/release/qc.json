@@ -1,0 +1,211 @@
+{
+ "rep": {
+  "video": "h264 1920x1080 30/1 443.70s",
+  "audio": "aac 48000 Hz 1 ch 443.71s",
+  "subtitles": "1 track(s): mov_text/eng",
+  "chapters": 13,
+  "av_duration_diff_s": 0.013,
+  "integrated_LUFS": -16.1,
+  "true_peak_dBTP": -1.4,
+  "LRA_LU": 2.8,
+  "asr_word_error_rate": 0.069,
+  "captions": "105 cues, 0 cues mostly over silence, 0 overlaps, max 19.1 chars/s, last cue ends 442.0s"
+ },
+ "mism": [
+  [
+   "h1",
+   "Here's our reference motor again: twelve slots, eight magnet poles.",
+   "Here's our reference motor again. 12 slots, 8 magnet poles."
+  ],
+  [
+   "h3",
+   "The magnets' flux crosses it twice, and runs through centimeters of steel.",
+   "The magnet's flux crosses it twice and runs through centimeters of steel."
+  ],
+  [
+   "h5",
+   "Today we'll see why, and predict that field from a magnet datasheet and two lengths.",
+   "Today we'll see why and predict that field from a magnet data sheet and two links."
+  ],
+  [
+   "a3",
+   "Two: balanced three-phase currents give a rotating fundamental, three halves of one phase's peak.",
+   "2. Balance three-phase currents give a rotating fundamental. 3/2 of one phases peak."
+  ],
+  [
+   "a4",
+   "Three: with ideal iron, B in the gap is mu-nought F, over g. So doubling the gap halves it.",
+   "3. With ideal iron, B in the gap is mu0f. Over G so doubling the gap halves it."
+  ],
+  [
+   "a5",
+   "Today we'll see what 'ideal iron' really means.",
+   "Today we'll see what ideal iron really means."
+  ],
+  [
+   "c1",
+   "Take a steel ring with a coil of N turns, and cut a narrow gap in it.",
+   "Take a steel ring with a coil of end turns and cut a narrow gap in it."
+  ],
+  [
+   "c2",
+   "Around the center line of the core, Ampère's law says the line integral of H equals the enclosed current, N times I: the magnetomotive force, or MMF.",
+   "Around the center line of the core, Ampere's law says the line integral of H equals the enclosed current, n times i, the magnetomotive force, or MMF."
+  ],
+  [
+   "c4",
+   "In each part, H is B over mu. So N times I equals the flux, times a sum of terms: length, over mu times area.",
+   "in each part h is b over mu. So n times i equals the flux times the sum of terms, length over mu times area."
+  ],
+  [
+   "r2",
+   "Reluctances in series add, and high permeability means low reluctance.",
+   "Reluctances in series ad and high permeability means low reluctance."
+  ],
+  [
+   "k1",
+   "Let's put in numbers: 200 turns at 2 amps, 400 ampere turns.",
+   "Let's put a number of 200 turns at 2 amps, 400 ampere turns."
+  ],
+  [
+   "k2",
+   "A steel path about 320 millimeters long, relative permeability 4,000, and a 1 millimeter gap.",
+   "A steel path about 320 millimeters long, relative permeability 4000 and a 1 millimeter gap."
+  ],
+  [
+   "k3",
+   "B in the gap is 0.47 tesla, and the gap alone takes 93 percent of the MMF.",
+   "Being the gap is 0.47 Tesla, and the gap alone takes 93% of the MMF."
+  ],
+  [
+   "k4",
+   "Shrink the gap and B rises roughly as one over g.",
+   "shrink the gap and be rises roughly as 1/g."
+  ],
+  [
+   "k5",
+   "But at about a quarter of a millimeter it passes 1.5 tesla, the steel saturates, and this linear model stops applying.",
+   "But at about a quarter of a millimeter, it passes 1.5 Tesla, the steel saturates, and this linear model stops applying. [BUZZER]"
+  ],
+  [
+   "e3",
+   "With good steel, the gap sets the field. That's what 'ideal iron' meant.",
+   "With good steel, the gap sets the field. That's what ideal iron meant."
+  ],
+  [
+   "e4",
+   "But mu-r isn't constant. Near saturation it can fall to a few hundred, and the steel's share grows.",
+   "But Muar isn't constant. Near saturation it can fall to a few hundred and the steel's share grows."
+  ],
+  [
+   "b2",
+   "Here's a two-dimensional finite-difference solution of the same core, with a 6 millimeter gap to make the effect visible.",
+   "Here's a two-dimensional finite difference solution of the same core, with a 6 mm gap to make the effect visible."
+  ],
+  [
+   "b4",
+   "B at the center of the gap still matches the circuit within 1 percent, because Ampère's law along the center line doesn't care where the other flux goes.",
+   "B at the center of the gap still matches the circuit within 1%, because Ampere's law along the center line doesn't care where the other flux goes."
+  ],
+  [
+   "b5",
+   "But the coil drives more flux than the circuit predicts: a quarter more with a 1 millimeter gap, twice as much with 6.",
+   "but the coil drives more flux than the circuit predicts. A quarter more with a 1 millimeter gap, twice as much with 6. [BUZZER]"
+  ],
+  [
+   "p3",
+   "For sintered neodymium, that's nearly a straight line, the recoil line: B equals the remanence, plus mu-nought, times the recoil permeability, times H.",
+   "For centered neodymium, that's nearly a straight line, the recoil line. B equals the remnants plus mu knot times the recoil permeability times h."
+  ],
+  [
+   "l2",
+   "With no current, Ampère's law gives zero: H in the magnet times its thickness, plus H in the gap times its length. So the magnet runs at negative H.",
+   "With no current, Ampere's law gives zero. H in the magnet times its thickness plus H in the gap times its length. So the magnet runs at negative H."
+  ],
+  [
+   "l3",
+   "With equal areas, B is the same in both, which gives a straight line through the origin: the load line.",
+   "With equal areas, B is the same in both, which gives a straight line through the origin. The load line. [buzzer]"
+  ],
+  [
+   "l4",
+   "Its slope is set by the permeance coefficient: magnet thickness over gap, times the area ratio.",
+   "Its slope is set by the Permience Coefficient. Magnet thickness over gap times the area ratio."
+  ],
+  [
+   "l5",
+   "The magnet works where the two lines cross. Close the gap, and the operating point climbs toward the remanence.",
+   "The magnet works where the two lines cross. Close the gap and the operating point climbs toward the remnants."
+  ],
+  [
+   "l6",
+   "A 5 millimeter magnet and a 2 millimeter gap: permeance coefficient 2.5, and 0.85 tesla.",
+   "a 5 mm magnet and a 2 mm gap, Permian's coefficient 2.5 and 0.85 Tesla."
+  ],
+  [
+   "f3",
+   "Each magnet is an MMF source, its coercivity times its thickness, with an internal reluctance. Gaps and steel are reluctances in series.",
+   "Each magnet is an MMF source, its co-recivity times its thickness, with an internal reluctance. Gaps and steel are reluctances in series."
+  ],
+  [
+   "g1",
+   "Magnets 3 millimeters thick, a half millimeter gap, and two refinements to the flat model.",
+   "Magnets 3 mm thick, a half-millimeter gap, and two refinements to the flat model."
+  ],
+  [
+   "g2",
+   "The flux spreads out with radius, so the gap's area is almost 10 percent larger than the magnet's.",
+   "The flux spreads out with radius, so the gap's area is almost 10% larger than the magnets."
+  ],
+  [
+   "g3",
+   "And the steel adds only 0.015 millimeters of equivalent air.",
+   "and the steel adds only 0.0115 mm of equivalent air."
+  ],
+  [
+   "g4",
+   "The result: about 0.94 tesla in the gap. An exact radial solution agrees within 0.2 percent.",
+   "The result, about 0.94 Tesla in the gap. An exact radial solution agrees within 0.2%."
+  ],
+  [
+   "g5",
+   "Teeth and yoke then carry about 1.5 tesla, near the knee, so linear steel is optimistic here.",
+   "Teeth and yolk then carry about 1.5 Tesla, near the knee, so linear steel is optimistic here."
+  ],
+  [
+   "x1",
+   "Check it on the bench. Put an N38 block magnet, 5 millimeters thick, on one jaw of a steel C-yoke. Steel plates on the other jaw set the gap.",
+   "Check it on the bench. Put an N38 block magnet, 5 mm thick, on one jaw of a steel sea oak. Steel plates on the other jaw set the gap."
+  ],
+  [
+   "x2",
+   "Slide a transverse Hall probe, flat, into the middle of the gap. Probes are 1 to 1.5 millimeters thick, so start with a 2 millimeter gap.",
+   "Slide a transverse haul probe, flat, into the middle of the gap. Probes are 1 to 1.5 mm thick, so start with a 2 mm gap."
+  ],
+  [
+   "x3",
+   "The circuit predicts 0.85 tesla at 2 millimeters, and 0.49 at 7.",
+   "The circuit predicts 0.85 Tesla at 2 mm and 0.49 at 7."
+  ],
+  [
+   "x4",
+   "A two-dimensional solution with mild steel and fringing expects 3 to 7 percent less, and your magnet's own remanence scales everything.",
+   "A two-dimensional solution with mild steel and fringing expects 3 to 7% less, and your magnet's own remnant scales everything."
+  ],
+  [
+   "q2",
+   "One: flat geometry, ideal iron. A 3 millimeter magnet, remanence 1.2 tesla, recoil permeability 1.05, drives a half millimeter gap. What's the flux density in the gap?",
+   "1 flat geometry, ideal iron. A 3 mm magnet, remnants 1.2 Tesla, recoil permeability 1.05 drives a half-millimeter gap. What's the flux density in the gap?"
+  ],
+  [
+   "q3",
+   "Two: double the magnet's thickness. What does B become?",
+   "To double the magnet's thickness, what does B become?"
+  ],
+  [
+   "q4",
+   "Three: a 40 millimeter steel path with a relative permeability of 4,000 is worth how much air gap? And at 40?",
+   "3. A 40 mm steel path with a relative permeability of 4,000 is worth how much air gap. And at 40."
+  ]
+ ]
+}

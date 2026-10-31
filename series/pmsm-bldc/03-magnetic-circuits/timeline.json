@@ -1,0 +1,484 @@
+[
+ {
+  "id": "hook",
+  "title": "Half a millimetre of air",
+  "start": 0.0,
+  "beats": [
+   {
+    "id": "h1",
+    "start": 0.6,
+    "end": 4.636,
+    "text": "Here's our reference motor again: twelve slots, eight magnet poles."
+   },
+   {
+    "id": "h2",
+    "start": 5.036,
+    "end": 9.724,
+    "text": "Between the magnets and the stator teeth is an air gap just half a millimetre wide."
+   },
+   {
+    "id": "h3",
+    "start": 10.124,
+    "end": 14.214,
+    "text": "The magnets' flux crosses it twice, and runs through centimetres of steel."
+   },
+   {
+    "id": "h4",
+    "start": 14.614,
+    "end": 20.141,
+    "text": "Yet, after the magnet itself, it's that thin layer of air, not the steel, that sets the field."
+   },
+   {
+    "id": "h5",
+    "start": 20.541,
+    "end": 24.965,
+    "text": "Today we'll see why, and predict that field from a magnet datasheet and two lengths."
+   }
+  ],
+  "end": 26.364708333333336
+ },
+ {
+  "id": "answers",
+  "title": "Answers from Lesson 2",
+  "start": 26.364708333333336,
+  "beats": [
+   {
+    "id": "a1",
+    "start": 26.765,
+    "end": 28.653,
+    "text": "First, last lesson's answers."
+   },
+   {
+    "id": "a2",
+    "start": 28.953,
+    "end": 36.772,
+    "text": "One: a coil of N turns carrying I makes an MMF step of N\u00b7I, a square wave from \u2212N\u00b7I/2 to +N\u00b7I/2."
+   },
+   {
+    "id": "a3",
+    "start": 37.172,
+    "end": 42.609,
+    "text": "Two: balanced three-phase currents give a rotating fundamental 3/2 of one phase's peak."
+   },
+   {
+    "id": "a4",
+    "start": 43.009,
+    "end": 48.656,
+    "text": "Three: with ideal iron, B in the gap is \u03bc\u2080F/g, so doubling the gap halves it."
+   },
+   {
+    "id": "a5",
+    "start": 48.956,
+    "end": 51.349,
+    "text": "Today we'll see what 'ideal iron' really means."
+   }
+  ],
+  "end": 52.74933333333333
+ },
+ {
+  "id": "circuit",
+  "title": "Amp\u00e8re's law around a core",
+  "start": 52.74933333333333,
+  "beats": [
+   {
+    "id": "c1",
+    "start": 53.149,
+    "end": 56.923,
+    "text": "Take a steel ring with a coil of N turns, and cut a narrow gap in it."
+   },
+   {
+    "id": "c2",
+    "start": 57.323,
+    "end": 67.539,
+    "text": "Around the centre line of the core, Amp\u00e8re's law says the line integral of H equals the enclosed current, N\u00b7I: the magnetomotive force, or MMF."
+   },
+   {
+    "id": "c3",
+    "start": 67.939,
+    "end": 74.93,
+    "text": "Field lines never end, so if no flux escapes, the flux, B times the area, is the same in every cross-section."
+   },
+   {
+    "id": "c4",
+    "start": 75.33,
+    "end": 82.719,
+    "text": "In each part, H is B over \u03bc. So N\u00b7I equals the flux, times a sum of terms: length over \u03bc times area."
+   },
+   {
+    "id": "c5",
+    "start": 83.019,
+    "end": 84.476,
+    "text": "Each term is a reluctance."
+   }
+  ],
+  "end": 85.87612499999999
+ },
+ {
+  "id": "analogy",
+  "title": "The circuit analogy",
+  "start": 85.87612499999999,
+  "beats": [
+   {
+    "id": "r1",
+    "start": 86.276,
+    "end": 93.469,
+    "text": "That's Ohm's law in magnetic form: MMF plays voltage, flux plays current, and reluctance plays resistance."
+   },
+   {
+    "id": "r2",
+    "start": 93.869,
+    "end": 98.232,
+    "text": "Reluctances in series add, and high permeability means low reluctance."
+   },
+   {
+    "id": "r3",
+    "start": 98.632,
+    "end": 109.411,
+    "text": "In 1886, John and Edward Hopkinson used magnetic-circuit equations to predict a dynamo's characteristic from its dimensions. Designers still start this way."
+   }
+  ],
+  "end": 110.81133333333334
+ },
+ {
+  "id": "ccore",
+  "title": "A gapped core, computed",
+  "start": 110.81133333333334,
+  "beats": [
+   {
+    "id": "k1",
+    "start": 111.211,
+    "end": 115.84,
+    "text": "Let's put in numbers: 200 turns at 2 amps, 400 ampere-turns."
+   },
+   {
+    "id": "k2",
+    "start": 116.14,
+    "end": 123.335,
+    "text": "A steel path about 320 millimetres long, relative permeability 4000, and a 1-millimetre gap."
+   },
+   {
+    "id": "k3",
+    "start": 123.735,
+    "end": 130.117,
+    "text": "B in the gap is 0.47 tesla, and the gap alone takes 93 percent of the MMF."
+   },
+   {
+    "id": "k4",
+    "start": 130.517,
+    "end": 133.611,
+    "text": "Shrink the gap and B rises roughly as one over g."
+   },
+   {
+    "id": "k5",
+    "start": 133.911,
+    "end": 141.484,
+    "text": "But at about a quarter of a millimetre it passes 1.5 tesla, the steel saturates, and this linear model stops applying."
+   }
+  ],
+  "end": 142.8838333333334
+ },
+ {
+  "id": "airlen",
+  "title": "Why the air gap dominates",
+  "start": 142.8838333333334,
+  "beats": [
+   {
+    "id": "e1",
+    "start": 143.284,
+    "end": 150.105,
+    "text": "Here's why. Divide each length of steel by its relative permeability: that's the length of air with the same reluctance."
+   },
+   {
+    "id": "e2",
+    "start": 150.505,
+    "end": 159.121,
+    "text": "Unroll the core: 319 millimetres of steel shrink to 0.08 millimetres of air, next to a 1-millimetre gap."
+   },
+   {
+    "id": "e3",
+    "start": 159.621,
+    "end": 163.713,
+    "text": "With good steel, the gap sets the field. That's what 'ideal iron' meant."
+   },
+   {
+    "id": "e4",
+    "start": 164.113,
+    "end": 170.196,
+    "text": "But \u03bcr isn't constant. Near saturation it can fall to a few hundred, and the steel's share grows."
+   }
+  ],
+  "end": 171.5960416666667
+ },
+ {
+  "id": "leakage",
+  "title": "Where the analogy breaks",
+  "start": 171.5960416666667,
+  "beats": [
+   {
+    "id": "b1",
+    "start": 171.996,
+    "end": 180.551,
+    "text": "The analogy has a weak spot: there's no practical insulator for flux. Air carries flux only a few thousand times less readily than steel."
+   },
+   {
+    "id": "b2",
+    "start": 180.951,
+    "end": 187.804,
+    "text": "Here's a two-dimensional finite-difference solution of the same core, with a 6-millimetre gap to make the effect visible."
+   },
+   {
+    "id": "b3",
+    "start": 188.204,
+    "end": 194.261,
+    "text": "Some flux leaks across the window, and around the gap the field bulges outward: leakage and fringing."
+   },
+   {
+    "id": "b4",
+    "start": 194.661,
+    "end": 203.61,
+    "text": "B at the centre of the gap still matches the circuit within 1 percent, because Amp\u00e8re's law along the centre line doesn't care where the other flux goes."
+   },
+   {
+    "id": "b5",
+    "start": 204.01,
+    "end": 211.093,
+    "text": "But the coil drives more flux than the circuit predicts: a quarter more with a 1-millimetre gap, twice as much with 6."
+   }
+  ],
+  "end": 212.4926250000001
+ },
+ {
+  "id": "magnet",
+  "title": "The magnet's second quadrant",
+  "start": 212.4926250000001,
+  "beats": [
+   {
+    "id": "p1",
+    "start": 212.893,
+    "end": 215.358,
+    "text": "Now replace the coil with a permanent magnet."
+   },
+   {
+    "id": "p2",
+    "start": 215.758,
+    "end": 222.758,
+    "text": "Driving flux through a gap, it works in the second quadrant of its B\u2013H curve: B positive, H negative."
+   },
+   {
+    "id": "p3",
+    "start": 223.158,
+    "end": 232.247,
+    "text": "For sintered neodymium, that's nearly a straight line, the recoil line: B = Br + \u03bc\u2080\u03bcrec H."
+   },
+   {
+    "id": "p4",
+    "start": 232.647,
+    "end": 242.014,
+    "text": "We'll use Br = 1.2 T and \u03bcrec = 1.05, barely more than air. The line crosses B = 0 near \u2212910 kA/m."
+   },
+   {
+    "id": "p5",
+    "start": 242.414,
+    "end": 249.81,
+    "text": "It only holds above a knee. Push the magnet past it, more easily when it's hot, and some magnetisation is lost for good."
+   }
+  ],
+  "end": 251.2095416666668
+ },
+ {
+  "id": "loadline",
+  "title": "Load line and operating point",
+  "start": 251.2095416666668,
+  "beats": [
+   {
+    "id": "l1",
+    "start": 251.61,
+    "end": 255.147,
+    "text": "Put a magnet in series with a gap, and take the steel as ideal."
+   },
+   {
+    "id": "l2",
+    "start": 255.447,
+    "end": 264.958,
+    "text": "With no current, Amp\u00e8re's law gives zero: Hm\u00b7hm + Hg\u00b7g = 0. So the magnet runs at negative H."
+   },
+   {
+    "id": "l3",
+    "start": 265.358,
+    "end": 271.295,
+    "text": "With equal areas, B is the same in both, which gives a straight line through the origin: the load line."
+   },
+   {
+    "id": "l4",
+    "start": 271.595,
+    "end": 277.625,
+    "text": "Its slope is set by the permeance coefficient: hm over g, times the area ratio."
+   },
+   {
+    "id": "l5",
+    "start": 278.025,
+    "end": 284.183,
+    "text": "The magnet works where the two lines cross. Close the gap, and the operating point climbs toward Br."
+   },
+   {
+    "id": "l6",
+    "start": 284.583,
+    "end": 292.191,
+    "text": "A 5-millimetre magnet and a 2-millimetre gap: permeance coefficient 2.5, and 0.85 tesla."
+   }
+  ],
+  "end": 293.5908333333335
+ },
+ {
+  "id": "motorpath",
+  "title": "The reference motor's flux path",
+  "start": 293.5908333333335,
+  "beats": [
+   {
+    "id": "f1",
+    "start": 293.991,
+    "end": 297.394,
+    "text": "Now the reference motor. Follow one loop of magnet flux:"
+   },
+   {
+    "id": "f2",
+    "start": 297.594,
+    "end": 307.147,
+    "text": "out of a north magnet, across the gap, down a tooth, along the stator yoke, up the next tooth, across the gap, through a south magnet, and home through the rotor steel."
+   },
+   {
+    "id": "f3",
+    "start": 307.547,
+    "end": 316.772,
+    "text": "Each magnet is an MMF source, Hc\u00b7hm, with an internal reluctance. Gaps and steel are reluctances in series."
+   },
+   {
+    "id": "f4",
+    "start": 317.072,
+    "end": 320.873,
+    "text": "By symmetry, each pole sees one magnet, one gap, and half the steel."
+   }
+  ],
+  "end": 322.2725416666668
+ },
+ {
+  "id": "motorB",
+  "title": "Air-gap flux density of the reference motor",
+  "start": 322.2725416666668,
+  "beats": [
+   {
+    "id": "g1",
+    "start": 322.673,
+    "end": 327.912,
+    "text": "Magnets 3 millimetres thick, a half-millimetre gap, and two refinements to the flat model."
+   },
+   {
+    "id": "g2",
+    "start": 328.212,
+    "end": 333.602,
+    "text": "The flux spreads out with radius, so the gap's area is almost 10 percent larger than the magnet's."
+   },
+   {
+    "id": "g3",
+    "start": 333.902,
+    "end": 338.422,
+    "text": "And the steel adds only 0.015 millimetres of equivalent air."
+   },
+   {
+    "id": "g4",
+    "start": 338.822,
+    "end": 346.477,
+    "text": "The result: about 0.94 tesla in the gap. An exact radial solution agrees within 0.2 percent."
+   },
+   {
+    "id": "g5",
+    "start": 346.877,
+    "end": 353.235,
+    "text": "Teeth and yoke then carry about 1.5 tesla, near the knee, so linear steel is optimistic here."
+   },
+   {
+    "id": "g6",
+    "start": 353.635,
+    "end": 361.708,
+    "text": "Leakage between magnets and the slot openings lower the gap field further. Lesson 5 computes them with a 2D field solution."
+   }
+  ],
+  "end": 363.10779166666674
+ },
+ {
+  "id": "bench",
+  "title": "Bench check with a Hall probe",
+  "start": 363.10779166666674,
+  "beats": [
+   {
+    "id": "x1",
+    "start": 363.508,
+    "end": 372.855,
+    "text": "Check it on the bench. Put an N38 block magnet, 5 millimetres thick, on one jaw of a steel C-yoke; steel plates on the other jaw set the gap."
+   },
+   {
+    "id": "x2",
+    "start": 373.255,
+    "end": 382.401,
+    "text": "Slide a transverse Hall probe, flat, into the middle of the gap. Probes are 1 to 1.5 millimetres thick, so start with a 2-millimetre gap."
+   },
+   {
+    "id": "x3",
+    "start": 382.801,
+    "end": 388.678,
+    "text": "The circuit predicts 0.85 tesla at 2 millimetres, and 0.49 at 7."
+   },
+   {
+    "id": "x4",
+    "start": 388.978,
+    "end": 397.344,
+    "text": "A 2D solution with mild steel and fringing expects 3 to 7 percent less, and your magnet's own remanence scales everything."
+   },
+   {
+    "id": "x5",
+    "start": 397.744,
+    "end": 402.547,
+    "text": "Zero the meter away from magnets, and keep fingers clear: the plates snap on hard."
+   }
+  ],
+  "end": 403.969375
+ },
+ {
+  "id": "predict",
+  "title": "Predict, then check",
+  "start": 403.969375,
+  "beats": [
+   {
+    "id": "q1",
+    "start": 404.369,
+    "end": 406.289,
+    "text": "Three predictions before next time."
+   },
+   {
+    "id": "q2",
+    "start": 406.689,
+    "end": 420.282,
+    "text": "One: flat geometry, ideal iron. A 3-millimetre magnet, Br = 1.2 T, \u03bcrec = 1.05, drives a half-millimetre gap. What's the flux density in the gap?"
+   },
+   {
+    "id": "q3",
+    "start": 422.082,
+    "end": 425.142,
+    "text": "Two: double the magnet's thickness. What does B become?"
+   },
+   {
+    "id": "q4",
+    "start": 426.942,
+    "end": 434.601,
+    "text": "Three: a 40-millimetre steel path with \u03bcr = 4000 is worth how much air gap? And with \u03bcr = 40?"
+   },
+   {
+    "id": "q5",
+    "start": 436.401,
+    "end": 441.513,
+    "text": "Next time: inside the steel itself, with saturation, hysteresis and eddy currents."
+   }
+  ],
+  "end": 443.71308333333343
+ }
+]
