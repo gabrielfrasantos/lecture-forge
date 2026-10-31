@@ -1,0 +1,82 @@
+;FFMETADATA1
+title=From a Compass to a Motor — PMSM & BLDC, Lesson 1 (pilot)
+artist=Pilot lesson
+language=eng
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=20148
+title=01 A look inside
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=20148
+END=40164
+title=02 Ørsted, 1820
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=40164
+END=65394
+title=03 The needle follows the total field
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=65394
+END=85868
+title=04 The field around a wire
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=85868
+END=117018
+title=05 Ampère's law and symmetry
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=117018
+END=140044
+title=06 Putting in numbers
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=140044
+END=158643
+title=07 From wire to loop
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=158643
+END=187441
+title=08 Biot–Savart and the coil axis
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=187441
+END=203995
+title=09 The loop's field, computed
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=203995
+END=230941
+title=10 Torque on a magnetic dipole
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=230941
+END=259186
+title=11 Faraday's rotation, 1821
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=259186
+END=293956
+title=12 Back to the motor: a rotating field
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=293956
+END=323789
+title=13 Predict, then check

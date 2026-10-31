@@ -1,0 +1,14 @@
+numpy
+scipy
+matplotlib
+pillow
+soundfile
+kokoro-onnx
+misaki
+num2words
+regex
+spacy
+sherpa-onnx
+pyloudnorm
+# plus: en_core_web_sm 3.8.0 (spaCy model wheel from github.com/explosion/spacy-models releases)
+# system: ffmpeg, pdflatex (amsmath, bm, standalone), pdftoppm (poppler), Inter font

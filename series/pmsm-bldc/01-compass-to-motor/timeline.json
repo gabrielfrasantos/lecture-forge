@@ -1,0 +1,448 @@
+[
+ {
+  "id": "motor",
+  "title": "A look inside",
+  "start": 0.0,
+  "beats": [
+   {
+    "id": "m1",
+    "start": 0.6,
+    "end": 1.933,
+    "text": "Look inside this motor."
+   },
+   {
+    "id": "m2",
+    "start": 2.483,
+    "end": 6.052,
+    "text": "The copper windings stay still, while the magnets turn with the shaft."
+   },
+   {
+    "id": "m3",
+    "start": 6.452,
+    "end": 11.038,
+    "text": "There's a small air gap between them \u2014 nothing is pushing through a mechanical contact."
+   },
+   {
+    "id": "m4",
+    "start": 11.538,
+    "end": 13.421,
+    "text": "So where does the turning force come from?"
+   },
+   {
+    "id": "m5",
+    "start": 14.221,
+    "end": 18.848,
+    "text": "To answer that, let's start with a much simpler experiment: a wire and a compass."
+   }
+  ],
+  "end": 20.14766666666667
+ },
+ {
+  "id": "oersted",
+  "title": "\u00d8rsted, 1820",
+  "start": 20.14766666666667,
+  "beats": [
+   {
+    "id": "o1",
+    "start": 20.648,
+    "end": 30.309,
+    "text": "In the spring of 1820, during a lecture in Copenhagen, Hans Christian \u00d8rsted placed a wire carrying current just above a compass needle, parallel to it."
+   },
+   {
+    "id": "o2",
+    "start": 30.659,
+    "end": 31.914,
+    "text": "The needle swung aside."
+   },
+   {
+    "id": "o3",
+    "start": 32.414,
+    "end": 38.864,
+    "text": "After careful tests, he published the result that July: an electric current produces a magnetic effect."
+   }
+  ],
+  "end": 40.16366666666667
+ },
+ {
+  "id": "total",
+  "title": "The needle follows the total field",
+  "start": 40.16366666666667,
+  "beats": [
+   {
+    "id": "t1",
+    "start": 40.564,
+    "end": 42.138,
+    "text": "Let's rebuild that experiment."
+   },
+   {
+    "id": "t2",
+    "start": 42.438,
+    "end": 48.582,
+    "text": "With the current off, the needle follows the horizontal part of Earth's field \u2014 about twenty microtesla here."
+   },
+   {
+    "id": "t3",
+    "start": 49.182,
+    "end": 51.289,
+    "text": "Switch the current on, and it turns west."
+   },
+   {
+    "id": "t4",
+    "start": 52.589,
+    "end": 54.336,
+    "text": "Reverse it, and it turns east."
+   },
+   {
+    "id": "t5",
+    "start": 55.536,
+    "end": 64.094,
+    "text": "The needle doesn't respond to the wire alone. It lines up with the total local field: Earth's field plus the wire's field, added as vectors."
+   }
+  ],
+  "end": 65.39420833333334
+ },
+ {
+  "id": "wirefield",
+  "title": "The field around a wire",
+  "start": 65.39420833333334,
+  "beats": [
+   {
+    "id": "w1",
+    "start": 65.794,
+    "end": 68.005,
+    "text": "So what does the wire's own field look like?"
+   },
+   {
+    "id": "w2",
+    "start": 68.355,
+    "end": 74.295,
+    "text": "Calculated in three dimensions, it forms circles around the wire, in planes perpendicular to it."
+   },
+   {
+    "id": "w3",
+    "start": 74.695,
+    "end": 80.137,
+    "text": "Point your right thumb along the conventional current, and your fingers curl the way the field points."
+   },
+   {
+    "id": "w4",
+    "start": 80.537,
+    "end": 84.568,
+    "text": "The arrowheads only mark direction. Nothing flows along these lines."
+   }
+  ],
+  "end": 85.86783333333335
+ },
+ {
+  "id": "ampere",
+  "title": "Amp\u00e8re's law and symmetry",
+  "start": 85.86783333333335,
+  "beats": [
+   {
+    "id": "a1",
+    "start": 86.268,
+    "end": 87.291,
+    "text": "How strong is it?"
+   },
+   {
+    "id": "a2",
+    "start": 87.591,
+    "end": 95.503,
+    "text": "What we now call Amp\u00e8re's law says: go around any closed path, add up B\u00b7dl, and you get \u03bc\u2080 times the current passing through."
+   },
+   {
+    "id": "a3",
+    "start": 95.903,
+    "end": 98.537,
+    "text": "For a long, straight wire, symmetry does the work."
+   },
+   {
+    "id": "a4",
+    "start": 98.837,
+    "end": 105.103,
+    "text": "On a circle of radius r, centred on the wire, B runs along the path, with the same size everywhere."
+   },
+   {
+    "id": "a5",
+    "start": 105.453,
+    "end": 111.132,
+    "text": "So the integral is just B times 2\u03c0r, and B of r is \u03bc\u2080I over 2\u03c0r."
+   },
+   {
+    "id": "a6",
+    "start": 111.532,
+    "end": 115.718,
+    "text": "That assumes a long, thin wire, a steady current, and no iron nearby."
+   }
+  ],
+  "end": 117.01820833333333
+ },
+ {
+  "id": "numbers",
+  "title": "Putting in numbers",
+  "start": 117.01820833333333,
+  "beats": [
+   {
+    "id": "n1",
+    "start": 117.418,
+    "end": 123.173,
+    "text": "Let's predict something. Two amps, one centimetre from the wire, gives about forty microtesla."
+   },
+   {
+    "id": "n2",
+    "start": 123.573,
+    "end": 128.661,
+    "text": "That's twice Earth's horizontal field, so the needle should turn by about sixty-three degrees."
+   },
+   {
+    "id": "n3",
+    "start": 129.061,
+    "end": 134.997,
+    "text": "Double the distance, and the field halves. Now the two fields are equal, and the needle sits at forty-five."
+   },
+   {
+    "id": "n4",
+    "start": 135.397,
+    "end": 138.744,
+    "text": "A bench supply, a ruler and a compass are enough to check it."
+   }
+  ],
+  "end": 140.0435
+ },
+ {
+  "id": "loop",
+  "title": "From wire to loop",
+  "start": 140.0435,
+  "beats": [
+   {
+    "id": "l1",
+    "start": 140.444,
+    "end": 143.345,
+    "text": "To concentrate the field, bend the wire into a loop."
+   },
+   {
+    "id": "l2",
+    "start": 143.745,
+    "end": 150.351,
+    "text": "At a point on the axis, each short piece of wire adds a small field, at right angles to the line joining them."
+   },
+   {
+    "id": "l3",
+    "start": 150.751,
+    "end": 155.345,
+    "text": "Pieces on opposite sides tilt in mirror image: their sideways parts cancel,"
+   },
+   {
+    "id": "l4",
+    "start": 155.495,
+    "end": 157.343,
+    "text": "and their parts along the axis add."
+   }
+  ],
+  "end": 158.64324999999997
+ },
+ {
+  "id": "biot",
+  "title": "Biot\u2013Savart and the coil axis",
+  "start": 158.64324999999997,
+  "beats": [
+   {
+    "id": "s1",
+    "start": 159.043,
+    "end": 161.347,
+    "text": "The Biot\u2013Savart law makes this exact."
+   },
+   {
+    "id": "s2",
+    "start": 161.647,
+    "end": 168.875,
+    "text": "Each current element, I times dl, contributes \u03bc\u2080 over 4\u03c0, times I dl cross r-hat, over r squared."
+   },
+   {
+    "id": "s3",
+    "start": 169.275,
+    "end": 181.214,
+    "text": "Summed around a coil of N turns and radius a, the axial field at distance x from the centre is \u03bc\u2080NIa\u00b2, over two, times a\u00b2 plus x\u00b2, to the three-halves."
+   },
+   {
+    "id": "s4",
+    "start": 181.664,
+    "end": 186.139,
+    "text": "That holds for a thin coil, with steady current, in air \u2014 and only on the axis."
+   }
+  ],
+  "end": 187.44099999999995
+ },
+ {
+  "id": "streamlines",
+  "title": "The loop's field, computed",
+  "start": 187.44099999999995,
+  "beats": [
+   {
+    "id": "f1",
+    "start": 187.841,
+    "end": 193.462,
+    "text": "Off the axis, we compute the field numerically, summing seven hundred and twenty short segments."
+   },
+   {
+    "id": "f2",
+    "start": 193.862,
+    "end": 197.62,
+    "text": "Every line threads the loop, wraps around the outside, and returns."
+   },
+   {
+    "id": "f3",
+    "start": 198.02,
+    "end": 202.695,
+    "text": "From a distance, it looks just like a bar magnet, with a north face and a south face."
+   }
+  ],
+  "end": 203.9947916666666
+ },
+ {
+  "id": "torque",
+  "title": "Torque on a magnetic dipole",
+  "start": 203.9947916666666,
+  "beats": [
+   {
+    "id": "q1",
+    "start": 204.395,
+    "end": 211.364,
+    "text": "So we can describe the loop by its magnetic moment, m: turns, times current, times area, pointing along the axis."
+   },
+   {
+    "id": "q2",
+    "start": 211.764,
+    "end": 218.714,
+    "text": "In a uniform field there's no net force, but there is a torque: \u03c4 = m \u00d7 B, with size mB sin \u03b8."
+   },
+   {
+    "id": "q3",
+    "start": 219.114,
+    "end": 222.932,
+    "text": "It's largest at ninety degrees, and zero when m lines up with B."
+   },
+   {
+    "id": "q4",
+    "start": 223.332,
+    "end": 226.056,
+    "text": "Let go, and the loop swings into line, and stops."
+   },
+   {
+    "id": "q5",
+    "start": 226.556,
+    "end": 229.641,
+    "text": "To keep it turning, the field has to keep moving ahead of it."
+   }
+  ],
+  "end": 230.94116666666662
+ },
+ {
+  "id": "faraday",
+  "title": "Faraday's rotation, 1821",
+  "start": 230.94116666666662,
+  "beats": [
+   {
+    "id": "h1",
+    "start": 231.341,
+    "end": 238.412,
+    "text": "Faraday got continuous motion a different way, in September 1821, at the Royal Institution in London."
+   },
+   {
+    "id": "h2",
+    "start": 238.762,
+    "end": 249.007,
+    "text": "A magnet stood upright in a basin of mercury. A free wire dipped into the mercury beside it. With current flowing, the wire circled the magnet's pole \u2014 and kept circling."
+   },
+   {
+    "id": "h3",
+    "start": 249.407,
+    "end": 257.886,
+    "text": "It was a demonstration, not a practical motor. But it was the first continuous conversion of electrical energy into mechanical motion."
+   }
+  ],
+  "end": 259.18566666666663
+ },
+ {
+  "id": "rotating",
+  "title": "Back to the motor: a rotating field",
+  "start": 259.18566666666663,
+  "beats": [
+   {
+    "id": "r1",
+    "start": 259.586,
+    "end": 262.805,
+    "text": "A modern motor moves the field electrically instead."
+   },
+   {
+    "id": "r2",
+    "start": 263.105,
+    "end": 270.376,
+    "text": "Three fixed windings, a hundred and twenty degrees apart, carry sinusoidal currents, each delayed by a third of a cycle."
+   },
+   {
+    "id": "r3",
+    "start": 270.776,
+    "end": 274.829,
+    "text": "Each winding alone just pulses back and forth along its own axis."
+   },
+   {
+    "id": "r4",
+    "start": 275.129,
+    "end": 280.792,
+    "text": "But added as vectors, their fundamental component keeps a constant length, and rotates steadily."
+   },
+   {
+    "id": "r5",
+    "start": 281.192,
+    "end": 285.699,
+    "text": "The rotor magnets follow at exactly that speed. That's what synchronous means."
+   },
+   {
+    "id": "r6",
+    "start": 286.099,
+    "end": 292.556,
+    "text": "Under load, the rotor lags by an angle, and the torque follows the sine of that angle \u2014 just like m \u00d7 B."
+   }
+  ],
+  "end": 293.9555416666666
+ },
+ {
+  "id": "predict",
+  "title": "Predict, then check",
+  "start": 293.9555416666666,
+  "beats": [
+   {
+    "id": "p1",
+    "start": 294.356,
+    "end": 296.275,
+    "text": "Three predictions before next time."
+   },
+   {
+    "id": "p2",
+    "start": 296.675,
+    "end": 301.263,
+    "text": "One: a long wire carries six amps. What's the field three centimetres away?"
+   },
+   {
+    "id": "p3",
+    "start": 303.063,
+    "end": 307.98,
+    "text": "Two: how far along the axis of a coil does the field fall to half its centre value?"
+   },
+   {
+    "id": "p4",
+    "start": 309.78,
+    "end": 313.819,
+    "text": "Three: swap two of the three phase leads. What does the rotating field do?"
+   },
+   {
+    "id": "p5",
+    "start": 315.619,
+    "end": 321.589,
+    "text": "Next time, we'll see how real windings sit in slots, and how their geometry shapes that rotating field."
+   }
+  ],
+  "end": 323.7893333333333
+ }
+]

@@ -1,0 +1,121 @@
+{
+ "rep": {
+  "video": "h264 1920x1080 30/1 323.80s",
+  "audio": "aac 48000 Hz 1 ch 323.79s",
+  "subtitles": "1 track(s): mov_text/eng",
+  "chapters": 13,
+  "av_duration_diff_s": 0.011,
+  "integrated_LUFS": -16.1,
+  "true_peak_dBTP": -1.4,
+  "LRA_LU": 3.3,
+  "asr_word_error_rate": 0.072,
+  "captions": "84 cues, 0 cues mostly over silence, 0 overlaps, max 19.1 chars/s, last cue ends 322.1s"
+ },
+ "mism": [
+  [
+   "m2",
+   "The copper windings stay still, while the magnets turn with the shaft.",
+   "The copper winding stays still while the magnets turn with the shaft."
+  ],
+  [
+   "o1",
+   "In the spring of 1820, during a lecture in Copenhagen, Hans Christian Ørsted placed a wire carrying current just above a compass needle, parallel to it.",
+   "In the spring of 1820, during a lecture in Copenhagen, Hans Christian Ersted placed a wire-carrying current just above a compass needle. Parallel to it."
+  ],
+  [
+   "t2",
+   "With the current off, the needle follows the horizontal part of Earth's field — about twenty microtesla here.",
+   "With the current off, the needle follows the horizontal part of Earth's field, about 20 micro-tesla here."
+  ],
+  [
+   "t5",
+   "The needle doesn't respond to the wire alone. It lines up with the total local field: Earth's field plus the wire's field, added as vectors.",
+   "The needle doesn't respond to the wire alone. It lines up with the total local field. Earth's field plus the wires field added as vectors. [BUZZER]"
+  ],
+  [
+   "w1",
+   "So what does the wire's own field look like?",
+   "So what does the wires own field look like?"
+  ],
+  [
+   "a2",
+   "What we now call Ampère's law says: go around any closed path, add up B dot d-l, and you get mu-nought times the current passing through.",
+   "What we now call Ampere's Law says, go around any closed path, add up b dot dl, and you get mu naught times the current passing through."
+  ],
+  [
+   "a5",
+   "So the integral is just B, times two pi r. And B of r is mu-nought I, over two pi r.",
+   "So the integral is just b. Times 2 pi r and b of r is mu naught i over 2 pi r."
+  ],
+  [
+   "n1",
+   "Let's predict something. Two amps, one centimeter from the wire, gives about forty microtesla.",
+   "Let's predict something. Two amps, one centimeter from the wire, gives about 40 micro tesla."
+  ],
+  [
+   "n2",
+   "That's twice Earth's horizontal field, so the needle should turn by about sixty-three degrees.",
+   "That's twice Earth's horizontal field, so the needle should turn by about 63 degrees."
+  ],
+  [
+   "n3",
+   "Double the distance, and the field halves. Now the two fields are equal, and the needle sits at forty-five.",
+   "double the distance and the field halves. Now the two fields are equal and the needle sits at 45."
+  ],
+  [
+   "s1",
+   "The Biot–Savart law makes this exact.",
+   "The BIO, Savar Law makes this exact."
+  ],
+  [
+   "s2",
+   "Each current element, I times [dl](/dˌiˈɛl/), contributes mu-nought over four pi, times I [dl](/dˌiˈɛl/), cross r-hat, over r squared.",
+   "Each current element, i times dl, contributes mu naught over 4 pi times i dl cross r hat over r squared."
+  ],
+  [
+   "s3",
+   "Summed around a coil of N turns and radius [a](/ˈA/), the axial field at distance [x](/ˈɛks/) from the center is mu-nought N I [a](/ˈA/) squared, over two, times [a](/ˈA/) squared plus [x](/ˈɛks/) squared, to the three halves.",
+   "summed around a coil of n turns and radius a, the axial field at distance x from the center is mu naught n i a squared over 2 times a squared plus x squared to the 3/2."
+  ],
+  [
+   "f1",
+   "Off the axis, we compute the field numerically, summing seven hundred and twenty short segments.",
+   "Off the axis, we compute the field numerically, summing 720 short segments."
+  ],
+  [
+   "q2",
+   "In a uniform field there's no net force, but there is a torque: tau equals m cross B, with size m B sine theta.",
+   "In a uniform field, there's no net force, but there is a torque. Tau equals m cross b with size m b sin theta."
+  ],
+  [
+   "q3",
+   "It's largest at ninety degrees, and zero when m lines up with B.",
+   "It's largest at 90 degrees, and zero when M lines up with B."
+  ],
+  [
+   "r2",
+   "Three fixed windings, a hundred and twenty degrees apart, carry sinusoidal currents, each delayed by a third of a cycle.",
+   "Three fixed windings, 120 degrees apart, carry sinusoidal currents, each delayed by a third of a cycle."
+  ],
+  [
+   "r6",
+   "Under load, the rotor lags by an angle, and the torque follows the sine of that angle — just like m cross B.",
+   "Under load, the rotor lags by an angle, and the torque follows the sign of that angle, just like M cross B. [buzzer]"
+  ],
+  [
+   "p2",
+   "One: a long wire carries six amps. What's the field three centimeters away?",
+   "1. A long wire carries 6 amps. What's the field 3 centimeters away?"
+  ],
+  [
+   "p3",
+   "Two: how far along the axis of a coil does the field fall to half its center value?",
+   "2. How far along the axis of a coil does the field fall to half its center value?"
+  ],
+  [
+   "p4",
+   "Three: swap two of the three phase leads. What does the rotating field do?",
+   "3. Swap 2 of the 3-phase leads. What does the rotating field do?"
+  ]
+ ]
+}

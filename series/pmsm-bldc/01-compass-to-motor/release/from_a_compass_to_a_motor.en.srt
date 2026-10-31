@@ -1,0 +1,399 @@
+1
+00:00:00,600 --> 00:00:02,433
+Look inside this motor.
+
+2
+00:00:02,483 --> 00:00:06,412
+The copper windings stay still, while the
+magnets turn with the shaft.
+
+3
+00:00:06,452 --> 00:00:08,438
+There's a small air gap between them —
+
+4
+00:00:08,478 --> 00:00:11,498
+nothing is pushing through a mechanical
+contact.
+
+5
+00:00:11,538 --> 00:00:13,921
+So where does the turning force come from?
+
+6
+00:00:14,221 --> 00:00:19,348
+To answer that, let's start with a much
+simpler experiment: a wire and a compass.
+
+7
+00:00:20,648 --> 00:00:25,470
+In the spring of 1820, during a lecture in
+Copenhagen, Hans Christian Ørsted
+
+8
+00:00:25,510 --> 00:00:30,619
+placed a wire carrying current just above
+a compass needle, parallel to it.
+
+9
+00:00:30,659 --> 00:00:32,374
+The needle swung aside.
+
+10
+00:00:32,414 --> 00:00:35,852
+After careful tests, he published the
+result that July:
+
+11
+00:00:35,892 --> 00:00:39,364
+an electric current produces a magnetic
+effect.
+
+12
+00:00:40,564 --> 00:00:42,398
+Let's rebuild that experiment.
+
+13
+00:00:42,438 --> 00:00:45,527
+With the current off, the needle follows
+the horizontal
+
+14
+00:00:45,567 --> 00:00:49,082
+part of Earth's field — about twenty
+microtesla here.
+
+15
+00:00:49,182 --> 00:00:51,789
+Switch the current on, and it turns west.
+
+16
+00:00:52,589 --> 00:00:54,836
+Reverse it, and it turns east.
+
+17
+00:00:55,536 --> 00:00:59,929
+The needle doesn't respond to the wire
+alone. It lines up with the total
+
+18
+00:00:59,969 --> 00:01:04,594
+local field: Earth's field plus the wire's
+field, added as vectors.
+
+19
+00:01:05,794 --> 00:01:08,315
+So what does the wire's own field look
+like?
+
+20
+00:01:08,355 --> 00:01:10,253
+Calculated in three dimensions,
+
+21
+00:01:10,293 --> 00:01:14,655
+it forms circles around the wire, in
+planes perpendicular to it.
+
+22
+00:01:14,695 --> 00:01:17,565
+Point your right thumb along the
+conventional current,
+
+23
+00:01:17,605 --> 00:01:20,497
+and your fingers curl the way the field
+points.
+
+24
+00:01:20,537 --> 00:01:25,068
+The arrowheads only mark direction.
+Nothing flows along these lines.
+
+25
+00:01:26,268 --> 00:01:27,551
+How strong is it?
+
+26
+00:01:27,591 --> 00:01:31,507
+What we now call Ampère's law says: go
+around any closed path,
+
+27
+00:01:31,547 --> 00:01:35,863
+add up B·dl, and you get μ₀ times the
+current passing through.
+
+28
+00:01:35,903 --> 00:01:38,797
+For a long, straight wire, symmetry does
+the work.
+
+29
+00:01:38,837 --> 00:01:41,674
+On a circle of radius r, centred on the
+wire,
+
+30
+00:01:41,714 --> 00:01:45,413
+B runs along the path, with the same size
+everywhere.
+
+31
+00:01:45,453 --> 00:01:51,492
+So the integral is just B times 2πr, and B
+of r is μ₀I over 2πr.
+
+32
+00:01:51,532 --> 00:01:56,218
+That assumes a long, thin wire, a steady
+current, and no iron nearby.
+
+33
+00:01:57,418 --> 00:01:59,482
+Let's predict something. Two amps,
+
+34
+00:01:59,522 --> 00:02:03,533
+one centimetre from the wire, gives about
+forty microtesla.
+
+35
+00:02:03,573 --> 00:02:05,612
+That's twice Earth's horizontal field,
+
+36
+00:02:05,652 --> 00:02:09,021
+so the needle should turn by about sixty-
+three degrees.
+
+37
+00:02:09,061 --> 00:02:11,373
+Double the distance, and the field halves.
+
+38
+00:02:11,413 --> 00:02:15,357
+Now the two fields are equal, and the
+needle sits at forty-five.
+
+39
+00:02:15,397 --> 00:02:19,244
+A bench supply, a ruler and a compass are
+enough to check it.
+
+40
+00:02:20,444 --> 00:02:23,705
+To concentrate the field, bend the wire
+into a loop.
+
+41
+00:02:23,745 --> 00:02:27,826
+At a point on the axis, each short piece
+of wire adds a small field,
+
+42
+00:02:27,866 --> 00:02:30,711
+at right angles to the line joining them.
+
+43
+00:02:30,751 --> 00:02:35,455
+Pieces on opposite sides tilt in mirror
+image: their sideways parts cancel,
+
+44
+00:02:35,495 --> 00:02:37,843
+and their parts along the axis add.
+
+45
+00:02:39,043 --> 00:02:41,607
+The Biot–Savart law makes this exact.
+
+46
+00:02:41,647 --> 00:02:45,899
+Each current element, I times dl,
+contributes μ₀ over 4π,
+
+47
+00:02:45,939 --> 00:02:49,235
+times I dl cross r-hat, over r squared.
+
+48
+00:02:49,275 --> 00:02:55,205
+Summed around a coil of N turns and radius
+a, the axial field at distance x
+
+49
+00:02:55,245 --> 00:03:01,624
+from the centre is μ₀NIa², over two, times
+a² plus x², to the three-halves.
+
+50
+00:03:01,664 --> 00:03:06,639
+That holds for a thin coil, with steady
+current, in air — and only on the axis.
+
+51
+00:03:07,841 --> 00:03:10,582
+Off the axis, we compute the field
+numerically,
+
+52
+00:03:10,622 --> 00:03:13,822
+summing seven hundred and twenty short
+segments.
+
+53
+00:03:13,862 --> 00:03:17,980
+Every line threads the loop, wraps around
+the outside, and returns.
+
+54
+00:03:18,020 --> 00:03:20,707
+From a distance, it looks just like a bar
+magnet,
+
+55
+00:03:20,747 --> 00:03:23,195
+with a north face and a south face.
+
+56
+00:03:24,395 --> 00:03:27,715
+So we can describe the loop by its
+magnetic moment, m:
+
+57
+00:03:27,755 --> 00:03:31,724
+turns, times current, times area, pointing
+along the axis.
+
+58
+00:03:31,764 --> 00:03:34,713
+In a uniform field there's no net force,
+
+59
+00:03:34,753 --> 00:03:39,074
+but there is a torque: τ = m × B, with
+size mB sin θ.
+
+60
+00:03:39,114 --> 00:03:43,292
+It's largest at ninety degrees, and zero
+when m lines up with B.
+
+61
+00:03:43,332 --> 00:03:46,516
+Let go, and the loop swings into line, and
+stops.
+
+62
+00:03:46,556 --> 00:03:50,141
+To keep it turning, the field has to keep
+moving ahead of it.
+
+63
+00:03:51,341 --> 00:03:54,554
+Faraday got continuous motion a different
+way,
+
+64
+00:03:54,594 --> 00:03:58,722
+in September 1821, at the Royal
+Institution in London.
+
+65
+00:03:58,762 --> 00:04:01,466
+A magnet stood upright in a basin of
+mercury.
+
+66
+00:04:01,506 --> 00:04:05,613
+A free wire dipped into the mercury beside
+it. With current flowing,
+
+67
+00:04:05,653 --> 00:04:09,367
+the wire circled the magnet's pole — and
+kept circling.
+
+68
+00:04:09,407 --> 00:04:13,638
+It was a demonstration, not a practical
+motor. But it was the first
+
+69
+00:04:13,678 --> 00:04:18,386
+continuous conversion of electrical energy
+into mechanical motion.
+
+70
+00:04:19,586 --> 00:04:23,065
+A modern motor moves the field
+electrically instead.
+
+71
+00:04:23,105 --> 00:04:26,548
+Three fixed windings, a hundred and twenty
+degrees apart,
+
+72
+00:04:26,588 --> 00:04:30,736
+carry sinusoidal currents, each delayed by
+a third of a cycle.
+
+73
+00:04:30,776 --> 00:04:35,089
+Each winding alone just pulses back and
+forth along its own axis.
+
+74
+00:04:35,129 --> 00:04:38,010
+But added as vectors, their fundamental
+component
+
+75
+00:04:38,050 --> 00:04:41,152
+keeps a constant length, and rotates
+steadily.
+
+76
+00:04:41,192 --> 00:04:46,059
+The rotor magnets follow at exactly that
+speed. That's what synchronous means.
+
+77
+00:04:46,099 --> 00:04:48,504
+Under load, the rotor lags by an angle,
+
+78
+00:04:48,544 --> 00:04:53,056
+and the torque follows the sine of that
+angle — just like m × B.
+
+79
+00:04:54,356 --> 00:04:56,635
+Three predictions before next time.
+
+80
+00:04:56,675 --> 00:05:01,763
+One: a long wire carries six amps. What's
+the field three centimetres away?
+
+81
+00:05:03,063 --> 00:05:08,480
+Two: how far along the axis of a coil does
+the field fall to half its centre value?
+
+82
+00:05:09,780 --> 00:05:14,319
+Three: swap two of the three phase leads.
+What does the rotating field do?
+
+83
+00:05:15,619 --> 00:05:18,623
+Next time, we'll see how real windings sit
+in slots,
+
+84
+00:05:18,663 --> 00:05:22,089
+and how their geometry shapes that
+rotating field.

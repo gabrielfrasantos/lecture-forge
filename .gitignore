@@ -1,0 +1,11 @@
+models/*.onnx
+models/*.bin
+models/asr
+core/eqcache/
+**/cache/
+**/out/
+**/narration_24k.wav
+**/timeline_v1.json
+__pycache__/
+*.mp4
+*.wav
