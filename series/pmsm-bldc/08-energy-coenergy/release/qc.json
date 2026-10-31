@@ -1,0 +1,196 @@
+{
+ "rep": {
+  "video": "h264 1920x1080 30/1 479.97s",
+  "audio": "aac 48000 Hz 1 ch 479.97s",
+  "subtitles": "1 track(s): mov_text/eng",
+  "chapters": 13,
+  "av_duration_diff_s": 0.006,
+  "integrated_LUFS": -16.1,
+  "true_peak_dBTP": -1.4,
+  "LRA_LU": 2.7,
+  "asr_word_error_rate": 0.073,
+  "captions": "105 cues, 0 cues mostly over silence, 0 overlaps, max 18.9 chars/s, last cue ends 479.3s"
+ },
+ "mism": [
+  [
+   "h2",
+   "The bar carries no conduction current, so the wire formula, I l cross B, has nothing to act on.",
+   "The bar carries no conduction current, so the wire formula, IL cross B, has nothing to act on."
+  ],
+  [
+   "h4",
+   "So we need force from the field without asking exactly where it pushes. The tool is energy.",
+   "So we need force from the field without asking exactly where it pushes. The tool is energy. [BUZZER]"
+  ],
+  [
+   "a2",
+   "One: at 3,000 rpm, the electrical speed is 1257 radians per second, so the phase EMF peaks at 8.17 volts.",
+   "1 at 3000 RPM, the electrical speed is 1257 radians per second. So the phase EMF peaks at 8.17 volts."
+  ],
+  [
+   "a3",
+   "Two: line to line, root three times that: 14.1 volts.",
+   "2. Line to line, root 3 times that 14.1 volts."
+  ],
+  [
+   "a4",
+   "Three: yes, a shorted motor brakes. No energy can leave through the terminals, so the power the rotor gives up becomes I squared R heat.",
+   "3. Yes, a shorted motor breaks. No energy can leave through the terminals, so the power the rotor gives up becomes I-squared R-heat."
+  ],
+  [
+   "a5",
+   "At 3,000 rpm: about 110 amps, 720 watts, and 2.3 newton meters of drag. Energy bookkeeping told us it must brake.",
+   "at 3000 RPM, about 110 amps, 720 watts, and 2.3 Newton meters of drag. Energy bookkeeping told us it must break."
+  ],
+  [
+   "e1",
+   "So let's keep the books for the actuator: a 500 turn coil on a U-shaped steel core, and a bar at gap [x](/ˈɛks/).",
+   "So let's keep the books for the actuator, a 500 turn coil on a U-shaped steel core, and a bar at Gap X."
+  ],
+  [
+   "e2",
+   "Energy enters at the terminals. Some heats the winding's resistance, some is stored in the magnetic field, and some leaves as mechanical work.",
+   "Energy enters at the terminals. Some heats the windings' resistance, some is stored in the magnetic field, and some leaves as mechanical work."
+  ],
+  [
+   "e4",
+   "The terminal voltage is R i, plus the rate of change of lambda, the flux linkage. Multiply by i and a short time: the field receives i times d lambda.",
+   "The terminal voltage is Ri plus the rate of change of lambda, the flux linkage. Multiply by i and a short time, the field receives i times d lambda."
+  ],
+  [
+   "e5",
+   "Part of it is stored, d W f, and the rest is work on the bar, F d [x](/ˈɛks/).",
+   "Part of it is stored, D.W.F., and the rest is work on the bar, FDX."
+  ],
+  [
+   "w1",
+   "Hold the bar still, at a one millimeter gap, and raise the current. The flux linkage follows this curve: it bends because the steel from Lesson 4 saturates.",
+   "Hold the bar still at a 1 mm gap and raise the current. The flux linkage follows this curve. It bends because the steel from lesson for saturates."
+  ],
+  [
+   "w2",
+   "With no motion, all of i d lambda is stored, so the field energy is its integral: the area between the curve and the lambda axis.",
+   "With no motion, all of ID lambda is stored, so the field energy is its integral. The area between the curve and the lambda axis. [BUZZER]"
+  ],
+  [
+   "w3",
+   "The area under the curve is the integral of lambda d i. It's called the co-energy, W prime.",
+   "The area under the curve is the integral of lambda di. It's called the co-energy, W prime."
+  ],
+  [
+   "v1",
+   "Now let the bar close in by a small step. At the smaller gap, the same current links more flux, so the curve rises.",
+   "Now let the bar close in by a small step. At the smaller gap, the same current links more flux, so the curve rises. [BUZZER]"
+  ],
+  [
+   "v3",
+   "Hold i constant instead: the source adds i d lambda, and the work is exactly the gain in co-energy. The force is the slope of the co-energy, at constant current.",
+   "Hold I constant instead. The source adds ID lambda, and the work is exactly the gain in co-energy. The force is the slope of the co-energy at constant current. [BUZZER]"
+  ],
+  [
+   "v5",
+   "Computed from these saturated curves at one millimeter and 6 amps, both give 759.3 newtons, pulling the gap shut.",
+   "computed from these saturated curves at 1 millimeter and 6 amps, both give 759.3 Newtons, pulling the gap shut."
+  ],
+  [
+   "l1",
+   "With linear iron, lambda is L times i, and the co-energy is one half L i squared.",
+   "With linear iron, lambda is L times i, and the co-energy is 1/2 L i squared."
+  ],
+  [
+   "l2",
+   "So F equals one half, i squared, times d L by d [x](/ˈɛks/). The force follows the slope of the inductance, not the inductance itself.",
+   "So F = 1/2, I2 times dl/dx, the force follows the slope of the inductance, not the inductance itself."
+  ],
+  [
+   "l3",
+   "For our actuator, treated as a circuit: two gaps in series with 220 millimeters of steel. L is 61 millihenries at one millimeter.",
+   "For our actuator, treat it as a circuit, two gaps in series with 220 millimeters of steel. L is 61 millihenries at 1 millimeter."
+  ],
+  [
+   "l4",
+   "L rises as the gap closes, so its slope is negative: the force pulls the gap shut. At one amp, about 30 newtons.",
+   "L rises as the gap closes, so its slope is negative. The force pulls the gap shut. At 1 amp, about 30 newtons. [BUZZER]"
+  ],
+  [
+   "f1",
+   "Here's the actuator solved with Lesson 3's finite difference solver: two millimeter gap, one amp, linear steel.",
+   "Here's the actuator solved with Lesson 3's Finite Difference Solver. 2mm gap, 1 amp linear steel."
+  ],
+  [
+   "f4",
+   "But leakage hardly changes with the gap, so it adds almost no force. The co-energy slope gives 8.23 newtons, 8 percent above the circuit model, mostly from fringing.",
+   "but leakage hardly changes with the gap, so it adds almost no force. The co-energy slope gives 8.23 Newtons, 8% above the circuit model, mostly from fringing."
+  ],
+  [
+   "m1",
+   "Now an independent check. The field itself carries stress: tension, B squared over two mu-nought, along the lines, and an equal pressure across them.",
+   "Now an independent check. The field itself carries stress. Tension, B squared over 2 mu knot along the lines and an equal pressure across them."
+  ],
+  [
+   "m2",
+   "Where lines leave steel at right angles, they pull on its face. At one millimeter and one amp, 0.31 tesla pulls with 37 kilopascals.",
+   "where lines leave steel at right angles, they pull on its face. At 1 millimeter and 1 amp, 0.31 Tesla pulls with 37 kilopascals. [BUZZER]"
+  ],
+  [
+   "m4",
+   "From half a millimeter to 4 millimeters, it matches the co-energy slope within 0.2 percent, whichever contour we choose.",
+   "From half a millimeter to 4 millimeters, it matches the co-energy slope within 0.2%, whichever contour we choose."
+  ],
+  [
+   "s1",
+   "With saturating steel, there's no single inductance. Here are flux linkage curves at three gaps, using Lesson 4's steel.",
+   "With saturating steel, there's no single inductance. Here are flux linkage curves at three gaps using Lesson 4's steel. [BUZZER]"
+  ],
+  [
+   "s4",
+   "And one half i squared d L by d [x](/ˈɛks/) fails both ways at 8 amps: about 1900 newtons with the unsaturated L, 240 with L equal to lambda over i. The co-energy gives 895.",
+   "and 1/2i squared L by dx fails both ways at 8 amps. About 1900 newtons with the unsaturated L. 240 with L equal to lambda over i, the co-energy gives 895."
+  ],
+  [
+   "r1",
+   "Rotation works the same way: replace [x](/ˈɛks/) with an angle, theta, and force with torque. Torque is the derivative of the co-energy with respect to theta, at constant current.",
+   "Rotation works the same way. Replace x with an angle, theta, and force with torque. Torque is the derivative of the co-energy with respect to theta at constant current."
+  ],
+  [
+   "r3",
+   "With linear iron, the torque is one half i squared, d L by d theta: the rotor turns toward maximum inductance, where the gaps are smallest. That's reluctance torque.",
+   "With linear iron, the torque is 1/2i^2 dl/d theta. The rotor turns toward maximum inductance where the gaps are smallest. That's reluctance torque."
+  ],
+  [
+   "g5",
+   "Differentiate with respect to theta, and each kind gives its own torque. The first gives reluctance torque, the last gives cogging. The middle one is the subject of Lesson 9.",
+   "differentiate with respect to theta, and each kind gives its own torque. The first gives reluctance torque, the last gives cogging. The middle one is the subject of lesson nine."
+  ],
+  [
+   "b1",
+   "Try it yourself: the lesson's script computes this force both ways.",
+   "Try it yourself. The lesson script computes this force both ways."
+  ],
+  [
+   "b2",
+   "Then build one. Clamp the core poles down, and rest the bar on a two kilogram, non-magnetic block, on a kitchen scale, two millimeters below the poles.",
+   "Then build one. Clamp the core poles down and rest the bar on a 2 kg non-magnetic block on a kitchen scale, 2 mm below the poles."
+  ],
+  [
+   "b5",
+   "Or use an LCR meter: about 60 millihenries at 1.5 millimeters, and 43 at 2.5. Half i squared, times that slope, gives 8.7 newtons at one amp, slightly high because the step is large.",
+   "or use an LCR meter, about 60 millihenries at 1.5 millimeters and 43 at 2.5. Half-eye squared times that slope gives 8.7 newtons at one amp, slightly high because the step is large."
+  ],
+  [
+   "q2",
+   "One: an inductance varies with position as L nought, plus k [x](/ˈɛks/). At a constant current, I, what's the force?",
+   "One, an inductance varies with position as L0, plus Kx at a constant current, I what's the force?"
+  ],
+  [
+   "q3",
+   "Two: with linear iron, double the current. What happens to the force?",
+   "Two with linear iron double the current. What happens to the force? [buzzer]"
+  ],
+  [
+   "q4",
+   "Three: with a magnet in the machine, why is there a torque term that's linear in current?",
+   "3. With a magnet in the machine, why is there a torque term that's linear and current?"
+  ]
+ ]
+}

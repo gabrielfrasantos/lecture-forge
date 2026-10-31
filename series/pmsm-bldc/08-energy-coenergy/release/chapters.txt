@@ -1,0 +1,82 @@
+;FFMETADATA1
+title=Energy and Co-energy — PMSM & BLDC, Lesson 8
+artist=lecture-forge
+language=eng
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=26852
+title=01 A pull without current
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=26852
+END=64059
+title=02 Answers from Lesson 7
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=64059
+END=103333
+title=03 The energy balance
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=103333
+END=143005
+title=04 Two areas: energy and co-energy
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=143005
+END=188222
+title=05 Force from a small move
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=188222
+END=226190
+title=06 The linear case
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=226190
+END=260452
+title=07 The actuator, computed
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=260452
+END=296687
+title=08 Check: the Maxwell stress
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=296687
+END=347262
+title=09 When the iron saturates
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=347262
+END=375717
+title=10 From force to torque
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=375717
+END=407124
+title=11 Several windings and a magnet
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=407124
+END=453061
+title=12 Try it: two routes and a scale
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=453061
+END=479973
+title=13 Predict, then check

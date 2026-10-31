@@ -1,0 +1,503 @@
+1
+00:00:00,500 --> 00:00:02,082
+Switch on this electromagnet,
+
+2
+00:00:02,122 --> 00:00:05,669
+and the steel bar above it is pulled down
+onto the poles.
+
+3
+00:00:05,709 --> 00:00:08,093
+The bar carries no conduction current,
+
+4
+00:00:08,133 --> 00:00:12,065
+so the wire formula, F = I l × B, has
+nothing to act on.
+
+5
+00:00:12,105 --> 00:00:15,434
+Inside a motor it's the same. The copper
+sits in slots,
+
+6
+00:00:15,474 --> 00:00:20,367
+where the field is weak, and most of the
+force lands on steel and magnets.
+
+7
+00:00:20,407 --> 00:00:23,124
+So we need force from the field without
+asking
+
+8
+00:00:23,164 --> 00:00:26,302
+exactly where it pushes. The tool is
+energy.
+
+9
+00:00:27,152 --> 00:00:29,596
+First, the answers from Lesson 7.
+
+10
+00:00:29,636 --> 00:00:39,719
+One: at 3000 rpm, ωe = 1257 rad/s, so the
+phase EMF peaks at ωe λm = 8.17 V.
+
+11
+00:00:39,759 --> 00:00:44,145
+Two: line to line, √3 times that: 14.1 V.
+
+12
+00:00:44,185 --> 00:00:49,425
+Three: yes, a shorted motor brakes. No
+energy can leave through the terminals,
+
+13
+00:00:49,465 --> 00:00:53,042
+so the power the rotor gives up becomes
+I²R heat.
+
+14
+00:00:53,082 --> 00:00:58,734
+At 3000 rpm: about 110 A, 720 W, and 2.3
+N·m of drag.
+
+15
+00:00:58,774 --> 00:01:03,677
+Energy bookkeeping told us it must brake.
+
+16
+00:01:04,359 --> 00:01:06,957
+So let's keep the books for the actuator:
+
+17
+00:01:06,997 --> 00:01:11,182
+a 500-turn coil on a U-shaped steel core,
+and a bar at gap x.
+
+18
+00:01:11,222 --> 00:01:15,319
+Energy enters at the terminals. Some heats
+the winding's resistance,
+
+19
+00:01:15,359 --> 00:01:20,061
+some is stored in the magnetic field, and
+some leaves as mechanical work.
+
+20
+00:01:20,101 --> 00:01:24,435
+Put the resistance outside, and what's
+left is a lossless coupling field,
+
+21
+00:01:24,475 --> 00:01:27,491
+with an electrical port and a mechanical
+port.
+
+22
+00:01:27,531 --> 00:01:33,713
+The terminal voltage is v = R i + dλ/dt,
+where λ is the flux linkage.
+
+23
+00:01:33,753 --> 00:01:37,801
+Multiply by i dt: the field receives i dλ.
+
+24
+00:01:37,841 --> 00:01:42,783
+Part of it is stored, dW_f, and the rest
+is work on the bar, F dx.
+
+25
+00:01:43,633 --> 00:01:48,581
+Hold the bar still, at a 1 mm gap, and
+raise the current. The flux linkage
+
+26
+00:01:48,621 --> 00:01:53,666
+follows this curve: it bends because the
+steel from Lesson 4 saturates.
+
+27
+00:01:53,706 --> 00:01:58,842
+With no motion, all of i dλ is stored, so
+the field energy is its integral:
+
+28
+00:01:58,882 --> 00:02:02,041
+the area between the curve and the λ axis.
+
+29
+00:02:02,081 --> 00:02:08,158
+The area under the curve is the integral
+of λ di. It's called the co-energy, W′.
+
+30
+00:02:08,198 --> 00:02:12,799
+Together they fill the rectangle λ i. At 6
+A,
+
+31
+00:02:12,839 --> 00:02:18,050
+that's 0.79 J of energy and 1.06 J of co-
+energy.
+
+32
+00:02:18,090 --> 00:02:22,455
+On a straight line they'd be equal halves:
+½ L i² each.
+
+33
+00:02:23,305 --> 00:02:26,997
+Now let the bar close in by a small step.
+At the smaller gap,
+
+34
+00:02:27,037 --> 00:02:30,540
+the same current links more flux, so the
+curve rises.
+
+35
+00:02:30,580 --> 00:02:34,688
+Hold λ constant during the step: no
+electrical energy enters,
+
+36
+00:02:34,728 --> 00:02:36,932
+so the work comes out of storage.
+
+37
+00:02:36,972 --> 00:02:41,584
+The force is minus the slope of the field
+energy, at constant λ.
+
+38
+00:02:41,624 --> 00:02:47,111
+Hold i constant instead: the source adds i
+dλ, and the work is exactly the gain
+
+39
+00:02:47,151 --> 00:02:52,659
+in co-energy. The force is the slope of
+the co-energy, at constant current.
+
+40
+00:02:52,699 --> 00:02:56,409
+For a small step, the two slivers differ
+only at second order,
+
+41
+00:02:56,449 --> 00:02:58,403
+so both give the same force.
+
+42
+00:02:58,443 --> 00:03:03,378
+Computed from these saturated curves at 1
+mm and 6 A,
+
+43
+00:03:03,418 --> 00:03:07,672
+both give 759.3 N, pulling the gap shut.
+
+44
+00:03:08,522 --> 00:03:14,211
+With linear iron, λ = L(x) i, and the co-
+energy is ½ L i².
+
+45
+00:03:14,251 --> 00:03:20,330
+So F = ½ i² dL/dx. The force follows the
+slope of the inductance,
+
+46
+00:03:20,370 --> 00:03:23,078
+not the inductance itself.
+
+47
+00:03:23,118 --> 00:03:26,773
+For our actuator, treated as a circuit:
+
+48
+00:03:26,813 --> 00:03:32,757
+two gaps in series with 220 mm of steel. L
+is 61 mH at 1 mm.
+
+49
+00:03:32,797 --> 00:03:36,425
+L rises as the gap closes, so dL/dx is
+negative:
+
+50
+00:03:36,465 --> 00:03:40,469
+the force pulls the gap shut. At 1 A,
+about 30 N.
+
+51
+00:03:40,509 --> 00:03:45,640
+That assumes no leakage and no fringing.
+Let's check it against a field solution.
+
+52
+00:03:46,490 --> 00:03:51,458
+Here's the actuator solved with Lesson 3's
+finite-difference solver:
+
+53
+00:03:51,498 --> 00:03:53,820
+2 mm gap, 1 A, linear steel.
+
+54
+00:03:53,860 --> 00:03:56,458
+Flux bulges out at the pole edges:
+fringing.
+
+55
+00:03:56,498 --> 00:04:00,355
+And some circles the coil without reaching
+the bar: leakage.
+
+56
+00:04:00,395 --> 00:04:04,205
+Leakage, plus some fringing, raises the
+inductance
+
+57
+00:04:04,245 --> 00:04:08,355
+well above the circuit model: 49 mH
+instead of 31.
+
+58
+00:04:08,395 --> 00:04:13,569
+But leakage hardly changes with the gap,
+so it adds almost no force. The
+
+59
+00:04:13,609 --> 00:04:19,902
+co-energy slope gives 8.23 N, 8 % above
+the circuit model, mostly from fringing.
+
+60
+00:04:20,752 --> 00:04:25,005
+Now an independent check. The field itself
+carries stress:
+
+61
+00:04:25,045 --> 00:04:30,190
+tension B²/2μ0 along the lines, and an
+equal pressure across them.
+
+62
+00:04:30,230 --> 00:04:36,030
+Where lines leave steel at right angles,
+they pull on its face.
+
+63
+00:04:36,070 --> 00:04:40,223
+At 1 mm and 1 A, 0.31 T pulls with 37 kPa.
+
+64
+00:04:40,263 --> 00:04:44,821
+Integrate the full stress tensor on a
+closed contour in the air around the bar,
+
+65
+00:04:44,861 --> 00:04:47,857
+and you get the total force, fringing
+included.
+
+66
+00:04:47,897 --> 00:04:50,164
+From half a millimetre to 4 mm,
+
+67
+00:04:50,204 --> 00:04:56,137
+it matches the co-energy slope within 0.2
+%, whichever contour we choose.
+
+68
+00:04:56,987 --> 00:05:00,426
+With saturating steel there's no single
+inductance.
+
+69
+00:05:00,466 --> 00:05:04,682
+Here are λ–i curves at three gaps, using
+Lesson 4's steel.
+
+70
+00:05:04,722 --> 00:05:10,168
+The force is still the change in co-
+energy: at 6 A,
+
+71
+00:05:10,208 --> 00:05:17,890
+the area between the 0.9 and 1.1 mm
+curves, over 0.2 mm, gives 759 N.
+
+72
+00:05:17,930 --> 00:05:22,843
+Against current, the force first grows as
+i², then flattens.
+
+73
+00:05:22,883 --> 00:05:27,023
+From 4 to 8 A, it grows only 1.86 times,
+not 4.
+
+74
+00:05:27,063 --> 00:05:35,974
+And ½ i² dL/dx fails both ways at 8 A:
+about 1900 N with the unsaturated L,
+
+75
+00:05:36,014 --> 00:05:41,526
+240 N with L = λ/i. The co-energy gives
+895.
+
+76
+00:05:41,566 --> 00:05:46,712
+This circuit model assumes uniform flux,
+no leakage, and no hysteresis.
+
+77
+00:05:47,562 --> 00:05:52,883
+Rotation works the same way: replace x
+with an angle θ,
+
+78
+00:05:52,923 --> 00:05:58,447
+and force with torque. T = ∂W′/∂θ at
+constant current.
+
+79
+00:05:58,487 --> 00:06:00,881
+A steel rotor between two poles gives an
+
+80
+00:06:00,921 --> 00:06:04,224
+inductance that varies with angle, twice
+per turn.
+
+81
+00:06:04,264 --> 00:06:10,306
+With linear iron, T = ½ i² dL/dθ: the
+rotor turns toward maximum inductance,
+
+82
+00:06:10,346 --> 00:06:15,167
+where the gaps are smallest. That's
+reluctance torque.
+
+83
+00:06:16,017 --> 00:06:18,721
+A real motor has three windings and
+magnets.
+
+84
+00:06:18,761 --> 00:06:22,887
+With linear iron, its co-energy collects
+three kinds of terms.
+
+85
+00:06:22,927 --> 00:06:26,488
+Self and mutual inductances, times
+products of currents.
+
+86
+00:06:26,528 --> 00:06:31,320
+The magnet's flux linking each winding,
+λm, times that winding's current.
+
+87
+00:06:31,360 --> 00:06:35,113
+And a term from the magnet alone, present
+with no current at all.
+
+88
+00:06:35,153 --> 00:06:40,541
+Differentiate with respect to θ, and each
+kind gives its own torque. The first gives
+
+89
+00:06:40,581 --> 00:06:46,574
+reluctance torque, the last gives cogging.
+The middle one is the subject of Lesson 9.
+
+90
+00:06:47,424 --> 00:06:51,370
+Try it yourself: the lesson's script
+computes this force both ways.
+
+91
+00:06:51,410 --> 00:06:56,023
+Then build one. Clamp the core poles down,
+and rest the bar on a
+
+92
+00:06:56,063 --> 00:07:01,048
+2 kg non-magnetic block on a kitchen
+scale, 2 mm below the poles.
+
+93
+00:07:01,088 --> 00:07:04,373
+Zero the scale, and drive a DC current.
+
+94
+00:07:04,413 --> 00:07:11,407
+The model predicts the reading drops by
+about 210 g at 0.5 A, and 840 g at 1 A.
+
+95
+00:07:11,447 --> 00:07:14,333
+Against i², the drop should be a straight
+line,
+
+96
+00:07:14,373 --> 00:07:17,372
+a little steeper than the 2D model
+predicts.
+
+97
+00:07:17,412 --> 00:07:24,723
+Or use an LCR meter: about 60 mH at 1.5
+mm, and 43 at 2.5. Half i² times
+
+98
+00:07:24,763 --> 00:07:32,511
+that slope gives 8.7 N at 1 A, slightly
+high because the step is large.
+
+99
+00:07:33,361 --> 00:07:35,641
+Three predictions before next time.
+
+100
+00:07:35,681 --> 00:07:39,180
+One: an inductance varies with position as
+L0 + k x.
+
+101
+00:07:39,220 --> 00:07:42,578
+At a constant current I, what's the force?
+
+102
+00:07:43,278 --> 00:07:47,736
+Two: with linear iron, double the current.
+What happens to the force?
+
+103
+00:07:48,436 --> 00:07:50,342
+Three: with a magnet in the machine,
+
+104
+00:07:50,382 --> 00:07:53,693
+why is there a torque term that's linear
+in current?
+
+105
+00:07:54,393 --> 00:07:59,273
+Next time: torque in our permanent-magnet
+motor, from exactly these terms.

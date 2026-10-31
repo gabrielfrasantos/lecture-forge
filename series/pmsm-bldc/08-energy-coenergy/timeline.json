@@ -1,0 +1,466 @@
+[
+ {
+  "id": "hook",
+  "title": "A pull without current",
+  "start": 0.0,
+  "beats": [
+   {
+    "id": "h1",
+    "start": 0.5,
+    "end": 5.309,
+    "text": "Switch on this electromagnet, and the steel bar above it is pulled down onto the poles."
+   },
+   {
+    "id": "h2",
+    "start": 5.709,
+    "end": 11.705,
+    "text": "The bar carries no conduction current, so the wire formula, F = I l \u00d7 B, has nothing to act on."
+   },
+   {
+    "id": "h3",
+    "start": 12.105,
+    "end": 20.007,
+    "text": "Inside a motor it's the same. The copper sits in slots, where the field is weak, and most of the force lands on steel and magnets."
+   },
+   {
+    "id": "h4",
+    "start": 20.407,
+    "end": 25.802,
+    "text": "So we need force from the field without asking exactly where it pushes. The tool is energy."
+   }
+  ],
+  "end": 26.85225
+ },
+ {
+  "id": "answers",
+  "title": "Answers from Lesson 7",
+  "start": 26.85225,
+  "beats": [
+   {
+    "id": "a1",
+    "start": 27.152,
+    "end": 29.336,
+    "text": "First, the answers from Lesson 7."
+   },
+   {
+    "id": "a2",
+    "start": 29.636,
+    "end": 39.459,
+    "text": "One: at 3000 rpm, \u03c9e = 1257 rad/s, so the phase EMF peaks at \u03c9e \u03bbm = 8.17 V."
+   },
+   {
+    "id": "a3",
+    "start": 39.759,
+    "end": 43.885,
+    "text": "Two: line to line, \u221a3 times that: 14.1 V."
+   },
+   {
+    "id": "a4",
+    "start": 44.185,
+    "end": 52.782,
+    "text": "Three: yes, a shorted motor brakes. No energy can leave through the terminals, so the power the rotor gives up becomes I\u00b2R heat."
+   },
+   {
+    "id": "a5",
+    "start": 53.082,
+    "end": 63.177,
+    "text": "At 3000 rpm: about 110 A, 720 W, and 2.3 N\u00b7m of drag. Energy bookkeeping told us it must brake."
+   }
+  ],
+  "end": 64.05854166666667
+ },
+ {
+  "id": "balance",
+  "title": "The energy balance",
+  "start": 64.05854166666667,
+  "beats": [
+   {
+    "id": "e1",
+    "start": 64.359,
+    "end": 70.922,
+    "text": "So let's keep the books for the actuator: a 500-turn coil on a U-shaped steel core, and a bar at gap x."
+   },
+   {
+    "id": "e2",
+    "start": 71.222,
+    "end": 79.801,
+    "text": "Energy enters at the terminals. Some heats the winding's resistance, some is stored in the magnetic field, and some leaves as mechanical work."
+   },
+   {
+    "id": "e3",
+    "start": 80.101,
+    "end": 87.231,
+    "text": "Put the resistance outside, and what's left is a lossless coupling field, with an electrical port and a mechanical port."
+   },
+   {
+    "id": "e4",
+    "start": 87.531,
+    "end": 97.541,
+    "text": "The terminal voltage is v = R i + d\u03bb/dt, where \u03bb is the flux linkage. Multiply by i dt: the field receives i d\u03bb."
+   },
+   {
+    "id": "e5",
+    "start": 97.841,
+    "end": 102.283,
+    "text": "Part of it is stored, dW_f, and the rest is work on the bar, F dx."
+   }
+  ],
+  "end": 103.333125
+ },
+ {
+  "id": "areas",
+  "title": "Two areas: energy and co-energy",
+  "start": 103.333125,
+  "beats": [
+   {
+    "id": "w1",
+    "start": 103.633,
+    "end": 113.406,
+    "text": "Hold the bar still, at a 1 mm gap, and raise the current. The flux linkage follows this curve: it bends because the steel from Lesson 4 saturates."
+   },
+   {
+    "id": "w2",
+    "start": 113.706,
+    "end": 121.781,
+    "text": "With no motion, all of i d\u03bb is stored, so the field energy is its integral: the area between the curve and the \u03bb axis."
+   },
+   {
+    "id": "w3",
+    "start": 122.081,
+    "end": 127.898,
+    "text": "The area under the curve is the integral of \u03bb di. It's called the co-energy, W\u2032."
+   },
+   {
+    "id": "w4",
+    "start": 128.198,
+    "end": 137.79,
+    "text": "Together they fill the rectangle \u03bb i. At 6 A, that's 0.79 J of energy and 1.06 J of co-energy."
+   },
+   {
+    "id": "w5",
+    "start": 138.09,
+    "end": 141.955,
+    "text": "On a straight line they'd be equal halves: \u00bd L i\u00b2 each."
+   }
+  ],
+  "end": 143.00524999999996
+ },
+ {
+  "id": "virtual",
+  "title": "Force from a small move",
+  "start": 143.00524999999996,
+  "beats": [
+   {
+    "id": "v1",
+    "start": 143.305,
+    "end": 150.28,
+    "text": "Now let the bar close in by a small step. At the smaller gap, the same current links more flux, so the curve rises."
+   },
+   {
+    "id": "v2",
+    "start": 150.58,
+    "end": 161.324,
+    "text": "Hold \u03bb constant during the step: no electrical energy enters, so the work comes out of storage. The force is minus the slope of the field energy, at constant \u03bb."
+   },
+   {
+    "id": "v3",
+    "start": 161.624,
+    "end": 172.399,
+    "text": "Hold i constant instead: the source adds i d\u03bb, and the work is exactly the gain in co-energy. The force is the slope of the co-energy, at constant current."
+   },
+   {
+    "id": "v4",
+    "start": 172.699,
+    "end": 178.143,
+    "text": "For a small step, the two slivers differ only at second order, so both give the same force."
+   },
+   {
+    "id": "v5",
+    "start": 178.443,
+    "end": 187.172,
+    "text": "Computed from these saturated curves at 1 mm and 6 A, both give 759.3 N, pulling the gap shut."
+   }
+  ],
+  "end": 188.22183333333334
+ },
+ {
+  "id": "linear",
+  "title": "The linear case",
+  "start": 188.22183333333334,
+  "beats": [
+   {
+    "id": "l1",
+    "start": 188.522,
+    "end": 193.951,
+    "text": "With linear iron, \u03bb = L(x) i, and the co-energy is \u00bd L i\u00b2."
+   },
+   {
+    "id": "l2",
+    "start": 194.251,
+    "end": 202.818,
+    "text": "So F = \u00bd i\u00b2 dL/dx. The force follows the slope of the inductance, not the inductance itself."
+   },
+   {
+    "id": "l3",
+    "start": 203.118,
+    "end": 212.497,
+    "text": "For our actuator, treated as a circuit: two gaps in series with 220 mm of steel. L is 61 mH at 1 mm."
+   },
+   {
+    "id": "l4",
+    "start": 212.797,
+    "end": 220.209,
+    "text": "L rises as the gap closes, so dL/dx is negative: the force pulls the gap shut. At 1 A, about 30 N."
+   },
+   {
+    "id": "l5",
+    "start": 220.509,
+    "end": 225.14,
+    "text": "That assumes no leakage and no fringing. Let's check it against a field solution."
+   }
+  ],
+  "end": 226.19041666666666
+ },
+ {
+  "id": "field",
+  "title": "The actuator, computed",
+  "start": 226.19041666666666,
+  "beats": [
+   {
+    "id": "f1",
+    "start": 226.49,
+    "end": 233.56,
+    "text": "Here's the actuator solved with Lesson 3's finite-difference solver: 2 mm gap, 1 A, linear steel."
+   },
+   {
+    "id": "f2",
+    "start": 233.86,
+    "end": 240.095,
+    "text": "Flux bulges out at the pole edges: fringing. And some circles the coil without reaching the bar: leakage."
+   },
+   {
+    "id": "f3",
+    "start": 240.395,
+    "end": 248.095,
+    "text": "Leakage, plus some fringing, raises the inductance well above the circuit model: 49 mH instead of 31."
+   },
+   {
+    "id": "f4",
+    "start": 248.395,
+    "end": 259.402,
+    "text": "But leakage hardly changes with the gap, so it adds almost no force. The co-energy slope gives 8.23 N, 8 % above the circuit model, mostly from fringing."
+   }
+  ],
+  "end": 260.4522083333334
+ },
+ {
+  "id": "maxwell",
+  "title": "Check: the Maxwell stress",
+  "start": 260.4522083333334,
+  "beats": [
+   {
+    "id": "m1",
+    "start": 260.752,
+    "end": 269.93,
+    "text": "Now an independent check. The field itself carries stress: tension B\u00b2/2\u03bc0 along the lines, and an equal pressure across them."
+   },
+   {
+    "id": "m2",
+    "start": 270.23,
+    "end": 279.963,
+    "text": "Where lines leave steel at right angles, they pull on its face. At 1 mm and 1 A, 0.31 T pulls with 37 kPa."
+   },
+   {
+    "id": "m3",
+    "start": 280.263,
+    "end": 287.597,
+    "text": "Integrate the full stress tensor on a closed contour in the air around the bar, and you get the total force, fringing included."
+   },
+   {
+    "id": "m4",
+    "start": 287.897,
+    "end": 295.637,
+    "text": "From half a millimetre to 4 mm, it matches the co-energy slope within 0.2 %, whichever contour we choose."
+   }
+  ],
+  "end": 296.6866250000001
+ },
+ {
+  "id": "saturation",
+  "title": "When the iron saturates",
+  "start": 296.6866250000001,
+  "beats": [
+   {
+    "id": "s1",
+    "start": 296.987,
+    "end": 304.422,
+    "text": "With saturating steel there's no single inductance. Here are \u03bb\u2013i curves at three gaps, using Lesson 4's steel."
+   },
+   {
+    "id": "s2",
+    "start": 304.722,
+    "end": 317.63,
+    "text": "The force is still the change in co-energy: at 6 A, the area between the 0.9 and 1.1 mm curves, over 0.2 mm, gives 759 N."
+   },
+   {
+    "id": "s3",
+    "start": 317.93,
+    "end": 326.763,
+    "text": "Against current, the force first grows as i\u00b2, then flattens. From 4 to 8 A, it grows only 1.86 times, not 4."
+   },
+   {
+    "id": "s4",
+    "start": 327.063,
+    "end": 341.266,
+    "text": "And \u00bd i\u00b2 dL/dx fails both ways at 8 A: about 1900 N with the unsaturated L, 240 N with L = \u03bb/i. The co-energy gives 895."
+   },
+   {
+    "id": "s5",
+    "start": 341.566,
+    "end": 346.212,
+    "text": "This circuit model assumes uniform flux, no leakage, and no hysteresis."
+   }
+  ],
+  "end": 347.2622083333335
+ },
+ {
+  "id": "rotation",
+  "title": "From force to torque",
+  "start": 347.2622083333335,
+  "beats": [
+   {
+    "id": "r1",
+    "start": 347.562,
+    "end": 358.187,
+    "text": "Rotation works the same way: replace x with an angle \u03b8, and force with torque. T = \u2202W\u2032/\u2202\u03b8 at constant current."
+   },
+   {
+    "id": "r2",
+    "start": 358.487,
+    "end": 363.964,
+    "text": "A steel rotor between two poles gives an inductance that varies with angle, twice per turn."
+   },
+   {
+    "id": "r3",
+    "start": 364.264,
+    "end": 374.667,
+    "text": "With linear iron, T = \u00bd i\u00b2 dL/d\u03b8: the rotor turns toward maximum inductance, where the gaps are smallest. That's reluctance torque."
+   }
+  ],
+  "end": 375.7173333333335
+ },
+ {
+  "id": "magnet",
+  "title": "Several windings and a magnet",
+  "start": 375.7173333333335,
+  "beats": [
+   {
+    "id": "g1",
+    "start": 376.017,
+    "end": 382.627,
+    "text": "A real motor has three windings and magnets. With linear iron, its co-energy collects three kinds of terms."
+   },
+   {
+    "id": "g2",
+    "start": 382.927,
+    "end": 386.228,
+    "text": "Self and mutual inductances, times products of currents."
+   },
+   {
+    "id": "g3",
+    "start": 386.528,
+    "end": 391.06,
+    "text": "The magnet's flux linking each winding, \u03bbm, times that winding's current."
+   },
+   {
+    "id": "g4",
+    "start": 391.36,
+    "end": 394.853,
+    "text": "And a term from the magnet alone, present with no current at all."
+   },
+   {
+    "id": "g5",
+    "start": 395.153,
+    "end": 406.074,
+    "text": "Differentiate with respect to \u03b8, and each kind gives its own torque. The first gives reluctance torque, the last gives cogging. The middle one is the subject of Lesson 9."
+   }
+  ],
+  "end": 407.12370833333364
+ },
+ {
+  "id": "bench",
+  "title": "Try it: two routes and a scale",
+  "start": 407.12370833333364,
+  "beats": [
+   {
+    "id": "b1",
+    "start": 407.424,
+    "end": 411.11,
+    "text": "Try it yourself: the lesson's script computes this force both ways."
+   },
+   {
+    "id": "b2",
+    "start": 411.41,
+    "end": 420.788,
+    "text": "Then build one. Clamp the core poles down, and rest the bar on a 2 kg non-magnetic block on a kitchen scale, 2 mm below the poles."
+   },
+   {
+    "id": "b3",
+    "start": 421.088,
+    "end": 431.147,
+    "text": "Zero the scale, and drive a DC current. The model predicts the reading drops by about 210 g at 0.5 A, and 840 g at 1 A."
+   },
+   {
+    "id": "b4",
+    "start": 431.447,
+    "end": 437.112,
+    "text": "Against i\u00b2, the drop should be a straight line, a little steeper than the 2D model predicts."
+   },
+   {
+    "id": "b5",
+    "start": 437.412,
+    "end": 452.011,
+    "text": "Or use an LCR meter: about 60 mH at 1.5 mm, and 43 at 2.5. Half i\u00b2 times that slope gives 8.7 N at 1 A, slightly high because the step is large."
+   }
+  ],
+  "end": 453.0612083333337
+ },
+ {
+  "id": "predict",
+  "title": "Predict, then check",
+  "start": 453.0612083333337,
+  "beats": [
+   {
+    "id": "q1",
+    "start": 453.361,
+    "end": 455.281,
+    "text": "Three predictions before next time."
+   },
+   {
+    "id": "q2",
+    "start": 455.681,
+    "end": 462.078,
+    "text": "One: an inductance varies with position as L0 + k x. At a constant current I, what's the force?"
+   },
+   {
+    "id": "q3",
+    "start": 463.278,
+    "end": 467.236,
+    "text": "Two: with linear iron, double the current. What happens to the force?"
+   },
+   {
+    "id": "q4",
+    "start": 468.436,
+    "end": 473.193,
+    "text": "Three: with a magnet in the machine, why is there a torque term that's linear in current?"
+   },
+   {
+    "id": "q5",
+    "start": 474.393,
+    "end": 478.773,
+    "text": "Next time: torque in our permanent-magnet motor, from exactly these terms."
+   }
+  ],
+  "end": 479.9732083333337
+ }
+]
