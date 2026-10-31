@@ -36,6 +36,6 @@ Sources
 • M. Faraday, On some new electro-magnetical motions, Quarterly Journal of Science 12, 74–96 (1821); Royal Institution
 • Earth's field: World Magnetic Model 2025 (British Geological Survey); μ0: CODATA 2022 (NIST)
 
-Made with lecture-forge (code, captions and transcript): REPO_URL
+Made with lecture-forge (code, captions and transcript): https://github.com/gabrielfrasantos/lecture-forge
 Narration is a synthetic voice (Kokoro-82M). Visuals and calculations are generated from code.
 ```
