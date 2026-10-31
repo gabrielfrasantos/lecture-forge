@@ -29,7 +29,7 @@ Chapters
 6:45 Twenty-one lessons
 7:18 Capstone questions
 
-Predict before the next lesson
+Capstone questions (worked answers: release/answers.md in the GitHub repo)
 1. The reference SPM spins with no load at 5,800 rpm. Neglecting R and the losses, what i_d does it need, and how much copper loss does that cost?
 2. At standstill, why can a high-frequency voltage injection find the rotor angle of the IPM variant but not of the reference SPM?
 3. Rewind the motor with twice the turns in the same slots (λm ×2, R and L ×4). At the same torque, what happens to the current, the copper loss and the base speed?
