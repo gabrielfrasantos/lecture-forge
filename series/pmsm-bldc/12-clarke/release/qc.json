@@ -1,0 +1,161 @@
+{
+ "rep": {
+  "video": "h264 1920x1080 30/1 478.27s",
+  "audio": "aac 48000 Hz 1 ch 478.27s",
+  "subtitles": "1 track(s): mov_text/eng",
+  "chapters": 13,
+  "av_duration_diff_s": 0.001,
+  "integrated_LUFS": -16.1,
+  "true_peak_dBTP": -1.4,
+  "LRA_LU": 3.0,
+  "asr_word_error_rate": 0.06,
+  "captions": "104 cues, 0 cues mostly over silence, 0 overlaps, max 18.8 chars/s, last cue ends 476.6s"
+ },
+ "mism": [
+  [
+   "h1",
+   "Here's a space vector locus, like those in Lesson 11, from a drive's two current sensors: a synthetic log we'll take apart at the end.",
+   "Here's a space vector locus, like those in lesson 11, from a drive's two current sensors. A synthetic log will take apart at the end. [BUZZER]"
+  ],
+  [
+   "h2",
+   "It should be a circle centered on the origin. At first glance, it is.",
+   "It should be a circle centered on the origin. At first glance, it is. [BUZZER]"
+  ],
+  [
+   "h3",
+   "Magnify its deviation from a centered circle 5 times, though, and it's lopsided: stretched one way, and pushed off center.",
+   "Magnify its deviation from a centered circle five times though, and it's lopsided. Stretch one way and pushed off center."
+  ],
+  [
+   "a3",
+   "Two: adding 1 amp of DC to all three phases changes nothing. It's pure zero sequence.",
+   "2. Adding 1 amp of DC to all three phases changes nothing. It's pure zero sequence."
+  ],
+  [
+   "a4",
+   "Three: with phase C open, the vector slides along a line at minus 30 degrees, reaching 11.5 amps when phase A peaks at 10. It pulsates; it never turns.",
+   "3. With phase C open, the vector slides along a line at -30 degrees, reaching 11.5 amps when phase A peaks at 10. It pulsates, it never turns."
+  ],
+  [
+   "c3",
+   "Project the three phase contributions onto these axes: that's the Clark transformation. i alpha is two thirds of i A, minus half i B, minus half i C; i beta is i B minus i C, over root 3.",
+   "Project the three-phase contributions onto these axes. That's the Clark transformation. I-alpha is 2/3 of Ia minus 1/2ib minus 1/2ic. I-beta is Ib minus IC over root 3."
+  ],
+  [
+   "s1",
+   "Here's a more geometric view. three phase currents are one point in a space with axes A, B and C.",
+   "Here's a more geometric view. Three-phase currents are one point in a space with axes A, B, and C. [BUZZER]"
+  ],
+  [
+   "m2",
+   "Now there's an inverse. Going back, i A is i alpha plus i zero, and i B and i C take minus half of alpha, plus or minus root 3 over 2 of beta.",
+   "Now there's an inverse. Going back, Ia is i alpha plus i0, and Ib and Ic take minus half of alpha plus or minus root 3 over 2 of beta."
+  ],
+  [
+   "m3",
+   "The drive uses it on the way out: the controller decides v alpha and v beta; the half bridges need 3 phase voltages.",
+   "The drive uses it on the way out. The controller decides V-alpha and V-beta. The half bridges need three-phase voltages."
+  ],
+  [
+   "p1",
+   "Replace two thirds with root two thirds, and the zero row's one third with 1 over root 3: that's the power invariant version.",
+   "Replace two-thirds with root two-thirds, and the zero rose one-third with one over root three. That's the power invariant version."
+  ],
+  [
+   "p2",
+   "Its rows are orthonormal, so its inverse is its transpose: a pure rotation of A B C space. Lengths survive, so the 10 amp circle keeps its radius of 12.2; and so do dot products, like power.",
+   "Its rows are orthonormal, so its inverse is its transpose, a pure rotation of A, B, C space. Length survive, so the 10 amp circle keeps its radius of 12.2, and so do dot products like power."
+  ],
+  [
+   "p4",
+   "The amplitude invariant matrix is the same rotation, shrunk by root two thirds in alpha beta. Undo the shrink in a product of two quantities, and out comes three halves.",
+   "The amplitude invariant matrix is the same rotation, shrunk by root 2/3 in alpha beta. Undo the shrink in a product of two quantities and outcomes 3/2."
+  ],
+  [
+   "t1",
+   "Most drives measure only two currents, and compute the third as minus i A, minus i B.",
+   "Most drives measure only two currents and compute the third as minus Ia minus Ib."
+  ],
+  [
+   "t5",
+   "It also assumes two perfect sensors, read at the same instant. Let's break those, one at a time.",
+   "It also assumes two perfect sensors read at the same instant. Let's break those one at a time. [BEEP]"
+  ],
+  [
+   "g2",
+   "The error is 5% of i A, and it always lies on the same line: 30 degrees, where channel A lands in the 2 sensor formula.",
+   "The error is 5% of IA and it always lies on the same line, 30 degrees, where Channel A lands in the 2-sensor formula."
+  ],
+  [
+   "g4",
+   "In Lesson 11's terms, a backward turning part appears: 0.29 amps, which is 5% of 10 amps, over root 3.",
+   "In lesson 11's terms, a backward turning part appears. 0.29 amps, which is 5% of 10 amps, over Route 3."
+  ],
+  [
+   "o2",
+   "Every point moves by the same vector, so the circle shifts: 0.23 amps at 30 degrees, the 0 hertz line of Lesson 11's spectrum.",
+   "Every point moves by the same vector, so the circle shifts. 0.23 amps at 30 degrees, the 0 Hertz line of lesson 11 spectrum."
+  ],
+  [
+   "o4",
+   "In a frame turning with the current, Lesson 13, a fixed offset becomes a ripple at the electrical frequency; a gain mismatch, a ripple at twice that.",
+   "In a frame turning with the current, lesson 13, a fixed offset becomes a ripple at the electrical frequency. A gain mismatch. A ripple at twice that. [BUZZER]"
+  ],
+  [
+   "k1",
+   "Last, timing: say channel B lags by 3 electrical degrees, just 25 microseconds at 5000 rpm on our 8 pole motor.",
+   "Last timing. Say channel B lags by 3 electrical degrees, just 25 microseconds at 5,000 RPM on our 8 pole motor."
+  ],
+  [
+   "k2",
+   "Again an ellipse, but its long axis sits at minus 30 degrees: 45 degrees away from the gain case.",
+   "Again an ellipse, but its long axis sits at minus 30 degrees. 45 degrees away from the game case."
+  ],
+  [
+   "k3",
+   "Multiply the backward part by the forward part, cancelling the current's phase: a gain error lands at 30 degrees, a lag at minus 60.",
+   "Multiply the backward part by the forward part, canceling the current's phase. Again error lands at 30 degrees, a lag at minus 60."
+  ],
+  [
+   "u2",
+   "The constants are computed offline. Each sample costs two multiplies and an add going in, two of each coming back: no roots, no trigonometry, no loops.",
+   "The constants are computed offline. Each sample costs two multiplies and an ad going in, two of each coming back. No roots, no trigonometry, no loops."
+  ],
+  [
+   "u3",
+   "On a fixed point chip, 1 over root 3 becomes 18,919 over 32,768, and the result stays within one count of exact.",
+   "On a fixed-point chip, 1 over Route 3 becomes 18,919 over 32,768, and the result stays within one count of exact."
+  ],
+  [
+   "e1",
+   "Now the exercise, on a synthetic log: 10 amps at 100 hertz, sampled at 20 kilohertz, with channel A 5% high, offsets on both channels, and noise.",
+   "Now the exercise on a synthetic log. 10 amps at 100 hertz sampled at 20 kilohertz with channel A5% high offsets on both channels and noise."
+  ],
+  [
+   "e2",
+   "Over whole cycles, its complex FFT is a least squares ellipse fit: the 0 hertz line is the center; the plus and minus 100 hertz lines, the forward and backward parts.",
+   "Over whole cycles, its complex FFT is a least square's ellipse fit. The 0 hertz line is the center. The plus and minus 100 hertz lines, the forward and backward parts."
+  ],
+  [
+   "e3",
+   "The center, through inverse Clark, gives offsets of plus 0.15 and minus 0.25 amps. Solving the backward part for channel B's complex gain gives a ratio of 1.050, and no lag.",
+   "The center, through inverse clerk, gives offsets of +0.15 and -0.25 amps. Solving the backward part for Channel B's complex gain gives a ratio of 1.05 and no lag."
+  ],
+  [
+   "q2",
+   "One: three sensors, one per phase, and the phase A sensor reads 5% high. What does the alpha beta locus look like?",
+   "1, 3 sensors, 1 per phase, and the phase A sensor reads 5% high. What does the alpha beta locus look like?"
+  ],
+  [
+   "q3",
+   "Two: back to two sensors, with a 0.3 amp offset on channel B only. What happens to the locus?",
+   "2, back to two sensors, with a 0.3 AMP offset on channel B only. What happens to the locus?"
+  ],
+  [
+   "q4",
+   "Three: in which frame would the circle of balanced currents become a single point?",
+   "3. In which frame would the circle of balanced currents become a single point?"
+  ]
+ ]
+}

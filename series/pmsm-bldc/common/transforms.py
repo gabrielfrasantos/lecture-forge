@@ -76,6 +76,94 @@ def sequence_components(Xa, Xb, Xc):
     return (Xa + Xb + Xc) / 3, (Xa + A * Xb + A ** 2 * Xc) / 3, (Xa + A ** 2 * Xb + A * Xc) / 3
 
 
+# ---------------------------------------------------------------- Clarke transformation (added by Lesson 12)
+# (x_alpha, x_beta) are the real and imaginary parts of space_vector(); x_0 is zero_sequence().
+#   amplitude-invariant:  x_alpha = 2/3 (x_a - x_b/2 - x_c/2),  x_beta = (x_b - x_c)/sqrt(3),  x_0 = (x_a+x_b+x_c)/3
+#   power-invariant:      sqrt(2/3) and 1/sqrt(3) in place of 2/3 and 1/3; the matrix is orthogonal (a rotation
+#                         of abc space taking (1,1,1)/sqrt(3) to the 0 axis), so its inverse is its transpose.
+#   two sensors:          x_c = -x_a - x_b assumed  ->  x_alpha = x_a,  x_beta = (x_a + 2 x_b)/sqrt(3)  (amplitude)
+# The checks in _clarke_self_test() run as a doctest of clarke_matrix() when this file is executed.
+
+def clarke_matrix(scaling="amplitude"):
+    """3x3 matrix T with (x_alpha, x_beta, x_0) = T @ (x_a, x_b, x_c).
+
+    >>> T, Ti = clarke_matrix(), inverse_clarke_matrix()
+    >>> bool(np.allclose(T @ Ti, np.eye(3)))
+    True
+    >>> _clarke_self_test()
+    True
+    """
+    ks, k0 = _k(scaling)
+    s = np.sqrt(3.0) / 2.0
+    return np.array([[ks, -ks / 2.0, -ks / 2.0], [0.0, ks * s, -ks * s], [k0, k0, k0]])
+
+
+def inverse_clarke_matrix(scaling="amplitude"):
+    """3x3 matrix with (x_a, x_b, x_c) = inverse_clarke_matrix() @ (x_alpha, x_beta, x_0) (closed form)."""
+    ks, k0 = _k(scaling)
+    g, g0, s = 1.0 / (1.5 * ks), 1.0 / (3.0 * k0), np.sqrt(3.0) / 2.0
+    return np.array([[g, 0.0, g0], [-g / 2.0, g * s, g0], [-g / 2.0, -g * s, g0]])
+
+
+def clarke(xa, xb, xc, scaling="amplitude"):
+    """(x_alpha, x_beta, x_0) of three phase quantities (scalars or arrays)."""
+    ks, k0 = _k(scaling)
+    xa, xb, xc = (np.asarray(v, float) for v in (xa, xb, xc))
+    return ks * (xa - 0.5 * xb - 0.5 * xc), ks * (np.sqrt(3.0) / 2.0) * (xb - xc), k0 * (xa + xb + xc)
+
+
+def inverse_clarke(x_alpha, x_beta, x0=0.0, scaling="amplitude"):
+    """(x_a, x_b, x_c) from (x_alpha, x_beta, x_0); with x0 = 0 the three results add to zero."""
+    ks, k0 = _k(scaling)
+    al = np.asarray(x_alpha, float) / (1.5 * ks)
+    be = np.asarray(x_beta, float) / (1.5 * ks)
+    com = np.asarray(x0, float) / (3.0 * k0)
+    s = np.sqrt(3.0) / 2.0
+    return al + com, -0.5 * al + s * be + com, -0.5 * al - s * be + com
+
+
+def clarke_two_sensor(xa, xb, scaling="amplitude"):
+    """(x_alpha, x_beta) from two measured phases, ASSUMING x_c = -x_a - x_b (no zero sequence).
+    If a zero sequence x_0 is present after all, the result is off by 2 x_0 e^{j60deg} (amplitude-invariant)."""
+    ks, _ = _k(scaling)
+    xa, xb = np.asarray(xa, float), np.asarray(xb, float)
+    return 1.5 * ks * xa, 1.5 * ks * (xa + 2.0 * xb) / np.sqrt(3.0)
+
+
+def _clarke_self_test():
+    rng = np.random.default_rng(12)
+    xa, xb, xc = rng.normal(size=(3, 50))
+    for s in SCALINGS:
+        al, be, z0 = clarke(xa, xb, xc, s)
+        x = space_vector(xa, xb, xc, s)
+        assert np.allclose(al, x.real) and np.allclose(be, x.imag) and np.allclose(z0, zero_sequence(xa, xb, xc, s))
+        assert np.allclose(np.stack([al, be, z0]), clarke_matrix(s) @ np.stack([xa, xb, xc]))
+        assert np.allclose(clarke_matrix(s) @ inverse_clarke_matrix(s), np.eye(3))
+        assert np.allclose(inverse_clarke(al, be, z0, s), (xa, xb, xc))
+        assert np.allclose(inverse_clarke(al, be, z0, s), phase_values(x, z0, s))
+        # two sensors agree with the full transform when the three phases add to zero
+        assert np.allclose(clarke_two_sensor(xa, xb, s), clarke(xa, xb, -xa - xb, s)[:2])
+        # power from the alpha-beta-0 components
+        va, vb, vc = rng.normal(size=(3, 50))
+        cv, ci = clarke(va, vb, vc, s), clarke(xa, xb, xc, s)
+        k = (1.5, 1.5, 3.0) if s == "amplitude" else (1.0, 1.0, 1.0)
+        assert np.allclose(sum(k[j] * cv[j] * ci[j] for j in range(3)), va * xa + vb * xb + vc * xc)
+    Tp = clarke_matrix("power")
+    assert np.allclose(Tp @ Tp.T, np.eye(3)) and np.isclose(np.linalg.det(Tp), 1.0)   # a proper rotation
+    assert np.allclose(inverse_clarke_matrix("power"), Tp.T)
+    assert np.allclose(clarke_matrix("amplitude"), np.diag([np.sqrt(2 / 3), np.sqrt(2 / 3), 1 / np.sqrt(3)]) @ Tp)
+    # balanced 10 A: alpha = 10 cos wt, beta = 10 sin wt
+    wt = np.linspace(0, 2 * np.pi, 37)
+    al, be, z0 = clarke(*(10 * np.cos(wt - k * 2 * np.pi / 3) for k in range(3)))
+    assert np.allclose(al, 10 * np.cos(wt)) and np.allclose(be, 10 * np.sin(wt)) and np.allclose(z0, 0)
+    # a zero sequence missed by the two-sensor formula lands at 2 x_0 at +60 degrees
+    i0 = 1.0
+    al2, be2 = clarke_two_sensor(xa - xa.mean() + i0, xb - xb.mean() + i0)
+    al3, be3, _ = clarke(xa - xa.mean() + i0, xb - xb.mean() + i0, -(xa - xa.mean()) - (xb - xb.mean()) + i0)
+    assert np.allclose((al2 - al3) + 1j * (be2 - be3), 2 * i0 * np.exp(1j * np.pi / 3))
+    return True
+
+
 def _self_test():
     rng = np.random.default_rng(0)
     wt = np.linspace(0, 4 * np.pi, 401)

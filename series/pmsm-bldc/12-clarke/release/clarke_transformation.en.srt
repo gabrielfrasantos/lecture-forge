@@ -1,0 +1,501 @@
+1
+00:00:00,600 --> 00:00:03,905
+Here's a space-vector locus, like those in
+Lesson 11,
+
+2
+00:00:03,945 --> 00:00:09,454
+from a drive's two current sensors: a
+synthetic log we'll take apart at the end.
+
+3
+00:00:09,494 --> 00:00:13,836
+It should be a circle centred on the
+origin. At first glance, it is.
+
+4
+00:00:13,936 --> 00:00:17,770
+Magnify its deviation from a centred
+circle five times, though,
+
+5
+00:00:17,810 --> 00:00:21,999
+and it's lopsided: stretched one way, and
+pushed off-centre.
+
+6
+00:00:22,099 --> 00:00:25,983
+Is that the motor, or the sensors? Today:
+the Clarke transformation,
+
+7
+00:00:26,023 --> 00:00:28,946
+and how to read the answer from the shape.
+
+8
+00:00:30,246 --> 00:00:32,733
+First, the answers from Lesson 11.
+
+9
+00:00:32,773 --> 00:00:37,548
+One: balanced currents of 10 A peak give a
+space vector of exactly 10 A.
+
+10
+00:00:37,588 --> 00:00:40,222
+That's what the two-thirds is for.
+
+11
+00:00:40,262 --> 00:00:46,581
+Two: adding 1 A of DC to all three phases
+changes nothing. It's pure zero sequence.
+
+12
+00:00:46,621 --> 00:00:51,962
+Three: with phase c open, the vector
+slides along a line at −30°,
+
+13
+00:00:52,002 --> 00:00:58,296
+reaching 11.5 A when phase a peaks at 10.
+It pulsates; it never turns.
+
+14
+00:00:59,596 --> 00:01:02,497
+Every complex number is two real numbers:
+
+15
+00:01:02,537 --> 00:01:07,559
+the real part of the space vector is i_α,
+the imaginary part i_β.
+
+16
+00:01:07,599 --> 00:01:12,398
+α lies along the axis of phase a; β is 90°
+ahead.
+
+17
+00:01:12,438 --> 00:01:16,667
+Project the three phase contributions onto
+these axes:
+
+18
+00:01:16,707 --> 00:01:21,331
+that's the Clarke transformation. i_α is
+two-thirds of i_a,
+
+19
+00:01:21,371 --> 00:01:26,732
+minus half i_b, minus half i_c; i_β is i_b
+minus i_c, over √3.
+
+20
+00:01:26,772 --> 00:01:29,900
+Balanced currents become two sinusoids in
+quadrature,
+
+21
+00:01:29,940 --> 00:01:32,492
+each with the full phase amplitude.
+
+22
+00:01:32,532 --> 00:01:36,009
+The name honours Edith Clarke of General
+Electric,
+
+23
+00:01:36,049 --> 00:01:41,050
+who introduced these α, β and zero
+components in the late 1930s.
+
+24
+00:01:42,350 --> 00:01:44,103
+Here's a more geometric view.
+
+25
+00:01:44,143 --> 00:01:48,647
+Three phase currents are one point in a
+space with axes a, b and c.
+
+26
+00:01:48,687 --> 00:01:51,549
+As balanced currents flow, the point
+traces a circle
+
+27
+00:01:51,589 --> 00:01:54,840
+in the plane where the three currents add
+to zero.
+
+28
+00:01:54,880 --> 00:01:59,800
+Now look straight down the diagonal, where
+all three currents are equal.
+
+29
+00:02:00,500 --> 00:02:06,122
+The three axes, at right angles in this
+space, now appear 120° apart:
+
+30
+00:02:06,162 --> 00:02:10,725
+the phase axes of Lesson 11, around the
+α–β plane.
+
+31
+00:02:10,765 --> 00:02:14,297
+A zero-sequence current moves the point
+along the diagonal,
+
+32
+00:02:14,337 --> 00:02:17,683
+straight toward us. From here, nothing
+changes.
+
+33
+00:02:18,983 --> 00:02:20,939
+Write the projections as a matrix,
+
+34
+00:02:20,979 --> 00:02:25,038
+and add a third row for the zero sequence
+— so nothing is lost.
+
+35
+00:02:25,078 --> 00:02:29,954
+Now there's an inverse. Going back, i_a is
+i_α plus i_0,
+
+36
+00:02:29,994 --> 00:02:35,896
+and i_b and i_c take minus half of α, plus
+or minus √3/2 of β.
+
+37
+00:02:35,936 --> 00:02:40,485
+The drive uses it on the way out: the
+controller decides v_α and v_β;
+
+38
+00:02:40,525 --> 00:02:43,885
+the half-bridges need three phase
+voltages.
+
+39
+00:02:45,185 --> 00:02:50,401
+Replace two-thirds with √(2/3), and the
+zero row's one-third with 1/√3:
+
+40
+00:02:50,441 --> 00:02:53,392
+that's the power-invariant version.
+
+41
+00:02:53,432 --> 00:02:57,709
+Its rows are orthonormal, so its inverse
+is its transpose:
+
+42
+00:02:57,749 --> 00:03:01,133
+a pure rotation of abc space. Lengths
+survive,
+
+43
+00:03:01,173 --> 00:03:07,587
+so the 10 A circle keeps its radius of
+12.2; and so do dot products, like power.
+
+44
+00:03:07,627 --> 00:03:13,053
+The amplitude-invariant matrix is the same
+rotation, shrunk by √(2/3) in α–β.
+
+45
+00:03:13,093 --> 00:03:18,778
+Undo the shrink in a product of two
+quantities, and out comes three-halves.
+
+46
+00:03:18,818 --> 00:03:20,895
+This series keeps peak values instead,
+
+47
+00:03:20,935 --> 00:03:24,556
+so its power and torque formulas carry the
+three-halves.
+
+48
+00:03:25,856 --> 00:03:31,874
+Most drives measure only two currents, and
+compute the third as minus i_a, minus i_b.
+
+49
+00:03:31,914 --> 00:03:36,033
+Then Clarke shrinks to two lines: i_α is
+just i_a,
+
+50
+00:03:36,073 --> 00:03:39,445
+and i_β is i_a plus 2 i_b, over √3.
+
+51
+00:03:39,485 --> 00:03:42,030
+That quietly assumes the currents add to
+zero,
+
+52
+00:03:42,070 --> 00:03:46,027
+which Kirchhoff guarantees in a star
+connection without neutral.
+
+53
+00:03:46,067 --> 00:03:50,316
+If a zero-sequence current does flow, say
+a third harmonic through a
+
+54
+00:03:50,356 --> 00:03:55,673
+connected neutral, it reappears at twice
+its size, along the negative c axis.
+
+55
+00:03:55,713 --> 00:03:57,884
+It also assumes two perfect sensors,
+
+56
+00:03:57,924 --> 00:04:02,048
+read at the same instant. Let's break
+those, one at a time.
+
+57
+00:04:03,348 --> 00:04:07,460
+First, gain. Say the phase-a sensor reads
+5 % high.
+
+58
+00:04:07,500 --> 00:04:11,920
+The error is 5 % of i_a, and it always
+lies on the same line:
+
+59
+00:04:11,960 --> 00:04:16,296
+30°, where channel a lands in the two-
+sensor formula.
+
+60
+00:04:16,336 --> 00:04:20,543
+Back and forth along a line, plus a
+rotation,
+
+61
+00:04:20,583 --> 00:04:26,705
+makes an ellipse: semi-axes of 10.54 and
+9.96 A, tilted 15°.
+
+62
+00:04:26,745 --> 00:04:31,595
+In Lesson 11's terms, a backward-turning
+part appears:
+
+63
+00:04:31,635 --> 00:04:35,576
+0.29 A, which is 5 % of 10 A, over √3.
+
+64
+00:04:36,876 --> 00:04:41,163
+Next, offset. Give channel a 200 mA of DC.
+
+65
+00:04:41,203 --> 00:04:45,837
+Every point moves by the same vector, so
+the circle shifts:
+
+66
+00:04:45,877 --> 00:04:51,010
+0.23 A at 30°, the zero-hertz line of
+Lesson 11's spectrum.
+
+67
+00:04:51,050 --> 00:04:52,748
+The centre maps back uniquely:
+
+68
+00:04:52,788 --> 00:04:56,551
+inverse Clarke of the centre gives each
+channel's offset.
+
+69
+00:04:56,591 --> 00:05:01,068
+In a frame turning with the current,
+Lesson 13, a fixed offset becomes a
+
+70
+00:05:01,108 --> 00:05:06,335
+ripple at the electrical frequency; a gain
+mismatch, a ripple at twice that.
+
+71
+00:05:06,375 --> 00:05:10,206
+Close the current loop, and the controller
+smooths the measured current,
+
+72
+00:05:10,246 --> 00:05:13,326
+so the real current and torque carry the
+ripple.
+
+73
+00:05:14,626 --> 00:05:19,869
+Last, timing: say channel b lags by 3
+electrical degrees,
+
+74
+00:05:19,909 --> 00:05:24,355
+just 25 µs at 5000 rpm on our 8-pole
+motor.
+
+75
+00:05:24,395 --> 00:05:31,555
+Again an ellipse, but its long axis sits
+at −30°: 45° away from the gain case.
+
+76
+00:05:31,595 --> 00:05:34,872
+Multiply the backward part by the forward
+part,
+
+77
+00:05:34,912 --> 00:05:40,424
+cancelling the current's phase: a gain
+error lands at 30°, a lag at −60°.
+
+78
+00:05:40,464 --> 00:05:43,848
+At right angles, so one complex number
+separates them.
+
+79
+00:05:43,888 --> 00:05:49,398
+The cure is in hardware: sample both
+channels at once, through matched filters.
+
+80
+00:05:50,698 --> 00:05:55,183
+Here's Clarke as it runs in a drive, once
+every PWM period.
+
+81
+00:05:55,223 --> 00:05:59,982
+The constants are computed offline. Each
+sample costs two multiplies and an
+
+82
+00:06:00,022 --> 00:06:05,281
+add going in, two of each coming back: no
+roots, no trigonometry, no loops.
+
+83
+00:06:05,321 --> 00:06:11,374
+On a fixed-point chip, 1/√3 becomes 18,919
+over 32,768,
+
+84
+00:06:11,414 --> 00:06:17,081
+and the result stays within one count of
+exact.
+
+85
+00:06:17,121 --> 00:06:20,455
+Calibration comes first: subtract each
+channel's offset,
+
+86
+00:06:20,495 --> 00:06:24,128
+measured with the inverter off, then trim
+the gains.
+
+87
+00:06:25,428 --> 00:06:31,069
+Now the exercise, on a synthetic log: 10 A
+at 100 Hz, sampled at 20 kHz,
+
+88
+00:06:31,109 --> 00:06:36,382
+with channel a 5 % high, offsets on both
+channels, and noise.
+
+89
+00:06:36,422 --> 00:06:41,814
+Over whole cycles, its complex FFT is a
+least-squares ellipse fit: the
+
+90
+00:06:41,854 --> 00:06:48,599
+zero-hertz line is the centre; the ±100 Hz
+lines, the forward and backward parts.
+
+91
+00:06:48,639 --> 00:06:55,627
+The centre, through inverse Clarke, gives
+offsets of +0.15 and −0.25 A. Solving
+
+92
+00:06:55,667 --> 00:07:03,421
+the backward part for channel b's complex
+gain gives a ratio of 1.050, and no lag.
+
+93
+00:07:03,461 --> 00:07:06,548
+Correct the channels, and the locus is a
+centred circle,
+
+94
+00:07:06,588 --> 00:07:09,337
+with the backward line down in the noise.
+
+95
+00:07:09,377 --> 00:07:14,455
+The locus gives only the gain ratio;
+absolute gains need a reference, such as a
+
+96
+00:07:14,495 --> 00:07:20,373
+calibrated probe. On your own drive, log
+both raw channels and run the same script.
+
+97
+00:07:21,673 --> 00:07:23,953
+Three predictions before next time.
+
+98
+00:07:23,993 --> 00:07:26,392
+One: three sensors, one per phase,
+
+99
+00:07:26,432 --> 00:07:32,170
+and the phase-a sensor reads 5 % high.
+What does the α–β locus look like?
+
+100
+00:07:33,270 --> 00:07:37,984
+Two: back to two sensors, with a 0.3 A
+offset on channel b only.
+
+101
+00:07:38,024 --> 00:07:40,456
+What happens to the locus?
+
+102
+00:07:41,556 --> 00:07:46,517
+Three: in which frame would the circle of
+balanced currents become a single point?
+
+103
+00:07:47,617 --> 00:07:51,104
+Next time: the Park transformation —
+rotating frames,
+
+104
+00:07:51,144 --> 00:07:56,568
+the rotor angle from Hall sensors or an
+encoder, and what angle errors do.

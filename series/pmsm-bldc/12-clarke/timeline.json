@@ -1,0 +1,448 @@
+[
+ {
+  "id": "hook",
+  "title": "Motor or sensors?",
+  "start": 0.0,
+  "beats": [
+   {
+    "id": "h1",
+    "start": 0.6,
+    "end": 8.994,
+    "text": "Here's a space-vector locus, like those in Lesson 11, from a drive's two current sensors: a synthetic log we'll take apart at the end."
+   },
+   {
+    "id": "h2",
+    "start": 9.494,
+    "end": 13.336,
+    "text": "It should be a circle centred on the origin. At first glance, it is."
+   },
+   {
+    "id": "h3",
+    "start": 13.936,
+    "end": 21.499,
+    "text": "Magnify its deviation from a centred circle five times, though, and it's lopsided: stretched one way, and pushed off-centre."
+   },
+   {
+    "id": "h4",
+    "start": 22.099,
+    "end": 28.446,
+    "text": "Is that the motor, or the sensors? Today: the Clarke transformation, and how to read the answer from the shape."
+   }
+  ],
+  "end": 29.846375000000002
+ },
+ {
+  "id": "answers",
+  "title": "Answers from Lesson 11",
+  "start": 29.846375000000002,
+  "beats": [
+   {
+    "id": "a1",
+    "start": 30.246,
+    "end": 32.473,
+    "text": "First, the answers from Lesson 11."
+   },
+   {
+    "id": "a2",
+    "start": 32.773,
+    "end": 39.862,
+    "text": "One: balanced currents of 10 A peak give a space vector of exactly 10 A. That's what the two-thirds is for."
+   },
+   {
+    "id": "a3",
+    "start": 40.262,
+    "end": 46.221,
+    "text": "Two: adding 1 A of DC to all three phases changes nothing. It's pure zero sequence."
+   },
+   {
+    "id": "a4",
+    "start": 46.621,
+    "end": 57.796,
+    "text": "Three: with phase c open, the vector slides along a line at \u221230\u00b0, reaching 11.5 A when phase a peaks at 10. It pulsates; it never turns."
+   }
+  ],
+  "end": 59.19595833333333
+ },
+ {
+  "id": "alphabeta",
+  "title": "Two real axes: \u03b1 and \u03b2",
+  "start": 59.19595833333333,
+  "beats": [
+   {
+    "id": "c1",
+    "start": 59.596,
+    "end": 67.199,
+    "text": "Every complex number is two real numbers: the real part of the space vector is i_\u03b1, the imaginary part i_\u03b2."
+   },
+   {
+    "id": "c2",
+    "start": 67.599,
+    "end": 71.938,
+    "text": "\u03b1 lies along the axis of phase a; \u03b2 is 90\u00b0 ahead."
+   },
+   {
+    "id": "c3",
+    "start": 72.438,
+    "end": 86.272,
+    "text": "Project the three phase contributions onto these axes: that's the Clarke transformation. i_\u03b1 is two-thirds of i_a, minus half i_b, minus half i_c; i_\u03b2 is i_b minus i_c, over \u221a3."
+   },
+   {
+    "id": "c4",
+    "start": 86.772,
+    "end": 92.032,
+    "text": "Balanced currents become two sinusoids in quadrature, each with the full phase amplitude."
+   },
+   {
+    "id": "c5",
+    "start": 92.532,
+    "end": 100.55,
+    "text": "The name honours Edith Clarke of General Electric, who introduced these \u03b1, \u03b2 and zero components in the late 1930s."
+   }
+  ],
+  "end": 101.95029166666666
+ },
+ {
+  "id": "abcspace",
+  "title": "Looking down the diagonal",
+  "start": 101.95029166666666,
+  "beats": [
+   {
+    "id": "s1",
+    "start": 102.35,
+    "end": 108.287,
+    "text": "Here's a more geometric view. Three phase currents are one point in a space with axes a, b and c."
+   },
+   {
+    "id": "s2",
+    "start": 108.687,
+    "end": 114.38,
+    "text": "As balanced currents flow, the point traces a circle in the plane where the three currents add to zero."
+   },
+   {
+    "id": "s3",
+    "start": 114.88,
+    "end": 119.3,
+    "text": "Now look straight down the diagonal, where all three currents are equal."
+   },
+   {
+    "id": "s4",
+    "start": 120.5,
+    "end": 130.265,
+    "text": "The three axes, at right angles in this space, now appear 120\u00b0 apart: the phase axes of Lesson 11, around the \u03b1\u2013\u03b2 plane."
+   },
+   {
+    "id": "s5",
+    "start": 130.765,
+    "end": 137.183,
+    "text": "A zero-sequence current moves the point along the diagonal, straight toward us. From here, nothing changes."
+   }
+  ],
+  "end": 138.58258333333333
+ },
+ {
+  "id": "matrix",
+  "title": "The matrix and its inverse",
+  "start": 138.58258333333333,
+  "beats": [
+   {
+    "id": "m1",
+    "start": 138.983,
+    "end": 144.678,
+    "text": "Write the projections as a matrix, and add a third row for the zero sequence \u2014 so nothing is lost."
+   },
+   {
+    "id": "m2",
+    "start": 145.078,
+    "end": 155.436,
+    "text": "Now there's an inverse. Going back, i_a is i_\u03b1 plus i_0, and i_b and i_c take minus half of \u03b1, plus or minus \u221a3/2 of \u03b2."
+   },
+   {
+    "id": "m3",
+    "start": 155.936,
+    "end": 163.385,
+    "text": "The drive uses it on the way out: the controller decides v_\u03b1 and v_\u03b2; the half-bridges need three phase voltages."
+   }
+  ],
+  "end": 164.78516666666667
+ },
+ {
+  "id": "scaling",
+  "title": "Amplitude or power invariant",
+  "start": 164.78516666666667,
+  "beats": [
+   {
+    "id": "p1",
+    "start": 165.185,
+    "end": 173.032,
+    "text": "Replace two-thirds with \u221a(2/3), and the zero row's one-third with 1/\u221a3: that's the power-invariant version."
+   },
+   {
+    "id": "p2",
+    "start": 173.432,
+    "end": 187.127,
+    "text": "Its rows are orthonormal, so its inverse is its transpose: a pure rotation of abc space. Lengths survive, so the 10 A circle keeps its radius of 12.2; and so do dot products, like power."
+   },
+   {
+    "id": "p4",
+    "start": 187.627,
+    "end": 198.418,
+    "text": "The amplitude-invariant matrix is the same rotation, shrunk by \u221a(2/3) in \u03b1\u2013\u03b2. Undo the shrink in a product of two quantities, and out comes three-halves."
+   },
+   {
+    "id": "p5",
+    "start": 198.818,
+    "end": 204.056,
+    "text": "This series keeps peak values instead, so its power and torque formulas carry the three-halves."
+   }
+  ],
+  "end": 205.4562916666667
+ },
+ {
+  "id": "twosensors",
+  "title": "Two sensors, one assumption",
+  "start": 205.4562916666667,
+  "beats": [
+   {
+    "id": "t1",
+    "start": 205.856,
+    "end": 211.514,
+    "text": "Most drives measure only two currents, and compute the third as minus i_a, minus i_b."
+   },
+   {
+    "id": "t2",
+    "start": 211.914,
+    "end": 218.985,
+    "text": "Then Clarke shrinks to two lines: i_\u03b1 is just i_a, and i_\u03b2 is i_a plus 2 i_b, over \u221a3."
+   },
+   {
+    "id": "t3",
+    "start": 219.485,
+    "end": 225.667,
+    "text": "That quietly assumes the currents add to zero, which Kirchhoff guarantees in a star connection without neutral."
+   },
+   {
+    "id": "t4",
+    "start": 226.067,
+    "end": 235.213,
+    "text": "If a zero-sequence current does flow, say a third harmonic through a connected neutral, it reappears at twice its size, along the negative c axis."
+   },
+   {
+    "id": "t5",
+    "start": 235.713,
+    "end": 241.548,
+    "text": "It also assumes two perfect sensors, read at the same instant. Let's break those, one at a time."
+   }
+  ],
+  "end": 242.9484166666667
+ },
+ {
+  "id": "gain",
+  "title": "Gain mismatch: an ellipse",
+  "start": 242.9484166666667,
+  "beats": [
+   {
+    "id": "g1",
+    "start": 243.348,
+    "end": 247.0,
+    "text": "First, gain. Say the phase-a sensor reads 5 % high."
+   },
+   {
+    "id": "g2",
+    "start": 247.5,
+    "end": 255.836,
+    "text": "The error is 5 % of i_a, and it always lies on the same line: 30\u00b0, where channel a lands in the two-sensor formula."
+   },
+   {
+    "id": "g3",
+    "start": 256.336,
+    "end": 266.245,
+    "text": "Back and forth along a line, plus a rotation, makes an ellipse: semi-axes of 10.54 and 9.96 A, tilted 15\u00b0."
+   },
+   {
+    "id": "g4",
+    "start": 266.745,
+    "end": 275.076,
+    "text": "In Lesson 11's terms, a backward-turning part appears: 0.29 A, which is 5 % of 10 A, over \u221a3."
+   }
+  ],
+  "end": 276.4761250000001
+ },
+ {
+  "id": "offset",
+  "title": "Offset: a shifted circle",
+  "start": 276.4761250000001,
+  "beats": [
+   {
+    "id": "o1",
+    "start": 276.876,
+    "end": 280.703,
+    "text": "Next, offset. Give channel a 200 mA of DC."
+   },
+   {
+    "id": "o2",
+    "start": 281.203,
+    "end": 290.55,
+    "text": "Every point moves by the same vector, so the circle shifts: 0.23 A at 30\u00b0, the zero-hertz line of Lesson 11's spectrum."
+   },
+   {
+    "id": "o3",
+    "start": 291.05,
+    "end": 296.091,
+    "text": "The centre maps back uniquely: inverse Clarke of the centre gives each channel's offset."
+   },
+   {
+    "id": "o4",
+    "start": 296.591,
+    "end": 305.875,
+    "text": "In a frame turning with the current, Lesson 13, a fixed offset becomes a ripple at the electrical frequency; a gain mismatch, a ripple at twice that."
+   },
+   {
+    "id": "o5",
+    "start": 306.375,
+    "end": 312.826,
+    "text": "Close the current loop, and the controller smooths the measured current, so the real current and torque carry the ripple."
+   }
+  ],
+  "end": 314.22595833333344
+ },
+ {
+  "id": "skew",
+  "title": "Timing skew: the other tilt",
+  "start": 314.22595833333344,
+  "beats": [
+   {
+    "id": "k1",
+    "start": 314.626,
+    "end": 323.895,
+    "text": "Last, timing: say channel b lags by 3 electrical degrees, just 25 \u00b5s at 5000 rpm on our 8-pole motor."
+   },
+   {
+    "id": "k2",
+    "start": 324.395,
+    "end": 331.095,
+    "text": "Again an ellipse, but its long axis sits at \u221230\u00b0: 45\u00b0 away from the gain case."
+   },
+   {
+    "id": "k3",
+    "start": 331.595,
+    "end": 340.064,
+    "text": "Multiply the backward part by the forward part, cancelling the current's phase: a gain error lands at 30\u00b0, a lag at \u221260\u00b0."
+   },
+   {
+    "id": "k4",
+    "start": 340.464,
+    "end": 348.898,
+    "text": "At right angles, so one complex number separates them. The cure is in hardware: sample both channels at once, through matched filters."
+   }
+  ],
+  "end": 350.2979166666668
+ },
+ {
+  "id": "mcu",
+  "title": "Clarke on a microcontroller",
+  "start": 350.2979166666668,
+  "beats": [
+   {
+    "id": "u1",
+    "start": 350.698,
+    "end": 354.823,
+    "text": "Here's Clarke as it runs in a drive, once every PWM period."
+   },
+   {
+    "id": "u2",
+    "start": 355.223,
+    "end": 364.821,
+    "text": "The constants are computed offline. Each sample costs two multiplies and an add going in, two of each coming back: no roots, no trigonometry, no loops."
+   },
+   {
+    "id": "u3",
+    "start": 365.321,
+    "end": 376.621,
+    "text": "On a fixed-point chip, 1/\u221a3 becomes 18,919 over 32,768, and the result stays within one count of exact."
+   },
+   {
+    "id": "u4",
+    "start": 377.121,
+    "end": 383.628,
+    "text": "Calibration comes first: subtract each channel's offset, measured with the inverter off, then trim the gains."
+   }
+  ],
+  "end": 385.02795833333346
+ },
+ {
+  "id": "exercise",
+  "title": "Diagnose a current log",
+  "start": 385.02795833333346,
+  "beats": [
+   {
+    "id": "e1",
+    "start": 385.428,
+    "end": 395.922,
+    "text": "Now the exercise, on a synthetic log: 10 A at 100 Hz, sampled at 20 kHz, with channel a 5 % high, offsets on both channels, and noise."
+   },
+   {
+    "id": "e2",
+    "start": 396.422,
+    "end": 408.139,
+    "text": "Over whole cycles, its complex FFT is a least-squares ellipse fit: the zero-hertz line is the centre; the \u00b1100 Hz lines, the forward and backward parts."
+   },
+   {
+    "id": "e3",
+    "start": 408.639,
+    "end": 422.961,
+    "text": "The centre, through inverse Clarke, gives offsets of +0.15 and \u22120.25 A. Solving the backward part for channel b's complex gain gives a ratio of 1.050, and no lag."
+   },
+   {
+    "id": "e4",
+    "start": 423.461,
+    "end": 428.877,
+    "text": "Correct the channels, and the locus is a centred circle, with the backward line down in the noise."
+   },
+   {
+    "id": "e5",
+    "start": 429.377,
+    "end": 439.873,
+    "text": "The locus gives only the gain ratio; absolute gains need a reference, such as a calibrated probe. On your own drive, log both raw channels and run the same script."
+   }
+  ],
+  "end": 441.27341666666683
+ },
+ {
+  "id": "predict",
+  "title": "Predict, then check",
+  "start": 441.27341666666683,
+  "beats": [
+   {
+    "id": "q1",
+    "start": 441.673,
+    "end": 443.593,
+    "text": "Three predictions before next time."
+   },
+   {
+    "id": "q2",
+    "start": 443.993,
+    "end": 451.67,
+    "text": "One: three sensors, one per phase, and the phase-a sensor reads 5 % high. What does the \u03b1\u2013\u03b2 locus look like?"
+   },
+   {
+    "id": "q3",
+    "start": 453.27,
+    "end": 459.956,
+    "text": "Two: back to two sensors, with a 0.3 A offset on channel b only. What happens to the locus?"
+   },
+   {
+    "id": "q4",
+    "start": 461.556,
+    "end": 466.017,
+    "text": "Three: in which frame would the circle of balanced currents become a single point?"
+   },
+   {
+    "id": "q5",
+    "start": 467.617,
+    "end": 476.068,
+    "text": "Next time: the Park transformation \u2014 rotating frames, the rotor angle from Hall sensors or an encoder, and what angle errors do."
+   }
+  ],
+  "end": 478.2680416666669
+ }
+]

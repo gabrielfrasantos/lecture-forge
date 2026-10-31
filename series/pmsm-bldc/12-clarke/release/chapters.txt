@@ -1,0 +1,82 @@
+;FFMETADATA1
+title=Clarke Transformation — PMSM & BLDC, Lesson 12
+artist=lecture-forge
+language=eng
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=29846
+title=01 Motor or sensors?
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=29846
+END=59196
+title=02 Answers from Lesson 11
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=59196
+END=101950
+title=03 Two real axes: α and β
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=101950
+END=138583
+title=04 Looking down the diagonal
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=138583
+END=164785
+title=05 The matrix and its inverse
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=164785
+END=205456
+title=06 Amplitude or power invariant
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=205456
+END=242948
+title=07 Two sensors, one assumption
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=242948
+END=276476
+title=08 Gain mismatch: an ellipse
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=276476
+END=314226
+title=09 Offset: a shifted circle
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=314226
+END=350298
+title=10 Timing skew: the other tilt
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=350298
+END=385028
+title=11 Clarke on a microcontroller
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=385028
+END=441273
+title=12 Diagnose a current log
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=441273
+END=478268
+title=13 Predict, then check
