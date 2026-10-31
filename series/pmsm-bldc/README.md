@@ -14,7 +14,7 @@ Goal: intuition strong enough to derive the equations, predict behaviour and rea
 | 7 | [Back-EMF](07-back-emf) | Flux linkage, e = dλ/dt, Ke | Spin a motor with a drill; extract Ke from the scope | Rendered (8:07) |
 | 8 | [Energy and co-energy](08-energy-coenergy) | Force and torque from co-energy | Co-energy vs Maxwell stress on an actuator | Rendered (8:00) |
 | 9 | [Torque in a PM machine](09-pm-torque) | Alignment torque, cogging | Measure cogging torque with a lever and scale | Rendered (7:57) |
-| 10 | Saliency | Surface vs interior PM, Ld and Lq | Inductance vs rotor angle with an LCR meter | Planned |
+| 10 | [Saliency](10-saliency) | Surface vs interior PM, Ld and Lq | Inductance vs rotor angle with an LCR meter | Rendered (7:57) |
 | 11 | [Space vectors](11-space-vectors) | Phasors vs space vectors, scaling conventions | Space vectors from logged currents | Rendered (7:54) |
 | 12 | [Clarke transformation](12-clarke) | abc → αβ, zero sequence | Plot the αβ locus of measured currents | Rendered (7:58) |
 | 13 | [Park transformation](13-park) | Rotating frames; angle from Hall sensors or encoder | Effect of angle error on d and q | Rendered (7:58) |
