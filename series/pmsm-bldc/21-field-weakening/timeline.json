@@ -1,0 +1,462 @@
+[
+ {
+  "id": "hook",
+  "title": "Running out of voltage",
+  "start": 0.0,
+  "beats": [
+   {
+    "id": "h1",
+    "start": 0.6,
+    "end": 4.347,
+    "text": "Spin our motor faster, and its back-EMF grows with the speed."
+   },
+   {
+    "id": "h2",
+    "start": 4.747,
+    "end": 17.114,
+    "text": "But from a 24 V bus, linear SVPWM makes at most 13.9 V of phase amplitude. At full current, the motor needs all of it at 5,030 rpm."
+   },
+   {
+    "id": "h3",
+    "start": 17.514,
+    "end": 24.919,
+    "text": "Today, in the series finale: running past that limit, finding the rotor angle without a sensor, and where the power goes."
+   }
+  ],
+  "end": 26.118791666666667
+ },
+ {
+  "id": "answers",
+  "title": "Answers from Lesson 20",
+  "start": 26.118791666666667,
+  "beats": [
+   {
+    "id": "a1",
+    "start": 26.419,
+    "end": 28.332,
+    "text": "First, Lesson 20's answers."
+   },
+   {
+    "id": "a2",
+    "start": 28.632,
+    "end": 35.142,
+    "text": "One: on a surface-magnet motor, torque has no i_d term, so at maximum current the best i_d is zero."
+   },
+   {
+    "id": "a3",
+    "start": 35.542,
+    "end": 47.982,
+    "text": "Two: with 20 A on q, the flux linkage is 6.58 mWb, and 13.9 V over that gives 2107 rad/s: 5,030 rpm."
+   },
+   {
+    "id": "a4",
+    "start": 48.382,
+    "end": 52.691,
+    "text": "Three: above base speed, i_d must go negative. That's field weakening."
+   }
+  ],
+  "end": 53.89133333333333
+ },
+ {
+  "id": "plane",
+  "title": "Two limits in the current plane",
+  "start": 53.89133333333333,
+  "beats": [
+   {
+    "id": "v1",
+    "start": 54.191,
+    "end": 60.071,
+    "text": "Draw both limits in the plane of i_d and i_q. The current limit is a circle of 20 A."
+   },
+   {
+    "id": "v2",
+    "start": 60.471,
+    "end": 69.149,
+    "text": "Neglect R, and the voltage is j\u03c9e times the flux linkage \u03c8, so |\u03c8| must stay below V_max/\u03c9e."
+   },
+   {
+    "id": "v3",
+    "start": 69.549,
+    "end": 79.177,
+    "text": "That's a second circle, centred at i_d = \u2212\u03bbm/L: the characteristic current, 130 A, six and a half times our limit."
+   },
+   {
+    "id": "v4",
+    "start": 79.577,
+    "end": 85.51,
+    "text": "As the speed rises, it shrinks toward that centre. The operating point must stay inside both circles."
+   }
+  ],
+  "end": 86.70983333333334
+ },
+ {
+  "id": "past",
+  "title": "Past base speed",
+  "start": 86.70983333333334,
+  "beats": [
+   {
+    "id": "b1",
+    "start": 87.01,
+    "end": 91.6,
+    "text": "At base speed, the voltage circle passes through full torque: 20 A on q."
+   },
+   {
+    "id": "b2",
+    "start": 92.0,
+    "end": 97.846,
+    "text": "Go faster, and the current must swing left along its circle: i_d goes negative, and the torque falls."
+   },
+   {
+    "id": "b3",
+    "start": 98.246,
+    "end": 112.271,
+    "text": "At 5,500 rpm, i_d is \u221210.9 A and the torque 0.65 N\u00b7m. At 6,014 rpm, all 20 A sit on \u2212d, and the torque is zero."
+   },
+   {
+    "id": "b4",
+    "start": 112.671,
+    "end": 120.223,
+    "text": "So field weakening buys this motor just a fifth more speed: 20 A cancels only 15 % of the magnet's flux."
+   },
+   {
+    "id": "b5",
+    "start": 120.623,
+    "end": 127.009,
+    "text": "And that's with R neglected: with it, base speed drops to about 4,740 rpm."
+   }
+  ],
+  "end": 128.2086666666667
+ },
+ {
+  "id": "ipm",
+  "title": "The interior-magnet variant",
+  "start": 128.2086666666667,
+  "beats": [
+   {
+    "id": "i1",
+    "start": 128.509,
+    "end": 131.817,
+    "text": "The interior-magnet variant from Lesson 10 does better."
+   },
+   {
+    "id": "i2",
+    "start": 132.217,
+    "end": 140.079,
+    "text": "Its voltage limit is an ellipse, centred at \u2212\u03bbm/L_d = \u221231 A, close to the 20 A circle."
+   },
+   {
+    "id": "i3",
+    "start": 140.479,
+    "end": 150.475,
+    "text": "Its base speed is similar, but its power stays near 400 W out to 10,000 rpm, and it keeps turning to about 18,400 rpm."
+   },
+   {
+    "id": "i4",
+    "start": 150.875,
+    "end": 160.324,
+    "text": "The price: at \u221220 A, only 36 % of its magnet flux remains on the d axis, so check the magnets for demagnetisation when hot."
+   }
+  ],
+  "end": 161.52441666666667
+ },
+ {
+  "id": "observer",
+  "title": "Reading the angle from the back-EMF",
+  "start": 161.52441666666667,
+  "beats": [
+   {
+    "id": "o1",
+    "start": 161.824,
+    "end": 164.225,
+    "text": "Next, the angle. Can we drop the encoder?"
+   },
+   {
+    "id": "o2",
+    "start": 164.625,
+    "end": 172.032,
+    "text": "The back-EMF carries the angle: a vector 90\u00b0 ahead of the rotor's d axis, as long as the rotor turns."
+   },
+   {
+    "id": "o3",
+    "start": 172.432,
+    "end": 182.469,
+    "text": "It's hidden behind R and L, so we run a software copy of the motor's R\u2013L circuit, driven by the voltage we command, and compare its current with the measured one."
+   },
+   {
+    "id": "o4",
+    "start": 182.869,
+    "end": 191.343,
+    "text": "The difference corrects a back-EMF estimate until the currents agree: a back-EMF observer. It needs R and L, but not \u03bbm."
+   }
+  ],
+  "end": 192.54258333333337
+ },
+ {
+  "id": "pll",
+  "title": "Locking on: the PLL",
+  "start": 192.54258333333337,
+  "beats": [
+   {
+    "id": "p1",
+    "start": 192.843,
+    "end": 198.753,
+    "text": "To get a clean angle and speed from that estimate, \u00ea, we lock onto it with a phase-locked loop."
+   },
+   {
+    "id": "p2",
+    "start": 199.153,
+    "end": 210.351,
+    "text": "Turn \u00ea back by our angle estimate, \u03b8\u0302. If \u03b8\u0302 is right, it points along the q axis. If not, a d component appears, proportional to the sine of the error."
+   },
+   {
+    "id": "p3",
+    "start": 210.751,
+    "end": 219.32,
+    "text": "PI control drives it to zero: its output is the speed, and integrating the speed gives the angle. Ours is tuned for 50 Hz."
+   }
+  ],
+  "end": 220.51983333333337
+ },
+ {
+  "id": "test",
+  "title": "Observer against encoder",
+  "start": 220.51983333333337,
+  "beats": [
+   {
+    "id": "s1",
+    "start": 220.82,
+    "end": 229.809,
+    "text": "Here's a simulated test: 10 A on q, the current loop on an encoder, a dynamometer stepping the speed down, and the observer alongside."
+   },
+   {
+    "id": "s2",
+    "start": 230.209,
+    "end": 237.997,
+    "text": "At 3000 rpm, the two angles agree within 0.1\u00b0. At 1000, within 0.4\u00b0."
+   },
+   {
+    "id": "s3",
+    "start": 238.397,
+    "end": 245.379,
+    "text": "At 300 rpm, the error swings by 7\u00b0; at 100, by 18\u00b0; at 30, by 32\u00b0."
+   },
+   {
+    "id": "s4",
+    "start": 245.779,
+    "end": 253.373,
+    "text": "At standstill there's no back-EMF at all: the estimate sits 27\u00b0 off, and nothing in the signals can correct it."
+   }
+  ],
+  "end": 254.57295833333336
+ },
+ {
+  "id": "lowspeed",
+  "title": "Why it fails at low speed",
+  "start": 254.57295833333336,
+  "beats": [
+   {
+    "id": "f1",
+    "start": 254.873,
+    "end": 263.247,
+    "text": "With an ideal inverter, the same observer stays within two hundredths of a degree down to 30 rpm. The trouble is the inverter."
+   },
+   {
+    "id": "f2",
+    "start": 263.647,
+    "end": 273.389,
+    "text": "Dead time, from Lesson 17, takes 0.24 V from each phase: an error the observer can't see, so it lands in the back-EMF estimate."
+   },
+   {
+    "id": "f3",
+    "start": 273.789,
+    "end": 281.519,
+    "text": "That error doesn't shrink with speed, but the back-EMF does. Their fundamentals are equal at about 112 rpm."
+   },
+   {
+    "id": "f4",
+    "start": 281.919,
+    "end": 289.837,
+    "text": "So sensorless drives start in open loop, and hand over to the observer once the back-EMF stands well clear of such errors."
+   }
+  ],
+  "end": 291.03729166666676
+ },
+ {
+  "id": "losses",
+  "title": "Where the power goes",
+  "start": 291.03729166666676,
+  "beats": [
+   {
+    "id": "l1",
+    "start": 291.337,
+    "end": 296.188,
+    "text": "Last, losses: every watt from the bus either reaches the shaft or becomes heat."
+   },
+   {
+    "id": "l2",
+    "start": 296.588,
+    "end": 304.789,
+    "text": "Copper, 3/2 R |i|\u00b2: 24 W at 20 A. It follows the torque, and any i_d spent on weakening."
+   },
+   {
+    "id": "l3",
+    "start": 305.189,
+    "end": 311.269,
+    "text": "Iron: Lesson 4's model for this steel, with Lesson 5's flux densities. It follows the speed."
+   },
+   {
+    "id": "l4",
+    "start": 311.669,
+    "end": 315.829,
+    "text": "Then MOSFET conduction and switching, with assumed devices, and friction."
+   },
+   {
+    "id": "l5",
+    "start": 316.229,
+    "end": 333.378,
+    "text": "At 3000 rpm and 0.39 N\u00b7m, the shaft gets 122.5 W. Copper takes 6.6, iron 4.7, friction 1.6, the inverter 1.3. Efficiency: 89.6 %."
+   }
+  ],
+  "end": 334.57816666666673
+ },
+ {
+  "id": "map",
+  "title": "The efficiency map",
+  "start": 334.57816666666673,
+  "beats": [
+   {
+    "id": "e1",
+    "start": 334.878,
+    "end": 338.633,
+    "text": "Repeat that across the torque\u2013speed plane, and you get an efficiency map."
+   },
+   {
+    "id": "e2",
+    "start": 339.033,
+    "end": 346.982,
+    "text": "At low speed and high torque, copper dominates: 60 % at 500 rpm and 0.7 N\u00b7m."
+   },
+   {
+    "id": "e3",
+    "start": 347.382,
+    "end": 358.725,
+    "text": "At high speed and light load, iron and friction take over. The best point, 90.8 %, sits near 4,900 rpm and 0.54 N\u00b7m."
+   },
+   {
+    "id": "e4",
+    "start": 359.125,
+    "end": 365.712,
+    "text": "Past base speed, current on \u2212d costs copper loss without torque, so efficiency falls toward the edge."
+   },
+   {
+    "id": "e5",
+    "start": 366.112,
+    "end": 371.118,
+    "text": "Ripple, magnet and punching losses aren't modelled: treat this map as an upper bound."
+   }
+  ],
+  "end": 372.3177916666667
+ },
+ {
+  "id": "exercise",
+  "title": "Two measurements",
+  "start": 372.3177916666667,
+  "beats": [
+   {
+    "id": "x1",
+    "start": 372.618,
+    "end": 381.613,
+    "text": "Two experiments to close. First, map the efficiency: a power analyser on the DC bus, a torque sensor and a load machine on the shaft."
+   },
+   {
+    "id": "x2",
+    "start": 382.013,
+    "end": 392.907,
+    "text": "Efficiency is shaft power over DC power. At 0.39 N\u00b7m, a torque error of just 0.005 N\u00b7m moves it by a point."
+   },
+   {
+    "id": "x3",
+    "start": 393.307,
+    "end": 404.101,
+    "text": "Second, log observer and encoder angles while stepping the speed down: under half a degree at 1000 rpm, 20 or 30 degrees at 100 rpm and below."
+   }
+  ],
+  "end": 405.3064166666667
+ },
+ {
+  "id": "recap",
+  "title": "Twenty-one lessons",
+  "start": 405.3064166666667,
+  "beats": [
+   {
+    "id": "r1",
+    "start": 405.606,
+    "end": 407.912,
+    "text": "That's the end of the series. Looking back:"
+   },
+   {
+    "id": "r2",
+    "start": 408.312,
+    "end": 417.366,
+    "text": "We began with a compass needle beside a wire, put windings in slots, let iron and magnets shape the field, and found the back-EMF and the torque."
+   },
+   {
+    "id": "r4",
+    "start": 417.766,
+    "end": 424.171,
+    "text": "Clarke and Park turned three alternating currents into two steady ones, and the dq model gave their voltages."
+   },
+   {
+    "id": "r5",
+    "start": 424.571,
+    "end": 432.07,
+    "text": "The inverter makes those voltages. Current control, field-oriented control, field weakening and the observer close the loop."
+   },
+   {
+    "id": "r6",
+    "start": 432.47,
+    "end": 436.558,
+    "text": "At every step: a model, its limits, and a number you can check on a bench."
+   }
+  ],
+  "end": 437.7577916666666
+ },
+ {
+  "id": "capstone",
+  "title": "Capstone questions",
+  "start": 437.7577916666666,
+  "beats": [
+   {
+    "id": "q1",
+    "start": 438.058,
+    "end": 439.514,
+    "text": "Three capstone questions."
+   },
+   {
+    "id": "q2",
+    "start": 439.914,
+    "end": 451.126,
+    "text": "One: our surface-magnet motor spins unloaded at 5,800 rpm. Neglecting R and the losses, what i_d does it need, and what copper loss does that cost?"
+   },
+   {
+    "id": "q3",
+    "start": 452.226,
+    "end": 460.567,
+    "text": "Two: at standstill, why can high-frequency injection find the angle of the interior-magnet rotor, but not of the surface-magnet one?"
+   },
+   {
+    "id": "q4",
+    "start": 461.667,
+    "end": 472.786,
+    "text": "Three: rewind with twice the turns in the same slots, so \u03bbm doubles and R and L quadruple. At the same torque, what happens to the current, the copper loss and the base speed?"
+   },
+   {
+    "id": "q5",
+    "start": 473.886,
+    "end": 478.246,
+    "text": "Worked answers are in the lesson's repository. Thanks for following the series."
+   }
+  ],
+  "end": 479.94562500000006
+ }
+]

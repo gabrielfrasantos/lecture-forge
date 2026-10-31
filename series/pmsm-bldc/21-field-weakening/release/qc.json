@@ -1,0 +1,151 @@
+{
+ "rep": {
+  "video": "h264 1920x1080 30/1 479.93s",
+  "audio": "aac 48000 Hz 1 ch 479.94s",
+  "subtitles": "1 track(s): mov_text/eng",
+  "chapters": 14,
+  "av_duration_diff_s": 0.012,
+  "integrated_LUFS": -16.1,
+  "true_peak_dBTP": -1.4,
+  "LRA_LU": 2.7,
+  "asr_word_error_rate": 0.036,
+  "captions": "101 cues, 0 cues mostly over silence, 0 overlaps, max 18.2 chars/s, last cue ends 478.7s"
+ },
+ "mism": [
+  [
+   "a3",
+   "Two: with 20 amps on q, the flux linkage is 6.58 milliwebers, and 13.9 volts over that gives 2107 radians per second: 5,030 rpm.",
+   "Two, with 20 amps on cue, the flux linkage is 6.58 milliwebers, and 13.9 volts over that gives 2107 radians per second. 5,030 RPM."
+  ],
+  [
+   "a4",
+   "Three: above base speed, ID must go negative. That's field weakening.",
+   "3. Above base speed, ID must go negative. That's field weakening."
+  ],
+  [
+   "v3",
+   "That's a second circle, centred at ID equals minus lambda M over L: the characteristic current, 130 amps, six and a half times our limit.",
+   "That's a second circle, centered at id equals minus lambda m over l. The characteristic current, 130 amps, 6 and a half times our limit."
+  ],
+  [
+   "v4",
+   "As the speed rises, it shrinks toward that centre. The operating point must stay inside both circles.",
+   "As the speed rises, it shrinks toward that center. The operating point must stay inside both circles."
+  ],
+  [
+   "b1",
+   "At base speed, the voltage circle passes through full torque: 20 amps on q.",
+   "At base speed, the voltage circle passes through full torque. 20 amps on Q. [BUZZER]"
+  ],
+  [
+   "b5",
+   "And that's with R neglected: with it, base speed drops to about 4,740 rpm.",
+   "and that's with R-neglected. With it, base speed drops to about 4740 RPM."
+  ],
+  [
+   "i2",
+   "Its voltage limit is an ellipse, centred at minus lambda M over L D, minus 31 amps: close to the 20 amp circle.",
+   "Its voltage limit is an ellipse, centred at minus lambda m over ld minus 31 amps, close to the 20 amp circle."
+  ],
+  [
+   "o3",
+   "It's hidden behind R and L, so we run a software copy of the motor's R L circuit, driven by the voltage we command, and compare its current with the measured one.",
+   "It's hidden behind R and L, so we run a software copy of the motor's RL circuit, driven by the voltage we command, and compare its current with the measured one."
+  ],
+  [
+   "p1",
+   "To get a clean angle and speed from that estimate, E hat, we lock onto it with a phase locked loop.",
+   "To get a clean angle and speed from that estimate, e-hat. We lock onto it with a phase-locked loop. [BUZZER]"
+  ],
+  [
+   "p2",
+   "Turn E hat back by our angle estimate, theta hat. If theta hat is right, it points along the q axis. If not, a D component appears, proportional to the sine of the error.",
+   "Turn E hat back by our angle estimate, theta hat. If theta hat is right, it points along the Q axis. If not, a D component appears proportional to the sign of the error."
+  ],
+  [
+   "p3",
+   "PI control drives it to zero: its output is the speed, and integrating the speed gives the angle. Ours is tuned for 50 hertz.",
+   "PI control drives it to zero. Its output is the speed, and integrating the speed gives the angle. Hours is tuned for 50 hertz."
+  ],
+  [
+   "s1",
+   "Here's a simulated test: 10 amps on q, the current loop on an encoder, a dynamometer stepping the speed down, and the observer alongside.",
+   "Here's a simulated test. 10 amps on Q, the current loop on an encoder, a dynamometer stepping the speed down, and the observer alongside. [BUZZER]"
+  ],
+  [
+   "s2",
+   "At 3000 rpm, the two angles agree within 0.1 of a degree. At 1000, within 0.4.",
+   "At 3,000 RPM, the two angles agree within 0.1 of a degree, at 1,000 within 0.4."
+  ],
+  [
+   "f1",
+   "With an ideal inverter, the same observer stays within two hundredths of a degree down to 30 rpm. The trouble is the inverter.",
+   "With an ideal inverter, the same observer stays within 200ths of a degree down to 30 RPM. The trouble is the inverter."
+  ],
+  [
+   "f2",
+   "Dead time, from Lesson 17, takes 0.24 volts from each phase: an error the observer can't see, so it lands in the back EMF estimate.",
+   "Dead time from lesson 17 takes 0.24 volts from each phase. An error the observer can't see, so it lands in the back EMF estimate. [BUZZER]"
+  ],
+  [
+   "l2",
+   "Copper, three halves R, times the current squared: 24 watts at 20 amps. It follows the torque, and any ID spent on weakening.",
+   "Copper 3/2 R times the current squared, 24 watts at 20 amps. It follows the torque and any ID spent on weakening."
+  ],
+  [
+   "l4",
+   "Then MOSFET conduction and switching, with assumed devices, and friction.",
+   "Then MOSVET Conduction and Switching with assumed devices and friction."
+  ],
+  [
+   "l5",
+   "At 3000 rpm and 0.39 newton meters, the shaft gets 122.5 watts. Copper takes 6.6, iron 4.7, friction 1.6, the inverter 1.3. Efficiency: 89.6%.",
+   "At 3000 RPM and 0.39 Nm, the shaft gets 122.5W. Copper takes 6.6, Iron 4.7, Friction 1.6, the Inverter 1.3. Efficiency 89.6%."
+  ],
+  [
+   "e3",
+   "At high speed and light load, iron and friction take over. The best point, 90.8%, sits near 4,900 rpm and 0.54 newton meters.",
+   "at high speed and light load, iron and friction take over. The best point, 90.8%, sits near 4,900 RPM and 0.54 newton meters. (buzzing)"
+  ],
+  [
+   "e5",
+   "Ripple, magnet and punching losses aren't modelled: treat this map as an upper bound.",
+   "Ripple, magnet, and punching losses aren't modeled. Treat this map as an upper bound."
+  ],
+  [
+   "x2",
+   "Efficiency is shaft power over DC power. At 0.39 newton meters, a torque error of just 0.005 newton meters moves it by a point.",
+   "Efficiency is shaft power over DC power. At 0.39 Newton meters, a torque error of just 0.00, 5 Newton meters, moves it by a point."
+  ],
+  [
+   "x3",
+   "Second, log observer and encoder angles while stepping the speed down: under half a degree at 1000 rpm, 20 or 30 degrees at 100 rpm and below.",
+   "Second, log observer and encoder angles while stepping the speed down. Under half a degree at 1,000 RPM, 20 or 30 degrees at 100 RPM and below."
+  ],
+  [
+   "r4",
+   "Clarke and Park turned three alternating currents into two steady ones, and the DQ model gave their voltages.",
+   "Clarkin Park turned three alternating currents into two steady ones, and the DQ model gave their voltages."
+  ],
+  [
+   "q1",
+   "Three capstone questions.",
+   "3 capstone questions"
+  ],
+  [
+   "q3",
+   "Two: at standstill, why can high frequency injection find the angle of the interior magnet rotor, but not of the surface magnet one?",
+   "2. At Stanstill, why can high frequency injection find the angle of the interior magnet rotor, but not of the surface magnet one?"
+  ],
+  [
+   "q4",
+   "Three: rewind with twice the turns in the same slots, so lambda M doubles, and R and L quadruple. At the same torque, what happens to the current, the copper loss, and the base speed?",
+   "Three, rewind with twice the turns in the same slots, so lambda m doubles and r and l quadruple. At the same torque, what happens to the current, the copper loss and the base speed. [BUZZER]"
+  ],
+  [
+   "q5",
+   "Worked answers are in the lesson's repository. Thanks for following the series.",
+   "Worked answers are in the lessons repository. Thanks for following the series."
+  ]
+ ]
+}

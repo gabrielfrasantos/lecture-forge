@@ -1,0 +1,487 @@
+1
+00:00:00,600 --> 00:00:04,707
+Spin our motor faster, and its back-EMF
+grows with the speed.
+
+2
+00:00:04,747 --> 00:00:11,747
+But from a 24 V bus, linear SVPWM makes at
+most 13.9 V of phase amplitude.
+
+3
+00:00:11,787 --> 00:00:17,474
+At full current, the motor needs all of it
+at 5,030 rpm.
+
+4
+00:00:17,514 --> 00:00:20,745
+Today, in the series finale: running past
+that limit,
+
+5
+00:00:20,785 --> 00:00:25,419
+finding the rotor angle without a sensor,
+and where the power goes.
+
+6
+00:00:26,419 --> 00:00:28,592
+First, Lesson 20's answers.
+
+7
+00:00:28,632 --> 00:00:32,246
+One: on a surface-magnet motor, torque has
+no i_d term,
+
+8
+00:00:32,286 --> 00:00:35,502
+so at maximum current the best i_d is
+zero.
+
+9
+00:00:35,542 --> 00:00:41,785
+Two: with 20 A on q, the flux linkage is
+6.58 mWb,
+
+10
+00:00:41,825 --> 00:00:48,342
+and 13.9 V over that gives 2107 rad/s:
+5,030 rpm.
+
+11
+00:00:48,382 --> 00:00:53,191
+Three: above base speed, i_d must go
+negative. That's field weakening.
+
+12
+00:00:54,191 --> 00:00:57,339
+Draw both limits in the plane of i_d and
+i_q.
+
+13
+00:00:57,379 --> 00:01:00,431
+The current limit is a circle of 20 A.
+
+14
+00:01:00,471 --> 00:01:06,057
+Neglect R, and the voltage is jωe times
+the flux linkage ψ,
+
+15
+00:01:06,097 --> 00:01:09,509
+so |ψ| must stay below V_max/ωe.
+
+16
+00:01:09,549 --> 00:01:13,514
+That's a second circle, centred at i_d =
+−λm/L:
+
+17
+00:01:13,554 --> 00:01:19,537
+the characteristic current, 130 A, six and
+a half times our limit.
+
+18
+00:01:19,577 --> 00:01:22,503
+As the speed rises, it shrinks toward that
+centre.
+
+19
+00:01:22,544 --> 00:01:26,010
+The operating point must stay inside both
+circles.
+
+20
+00:01:27,010 --> 00:01:31,960
+At base speed, the voltage circle passes
+through full torque: 20 A on q.
+
+21
+00:01:32,000 --> 00:01:35,468
+Go faster, and the current must swing left
+along its circle:
+
+22
+00:01:35,508 --> 00:01:38,206
+i_d goes negative, and the torque falls.
+
+23
+00:01:38,246 --> 00:01:44,964
+At 5,500 rpm, i_d is −10.9 A and the
+torque 0.65 N·m.
+
+24
+00:01:45,004 --> 00:01:52,631
+At 6,014 rpm, all 20 A sit on −d, and the
+torque is zero.
+
+25
+00:01:52,671 --> 00:01:56,957
+So field weakening buys this motor just a
+fifth more speed:
+
+26
+00:01:56,997 --> 00:02:00,583
+20 A cancels only 15 % of the magnet's
+flux.
+
+27
+00:02:00,623 --> 00:02:07,509
+And that's with R neglected: with it, base
+speed drops to about 4,740 rpm.
+
+28
+00:02:08,509 --> 00:02:12,177
+The interior-magnet variant from Lesson 10
+does better.
+
+29
+00:02:12,217 --> 00:02:15,137
+Its voltage limit is an ellipse,
+
+30
+00:02:15,177 --> 00:02:20,439
+centred at −λm/L_d = −31 A, close to the
+20 A circle.
+
+31
+00:02:20,479 --> 00:02:26,932
+Its base speed is similar, but its power
+stays near 400 W out to 10,000 rpm,
+
+32
+00:02:26,972 --> 00:02:30,835
+and it keeps turning to about 18,400 rpm.
+
+33
+00:02:30,875 --> 00:02:36,411
+The price: at −20 A, only 36 % of its
+magnet flux remains on the d axis,
+
+34
+00:02:36,451 --> 00:02:40,824
+so check the magnets for demagnetisation
+when hot.
+
+35
+00:02:41,824 --> 00:02:44,585
+Next, the angle. Can we drop the encoder?
+
+36
+00:02:44,625 --> 00:02:46,881
+The back-EMF carries the angle:
+
+37
+00:02:46,921 --> 00:02:52,392
+a vector 90° ahead of the rotor's d axis,
+as long as the rotor turns.
+
+38
+00:02:52,432 --> 00:02:57,442
+It's hidden behind R and L, so we run a
+software copy of the motor's R–L circuit,
+
+39
+00:02:57,482 --> 00:03:02,829
+driven by the voltage we command, and
+compare its current with the measured one.
+
+40
+00:03:02,869 --> 00:03:07,742
+The difference corrects a back-EMF
+estimate until the currents agree:
+
+41
+00:03:07,782 --> 00:03:11,843
+a back-EMF observer. It needs R and L, but
+not λm.
+
+42
+00:03:12,843 --> 00:03:15,947
+To get a clean angle and speed from that
+estimate,
+
+43
+00:03:15,987 --> 00:03:19,113
+ê, we lock onto it with a phase-locked
+loop.
+
+44
+00:03:19,153 --> 00:03:25,194
+Turn ê back by our angle estimate, θ̂. If
+θ̂ is right, it points along the q axis.
+
+45
+00:03:25,234 --> 00:03:30,711
+If not, a d component appears,
+proportional to the sine of the error.
+
+46
+00:03:30,751 --> 00:03:34,535
+PI control drives it to zero: its output
+is the speed,
+
+47
+00:03:34,575 --> 00:03:39,820
+and integrating the speed gives the angle.
+Ours is tuned for 50 Hz.
+
+48
+00:03:40,820 --> 00:03:45,308
+Here's a simulated test: 10 A on q, the
+current loop on an encoder,
+
+49
+00:03:45,348 --> 00:03:50,169
+a dynamometer stepping the speed down, and
+the observer alongside.
+
+50
+00:03:50,209 --> 00:03:58,357
+At 3000 rpm, the two angles agree within
+0.1°. At 1000, within 0.4°.
+
+51
+00:03:58,397 --> 00:04:05,739
+At 300 rpm, the error swings by 7°; at
+100, by 18°; at 30, by 32°.
+
+52
+00:04:05,779 --> 00:04:10,433
+At standstill there's no back-EMF at all:
+the estimate sits 27° off,
+
+53
+00:04:10,473 --> 00:04:13,873
+and nothing in the signals can correct it.
+
+54
+00:04:14,873 --> 00:04:18,719
+With an ideal inverter, the same observer
+stays within two
+
+55
+00:04:18,759 --> 00:04:23,607
+hundredths of a degree down to 30 rpm. The
+trouble is the inverter.
+
+56
+00:04:23,647 --> 00:04:27,937
+Dead time, from Lesson 17, takes 0.24 V
+from each phase:
+
+57
+00:04:27,977 --> 00:04:33,749
+an error the observer can't see, so it
+lands in the back-EMF estimate.
+
+58
+00:04:33,789 --> 00:04:38,124
+That error doesn't shrink with speed, but
+the back-EMF does.
+
+59
+00:04:38,164 --> 00:04:41,879
+Their fundamentals are equal at about
+112 rpm.
+
+60
+00:04:41,919 --> 00:04:44,497
+So sensorless drives start in open loop,
+
+61
+00:04:44,537 --> 00:04:50,337
+and hand over to the observer once the
+back-EMF stands well clear of such errors.
+
+62
+00:04:51,337 --> 00:04:56,548
+Last, losses: every watt from the bus
+either reaches the shaft or becomes heat.
+
+63
+00:04:56,588 --> 00:04:59,659
+Copper, 3/2 R |i|²: 24 W at 20 A.
+
+64
+00:04:59,699 --> 00:05:05,149
+It follows the torque, and any i_d spent
+on weakening.
+
+65
+00:05:05,189 --> 00:05:07,688
+Iron: Lesson 4's model for this steel,
+
+66
+00:05:07,728 --> 00:05:11,629
+with Lesson 5's flux densities. It follows
+the speed.
+
+67
+00:05:11,669 --> 00:05:16,189
+Then MOSFET conduction and switching, with
+assumed devices, and friction.
+
+68
+00:05:16,229 --> 00:05:25,165
+At 3000 rpm and 0.39 N·m, the shaft gets
+122.5 W. Copper takes 6.6,
+
+69
+00:05:25,205 --> 00:05:33,878
+iron 4.7, friction 1.6, the inverter 1.3.
+Efficiency: 89.6 %.
+
+70
+00:05:34,878 --> 00:05:38,993
+Repeat that across the torque–speed plane,
+and you get an efficiency map.
+
+71
+00:05:39,033 --> 00:05:47,342
+At low speed and high torque, copper
+dominates: 60 % at 500 rpm and 0.7 N·m.
+
+72
+00:05:47,382 --> 00:05:53,063
+At high speed and light load, iron and
+friction take over.
+
+73
+00:05:53,103 --> 00:05:59,085
+The best point, 90.8 %, sits near
+4,900 rpm and 0.54 N·m.
+
+74
+00:05:59,125 --> 00:06:03,301
+Past base speed, current on −d costs
+copper loss without torque,
+
+75
+00:06:03,341 --> 00:06:06,072
+so efficiency falls toward the edge.
+
+76
+00:06:06,112 --> 00:06:09,111
+Ripple, magnet and punching losses aren't
+modelled:
+
+77
+00:06:09,151 --> 00:06:11,618
+treat this map as an upper bound.
+
+78
+00:06:12,618 --> 00:06:16,121
+Two experiments to close. First, map the
+efficiency:
+
+79
+00:06:16,161 --> 00:06:21,973
+a power analyser on the DC bus, a torque
+sensor and a load machine on the shaft.
+
+80
+00:06:22,013 --> 00:06:27,420
+Efficiency is shaft power over DC power.
+At 0.39 N·m,
+
+81
+00:06:27,460 --> 00:06:33,267
+a torque error of just 0.005 N·m moves it
+by a point.
+
+82
+00:06:33,307 --> 00:06:38,626
+Second, log observer and encoder angles
+while stepping the speed down:
+
+83
+00:06:38,666 --> 00:06:44,601
+under half a degree at 1000 rpm, 20 or 30
+degrees at 100 rpm and below.
+
+84
+00:06:45,606 --> 00:06:48,272
+That's the end of the series. Looking
+back:
+
+85
+00:06:48,312 --> 00:06:52,547
+We began with a compass needle beside a
+wire, put windings in slots,
+
+86
+00:06:52,588 --> 00:06:57,726
+let iron and magnets shape the field, and
+found the back-EMF and the torque.
+
+87
+00:06:57,766 --> 00:07:01,937
+Clarke and Park turned three alternating
+currents into two steady ones,
+
+88
+00:07:01,977 --> 00:07:04,531
+and the dq model gave their voltages.
+
+89
+00:07:04,571 --> 00:07:07,640
+The inverter makes those voltages. Current
+control,
+
+90
+00:07:07,680 --> 00:07:12,430
+field-oriented control, field weakening
+and the observer close the loop.
+
+91
+00:07:12,470 --> 00:07:17,058
+At every step: a model, its limits, and a
+number you can check on a bench.
+
+92
+00:07:18,058 --> 00:07:19,874
+Three capstone questions.
+
+93
+00:07:19,914 --> 00:07:25,326
+One: our surface-magnet motor spins
+unloaded at 5,800 rpm. Neglecting R
+
+94
+00:07:25,366 --> 00:07:31,626
+and the losses, what i_d does it need, and
+what copper loss does that cost?
+
+95
+00:07:32,226 --> 00:07:36,452
+Two: at standstill, why can high-frequency
+injection find the angle
+
+96
+00:07:36,492 --> 00:07:41,067
+of the interior-magnet rotor, but not of
+the surface-magnet one?
+
+97
+00:07:41,667 --> 00:07:45,033
+Three: rewind with twice the turns in the
+same slots,
+
+98
+00:07:45,073 --> 00:07:48,633
+so λm doubles and R and L quadruple. At
+the same torque,
+
+99
+00:07:48,673 --> 00:07:53,286
+what happens to the current, the copper
+loss and the base speed?
+
+100
+00:07:53,886 --> 00:07:56,417
+Worked answers are in the lesson's
+repository.
+
+101
+00:07:56,457 --> 00:07:58,746
+Thanks for following the series.

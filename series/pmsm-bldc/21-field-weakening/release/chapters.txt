@@ -1,0 +1,88 @@
+;FFMETADATA1
+title=Field Weakening, Sensorless Control, Losses — PMSM & BLDC, Lesson 21
+artist=lecture-forge
+language=eng
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=26119
+title=01 Running out of voltage
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=26119
+END=53891
+title=02 Answers from Lesson 20
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=53891
+END=86710
+title=03 Two limits in the current plane
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=86710
+END=128209
+title=04 Past base speed
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=128209
+END=161524
+title=05 The interior-magnet variant
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=161524
+END=192543
+title=06 Reading the angle from the back-EMF
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=192543
+END=220520
+title=07 Locking on: the PLL
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=220520
+END=254573
+title=08 Observer against encoder
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=254573
+END=291037
+title=09 Why it fails at low speed
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=291037
+END=334578
+title=10 Where the power goes
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=334578
+END=372318
+title=11 The efficiency map
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=372318
+END=405306
+title=12 Two measurements
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=405306
+END=437758
+title=13 Twenty-one lessons
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=437758
+END=479946
+title=14 Capstone questions
