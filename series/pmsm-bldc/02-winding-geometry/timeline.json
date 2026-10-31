@@ -1,0 +1,478 @@
+[
+ {
+  "id": "hook",
+  "title": "From smooth windings to slots",
+  "start": 0.0,
+  "beats": [
+   {
+    "id": "h1",
+    "start": 0.6,
+    "end": 4.357,
+    "text": "Last time, three ideal windings made a smooth, rotating field."
+   },
+   {
+    "id": "h2",
+    "start": 4.807,
+    "end": 11.353,
+    "text": "But real copper can't be spread smoothly around the bore. In this motor, it's twelve coils, one around each tooth."
+   },
+   {
+    "id": "h3",
+    "start": 11.803,
+    "end": 14.065,
+    "text": "So the field it makes comes out as a staircase."
+   },
+   {
+    "id": "h4",
+    "start": 14.565,
+    "end": 21.202,
+    "text": "Today we'll compute those steps from the winding layout, compare them with a sine wave, and find the part that makes torque."
+   }
+  ],
+  "end": 22.601625000000002
+ },
+ {
+  "id": "answers",
+  "title": "Answers from Lesson 1",
+  "start": 22.601625000000002,
+  "beats": [
+   {
+    "id": "a1",
+    "start": 23.002,
+    "end": 25.228,
+    "text": "First, last lesson's three predictions."
+   },
+   {
+    "id": "a2",
+    "start": 25.578,
+    "end": 29.294,
+    "text": "One: six amps at three centimetres gives forty microtesla."
+   },
+   {
+    "id": "a3",
+    "start": 29.744,
+    "end": 35.661,
+    "text": "Two: on the axis of a coil, the field halves at about 0.77 times the radius."
+   },
+   {
+    "id": "a4",
+    "start": 36.111,
+    "end": 41.383,
+    "text": "Three: swap two phase leads, and the rotating field reverses direction, at the same speed."
+   },
+   {
+    "id": "a5",
+    "start": 41.733,
+    "end": 48.674,
+    "text": "The current peaks now reach the windings in the order a, then c, then b. Phase sequence and winding layout have to agree."
+   }
+  ],
+  "end": 50.07441666666667
+ },
+ {
+  "id": "ampere",
+  "title": "Amp\u00e8re's law across the gap",
+  "start": 50.07441666666667,
+  "beats": [
+   {
+    "id": "m1",
+    "start": 50.474,
+    "end": 57.001,
+    "text": "Here's the stator in cross-section. Draw a closed path that crosses the air gap twice and returns through the steel."
+   },
+   {
+    "id": "m2",
+    "start": 57.401,
+    "end": 62.101,
+    "text": "Amp\u00e8re's law: the line integral of H around it equals the current it encloses."
+   },
+   {
+    "id": "m3",
+    "start": 62.501,
+    "end": 70.05,
+    "text": "The steel is so permeable that it needs almost no H. Only the two gap crossings count: each is H times the gap length, g."
+   },
+   {
+    "id": "m4",
+    "start": 70.45,
+    "end": 79.007,
+    "text": "Call that product F, the magnetomotive force, or MMF. F at the second crossing, minus F at the first, equals the enclosed current."
+   },
+   {
+    "id": "m5",
+    "start": 79.407,
+    "end": 86.669,
+    "text": "Now sweep the second crossing around. F stays flat until the path passes a slot, then jumps by that slot's current."
+   },
+   {
+    "id": "m6",
+    "start": 87.169,
+    "end": 95.471,
+    "text": "That assumes ideal steel, a uniform gap, and each slot's current concentrated at its centre: no slot openings, no saturation."
+   }
+  ],
+  "end": 96.871125
+ },
+ {
+  "id": "onecoil",
+  "title": "One coil: a square wave",
+  "start": 96.871125,
+  "beats": [
+   {
+    "id": "c1",
+    "start": 97.271,
+    "end": 102.161,
+    "text": "Let's unroll the gap into a straight line, with the stator on top and the rotor underneath."
+   },
+   {
+    "id": "c2",
+    "start": 102.761,
+    "end": 110.282,
+    "text": "One coil of N turns, carrying current i, makes F jump up by N i at one coil side, and back down at the other."
+   },
+   {
+    "id": "c3",
+    "start": 110.732,
+    "end": 122.273,
+    "text": "Amp\u00e8re's law only fixes differences. The level comes from flux: every line leaving the rotor returns to it, so the gap flux density, \u03bc\u2080F over g, averages to zero."
+   },
+   {
+    "id": "c4",
+    "start": 122.723,
+    "end": 130.965,
+    "text": "So one coil gives a zero-mean square wave: 11/12 of N i over its own tooth, and \u22121/12 everywhere else."
+   }
+  ],
+  "end": 132.36529166666668
+ },
+ {
+  "id": "phase",
+  "title": "Coils into a phase",
+  "start": 132.36529166666668,
+  "beats": [
+   {
+    "id": "p1",
+    "start": 132.765,
+    "end": 138.921,
+    "text": "This motor's layout is a, b, c, repeated four times, with every coil spanning a single tooth."
+   },
+   {
+    "id": "p2",
+    "start": 139.321,
+    "end": 148.835,
+    "text": "Phase a takes teeth 1, 4, 7 and 10, in series. Their square waves add into four positive blocks: four pole pairs, for the 8-pole rotor."
+   },
+   {
+    "id": "p3",
+    "start": 149.285,
+    "end": 156.021,
+    "text": "That's a concentrated winding. Slots per pole per phase, q, is 12 over 8 times 3: just one half."
+   },
+   {
+    "id": "p4",
+    "start": 156.471,
+    "end": 166.805,
+    "text": "A distributed winding spreads each phase over a group of adjacent slots, a phase belt. With 24 slots and 4 poles, q is 2, and the steps come in pairs."
+   },
+   {
+    "id": "p5",
+    "start": 167.205,
+    "end": 173.244,
+    "text": "More, smaller steps follow a sine wave more closely, at the price of longer, overlapping end turns."
+   }
+  ],
+  "end": 174.64445833333335
+ },
+ {
+  "id": "three",
+  "title": "Three phases at one instant",
+  "start": 174.64445833333335,
+  "beats": [
+   {
+    "id": "t1",
+    "start": 175.044,
+    "end": 177.639,
+    "text": "Now feed all three phases with balanced currents."
+   },
+   {
+    "id": "t2",
+    "start": 177.989,
+    "end": 183.001,
+    "text": "At this instant, phase a is at its peak, and b and c each carry minus half of it."
+   },
+   {
+    "id": "t3",
+    "start": 183.401,
+    "end": 187.818,
+    "text": "Each slot's current is the sum of its two coil sides, and the staircase follows."
+   },
+   {
+    "id": "t4",
+    "start": 188.218,
+    "end": 191.952,
+    "text": "Over each tooth, F is simply N times the current in that tooth's coil."
+   },
+   {
+    "id": "t5",
+    "start": 192.402,
+    "end": 200.149,
+    "text": "A Fourier fit gives the fundamental: one and a half times one phase's \u2014 the three-halves from last time, now from real slots."
+   }
+  ],
+  "end": 201.55695833333334
+ },
+ {
+  "id": "rotate",
+  "title": "The staircase moves",
+  "start": 201.55695833333334,
+  "beats": [
+   {
+    "id": "r1",
+    "start": 201.957,
+    "end": 203.007,
+    "text": "Now let time run."
+   },
+   {
+    "id": "r2",
+    "start": 203.607,
+    "end": 207.123,
+    "text": "The staircase doesn't glide. It changes shape, step by step."
+   },
+   {
+    "id": "r3",
+    "start": 207.823,
+    "end": 211.817,
+    "text": "But its fundamental keeps a constant amplitude, and travels steadily."
+   },
+   {
+    "id": "r4",
+    "start": 212.417,
+    "end": 218.74,
+    "text": "One electrical cycle moves it by one pole pair, a quarter turn here: the field turns at \u03c9 over p."
+   },
+   {
+    "id": "r5",
+    "start": 219.24,
+    "end": 223.326,
+    "text": "That's exactly the speed the 8-pole rotor turns at, to stay in step."
+   }
+  ],
+  "end": 224.82616666666667
+ },
+ {
+  "id": "windfunc",
+  "title": "The winding function",
+  "start": 224.82616666666667,
+  "beats": [
+   {
+    "id": "f1",
+    "start": 225.226,
+    "end": 233.922,
+    "text": "Let's package this as one function per phase. The turns function, n of \u03b8, counts the turns of phase a passed as you sweep around the gap."
+   },
+   {
+    "id": "f2",
+    "start": 234.322,
+    "end": 237.943,
+    "text": "Subtract its average, and you get the winding function, N of \u03b8."
+   },
+   {
+    "id": "f3",
+    "start": 238.393,
+    "end": 247.131,
+    "text": "Then the MMF is each winding function times its phase current, summed over the phases. Geometry lives in N of \u03b8; time, in the currents."
+   },
+   {
+    "id": "f4",
+    "start": 247.581,
+    "end": 258.471,
+    "text": "Its fundamental is 4 over \u03c0, times the series turns, times a winding factor, over the number of poles. For this winding, the winding factor is 0.866."
+   },
+   {
+    "id": "f5",
+    "start": 258.921,
+    "end": 266.836,
+    "text": "The same function sets how much rotor flux each phase links, so the winding factor scales both back-EMF and torque per amp."
+   }
+  ],
+  "end": 268.23608333333334
+ },
+ {
+  "id": "harmonics",
+  "title": "Harmonics, computed",
+  "start": 268.23608333333334,
+  "beats": [
+   {
+    "id": "k1",
+    "start": 268.636,
+    "end": 271.661,
+    "text": "What else is in the staircase? Take its Fourier transform."
+   },
+   {
+    "id": "k2",
+    "start": 272.061,
+    "end": 283.49,
+    "text": "The working harmonic is order 4, matching the 4 pole pairs. Then come orders 8, 16, 20 and 28, falling as one over the order: order 8 is half the fundamental."
+   },
+   {
+    "id": "k3",
+    "start": 283.94,
+    "end": 296.108,
+    "text": "Order 8 travels backwards, order 16 forwards, each at its own speed. None keeps step with the rotor, so none adds average torque; they add ripple, and losses in the magnets and rotor iron."
+   },
+   {
+    "id": "k4",
+    "start": 296.558,
+    "end": 306.486,
+    "text": "Nothing appears below order 4: the layout repeats four times around the stator, the common factor of 12 slots and 4 pole pairs. No sub-harmonics."
+   },
+   {
+    "id": "k5",
+    "start": 306.936,
+    "end": 317.965,
+    "text": "With a 10-pole rotor, the same twelve coils are connected differently. The pattern repeats only once, and an order-1 sub-harmonic appears, about a third of the working harmonic."
+   }
+  ],
+  "end": 319.3646666666666
+ },
+ {
+  "id": "script",
+  "title": "Exercise: script the MMF",
+  "start": 319.3646666666666,
+  "beats": [
+   {
+    "id": "e1",
+    "start": 319.765,
+    "end": 325.457,
+    "text": "Your turn. Write the winding as a table: for each slot, which phase, which direction, how many turns."
+   },
+   {
+    "id": "e2",
+    "start": 325.857,
+    "end": 332.5,
+    "text": "Multiply by the phase currents, take a running total around the stator, and subtract the mean: that's the staircase."
+   },
+   {
+    "id": "e3",
+    "start": 332.9,
+    "end": 345.925,
+    "text": "An FFT gives the harmonics. Check against these numbers: winding factor 0.866, a fundamental of N times the peak current times 0.827, and order 8 at half of that."
+   },
+   {
+    "id": "e4",
+    "start": 346.375,
+    "end": 352.476,
+    "text": "Compared with a pure sine wave, the harmonics carry an RMS of 68 percent of the fundamental's."
+   }
+  ],
+  "end": 353.87624999999986
+ },
+ {
+  "id": "resistance",
+  "title": "Exercise: measure phase resistance",
+  "start": 353.87624999999986,
+  "beats": [
+   {
+    "id": "q1",
+    "start": 354.276,
+    "end": 366.107,
+    "text": "The winding table also predicts resistance: 4 coils of 6 turns per phase is about 1.8 metres of 1-millimetre copper, or 39 milliohms; 40 with the connections."
+   },
+   {
+    "id": "q2",
+    "start": 366.557,
+    "end": 371.09,
+    "text": "That's too small for a two-wire ohmmeter: leads and clips can add as much again."
+   },
+   {
+    "id": "q3",
+    "start": 371.49,
+    "end": 384.427,
+    "text": "So use four wires. A constant-current supply drives 2 amps through two motor leads, and a separate voltmeter senses right at the terminals. It draws almost no current, so lead resistance drops out."
+   },
+   {
+    "id": "q4",
+    "start": 384.877,
+    "end": 395.0,
+    "text": "In star, line to line is two phases in series: expect about 160 millivolts. Measure all three pairs; they should agree within about one percent."
+   },
+   {
+    "id": "q5",
+    "start": 395.45,
+    "end": 405.117,
+    "text": "Then correct for temperature: copper rises 0.393 percent per kelvin, so divide by one plus \u03b1 times the rise above 20 degrees."
+   }
+  ],
+  "end": 406.53337499999975
+ },
+ {
+  "id": "limits",
+  "title": "Where this model stops",
+  "start": 406.53337499999975,
+  "beats": [
+   {
+    "id": "l1",
+    "start": 406.933,
+    "end": 408.511,
+    "text": "So where does this model stop?"
+   },
+   {
+    "id": "l2",
+    "start": 408.911,
+    "end": 414.379,
+    "text": "Real steel needs some MMF of its own, and saturates at high current: Lessons 3 and 4."
+   },
+   {
+    "id": "l3",
+    "start": 414.829,
+    "end": 426.815,
+    "text": "Real slots have openings. Spreading each step across the 2-millimetre opening lowers the fundamental by under one percent; openings also make the gap look longer. That's Lesson 5."
+   },
+   {
+    "id": "l4",
+    "start": 427.265,
+    "end": 434.144,
+    "text": "And surface magnets act as extra gap, so this MMF makes only tens of millitesla. Next time shows why."
+   }
+  ],
+  "end": 435.5441666666664
+ },
+ {
+  "id": "predict",
+  "title": "Predict, then check",
+  "start": 435.5441666666664,
+  "beats": [
+   {
+    "id": "x1",
+    "start": 435.944,
+    "end": 437.864,
+    "text": "Three predictions before next time."
+   },
+   {
+    "id": "x2",
+    "start": 438.264,
+    "end": 443.597,
+    "text": "One: a coil of N turns carries current I. What's the total jump of its MMF square wave?"
+   },
+   {
+    "id": "x3",
+    "start": 445.397,
+    "end": 453.619,
+    "text": "Two: with balanced three-phase currents, how does the fundamental of the total MMF compare with the peak fundamental of one phase alone?"
+   },
+   {
+    "id": "x4",
+    "start": 455.419,
+    "end": 462.063,
+    "text": "Three: double the air gap, with ideal iron. What happens to the air-gap flux density from the same MMF?"
+   },
+   {
+    "id": "x5",
+    "start": 463.863,
+    "end": 469.529,
+    "text": "Next time: magnetic circuits \u2014 reluctance, the air gap, and the magnet as a source of MMF."
+   }
+  ],
+  "end": 471.7286249999998
+ }
+]
