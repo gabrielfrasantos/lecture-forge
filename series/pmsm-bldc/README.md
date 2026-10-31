@@ -15,7 +15,7 @@ Goal: intuition strong enough to derive the equations, predict behaviour and rea
 | 8 | Energy and co-energy | Force and torque from co-energy | Co-energy vs Maxwell stress on an actuator | Planned |
 | 9 | Torque in a PM machine | Alignment torque, cogging | Measure cogging torque with a lever and scale | Planned |
 | 10 | Saliency | Surface vs interior PM, Ld and Lq | Inductance vs rotor angle with an LCR meter | Planned |
-| 11 | Space vectors | Phasors vs space vectors, scaling conventions | Space vectors from logged currents | Planned |
+| 11 | [Space vectors](11-space-vectors) | Phasors vs space vectors, scaling conventions | Space vectors from logged currents | Rendered (7:54) |
 | 12 | Clarke transformation | abc → αβ, zero sequence | Plot the αβ locus of measured currents | Planned |
 | 13 | Park transformation | Rotating frames; angle from Hall sensors or encoder | Effect of angle error on d and q | Planned |
 | 14 | The d–q model | Voltage and torque equations | Simulate a current step; steady-state phasor diagram | Planned |
