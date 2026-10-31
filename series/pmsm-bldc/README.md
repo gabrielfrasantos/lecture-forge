@@ -12,7 +12,7 @@ Goal: intuition strong enough to derive the equations, predict behaviour and rea
 | 5 | [The rotor's air-gap field](05-air-gap-field) | Surface-magnet flux density, slot openings, Carter coefficient | 2D FEA of the pilot motor, labelled as FEA | Rendered (7:59) |
 | 6 | [Winding factors and harmonics](06-winding-factors) | Distribution and pitch factors; concentrated vs distributed | Winding factors for 9s/6p, 12s/8p, 24s/4p | Rendered (7:59) |
 | 7 | Back-EMF | Flux linkage, e = dλ/dt, Ke | Spin a motor with a drill; extract Ke from the scope | Planned |
-| 8 | Energy and co-energy | Force and torque from co-energy | Co-energy vs Maxwell stress on an actuator | Planned |
+| 8 | [Energy and co-energy](08-energy-coenergy) | Force and torque from co-energy | Co-energy vs Maxwell stress on an actuator | Rendered (8:00) |
 | 9 | Torque in a PM machine | Alignment torque, cogging | Measure cogging torque with a lever and scale | Planned |
 | 10 | Saliency | Surface vs interior PM, Ld and Lq | Inductance vs rotor angle with an LCR meter | Planned |
 | 11 | [Space vectors](11-space-vectors) | Phasors vs space vectors, scaling conventions | Space vectors from logged currents | Rendered (7:54) |
