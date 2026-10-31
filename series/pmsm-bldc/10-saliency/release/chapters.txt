@@ -1,0 +1,76 @@
+;FFMETADATA1
+title=Saliency — PMSM & BLDC, Lesson 10
+artist=lecture-forge
+language=eng
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=30709
+title=01 A rotor that isn't round
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=30709
+END=57859
+title=02 Answers from Lesson 9
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=57859
+END=99528
+title=03 Surface magnets look round
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=99528
+END=139931
+title=04 Bury the magnets
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=139931
+END=191164
+title=05 Two paths: d and q
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=191164
+END=223171
+title=06 Inductance at twice the angle
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=223171
+END=272638
+title=07 Reluctance torque from co-energy
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=272638
+END=310984
+title=08 Torque vs current angle
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=310984
+END=346284
+title=09 Maximum torque per amp
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=346284
+END=403191
+title=10 Bench: Ld and Lq with an LCR meter
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=403191
+END=446830
+title=11 What the meter can't see
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=446830
+END=476899
+title=12 Predict, then check

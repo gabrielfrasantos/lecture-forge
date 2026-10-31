@@ -1,0 +1,404 @@
+[
+ {
+  "id": "hook",
+  "title": "A rotor that isn't round",
+  "start": 0.0,
+  "beats": [
+   {
+    "id": "h1",
+    "start": 0.6,
+    "end": 5.736,
+    "text": "Clip an inductance meter across two terminals of a motor, and turn the shaft slowly by hand."
+   },
+   {
+    "id": "h2",
+    "start": 6.136,
+    "end": 13.194,
+    "text": "With surface magnets, the reading hardly moves: 0.085 mH in Lesson 5's 2D model."
+   },
+   {
+    "id": "h3",
+    "start": 13.494,
+    "end": 22.748,
+    "text": "Bury the magnets inside the iron, and it swings from 0.124 to 0.188 mH, twice per electrical cycle."
+   },
+   {
+    "id": "h4",
+    "start": 23.148,
+    "end": 29.509,
+    "text": "That swing is saliency: the rotor isn't magnetically round. And it gives the motor a second kind of torque."
+   }
+  ],
+  "end": 30.70929166666667
+ },
+ {
+  "id": "answers",
+  "title": "Answers from Lesson 9",
+  "start": 30.70929166666667,
+  "beats": [
+   {
+    "id": "a1",
+    "start": 31.009,
+    "end": 33.136,
+    "text": "First, the answers from Lesson 9."
+   },
+   {
+    "id": "a2",
+    "start": 33.436,
+    "end": 39.367,
+    "text": "One: 9 slots and 6 poles cog 18 times per revolution, their least common multiple."
+   },
+   {
+    "id": "a3",
+    "start": 39.667,
+    "end": 47.68,
+    "text": "Two: 15 A on the q axis gives 0.039 \u00d7 15 = 0.585 N\u00b7m."
+   },
+   {
+    "id": "a4",
+    "start": 47.98,
+    "end": 56.759,
+    "text": "Three: yes, when Lq is larger than Ld. Then (Ld \u2212 Lq) i_d i_q is positive for negative i_d."
+   }
+  ],
+  "end": 57.858624999999996
+ },
+ {
+  "id": "round",
+  "title": "Surface magnets look round",
+  "start": 57.858624999999996,
+  "beats": [
+   {
+    "id": "s1",
+    "start": 58.159,
+    "end": 66.366,
+    "text": "Start with the surface magnets. To the stator's current, a magnet is almost air: its recoil permeability is 1.05."
+   },
+   {
+    "id": "s2",
+    "start": 66.666,
+    "end": 78.292,
+    "text": "So flux on the d axis crosses the gap and 3 mm of magnet; on the q axis, between the magnets, the gap and 3 mm of air. Almost the same path."
+   },
+   {
+    "id": "s3",
+    "start": 78.592,
+    "end": 89.635,
+    "text": "The solver agrees. Turn the rotor through a whole electrical cycle: Ld and Lq both stay at 0.0423 mH, within 0.1%."
+   },
+   {
+    "id": "s4",
+    "start": 89.935,
+    "end": 98.428,
+    "text": "The nominal 0.05 mH adds the end windings, which a 2D model can't see. Either way, this rotor looks round."
+   }
+  ],
+  "end": 99.52791666666666
+ },
+ {
+  "id": "buried",
+  "title": "Bury the magnets",
+  "start": 99.52791666666666,
+  "beats": [
+   {
+    "id": "i1",
+    "start": 99.828,
+    "end": 111.003,
+    "text": "Now bury them. Each pole gets a flat magnet, 9 by 3 mm, 4 mm under the surface, an air pocket at each end, and a 1 mm iron rib between poles."
+   },
+   {
+    "id": "i2",
+    "start": 111.303,
+    "end": 123.682,
+    "text": "Same stator, same 6 turns per coil. The magnets give \u03bbm = 4.13 mWb, against 5.94 for the surface rotor, with 70% of its magnet area."
+   },
+   {
+    "id": "i3",
+    "start": 123.982,
+    "end": 129.058,
+    "text": "A real rotor closes each pocket with a thin iron bridge, which the magnet saturates."
+   },
+   {
+    "id": "i4",
+    "start": 129.258,
+    "end": 138.831,
+    "text": "Linear iron can't saturate, so here the pockets stay open. Two saturated 0.5 mm bridges would leak about 19% of the magnet's flux."
+   }
+  ],
+  "end": 139.93087499999996
+ },
+ {
+  "id": "paths",
+  "title": "Two paths: d and q",
+  "start": 139.93087499999996,
+  "beats": [
+   {
+    "id": "d1",
+    "start": 140.231,
+    "end": 144.146,
+    "text": "Now drive 20 A along each axis, with the magnets switched off."
+   },
+   {
+    "id": "d2",
+    "start": 144.446,
+    "end": 155.271,
+    "text": "On the d axis, the flux has to cross the magnet: 3 mm of near-air. On the q axis, it runs between the magnets, through iron, and crosses little more than the gap."
+   },
+   {
+    "id": "d3",
+    "start": 155.571,
+    "end": 165.992,
+    "text": "The solver gives Ld = 0.0605 mH and Lq = 0.0933 mH: Lq is 1.54 times Ld."
+   },
+   {
+    "id": "d4",
+    "start": 166.292,
+    "end": 175.318,
+    "text": "Ld is above the surface rotor's, because some d-axis flux bypasses the magnet: through the iron above it, across the pockets, and down the ribs."
+   },
+   {
+    "id": "d5",
+    "start": 175.618,
+    "end": 190.064,
+    "text": "The series' reference IPM is a separate design, with more turns and end windings: Ld = 0.16, Lq = 0.32 mH, \u03bbm = 5.0 mWb. Later lessons use those."
+   }
+  ],
+  "end": 191.164125
+ },
+ {
+  "id": "twice",
+  "title": "Inductance at twice the angle",
+  "start": 191.164125,
+  "beats": [
+   {
+    "id": "t1",
+    "start": 191.464,
+    "end": 197.071,
+    "text": "Back to the meter. Here's the self-inductance of phase a as the buried-magnet rotor turns."
+   },
+   {
+    "id": "t2",
+    "start": 197.371,
+    "end": 203.345,
+    "text": "It's lowest when a magnet faces the coil, and highest a quarter cycle later, when the q axis does."
+   },
+   {
+    "id": "t3",
+    "start": 203.645,
+    "end": 212.399,
+    "text": "A north pole and a south pole look the same to the iron, so the pattern repeats every half cycle: L0 + L2 cos 2\u03b8e."
+   },
+   {
+    "id": "t4",
+    "start": 212.699,
+    "end": 222.071,
+    "text": "The mutual inductances swing the same way. Park's transform turns it all into two near-constants, with Ld \u2212 Lq = 3 L2."
+   }
+  ],
+  "end": 223.1714583333334
+ },
+ {
+  "id": "reluctance",
+  "title": "Reluctance torque from co-energy",
+  "start": 223.1714583333334,
+  "beats": [
+   {
+    "id": "r1",
+    "start": 223.471,
+    "end": 233.239,
+    "text": "Lesson 8's co-energy gives the torque. With the magnets off, it's \u00bd i\u1d40 L i, and torque is its slope with rotor angle at constant current."
+   },
+   {
+    "id": "r2",
+    "start": 233.539,
+    "end": 243.026,
+    "text": "Put the cos 2\u03b8 terms into all three phases, add them up, and you get 3/2 p (Ld \u2212 Lq) i_d i_q."
+   },
+   {
+    "id": "r3",
+    "start": 243.326,
+    "end": 251.345,
+    "text": "Physically, the iron turns to bring its easy path, the q axis, toward the stator field, like Lesson 8's reluctance actuator."
+   },
+   {
+    "id": "r4",
+    "start": 251.645,
+    "end": 266.168,
+    "text": "Switch the magnets off in the solver and sweep the current angle at 20 A: a pure sin 2\u03b3, 0.039 N\u00b7m at 135\u00b0, within 0.04% of the formula."
+   },
+   {
+    "id": "r5",
+    "start": 266.468,
+    "end": 271.538,
+    "text": "It's positive only between 90\u00b0 and 180\u00b0, where i_d is negative."
+   }
+  ],
+  "end": 272.63804166666677
+ },
+ {
+  "id": "angle",
+  "title": "Torque vs current angle",
+  "start": 272.63804166666677,
+  "beats": [
+   {
+    "id": "g1",
+    "start": 272.938,
+    "end": 277.141,
+    "text": "Now switch the magnets back on, and compare both rotors at 20 A."
+   },
+   {
+    "id": "g2",
+    "start": 277.441,
+    "end": 284.477,
+    "text": "The surface rotor gives a pure sine: 0.713 N\u00b7m at 90\u00b0, all current on q."
+   },
+   {
+    "id": "g3",
+    "start": 284.777,
+    "end": 296.697,
+    "text": "The buried-magnet rotor adds its sin 2\u03b3 term, so its peak moves past 90\u00b0, to about 99\u00b0, with a little negative i_d: 0.502 N\u00b7m."
+   },
+   {
+    "id": "g4",
+    "start": 296.997,
+    "end": 309.884,
+    "text": "That's only 1.2% more than pure q current. Here (Lq \u2212 Ld) times the current is small next to \u03bbm: 0.66 against 4.13 mWb."
+   }
+  ],
+  "end": 310.9838333333335
+ },
+ {
+  "id": "mtpa",
+  "title": "Maximum torque per amp",
+  "start": 310.9838333333335,
+  "beats": [
+   {
+    "id": "m1",
+    "start": 311.284,
+    "end": 318.182,
+    "text": "In the reference IPM, it's 3.2 against 5.0 mWb, and the reluctance term matters."
+   },
+   {
+    "id": "m2",
+    "start": 318.482,
+    "end": 334.937,
+    "text": "20 A, all on q, makes 0.600 N\u00b7m. Turn the current to 114.7\u00b0, i_d = \u22128.3 A and i_q = 18.2 A, and it makes 0.691: 15% more from the same current."
+   },
+   {
+    "id": "m3",
+    "start": 335.237,
+    "end": 345.172,
+    "text": "Choosing that angle at every current is maximum torque per amp, MTPA. The angle grows with current; in Lesson 20, it goes into the controller."
+   }
+  ],
+  "end": 346.2837916666669
+ },
+ {
+  "id": "bench",
+  "title": "Bench: Ld and Lq with an LCR meter",
+  "start": 346.2837916666669,
+  "beats": [
+   {
+    "id": "b1",
+    "start": 346.584,
+    "end": 354.125,
+    "text": "You can measure Ld and Lq with an LCR meter. Connect it across two terminals, a and b, and leave c open."
+   },
+   {
+    "id": "b2",
+    "start": 354.425,
+    "end": 364.279,
+    "text": "Choose series inductance at a low frequency, say 100 Hz. Turn the rotor 1.5 mechanical degrees at a time, and hold it for each reading."
+   },
+   {
+    "id": "b3",
+    "start": 364.579,
+    "end": 376.98,
+    "text": "With a star winding, the reading is (Ld + Lq) + (Ld \u2212 Lq) cos(2\u03b8e + 60\u00b0). Its minimum is 2 Ld, its maximum 2 Lq."
+   },
+   {
+    "id": "b4",
+    "start": 377.28,
+    "end": 390.61,
+    "text": "No neutral needed: halve the extremes. For the reference IPM, expect 0.32 to 0.64 mH; for the surface-magnet motor, a flat 0.10."
+   },
+   {
+    "id": "b5",
+    "start": 390.91,
+    "end": 402.091,
+    "text": "Checked on the solver's 2D rotor: half its extremes give 0.0621 and 0.0938 mH, within 3% of the Park values."
+   }
+  ],
+  "end": 403.19120833333363
+ },
+ {
+  "id": "caveats",
+  "title": "What the meter can't see",
+  "start": 403.19120833333363,
+  "beats": [
+   {
+    "id": "c1",
+    "start": 403.491,
+    "end": 410.406,
+    "text": "Careful, though. The meter drives milliamps, so it reads the small-signal, incremental inductance near zero current."
+   },
+   {
+    "id": "c2",
+    "start": 410.706,
+    "end": 420.888,
+    "text": "At rated current, the iron on the q path saturates and Lq falls. The magnets already saturate the bridges, which shifts Ld. A linear model can't show either."
+   },
+   {
+    "id": "c3",
+    "start": 421.188,
+    "end": 437.135,
+    "text": "Frequency matters too: eddy currents push flux out of the steel. With \u03bcr = 4000, the skin depth is 0.57 mm at 100 Hz, but 0.18 mm at 1 kHz, half a lamination."
+   },
+   {
+    "id": "c4",
+    "start": 437.435,
+    "end": 445.73,
+    "text": "So read at two frequencies; if they disagree, go lower. And disconnect the drive: anything on the third terminal lets current couple in."
+   }
+  ],
+  "end": 446.8297083333337
+ },
+ {
+  "id": "predict",
+  "title": "Predict, then check",
+  "start": 446.8297083333337,
+  "beats": [
+   {
+    "id": "q1",
+    "start": 447.13,
+    "end": 449.05,
+    "text": "Three predictions before next time."
+   },
+   {
+    "id": "q2",
+    "start": 449.45,
+    "end": 455.518,
+    "text": "One: an 8-pole IPM motor. How many inductance cycles per mechanical revolution?"
+   },
+   {
+    "id": "q3",
+    "start": 456.918,
+    "end": 463.034,
+    "text": "Two: the reference IPM, with i_d = \u221210 A and i_q = 10 A. What torque?"
+   },
+   {
+    "id": "q4",
+    "start": 464.434,
+    "end": 469.308,
+    "text": "Three: what can bias an LCR-meter inductance reading on a stationary rotor?"
+   },
+   {
+    "id": "q5",
+    "start": 470.708,
+    "end": 475.099,
+    "text": "Next time: space vectors, three phase currents as one rotating arrow."
+   }
+  ],
+  "end": 476.89900000000034
+ }
+]

@@ -1,0 +1,166 @@
+{
+ "rep": {
+  "video": "h264 1920x1080 30/1 476.90s",
+  "audio": "aac 48000 Hz 1 ch 476.90s",
+  "subtitles": "1 track(s): mov_text/eng",
+  "chapters": 12,
+  "av_duration_diff_s": 0.001,
+  "integrated_LUFS": -16.1,
+  "true_peak_dBTP": -1.4,
+  "LRA_LU": 2.7,
+  "asr_word_error_rate": 0.047,
+  "captions": "88 cues, 0 cues mostly over silence, 0 overlaps, max 17.9 chars/s, last cue ends 475.6s"
+ },
+ "mism": [
+  [
+   "a2",
+   "One: 9 slots and 6 poles cog 18 times per revolution, their least common multiple.",
+   "1, 9 slots in 6 poles cog 18 times per revolution. Their least common multiple."
+  ],
+  [
+   "a3",
+   "Two: 15 amps on the Q axis gives 0.039 times 15: 0.585 newton meters.",
+   "2, 15 amps on the Q-axis gives 0.039 times 15. 0.585 Newton meters."
+  ],
+  [
+   "a4",
+   "Three: yes, when LQ is larger than LD. Then LD minus LQ, times ID, times IQ, is positive for negative ID.",
+   "3. Yes, when LQ is larger than LD. Then LD minus LQ times ID times IQ is positive for negative ID."
+  ],
+  [
+   "s2",
+   "So flux on the D axis crosses the gap and 3 millimeters of magnet. On the Q axis, between the magnets, it crosses the gap and 3 millimeters of air. Almost the same path.",
+   "So flux on the D-axis crosses the gap and 3 mm of magnet. On the Q-axis, between the magnets, it crosses the gap and 3 mm of air. Almost the same path."
+  ],
+  [
+   "s3",
+   "The solver agrees. Turn the rotor through a whole electrical cycle, and LD and LQ both stay at 0.0423 millihenries, within 0.1%.",
+   "The solver agrees. Turn the rotor through a whole electrical cycle and LD and LQ both stay at 0.0423 mHs within 0.1%."
+  ],
+  [
+   "s4",
+   "The nominal 0.05 millihenries adds the end windings, which a 2D model can't see. Either way, this rotor looks round.",
+   "The nominal 0.05 millionaries adds the end windings, which a 2D model can't see. Either way, this rotor looks round."
+  ],
+  [
+   "i2",
+   "Same stator, same 6 turns per coil. The magnets give a flux linkage of 4.13 milliwebers, against 5.94 for the surface rotor, with 70% of its magnet area.",
+   "Same stator, same six turns per coil. The magnets give a flux linkage of 4.13 milliwebers against 5.94 for the surface rotor with 70% of its magnet area."
+  ],
+  [
+   "d1",
+   "Now drive 20 amps along each axis, with the magnets switched off.",
+   "Now drive 20 amps along each axis, with the magnet switched off."
+  ],
+  [
+   "d3",
+   "The solver gives LD of 0.0605 millihenries, and LQ of 0.0933. LQ is 1.54 times LD.",
+   "The solver gives LD of 0.0605 millihenries, an LQ of 0.0933. LQ is 1.54 times LD."
+  ],
+  [
+   "d4",
+   "LD is above the surface rotor's, because some D axis flux bypasses the magnet: through the iron above it, across the pockets, and down the ribs.",
+   "LD is above the surface rotors because some D-axis flux bypasses the magnet, through the iron above it, across the pockets, and down the ribs."
+  ],
+  [
+   "d5",
+   "The series' reference interior magnet motor is a separate design, with more turns and end windings: LD of 0.16, LQ of 0.32 millihenries, and 5.0 milliwebers. Later lessons use those.",
+   "The series reference interior magnet motor is a separate design, with more turns and end windings. LD of 0.16, LQ of 0.32 millihenries, and 5 milliwebers. Later lessons use those."
+  ],
+  [
+   "t1",
+   "Back to the meter. Here's the self inductance of phase [a](/ˈA/) as the buried magnet rotor turns.",
+   "Back to the meter. Here's the self-inductance of phase A as the buried magnet rotor turns."
+  ],
+  [
+   "t3",
+   "A north pole and a south pole look the same to the iron, so the pattern repeats every half cycle: L nought, plus L two, cosine two theta E.",
+   "A north pole and a south pole look the same to the iron, so the pattern repeats every half cycle. L naught plus L2 cosine 2 theta E."
+  ],
+  [
+   "t4",
+   "The mutual inductances swing the same way. Park's transform turns it all into two near-constants, with LD minus LQ equal to three L two.",
+   "The mutual inductances swing the same way. Parks transform turns it all into two near constants, with LD minus LQ equal to 3L2."
+  ],
+  [
+   "r1",
+   "Lesson 8's co-energy gives the torque. With the magnets off, it's one half, i transpose L i, and torque is its slope with rotor angle, at constant current.",
+   "Lesson 8's co-energy gives the torque. With the magnets off, it's 1/2 i transpose Li, and torque is its slope with rotor angle at constant current."
+  ],
+  [
+   "r2",
+   "Put the cosine two theta terms into all three phases, add them up, and you get three halves, p, times LD minus LQ, times ID, times IQ.",
+   "Put the cosine 2 theta terms into all three phases, add them up, and you get 3/2 p times LD minus LQ times ID times IQ."
+  ],
+  [
+   "r4",
+   "Switch the magnets off in the solver, and sweep the current angle at 20 amps. It's a pure sine of two gamma: 0.039 newton meters at 135 degrees, within 0.04% of the formula.",
+   "switch the magnets off in the solver and sweep the current angle at 20 amps. It's a pure sign of 2-gamma, 0.039 newton meters at 135 degrees, within 0.04% of the formula."
+  ],
+  [
+   "g2",
+   "The surface rotor gives a pure sine: 0.713 newton meters at 90 degrees, all current on Q.",
+   "The surface rotor gives a pure sign. 0.713 newton meters at 90 degrees, all current on Q."
+  ],
+  [
+   "g3",
+   "The buried magnet rotor adds its sine two gamma term, so its peak moves past 90 degrees, to about 99, with a little negative ID: 0.502 newton meters.",
+   "The buried magnet rotor adds its sine 2-gamma term, so its peak moves past 90 degrees to about 99 with a little negative id. 0.502 Newton meters."
+  ],
+  [
+   "g4",
+   "That's only 1.2% more than pure Q current. Here, LQ minus LD, times the current, is small next to the magnet flux: 0.66 against 4.13 milliwebers.",
+   "That's only 1.2% more than pure Q current. Here, LQ-LD times the current is small next to the magnet flux. 0.66 against 4.13 milliwebers."
+  ],
+  [
+   "b1",
+   "You can measure LD and LQ with an LCR meter. Connect it across two terminals, [a](/ˈA/) and [b](/bˈi/), and leave [c](/sˈi/) open.",
+   "You can measure LD and LQ with an LCR meter. Connect it across two terminals, A and B, and leave C open."
+  ],
+  [
+   "b2",
+   "Choose series inductance, at a low frequency, say 100 hertz. Turn the rotor 1.5 mechanical degrees at a time, and hold it for each reading.",
+   "Choose series inductance at a low frequency, say 100 hertz. Turn the rotor 1.5 mechanical degrees at a time and hold it for each reading. [BUZZER]"
+  ],
+  [
+   "b3",
+   "With a star winding, the reading is LD plus LQ, plus LD minus LQ, times the cosine of two theta E plus 60 degrees. Its minimum is two LD, and its maximum, two LQ.",
+   "With a star winding, the reading is LD plus LQ, plus LD minus LQ, times the cosine of 2 theta E plus 60 degrees. Its minimum is 2 LD, and its maximum 2 LQ."
+  ],
+  [
+   "b4",
+   "No neutral needed: just halve the extremes. For the reference interior magnet motor, expect 0.32 to 0.64 millihenries. For the surface magnet motor, a flat 0.10.",
+   "no neutral needed. Just have the extremes. For the reference interior magnet motor, expect 0.32 to 0.64 millihenries. For the surface magnet motor, a flat 0.1."
+  ],
+  [
+   "b5",
+   "Checked on the solver's 2D rotor: half its extremes give 0.0621 and 0.0938 millihenries, within 3% of the Park values.",
+   "checked on the solvers 2D rotor. Half its extremes give 0.0621 and 0.0938 millionaries within 3% of the park values."
+  ],
+  [
+   "c2",
+   "At rated current, the iron on the Q path saturates, and LQ falls. The magnets already saturate the bridges, which shifts LD. A linear model can't show either.",
+   "At rated current, the iron on the Q-path saturates and LQ falls. The magnets already saturate the bridges, which shifts LD. A linear model can't show either. [BUZZER]"
+  ],
+  [
+   "q2",
+   "One: an 8 pole interior magnet motor. How many inductance cycles per mechanical revolution?",
+   "1. An 8-pole interior magnet motor. How many inductance cycles per mechanical revolution? //"
+  ],
+  [
+   "q3",
+   "Two: the reference interior magnet motor, with minus 10 amps on D, and 10 on Q. What torque?",
+   "2. The reference interior magnet motor with -10 amps on D and 10 on Q what torque."
+  ],
+  [
+   "q4",
+   "Three: what can bias an LCR-meter inductance reading on a stationary rotor?",
+   "3. What can bias an LCR meter inductance, reading on a stationary rotor?"
+  ],
+  [
+   "q5",
+   "Next time: space vectors, three phase currents as one rotating arrow.",
+   "Next time, space factors three-phase currents as one rotating arrow."
+  ]
+ ]
+}

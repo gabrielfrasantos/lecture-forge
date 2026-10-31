@@ -1,0 +1,426 @@
+1
+00:00:00,600 --> 00:00:03,777
+Clip an inductance meter across two
+terminals of a motor,
+
+2
+00:00:03,817 --> 00:00:06,096
+and turn the shaft slowly by hand.
+
+3
+00:00:06,136 --> 00:00:13,454
+With surface magnets, the reading hardly
+moves: 0.085 mH in Lesson 5's 2D model.
+
+4
+00:00:13,494 --> 00:00:16,570
+Bury the magnets inside the iron,
+
+5
+00:00:16,610 --> 00:00:23,108
+and it swings from 0.124 to 0.188 mH,
+twice per electrical cycle.
+
+6
+00:00:23,148 --> 00:00:26,649
+That swing is saliency: the rotor isn't
+magnetically round.
+
+7
+00:00:26,689 --> 00:00:30,009
+And it gives the motor a second kind of
+torque.
+
+8
+00:00:31,009 --> 00:00:33,396
+First, the answers from Lesson 9.
+
+9
+00:00:33,436 --> 00:00:39,627
+One: 9 slots and 6 poles cog 18 times per
+revolution, their least common multiple.
+
+10
+00:00:39,667 --> 00:00:47,940
+Two: 15 A on the q axis gives 0.039 × 15 =
+0.585 N·m.
+
+11
+00:00:47,980 --> 00:00:51,647
+Three: yes, when Lq is larger than Ld.
+
+12
+00:00:51,687 --> 00:00:57,259
+Then (Ld − Lq) i_d i_q is positive for
+negative i_d.
+
+13
+00:00:58,159 --> 00:01:02,223
+Start with the surface magnets. To the
+stator's current,
+
+14
+00:01:02,262 --> 00:01:06,626
+a magnet is almost air: its recoil
+permeability is 1.05.
+
+15
+00:01:06,666 --> 00:01:12,648
+So flux on the d axis crosses the gap and
+3 mm of magnet; on the q axis,
+
+16
+00:01:12,688 --> 00:01:18,552
+between the magnets, the gap and 3 mm of
+air. Almost the same path.
+
+17
+00:01:18,592 --> 00:01:25,100
+The solver agrees. Turn the rotor through
+a whole electrical cycle:
+
+18
+00:01:25,140 --> 00:01:29,895
+Ld and Lq both stay at 0.0423 mH, within
+0.1%.
+
+19
+00:01:29,935 --> 00:01:33,292
+The nominal 0.05 mH adds the end windings,
+
+20
+00:01:33,332 --> 00:01:38,928
+which a 2D model can't see. Either way,
+this rotor looks round.
+
+21
+00:01:39,828 --> 00:01:46,094
+Now bury them. Each pole gets a flat
+magnet, 9 by 3 mm, 4 mm under the surface,
+
+22
+00:01:46,134 --> 00:01:51,263
+an air pocket at each end, and a 1 mm iron
+rib between poles.
+
+23
+00:01:51,303 --> 00:01:57,594
+Same stator, same 6 turns per coil. The
+magnets give λm = 4.13 mWb,
+
+24
+00:01:57,634 --> 00:02:03,942
+against 5.94 for the surface rotor, with
+70% of its magnet area.
+
+25
+00:02:03,982 --> 00:02:07,367
+A real rotor closes each pocket with a
+thin iron bridge,
+
+26
+00:02:07,407 --> 00:02:09,218
+which the magnet saturates.
+
+27
+00:02:09,258 --> 00:02:13,522
+Linear iron can't saturate, so here the
+pockets stay open.
+
+28
+00:02:13,562 --> 00:02:19,331
+Two saturated 0.5 mm bridges would leak
+about 19% of the magnet's flux.
+
+29
+00:02:20,231 --> 00:02:24,406
+Now drive 20 A along each axis, with the
+magnets switched off.
+
+30
+00:02:24,446 --> 00:02:29,852
+On the d axis, the flux has to cross the
+magnet: 3 mm of near-air. On the q axis,
+
+31
+00:02:29,892 --> 00:02:35,531
+it runs between the magnets, through iron,
+and crosses little more than the gap.
+
+32
+00:02:35,571 --> 00:02:46,252
+The solver gives Ld = 0.0605 mH and Lq =
+0.0933 mH: Lq is 1.54 times Ld.
+
+33
+00:02:46,292 --> 00:02:51,175
+Ld is above the surface rotor's, because
+some d-axis flux bypasses the magnet:
+
+34
+00:02:51,215 --> 00:02:55,578
+through the iron above it, across the
+pockets, and down the ribs.
+
+35
+00:02:55,618 --> 00:03:03,704
+The series' reference IPM is a separate
+design, with more turns and end windings:
+
+36
+00:03:03,744 --> 00:03:10,564
+Ld = 0.16, Lq = 0.32 mH, λm = 5.0 mWb.
+Later lessons use those.
+
+37
+00:03:11,464 --> 00:03:14,259
+Back to the meter. Here's the self-
+inductance
+
+38
+00:03:14,299 --> 00:03:17,331
+of phase a as the buried-magnet rotor
+turns.
+
+39
+00:03:17,371 --> 00:03:19,856
+It's lowest when a magnet faces the coil,
+
+40
+00:03:19,896 --> 00:03:23,605
+and highest a quarter cycle later, when
+the q axis does.
+
+41
+00:03:23,645 --> 00:03:27,943
+A north pole and a south pole look the
+same to the iron,
+
+42
+00:03:27,983 --> 00:03:32,659
+so the pattern repeats every half cycle:
+L0 + L2 cos 2θe.
+
+43
+00:03:32,699 --> 00:03:36,023
+The mutual inductances swing the same way.
+
+44
+00:03:36,063 --> 00:03:42,571
+Park's transform turns it all into two
+near-constants, with Ld − Lq = 3 L2.
+
+45
+00:03:43,471 --> 00:03:48,818
+Lesson 8's co-energy gives the torque.
+With the magnets off, it's ½ iᵀ L i,
+
+46
+00:03:48,858 --> 00:03:53,499
+and torque is its slope with rotor angle
+at constant current.
+
+47
+00:03:53,539 --> 00:03:57,933
+Put the cos 2θ terms into all three
+phases,
+
+48
+00:03:57,973 --> 00:04:03,286
+add them up, and you get 3/2 p (Ld − Lq)
+i_d i_q.
+
+49
+00:04:03,326 --> 00:04:07,328
+Physically, the iron turns to bring its
+easy path, the q axis,
+
+50
+00:04:07,368 --> 00:04:11,605
+toward the stator field, like Lesson 8's
+reluctance actuator.
+
+51
+00:04:11,645 --> 00:04:19,458
+Switch the magnets off in the solver and
+sweep the current angle at 20 A:
+
+52
+00:04:19,498 --> 00:04:26,428
+a pure sin 2γ, 0.039 N·m at 135°, within
+0.04% of the formula.
+
+53
+00:04:26,468 --> 00:04:32,038
+It's positive only between 90° and 180°,
+where i_d is negative.
+
+54
+00:04:32,938 --> 00:04:37,401
+Now switch the magnets back on, and
+compare both rotors at 20 A.
+
+55
+00:04:37,441 --> 00:04:44,737
+The surface rotor gives a pure sine: 0.713
+N·m at 90°, all current on q.
+
+56
+00:04:44,777 --> 00:04:51,698
+The buried-magnet rotor adds its sin 2γ
+term, so its peak moves past 90°,
+
+57
+00:04:51,738 --> 00:04:56,957
+to about 99°, with a little negative i_d:
+0.502 N·m.
+
+58
+00:04:56,997 --> 00:05:01,544
+That's only 1.2% more than pure q current.
+
+59
+00:05:01,584 --> 00:05:10,384
+Here (Lq − Ld) times the current is small
+next to λm: 0.66 against 4.13 mWb.
+
+60
+00:05:11,284 --> 00:05:18,442
+In the reference IPM, it's 3.2 against 5.0
+mWb, and the reluctance term matters.
+
+61
+00:05:18,482 --> 00:05:26,670
+20 A, all on q, makes 0.600 N·m. Turn the
+current to 114.7°, i_d = −8.3
+
+62
+00:05:26,710 --> 00:05:35,197
+A and i_q = 18.2 A, and it makes 0.691:
+15% more from the same current.
+
+63
+00:05:35,237 --> 00:05:40,059
+Choosing that angle at every current is
+maximum torque per amp, MTPA.
+
+64
+00:05:40,099 --> 00:05:45,672
+The angle grows with current; in Lesson
+20, it goes into the controller.
+
+65
+00:05:46,584 --> 00:05:49,765
+You can measure Ld and Lq with an LCR
+meter.
+
+66
+00:05:49,805 --> 00:05:54,385
+Connect it across two terminals, a and b,
+and leave c open.
+
+67
+00:05:54,425 --> 00:05:58,503
+Choose series inductance at a low
+frequency, say 100 Hz.
+
+68
+00:05:58,543 --> 00:06:04,539
+Turn the rotor 1.5 mechanical degrees at a
+time, and hold it for each reading.
+
+69
+00:06:04,579 --> 00:06:12,695
+With a star winding, the reading is (Ld +
+Lq) + (Ld − Lq) cos(2θe + 60°).
+
+70
+00:06:12,735 --> 00:06:17,240
+Its minimum is 2 Ld, its maximum 2 Lq.
+
+71
+00:06:17,280 --> 00:06:23,643
+No neutral needed: halve the extremes. For
+the reference IPM,
+
+72
+00:06:23,683 --> 00:06:30,870
+expect 0.32 to 0.64 mH; for the surface-
+magnet motor, a flat 0.10.
+
+73
+00:06:30,910 --> 00:06:34,318
+Checked on the solver's 2D rotor:
+
+74
+00:06:34,358 --> 00:06:42,591
+half its extremes give 0.0621 and 0.0938
+mH, within 3% of the Park values.
+
+75
+00:06:43,491 --> 00:06:46,097
+Careful, though. The meter drives
+milliamps,
+
+76
+00:06:46,137 --> 00:06:50,666
+so it reads the small-signal, incremental
+inductance near zero current.
+
+77
+00:06:50,706 --> 00:06:55,626
+At rated current, the iron on the q path
+saturates and Lq falls. The magnets
+
+78
+00:06:55,666 --> 00:07:01,148
+already saturate the bridges, which shifts
+Ld. A linear model can't show either.
+
+79
+00:07:01,188 --> 00:07:09,274
+Frequency matters too: eddy currents push
+flux out of the steel. With μr = 4000,
+
+80
+00:07:09,314 --> 00:07:17,395
+the skin depth is 0.57 mm at 100 Hz, but
+0.18 mm at 1 kHz, half a lamination.
+
+81
+00:07:17,435 --> 00:07:20,774
+So read at two frequencies; if they
+disagree, go lower.
+
+82
+00:07:20,814 --> 00:07:26,230
+And disconnect the drive: anything on the
+third terminal lets current couple in.
+
+83
+00:07:27,130 --> 00:07:29,410
+Three predictions before next time.
+
+84
+00:07:29,450 --> 00:07:31,355
+One: an 8-pole IPM motor.
+
+85
+00:07:31,395 --> 00:07:36,018
+How many inductance cycles per mechanical
+revolution?
+
+86
+00:07:36,918 --> 00:07:43,534
+Two: the reference IPM, with i_d = −10 A
+and i_q = 10 A. What torque?
+
+87
+00:07:44,434 --> 00:07:49,808
+Three: what can bias an LCR-meter
+inductance reading on a stationary rotor?
+
+88
+00:07:50,708 --> 00:07:55,599
+Next time: space vectors, three phase
+currents as one rotating arrow.
