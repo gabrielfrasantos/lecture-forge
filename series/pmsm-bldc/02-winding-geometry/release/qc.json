@@ -1,0 +1,196 @@
+{
+ "rep": {
+  "video": "h264 1920x1080 30/1 471.73s",
+  "audio": "aac 48000 Hz 1 ch 471.73s",
+  "subtitles": "1 track(s): mov_text/eng",
+  "chapters": 13,
+  "av_duration_diff_s": 0.005,
+  "integrated_LUFS": -16.1,
+  "true_peak_dBTP": -1.4,
+  "LRA_LU": 2.9,
+  "asr_word_error_rate": 0.052,
+  "captions": "110 cues, 0 cues mostly over silence, 0 overlaps, max 18.8 chars/s, last cue ends 470.0s"
+ },
+ "mism": [
+  [
+   "a2",
+   "One: 6 amps at 3 centimeters gives 40 microtesla.",
+   "1, 6 amps at 3 centimeters gives 40 micro tesla."
+  ],
+  [
+   "a4",
+   "Three: swap two phase leads, and the rotating field reverses direction, at the same speed.",
+   "3. Swap Two-phase leads, and the rotating field reverses direction at the same speed."
+  ],
+  [
+   "a5",
+   "The current peaks now reach the windings in the order [a](/ˈA/), then c, then b. Phase sequence and winding layout have to agree.",
+   "The current peaks now reach the windings in the order A, then C, then B phase sequence, and winding layout have to agree."
+  ],
+  [
+   "m2",
+   "Ampère's law: the line integral of H around it equals the current it encloses.",
+   "Ampere's law, the line integral of H around it, equals the current it encloses."
+  ],
+  [
+   "m3",
+   "The steel is so permeable that it needs almost no H. Only the two gap crossings count: each is H times the gap length, [g](/ʤˈi/).",
+   "The steel is so permeable that it needs almost no H only the two gap crossings count. Each is H times the gap length G."
+  ],
+  [
+   "c3",
+   "Ampère's law only fixes differences. The level comes from flux: every line leaving the rotor returns to it, so the gap flux density, mu-nought F over [g](/ʤˈi/), averages to zero.",
+   "Ampere's law only fixes differences. The level comes from flux. Every line leaving the rotor returns to it, so the gap flux density, mu naught f over g, averages to 0."
+  ],
+  [
+   "c4",
+   "So one coil gives a zero-mean square wave: 11 twelfths of N times i over its own tooth, and minus 1 twelfth everywhere else.",
+   "So one coil gives a zero mean square wave, 11/12 of n times i over its own tooth, and minus 1/12 everywhere else."
+  ],
+  [
+   "p1",
+   "This motor's layout is [a](/ˈA/), b, c, repeated four times, with every coil spanning a single tooth.",
+   "This motor's layout is A, B, C, repeated four times, with every coil spanning a single tooth."
+  ],
+  [
+   "p2",
+   "Phase [a](/ˈA/) takes teeth 1, 4, 7 and 10, in series. Their square waves add into four positive blocks: four pole pairs, for the 8-pole rotor.",
+   "Phase A takes teeth 1, 4, 7, and 10 in series. Their square waves add into four positive blocks, four pole pairs for the eight pole rotor."
+  ],
+  [
+   "p3",
+   "That's a concentrated winding. Slots per pole per phase, [q](/kjˈu/), is 12, over 8 times 3: just one half.",
+   "That's a concentrated winding. Slots per pole per phase Q is 12 over 8 times 3, just one half."
+  ],
+  [
+   "p4",
+   "A distributed winding spreads each phase over a group of adjacent slots, a phase belt. With 24 slots and 4 poles, [q](/kjˈu/) is 2, and the steps come in pairs.",
+   "A distributed winding spreads each phase over a group of adjacent slots, a phase belt. With 24 slots and 4 poles, Q is 2, and the steps come in pairs."
+  ],
+  [
+   "p5",
+   "More, smaller steps follow a sine wave more closely, at the price of longer, overlapping end turns.",
+   "More smaller steps follow a sign wave more closely at the price of longer, overlapping end turns."
+  ],
+  [
+   "t2",
+   "At this instant, phase [a](/ˈA/) is at its peak, and b and c each carry minus half of it.",
+   "At this instant, phase A is at its peak, and B and C each carry minus half of it."
+  ],
+  [
+   "t5",
+   "A Fourier fit gives the fundamental: one and a half times one phase's — the three-halves from last time, now from real slots.",
+   "A Fourier fit gives the fundamental. One and a half times one phases, the three halves from last time, now from real slots."
+  ],
+  [
+   "r4",
+   "One electrical cycle moves it by one pole pair, a quarter turn here: the field turns at omega over [p](/pˈi/).",
+   "One electrical cycle moves it by one pole pair, a quarter turn here. The field turns at omega over p."
+  ],
+  [
+   "r5",
+   "That's exactly the speed the 8-pole rotor turns at, to stay in step.",
+   "That's exactly the speed the eight pole rotor turns at to stay in step."
+  ],
+  [
+   "f1",
+   "Let's package this as one function per phase. The turns function, n of theta, counts the turns of phase [a](/ˈA/) passed as you sweep around the gap.",
+   "Let's package this as one function per phase. The turns function, n of theta, counts the turns of phase A past as you sweep around the gap."
+  ],
+  [
+   "f4",
+   "Its fundamental is 4 over pi, times the series turns, times a winding factor, over the number of poles. For this winding, the winding factor is 0.866.",
+   "Its fundamental is 4/pi times the series turns times a winding factor over the number of poles. For this winding, the winding factor is 0.866."
+  ],
+  [
+   "f5",
+   "The same function sets how much rotor flux each phase links, so the winding factor scales both back E M F and torque per amp.",
+   "The same function sets how much rotor flux each phase links, so the winding factor scales both back EMF and torque per amp."
+  ],
+  [
+   "k2",
+   "The working harmonic is order 4, matching the 4 pole pairs. Then come orders 8, 16, 20 and 28, falling as one over the order: order 8 is half the fundamental.",
+   "The working harmonic is order 4, matching the four pole pairs. Then come orders 8, 16, 20, and 28, falling as 1 over the order. Order 8 is half the fundamental. [BUZZER]"
+  ],
+  [
+   "k4",
+   "Nothing appears below order 4: the layout repeats four times around the stator, the common factor of 12 slots and 4 pole pairs. No sub-harmonics.",
+   "Nothing appears below order 4. The layout repeats 4 times around the stator, the common factor of 12 slots and 4 pole pairs. No subharmonics."
+  ],
+  [
+   "k5",
+   "With a 10-pole rotor, the same twelve coils are connected differently. The pattern repeats only once, and an order-1 sub-harmonic appears, about a third of the working harmonic.",
+   "With a 10-pole rotor, the same 12 coils are connected differently. The pattern repeats only once, and an order 1 subharmonic appears, about a third of the working harmonic. [BUZZER]"
+  ],
+  [
+   "e1",
+   "Your turn. Write the winding as a table: for each slot, which phase, which direction, how many turns.",
+   "Your turn, write the winding as a table. For each slot, which phase, which direction, how many turns? [buzzer]"
+  ],
+  [
+   "e3",
+   "An FFT gives the harmonics. Check against these numbers: winding factor 0.866, a fundamental of N times the peak current times 0.827, and order 8 at half of that.",
+   "and FFT gives the harmonics. Check against these numbers. Winding factor 0.866, a fundamental of n times the peak current times 0.827 and order 8 at half of that."
+  ],
+  [
+   "e4",
+   "Compared with a pure sine wave, the harmonics carry an RMS of 68% of the fundamental's.",
+   "Compared with a pure sine wave, the harmonics carry an RMS of 68% of the fundamentals."
+  ],
+  [
+   "q1",
+   "The winding table also predicts resistance: 4 coils of 6 turns per phase is about 1.8 meters of 1-millimeter copper, or 39 milliohms; 40 with the connections.",
+   "The winding table also predicts resistance. Four coils of six turns per phase is about 1.8 meters of 1 millimeter copper or 39 milliomes, 40 with the connections."
+  ],
+  [
+   "q2",
+   "That's too small for a two-wire ohmmeter: leads and clips can add as much again.",
+   "That's too small for a two-wire ohm meter. Leads and clips can add as much again."
+  ],
+  [
+   "q3",
+   "So use four wires. A constant-current supply drives 2 amps through two motor leads, and a separate voltmeter senses right at the terminals. It draws almost no current, so lead resistance drops out.",
+   "So use four wires. A constant current supply drives two amps through two motor leads and a separate voltmeter senses right at the terminals. It draws almost no current, so lead resistance drops out."
+  ],
+  [
+   "q4",
+   "In star, line to line is two phases in series: expect about 160 millivolts. Measure all three pairs; they should agree within about one percent.",
+   "In star, line to line is two phases in series. Expect about 160 millivolts. Measure all three pairs. They should agree within about 1%."
+  ],
+  [
+   "q5",
+   "Then correct for temperature: copper rises 0.393% per kelvin, so divide by one plus alpha times the rise above 20 degrees.",
+   "then correct for temperature. Copper rises 0.393% per Kelvin, so divide by 1 plus alpha times the rise above 20 degrees."
+  ],
+  [
+   "l2",
+   "Real steel needs some MMF of its own, and saturates at high current: Lessons 3 and 4.",
+   "Real Steel needs some MMF of its own and satarits at high current. Lessons 3 and 4."
+  ],
+  [
+   "l3",
+   "Real slots have openings. Spreading each step across the 2-millimeter opening lowers the fundamental by under one percent; openings also make the gap look longer. That's Lesson 5.",
+   "Real slots have openings. Spreading each step across the 2 mm opening lowers the fundamental by under 1%. Openings also make the gap look longer. That's lesson 5."
+  ],
+  [
+   "l4",
+   "And surface magnets act as extra gap, so this MMF makes only tens of millitesla. Next time shows why.",
+   "and surface magnets act as extra gap, so this MMF makes only tens of militesla. Next time shows why."
+  ],
+  [
+   "x2",
+   "One: a coil of N turns carries current I. What's the total jump of its MMF square wave?",
+   "1. A coil of N turns carries current I. What's the total jump of its MMF square wave?"
+  ],
+  [
+   "x3",
+   "Two: with balanced three-phase currents, how does the fundamental of the total MMF compare with the peak fundamental of one phase alone?",
+   "2. With balanced three-phase currents, how does the fundamental of the total MMF compare with the peak fundamental of one phase alone?"
+  ],
+  [
+   "x4",
+   "Three: double the air gap, with ideal iron. What happens to the air-gap flux density from the same MMF?",
+   "3. Double the air gap with ideal iron. What happens to the air gap flux density from the same MMF?"
+  ]
+ ]
+}

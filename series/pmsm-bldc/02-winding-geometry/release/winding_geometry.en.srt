@@ -1,0 +1,531 @@
+1
+00:00:00,600 --> 00:00:04,767
+Last time, three ideal windings made a
+smooth, rotating field.
+
+2
+00:00:04,807 --> 00:00:08,069
+But real copper can't be spread smoothly
+around the bore.
+
+3
+00:00:08,109 --> 00:00:11,763
+In this motor, it's twelve coils, one
+around each tooth.
+
+4
+00:00:11,803 --> 00:00:14,525
+So the field it makes comes out as a
+staircase.
+
+5
+00:00:14,565 --> 00:00:17,547
+Today we'll compute those steps from the
+winding layout,
+
+6
+00:00:17,587 --> 00:00:21,702
+compare them with a sine wave, and find
+the part that makes torque.
+
+7
+00:00:23,002 --> 00:00:25,538
+First, last lesson's three predictions.
+
+8
+00:00:25,578 --> 00:00:29,704
+One: six amps at three centimetres gives
+forty microtesla.
+
+9
+00:00:29,744 --> 00:00:36,071
+Two: on the axis of a coil, the field
+halves at about 0.77 times the radius.
+
+10
+00:00:36,111 --> 00:00:37,730
+Three: swap two phase leads,
+
+11
+00:00:37,770 --> 00:00:41,693
+and the rotating field reverses direction,
+at the same speed.
+
+12
+00:00:41,733 --> 00:00:44,932
+The current peaks now reach the windings
+in the order a,
+
+13
+00:00:44,972 --> 00:00:49,174
+then c, then b. Phase sequence and winding
+layout have to agree.
+
+14
+00:00:50,474 --> 00:00:53,783
+Here's the stator in cross-section. Draw a
+closed path that
+
+15
+00:00:53,823 --> 00:00:57,361
+crosses the air gap twice and returns
+through the steel.
+
+16
+00:00:57,401 --> 00:01:02,461
+Ampère's law: the line integral of H
+around it equals the current it encloses.
+
+17
+00:01:02,501 --> 00:01:05,732
+The steel is so permeable that it needs
+almost no H.
+
+18
+00:01:05,772 --> 00:01:10,410
+Only the two gap crossings count: each is
+H times the gap length, g.
+
+19
+00:01:10,450 --> 00:01:13,926
+Call that product F, the magnetomotive
+force, or MMF.
+
+20
+00:01:13,966 --> 00:01:19,367
+F at the second crossing, minus F at the
+first, equals the enclosed current.
+
+21
+00:01:19,407 --> 00:01:21,724
+Now sweep the second crossing around.
+
+22
+00:01:21,764 --> 00:01:27,129
+F stays flat until the path passes a slot,
+then jumps by that slot's current.
+
+23
+00:01:27,169 --> 00:01:31,414
+That assumes ideal steel, a uniform gap,
+and each slot's current
+
+24
+00:01:31,454 --> 00:01:35,971
+concentrated at its centre: no slot
+openings, no saturation.
+
+25
+00:01:37,271 --> 00:01:39,513
+Let's unroll the gap into a straight line,
+
+26
+00:01:39,553 --> 00:01:42,661
+with the stator on top and the rotor
+underneath.
+
+27
+00:01:42,761 --> 00:01:45,507
+One coil of N turns, carrying current i,
+
+28
+00:01:45,547 --> 00:01:50,692
+makes F jump up by N i at one coil side,
+and back down at the other.
+
+29
+00:01:50,732 --> 00:01:56,570
+Ampère's law only fixes differences. The
+level comes from flux: every line leaving
+
+30
+00:01:56,610 --> 00:02:02,683
+the rotor returns to it, so the gap flux
+density, μ₀F over g, averages to zero.
+
+31
+00:02:02,723 --> 00:02:06,110
+So one coil gives a zero-mean square wave:
+
+32
+00:02:06,150 --> 00:02:11,465
+11/12 of N i over its own tooth, and −1/12
+everywhere else.
+
+33
+00:02:12,765 --> 00:02:16,204
+This motor's layout is a, b, c, repeated
+four times,
+
+34
+00:02:16,244 --> 00:02:19,281
+with every coil spanning a single tooth.
+
+35
+00:02:19,321 --> 00:02:23,896
+Phase a takes teeth 1, 4, 7 and 10, in
+series. Their square waves
+
+36
+00:02:23,936 --> 00:02:29,245
+add into four positive blocks: four pole
+pairs, for the 8-pole rotor.
+
+37
+00:02:29,285 --> 00:02:33,216
+That's a concentrated winding. Slots per
+pole per phase,
+
+38
+00:02:33,256 --> 00:02:36,431
+q, is 12 over 8 times 3: just one half.
+
+39
+00:02:36,471 --> 00:02:41,425
+A distributed winding spreads each phase
+over a group of adjacent slots,
+
+40
+00:02:41,465 --> 00:02:47,165
+a phase belt. With 24 slots and 4 poles, q
+is 2, and the steps come in pairs.
+
+41
+00:02:47,205 --> 00:02:50,369
+More, smaller steps follow a sine wave
+more closely,
+
+42
+00:02:50,409 --> 00:02:53,744
+at the price of longer, overlapping end
+turns.
+
+43
+00:02:55,044 --> 00:02:57,949
+Now feed all three phases with balanced
+currents.
+
+44
+00:02:57,989 --> 00:03:03,361
+At this instant, phase a is at its peak,
+and b and c each carry minus half of it.
+
+45
+00:03:03,401 --> 00:03:08,178
+Each slot's current is the sum of its two
+coil sides, and the staircase follows.
+
+46
+00:03:08,218 --> 00:03:12,362
+Over each tooth, F is simply N times the
+current in that tooth's coil.
+
+47
+00:03:12,402 --> 00:03:16,673
+A Fourier fit gives the fundamental: one
+and a half times one phase's
+
+48
+00:03:16,713 --> 00:03:20,649
+— the three-halves from last time, now
+from real slots.
+
+49
+00:03:21,957 --> 00:03:23,507
+Now let time run.
+
+50
+00:03:23,607 --> 00:03:27,623
+The staircase doesn't glide. It changes
+shape, step by step.
+
+51
+00:03:27,823 --> 00:03:32,317
+But its fundamental keeps a constant
+amplitude, and travels steadily.
+
+52
+00:03:32,417 --> 00:03:35,473
+One electrical cycle moves it by one pole
+pair,
+
+53
+00:03:35,513 --> 00:03:39,200
+a quarter turn here: the field turns at ω
+over p.
+
+54
+00:03:39,240 --> 00:03:43,826
+That's exactly the speed the 8-pole rotor
+turns at, to stay in step.
+
+55
+00:03:45,226 --> 00:03:49,342
+Let's package this as one function per
+phase. The turns function,
+
+56
+00:03:49,382 --> 00:03:54,282
+n of θ, counts the turns of phase a passed
+as you sweep around the gap.
+
+57
+00:03:54,322 --> 00:03:58,353
+Subtract its average, and you get the
+winding function, N of θ.
+
+58
+00:03:58,393 --> 00:04:02,396
+Then the MMF is each winding function
+times its phase current,
+
+59
+00:04:02,436 --> 00:04:07,541
+summed over the phases. Geometry lives in
+N of θ; time, in the currents.
+
+60
+00:04:07,581 --> 00:04:13,133
+Its fundamental is 4 over π, times the
+series turns, times a winding factor,
+
+61
+00:04:13,173 --> 00:04:18,881
+over the number of poles. For this
+winding, the winding factor is 0.866.
+
+62
+00:04:18,921 --> 00:04:22,774
+The same function sets how much rotor flux
+each phase links,
+
+63
+00:04:22,814 --> 00:04:27,336
+so the winding factor scales both back-EMF
+and torque per amp.
+
+64
+00:04:28,636 --> 00:04:32,021
+What else is in the staircase? Take its
+Fourier transform.
+
+65
+00:04:32,061 --> 00:04:37,772
+The working harmonic is order 4, matching
+the 4 pole pairs. Then come orders 8,
+
+66
+00:04:37,812 --> 00:04:43,900
+16, 20 and 28, falling as one over the
+order: order 8 is half the fundamental.
+
+67
+00:04:43,940 --> 00:04:48,349
+Order 8 travels backwards, order 16
+forwards, each at its own speed.
+
+68
+00:04:48,389 --> 00:04:52,274
+None keeps step with the rotor, so none
+adds average torque;
+
+69
+00:04:52,314 --> 00:04:56,518
+they add ripple, and losses in the magnets
+and rotor iron.
+
+70
+00:04:56,558 --> 00:05:01,965
+Nothing appears below order 4: the layout
+repeats four times around the stator,
+
+71
+00:05:02,005 --> 00:05:06,896
+the common factor of 12 slots and 4 pole
+pairs. No sub-harmonics.
+
+72
+00:05:06,936 --> 00:05:11,308
+With a 10-pole rotor, the same twelve
+coils are connected differently.
+
+73
+00:05:11,348 --> 00:05:15,530
+The pattern repeats only once, and an
+order-1 sub-harmonic appears,
+
+74
+00:05:15,570 --> 00:05:18,465
+about a third of the working harmonic.
+
+75
+00:05:19,765 --> 00:05:22,856
+Your turn. Write the winding as a table:
+for each slot,
+
+76
+00:05:22,896 --> 00:05:25,817
+which phase, which direction, how many
+turns.
+
+77
+00:05:25,857 --> 00:05:29,918
+Multiply by the phase currents, take a
+running total around the stator,
+
+78
+00:05:29,958 --> 00:05:32,860
+and subtract the mean: that's the
+staircase.
+
+79
+00:05:32,900 --> 00:05:39,170
+An FFT gives the harmonics. Check against
+these numbers: winding factor 0.866,
+
+80
+00:05:39,210 --> 00:05:46,335
+a fundamental of N times the peak current
+times 0.827, and order 8 at half of that.
+
+81
+00:05:46,375 --> 00:05:48,369
+Compared with a pure sine wave,
+
+82
+00:05:48,409 --> 00:05:52,976
+the harmonics carry an RMS of 68 percent
+of the fundamental's.
+
+83
+00:05:54,276 --> 00:05:57,497
+The winding table also predicts
+resistance:
+
+84
+00:05:57,537 --> 00:06:02,958
+4 coils of 6 turns per phase is about 1.8
+metres of 1-millimetre copper,
+
+85
+00:06:02,998 --> 00:06:06,517
+or 39 milliohms; 40 with the connections.
+
+86
+00:06:06,557 --> 00:06:11,450
+That's too small for a two-wire ohmmeter:
+leads and clips can add as much again.
+
+87
+00:06:11,490 --> 00:06:16,094
+So use four wires. A constant-current
+supply drives 2 amps through two
+
+88
+00:06:16,134 --> 00:06:20,605
+motor leads, and a separate voltmeter
+senses right at the terminals.
+
+89
+00:06:20,645 --> 00:06:24,837
+It draws almost no current, so lead
+resistance drops out.
+
+90
+00:06:24,877 --> 00:06:30,146
+In star, line to line is two phases in
+series: expect about 160 millivolts.
+
+91
+00:06:30,186 --> 00:06:35,410
+Measure all three pairs; they should agree
+within about one percent.
+
+92
+00:06:35,450 --> 00:06:40,711
+Then correct for temperature: copper rises
+0.393 percent per kelvin,
+
+93
+00:06:40,751 --> 00:06:45,617
+so divide by one plus α times the rise
+above 20 degrees.
+
+94
+00:06:46,933 --> 00:06:48,871
+So where does this model stop?
+
+95
+00:06:48,911 --> 00:06:51,280
+Real steel needs some MMF of its own,
+
+96
+00:06:51,320 --> 00:06:54,789
+and saturates at high current: Lessons 3
+and 4.
+
+97
+00:06:54,829 --> 00:06:58,581
+Real slots have openings. Spreading each
+step across the
+
+98
+00:06:58,621 --> 00:07:02,983
+2-millimetre opening lowers the
+fundamental by under one percent;
+
+99
+00:07:03,023 --> 00:07:07,225
+openings also make the gap look longer.
+That's Lesson 5.
+
+100
+00:07:07,265 --> 00:07:09,770
+And surface magnets act as extra gap,
+
+101
+00:07:09,810 --> 00:07:14,644
+so this MMF makes only tens of millitesla.
+Next time shows why.
+
+102
+00:07:15,944 --> 00:07:18,224
+Three predictions before next time.
+
+103
+00:07:18,264 --> 00:07:20,766
+One: a coil of N turns carries current I.
+
+104
+00:07:20,806 --> 00:07:24,097
+What's the total jump of its MMF square
+wave?
+
+105
+00:07:25,397 --> 00:07:29,498
+Two: with balanced three-phase currents,
+how does the fundamental of
+
+106
+00:07:29,538 --> 00:07:34,119
+the total MMF compare with the peak
+fundamental of one phase alone?
+
+107
+00:07:35,419 --> 00:07:38,180
+Three: double the air gap, with ideal
+iron.
+
+108
+00:07:38,220 --> 00:07:42,563
+What happens to the air-gap flux density
+from the same MMF?
+
+109
+00:07:43,863 --> 00:07:46,497
+Next time: magnetic circuits — reluctance,
+
+110
+00:07:46,537 --> 00:07:50,029
+the air gap, and the magnet as a source of
+MMF.

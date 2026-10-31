@@ -1,0 +1,82 @@
+;FFMETADATA1
+title=Winding Geometry — PMSM & BLDC, Lesson 2
+artist=lecture-forge
+language=eng
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=22602
+title=01 From smooth windings to slots
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=22602
+END=50074
+title=02 Answers from Lesson 1
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=50074
+END=96871
+title=03 Ampère's law across the gap
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=96871
+END=132365
+title=04 One coil: a square wave
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=132365
+END=174644
+title=05 Coils into a phase
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=174644
+END=201557
+title=06 Three phases at one instant
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=201557
+END=224826
+title=07 The staircase moves
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=224826
+END=268236
+title=08 The winding function
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=268236
+END=319365
+title=09 Harmonics, computed
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=319365
+END=353876
+title=10 Exercise: script the MMF
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=353876
+END=406533
+title=11 Exercise: measure phase resistance
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=406533
+END=435544
+title=12 Where this model stops
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=435544
+END=471729
+title=13 Predict, then check
