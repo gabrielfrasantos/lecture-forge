@@ -1,0 +1,82 @@
+;FFMETADATA1
+title=Iron: Saturation and Losses — PMSM & BLDC, Lesson 4
+artist=lecture-forge
+language=eng
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=19796
+title=01 Thin sheets of steel
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=19796
+END=51475
+title=02 Answers from Lesson 3
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=51475
+END=83245
+title=03 Why iron is easy to magnetise
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=83245
+END=120673
+title=04 The B–H curve of motor steel
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=120673
+END=152018
+title=05 Permeability depends on B
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=152018
+END=197268
+title=06 When the gap stops dominating
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=197268
+END=231040
+title=07 Hysteresis
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=231040
+END=275595
+title=08 The loop's area is energy
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=275595
+END=324785
+title=09 Eddy currents and laminations
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=324785
+END=361308
+title=10 Separating the losses
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=361308
+END=400923
+title=11 What the stator sees
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=400923
+END=444938
+title=12 Bench: trace a B–H loop
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=444938
+END=479085
+title=13 Predict, then check

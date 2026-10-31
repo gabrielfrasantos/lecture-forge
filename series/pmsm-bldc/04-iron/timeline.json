@@ -1,0 +1,484 @@
+[
+ {
+  "id": "hook",
+  "title": "Thin sheets of steel",
+  "start": 0.0,
+  "beats": [
+   {
+    "id": "h1",
+    "start": 0.4,
+    "end": 4.022,
+    "text": "The stator of our reference motor is not a solid block of steel."
+   },
+   {
+    "id": "h2",
+    "start": 4.322,
+    "end": 9.822,
+    "text": "It's a stack of sheets, each 0.35 mm thick, insulated from its neighbours."
+   },
+   {
+    "id": "h3",
+    "start": 10.322,
+    "end": 13.172,
+    "text": "Why make it from steel, and why cut the sheets so thin?"
+   },
+   {
+    "id": "h4",
+    "start": 13.672,
+    "end": 18.696,
+    "text": "Because iron does two things air doesn't: it saturates, and it turns energy into heat."
+   }
+  ],
+  "end": 19.79575
+ },
+ {
+  "id": "answers",
+  "title": "Answers from Lesson 3",
+  "start": 19.79575,
+  "beats": [
+   {
+    "id": "a1",
+    "start": 20.096,
+    "end": 22.129,
+    "text": "First, last lesson's predictions."
+   },
+   {
+    "id": "a2",
+    "start": 22.429,
+    "end": 30.834,
+    "text": "One: a 3 mm magnet with Br = 1.2 T (\u03bcrec = 1.05), across a 0.5 mm gap, gives about 1.02 T."
+   },
+   {
+    "id": "a3",
+    "start": 31.134,
+    "end": 36.828,
+    "text": "Two: doubling the magnet gives only about 1.10 T; the gap can't exceed Br."
+   },
+   {
+    "id": "a4",
+    "start": 37.128,
+    "end": 47.015,
+    "text": "Three: 40 mm of iron at \u03bcr = 4000 equals 0.01 mm of air; at \u03bcr = 40, a full 1 mm, twice the gap."
+   },
+   {
+    "id": "a5",
+    "start": 47.315,
+    "end": 50.375,
+    "text": "Real iron moves between those cases. Here's why."
+   }
+  ],
+  "end": 51.47541666666666
+ },
+ {
+  "id": "domains",
+  "title": "Why iron is easy to magnetise",
+  "start": 51.47541666666666,
+  "beats": [
+   {
+    "id": "d1",
+    "start": 51.775,
+    "end": 58.352,
+    "text": "In iron, electron spins carry magnetic moments that line up with their neighbours, in regions called domains."
+   },
+   {
+    "id": "d2",
+    "start": 58.652,
+    "end": 62.693,
+    "text": "In demagnetised iron, the domains point different ways and cancel."
+   },
+   {
+    "id": "d3",
+    "start": 62.993,
+    "end": 66.741,
+    "text": "Apply a field H, and the walls move: domains along H grow."
+   },
+   {
+    "id": "d4",
+    "start": 67.041,
+    "end": 73.84,
+    "text": "That gives a magnetisation M thousands of times larger than H, and B = \u03bc\u2080(H + M)."
+   },
+   {
+    "id": "d5",
+    "start": 74.14,
+    "end": 82.145,
+    "text": "When nearly every moment points along the field, M stops growing: saturation. From then on, B rises only as \u03bc\u2080H."
+   }
+  ],
+  "end": 83.2447083333333
+ },
+ {
+  "id": "bh",
+  "title": "The B\u2013H curve of motor steel",
+  "start": 83.2447083333333,
+  "beats": [
+   {
+    "id": "b1",
+    "start": 83.545,
+    "end": 90.396,
+    "text": "Here's that behaviour for our motor's steel class: a 0.35 mm non-oriented silicon steel."
+   },
+   {
+    "id": "b2",
+    "start": 90.696,
+    "end": 97.231,
+    "text": "Dots are typical datasheet values at 50 Hz; the curve is a smooth fit that later lessons reuse."
+   },
+   {
+    "id": "b3",
+    "start": 97.531,
+    "end": 102.677,
+    "text": "Up to 1.2 tesla, under 200 amps per metre will do; then the curve bends."
+   },
+   {
+    "id": "b4",
+    "start": 102.977,
+    "end": 113.932,
+    "text": "1.5 tesla needs 1700 amps per metre, and 1.8 tesla over 11000. That bend, near 1.5 tesla, is the saturation knee."
+   },
+   {
+    "id": "b5",
+    "start": 114.232,
+    "end": 119.573,
+    "text": "Typical values: cut edges and mechanical stress shift a real part's curve to the right."
+   }
+  ],
+  "end": 120.67274999999994
+ },
+ {
+  "id": "perm",
+  "title": "Permeability depends on B",
+  "start": 120.67274999999994,
+  "beats": [
+   {
+    "id": "p1",
+    "start": 120.973,
+    "end": 124.747,
+    "text": "Divide B by \u03bc\u2080H, and you get the relative permeability, \u03bcr."
+   },
+   {
+    "id": "p2",
+    "start": 125.047,
+    "end": 135.713,
+    "text": "For our steel, it peaks near 7700, at about 0.8 tesla, falls to about 700 at 1.5, and to about 130 at 1.8."
+   },
+   {
+    "id": "p3",
+    "start": 136.013,
+    "end": 144.141,
+    "text": "For small changes, the slope dB/dH matters: the incremental permeability. At 1.5 tesla it's only about 50."
+   },
+   {
+    "id": "p4",
+    "start": 144.441,
+    "end": 150.918,
+    "text": "So our constant 4000 is a fair round number below about 1.3 tesla, and badly wrong above."
+   }
+  ],
+  "end": 152.01841666666664
+ },
+ {
+  "id": "circuit",
+  "title": "When the gap stops dominating",
+  "start": 152.01841666666664,
+  "beats": [
+   {
+    "id": "c1",
+    "start": 152.318,
+    "end": 158.455,
+    "text": "Put this steel into Lesson 3's circuit: 40 mm of iron, a 0.5 mm gap, and a coil."
+   },
+   {
+    "id": "c2",
+    "start": 158.755,
+    "end": 165.324,
+    "text": "The ampere-turns divide: the iron needs H times its length l, and the gap needs B g / \u03bc\u2080."
+   },
+   {
+    "id": "c3",
+    "start": 165.624,
+    "end": 174.993,
+    "text": "The iron takes 1 % at one tesla, 10 % at 1.5, and almost 40 % at 1.8. The gap no longer dominates."
+   },
+   {
+    "id": "c4",
+    "start": 175.293,
+    "end": 186.356,
+    "text": "Teeth make it worse. Our teeth are 6.5 mm wide on a 10.7 mm pitch, so they carry 1.65 times the gap flux density."
+   },
+   {
+    "id": "c5",
+    "start": 186.656,
+    "end": 196.168,
+    "text": "With Lesson 3's magnet, such iron runs at 1.6 tesla, takes over a quarter of the MMF, and the gap falls to 0.97 tesla."
+   }
+  ],
+  "end": 197.26833333333337
+ },
+ {
+  "id": "loop",
+  "title": "Hysteresis",
+  "start": 197.26833333333337,
+  "beats": [
+   {
+    "id": "y1",
+    "start": 197.568,
+    "end": 203.171,
+    "text": "Saturation is half the story. Drive the steel back and forth, and B doesn't retrace its path."
+   },
+   {
+    "id": "y2",
+    "start": 203.471,
+    "end": 210.74,
+    "text": "Coming down from 1.5 tesla, this model keeps about 0.7 tesla at zero field: the remanence."
+   },
+   {
+    "id": "y3",
+    "start": 211.04,
+    "end": 216.371,
+    "text": "A reverse field of about 40 amps per metre, the coercive field, brings B back to zero."
+   },
+   {
+    "id": "y4",
+    "start": 216.671,
+    "end": 224.724,
+    "text": "It's computed with the Jiles\u2013Atherton model: domain-wall pinning on an ideal, hysteresis-free curve, tuned to this steel's losses."
+   },
+   {
+    "id": "y5",
+    "start": 225.024,
+    "end": 229.94,
+    "text": "Lower peaks trace smaller, nested loops, though this simple model draws them too wide."
+   }
+  ],
+  "end": 231.03970833333344
+ },
+ {
+  "id": "energy",
+  "title": "The loop's area is energy",
+  "start": 231.03970833333344,
+  "beats": [
+   {
+    "id": "e1",
+    "start": 231.34,
+    "end": 235.441,
+    "text": "Wind N turns on a steel ring of cross-section A and mean path length l."
+   },
+   {
+    "id": "e2",
+    "start": 235.741,
+    "end": 243.994,
+    "text": "Faraday's law gives the voltage, N A dB/dt; Amp\u00e8re's law gives the current, H l / N."
+   },
+   {
+    "id": "e3",
+    "start": 244.294,
+    "end": 254.433,
+    "text": "So the power is the volume A l, times H dB/dt. Over one cycle, the energy per unit volume is \u222eH dB: the area inside the loop."
+   },
+   {
+    "id": "e4",
+    "start": 254.733,
+    "end": 264.567,
+    "text": "At 1.5 tesla that's about 290 joules per cubic metre, turned to heat each cycle, so hysteresis loss grows in proportion to frequency."
+   },
+   {
+    "id": "e5",
+    "start": 264.867,
+    "end": 274.495,
+    "text": "In 1892 Steinmetz fitted this loss as B to the 1.6; for our steel the fitted exponent rises from 1.6 to 2.3."
+   }
+  ],
+  "end": 275.59508333333355
+ },
+ {
+  "id": "eddy",
+  "title": "Eddy currents and laminations",
+  "start": 275.59508333333355,
+  "beats": [
+   {
+    "id": "x1",
+    "start": 275.895,
+    "end": 283.024,
+    "text": "Iron also conducts. A changing flux induces an electric field that drives currents in the iron: eddy currents."
+   },
+   {
+    "id": "x2",
+    "start": 283.324,
+    "end": 289.094,
+    "text": "Solid iron lets them circle the whole cross-section; insulated sheets confine each to a thin loop."
+   },
+   {
+    "id": "x3",
+    "start": 289.394,
+    "end": 305.783,
+    "text": "In a thin sheet, the current density grows linearly from the mid-plane. Averaged over the sheet and a cycle, the loss per unit volume is \u03c0\u00b2t\u00b2f\u00b2B\u0302\u00b2 over 6\u03c1."
+   },
+   {
+    "id": "x4",
+    "start": 306.083,
+    "end": 313.991,
+    "text": "For 0.35 mm sheets at 50 Hz and 1.5 tesla, that's 0.28 watts per kilogram."
+   },
+   {
+    "id": "x5",
+    "start": 314.291,
+    "end": 323.685,
+    "text": "That assumes the flux fills the sheet, so t must be well below the skin depth: about 2 mm at 50 Hz, 0.7 mm at 400."
+   }
+  ],
+  "end": 324.78512500000033
+ },
+ {
+  "id": "lossmodel",
+  "title": "Separating the losses",
+  "start": 324.78512500000033,
+  "beats": [
+   {
+    "id": "l1",
+    "start": 325.085,
+    "end": 330.247,
+    "text": "Datasheets give total loss at several frequencies; a common reading splits it in three."
+   },
+   {
+    "id": "l2",
+    "start": 330.547,
+    "end": 341.228,
+    "text": "Hysteresis, in f; classical eddy loss, in f\u00b2, from our formula; and an excess term in f to the 1.5, from eddy currents around moving domain walls."
+   },
+   {
+    "id": "l3",
+    "start": 341.528,
+    "end": 351.729,
+    "text": "Fitted from 50 to 400 Hz, it stays within 6 % of the data. Hysteresis dominates at 50 Hz; at 400, eddy currents take over."
+   },
+   {
+    "id": "l4",
+    "start": 352.029,
+    "end": 355.1,
+    "text": "At 1 kHz the skin effect makes it over-predict."
+   },
+   {
+    "id": "l5",
+    "start": 355.4,
+    "end": 360.208,
+    "text": "And narrow cut strips of this grade have measured about 40 % above the datasheet."
+   }
+  ],
+  "end": 361.3080833333337
+ },
+ {
+  "id": "motor",
+  "title": "What the stator sees",
+  "start": 361.3080833333337,
+  "beats": [
+   {
+    "id": "m1",
+    "start": 361.608,
+    "end": 370.662,
+    "text": "Each pole pair passing a tooth is one electrical cycle of the stator flux: f = p n / 60, with n in rpm."
+   },
+   {
+    "id": "m2",
+    "start": 370.962,
+    "end": 375.121,
+    "text": "At 3000 rpm, with four pole pairs, that's 200 Hz."
+   },
+   {
+    "id": "m3",
+    "start": 375.421,
+    "end": 387.351,
+    "text": "There, at 1.5 tesla, this steel loses about 15 watts per kilogram. With 0.43 kg of stator steel, that's about 6 watts: the copper loss at 10 amps."
+   },
+   {
+    "id": "m4",
+    "start": 387.651,
+    "end": 394.461,
+    "text": "A rough estimate: parts of the stator run below 1.5 tesla, but harmonics and cut edges add loss."
+   },
+   {
+    "id": "m5",
+    "start": 394.761,
+    "end": 399.823,
+    "text": "The rotor iron turns with the field, so it sees nearly steady flux, and far less loss."
+   }
+  ],
+  "end": 400.9231666666671
+ },
+ {
+  "id": "bench",
+  "title": "Bench: trace a B\u2013H loop",
+  "start": 400.9231666666671,
+  "beats": [
+   {
+    "id": "t1",
+    "start": 401.223,
+    "end": 410.477,
+    "text": "Trace a loop yourself: stack 28 rings of this steel, 50 by 40 mm, with a 200-turn primary and a 100-turn secondary."
+   },
+   {
+    "id": "t2",
+    "start": 410.777,
+    "end": 416.896,
+    "text": "Drive the primary at 50 Hz through a 1 \u03a9 sense resistor; its voltage, on X, measures H."
+   },
+   {
+    "id": "t3",
+    "start": 417.196,
+    "end": 427.387,
+    "text": "The secondary voltage follows dB/dt, so integrate it with 100 k\u03a9 and 1 \u00b5F: that voltage, on Y, is proportional to B."
+   },
+   {
+    "id": "t4",
+    "start": 427.687,
+    "end": 437.44,
+    "text": "For 1.5 tesla, the primary needs about 4.6 volts peak. Expect about 1.2 volts on X, and 73 millivolts on Y."
+   },
+   {
+    "id": "t5",
+    "start": 437.74,
+    "end": 443.838,
+    "text": "At 50 Hz, eddy currents widen the loop; at lower frequency it shrinks toward the hysteresis loop."
+   }
+  ],
+  "end": 444.93816666666714
+ },
+ {
+  "id": "predict",
+  "title": "Predict, then check",
+  "start": 444.93816666666714,
+  "beats": [
+   {
+    "id": "q1",
+    "start": 445.238,
+    "end": 447.158,
+    "text": "Three predictions before next time."
+   },
+   {
+    "id": "q2",
+    "start": 447.458,
+    "end": 455.285,
+    "text": "One: cut the lamination thickness in half, same frequency and flux density. What happens to the classical eddy-current loss?"
+   },
+   {
+    "id": "q3",
+    "start": 456.485,
+    "end": 463.448,
+    "text": "Two: double the frequency, same flux density. By what factors do hysteresis and eddy-current losses change?"
+   },
+   {
+    "id": "q4",
+    "start": 464.648,
+    "end": 471.5,
+    "text": "Three: our motor has 8 poles. What's the electrical frequency in its stator iron at 5000 rpm?"
+   },
+   {
+    "id": "q5",
+    "start": 472.7,
+    "end": 477.285,
+    "text": "Next time: the field the rotor's magnets put into the air gap, slot by slot."
+   }
+  ],
+  "end": 479.0845000000005
+ }
+]

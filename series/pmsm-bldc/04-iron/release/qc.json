@@ -1,0 +1,146 @@
+{
+ "rep": {
+  "video": "h264 1920x1080 30/1 479.10s",
+  "audio": "aac 48000 Hz 1 ch 479.08s",
+  "subtitles": "1 track(s): mov_text/eng",
+  "chapters": 13,
+  "av_duration_diff_s": 0.016,
+  "integrated_LUFS": -16.1,
+  "true_peak_dBTP": -1.4,
+  "LRA_LU": 2.6,
+  "asr_word_error_rate": 0.045,
+  "captions": "107 cues, 0 cues mostly over silence, 0 overlaps, max 17.6 chars/s, last cue ends 477.8s"
+ },
+ "mism": [
+  [
+   "h2",
+   "It's a stack of sheets, each 0.35 millimeters thick, insulated from its neighbors.",
+   "It's a stack of sheets, each 0.35 mm thick, insulated from its neighbors."
+  ],
+  [
+   "h3",
+   "Why make it from steel, and why cut the sheets so thin?",
+   "Why make it from steel and why cut the sheet so thin?"
+  ],
+  [
+   "a2",
+   "One: a 3 millimeter magnet with 1.2 tesla remanence, across a half-millimeter gap, gives about 1.02 tesla.",
+   "1, a 3-millimeter magnet with 1.2 Tesla remnants across a half-millimeter gap gives about 1.02 Tesla."
+  ],
+  [
+   "a3",
+   "Two: doubling the magnet gives only about 1.10 tesla; the gap can't exceed the remanence.",
+   "2. Doubling the magnet gives only about 1.1 Tesla. The gap can't exceed the remnants."
+  ],
+  [
+   "a4",
+   "Three: 40 millimeters of iron at a permeability of 4,000 equals a hundredth of a millimeter of air; at 40, a full millimeter, twice the gap.",
+   "3. 40 mm of iron at a permeability of 4,000 equals 100th of a millimeter of air. At 40, a full millimeter twice the gap."
+  ],
+  [
+   "b1",
+   "Here's that behavior for our motor's steel class: a 0.35 millimeter, non-oriented silicon steel.",
+   "Here's that behavior for our motor's steel class. A 0.35 mm non-oriented silicon steel."
+  ],
+  [
+   "b2",
+   "Dots are typical data sheet values at 50 hertz; the curve is a smooth fit that later lessons reuse.",
+   "Dots are typical data sheet values at 50 hertz. The curve is a smooth fit that later lessons reuse. [BUZZER]"
+  ],
+  [
+   "b4",
+   "1.5 tesla needs 1700 amps per meter, and 1.8 tesla over 11,000. That bend, near 1.5 tesla, is the saturation knee.",
+   "1.5 Tesla needs 1,700 amps per meter and 1.8 Tesla over 11,000. That bend, near 1.5 Tesla, is the saturation knee."
+  ],
+  [
+   "b5",
+   "Typical values: cut edges and mechanical stress shift a real part's curve to the right.",
+   "Typical values, cut edges and mechanical stress shift a real parts curve to the right."
+  ],
+  [
+   "c1",
+   "Put this steel into Lesson 3's circuit: 40 millimeters of iron, a half-millimeter gap, and a coil.",
+   "Put this steel into lesson 3's circuit. 40 mm of iron, a half-millimeter gap, and a coil."
+  ],
+  [
+   "c3",
+   "The iron takes 1 percent at one tesla, 10 percent at 1.5, and almost 40 percent at 1.8. The gap no longer dominates.",
+   "The iron takes 1% at 1 Tesla, 10% at 1.5, and almost 40% at 1.8. The gap no longer dominates."
+  ],
+  [
+   "y2",
+   "Coming down from 1.5 tesla, this model keeps about 0.7 tesla at zero field: the remanence.",
+   "Coming down from 1.5 Tesla, this model keeps about 0.7 Tesla at zero field. The remnants."
+  ],
+  [
+   "y4",
+   "It's computed with the Jiles Atherton model: domain wall pinning on an ideal, hysteresis-free curve, tuned to this steel's losses.",
+   "It's computed with the Giles-Atherton model. Domain wall pinning on an ideal, hysteresis-free curve tuned to the steel's losses. [BUZZER]"
+  ],
+  [
+   "e5",
+   "In 1892 Steinmetz fitted this loss as B to the 1.6; for our steel the fitted exponent rises from 1.6 to 2.3.",
+   "In 1892, Steinmetz fitted this loss as B to the 1.6. For our steel, the fitted exponent rises from 1.6 to 2.3. [BUZZER]"
+  ],
+  [
+   "x4",
+   "For 0.35 millimeter sheets at 50 hertz and 1.5 tesla, that's 0.28 watts per kilogram.",
+   "for 0.35mm sheets at 50Hz and 1.5 Tesla. That's 0.28W/kg."
+  ],
+  [
+   "x5",
+   "That assumes the flux fills the sheet, so t must be well below the skin depth: about 2 millimeters at 50 hertz, 0.7 at 400.",
+   "That assumes the flux fills the sheet, so T must be well below the skin depth. About 2 mm at 50 Hz, 0.7 at 400."
+  ],
+  [
+   "l1",
+   "Data sheets give total loss at several frequencies; a common reading splits it in three.",
+   "Data sheets give total loss at several frequencies. A common reading splits it in three. [BUZZER]"
+  ],
+  [
+   "l3",
+   "Fitted from 50 to 400 hertz, it stays within 6 percent of the data. Hysteresis dominates at 50 hertz; at 400, eddy currents take over.",
+   "Fitted from 50 to 400 hertz, it stays within 6% of the data. Hysteriesis dominates at 50 hertz. At 400, Eddie currents take over."
+  ],
+  [
+   "l5",
+   "And narrow cut strips of this grade have measured about 40 percent above the data sheet.",
+   "and narrow cut strips of this grade have measured about 40% above the datasheet."
+  ],
+  [
+   "m3",
+   "There, at 1.5 tesla, this steel loses about 15 watts per kilogram. With 0.43 kilograms of stator steel, that's about 6 watts: the copper loss at 10 amps.",
+   "There at 1.5 Tesla, this steel loses about 15 watts per kilogram. With 0.43 kilograms of stator steel, that's about six watts. The copper loss at 10 amps. [BUZZER]"
+  ],
+  [
+   "m4",
+   "A rough estimate: parts of the stator run below 1.5 tesla, but harmonics and cut edges add loss.",
+   "A rough estimate. Parts of the state are run below 1.5 Tesla, but harmonics and cut edges add loss."
+  ],
+  [
+   "t3",
+   "The secondary voltage follows the rate of change of B, so integrate it with 100 kilohms and one microfarad: that voltage, on Y, is proportional to B.",
+   "The secondary voltage follows the rate of change of B, so integrate it with 100 kylombs and 1 microfarad. That voltage on Y is proportional to B."
+  ],
+  [
+   "t5",
+   "At 50 hertz, eddy currents widen the loop; at lower frequency it shrinks toward the hysteresis loop.",
+   "At 50 hertz, Eddie currents widen the loop. At lower frequency, it shrinks toward the hysteresis loop. [BUZZER]"
+  ],
+  [
+   "q2",
+   "One: cut the lamination thickness in half, same frequency and flux density. What happens to the classical eddy-current loss?",
+   "1. Cut the lamination thickness in half, same frequency and flux density. What happens to the classical eddy current loss?"
+  ],
+  [
+   "q3",
+   "Two: double the frequency, same flux density. By what factors do hysteresis and eddy-current losses change?",
+   "2. Double the frequency, same flux density. By what factors do hysteresis and eddy current losses change?"
+  ],
+  [
+   "q4",
+   "Three: our motor has 8 poles. What's the electrical frequency in its stator iron at 5,000 rpm?",
+   "3. Our motor has eight poles. What's the electrical frequency in its stator iron at 5,000 RPM?"
+  ]
+ ]
+}
