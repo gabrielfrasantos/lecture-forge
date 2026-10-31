@@ -1,0 +1,176 @@
+{
+ "rep": {
+  "video": "h264 1920x1080 30/1 473.80s",
+  "audio": "aac 48000 Hz 1 ch 473.79s",
+  "subtitles": "1 track(s): mov_text/eng",
+  "chapters": 13,
+  "av_duration_diff_s": 0.006,
+  "integrated_LUFS": -16.1,
+  "true_peak_dBTP": -1.4,
+  "LRA_LU": 2.9,
+  "asr_word_error_rate": 0.055,
+  "captions": "116 cues, 0 cues mostly over silence, 0 overlaps, max 19.3 chars/s, last cue ends 472.1s"
+ },
+ "mism": [
+  [
+   "h1",
+   "Here are three phase currents, the kind a motor drive samples thousands of times a second.",
+   "Here are three-phase currents. The kind of motor drive samples thousands of times a second."
+  ],
+  [
+   "a1",
+   "First, the answers from Lesson 10.",
+   "First, the answers from lesson 10. [BUZZER]"
+  ],
+  [
+   "a2",
+   "One: 8 inductance cycles per mechanical revolution — two per electrical cycle, and 4 electrical cycles per turn.",
+   "1. 8 inductance cycles per mechanical revolution 2. per electrical cycle and 4. electrical cycles per turn"
+  ],
+  [
+   "a3",
+   "Two: minus 10 amps on d and 10 on q give 0.396 newton meters in the interior-magnet variant, about a quarter of it reluctance torque.",
+   "2, minus 10 amps on D and 10 on Q, gives 0.396 Newton meters in the interior magnet variant, about a quarter of it reluctance torque."
+  ],
+  [
+   "a4",
+   "Three: an LCR meter reads small-signal, incremental inductance; eddy currents, magnet saturation and coupling to the other phases shift it.",
+   "3. An LCR meter reads small signal incremental inductance. Eddy currents, magnet saturation, and coupling to the other phases shift it."
+  ],
+  [
+   "p1",
+   "In circuit theory, each sinusoid gets a phasor: one fixed complex number holding its amplitude and phase.",
+   "In circuit theory, each sinusoid gets a phaser. One fixed complex number holding its amplitude and phase."
+  ],
+  [
+   "p2",
+   "That's perfect for steady state at one frequency. But a phasor's angle is a shift in time, not a direction inside the machine.",
+   "That's perfect for steady state at one frequency. But a phaser's angle is a shift in time, not a direction inside the machine."
+  ],
+  [
+   "p3",
+   "A drive needs to know where the stator field points at every instant — during start-up, with harmonics, at changing speed.",
+   "A drive needs to know where the stator field points at every instant, during startup with harmonics at changing speed."
+  ],
+  [
+   "d1",
+   "In Lesson 1, we added the three currents as vectors, each along the axis of its own winding.",
+   "In lesson one, we added the three currents as vectors, each along the axis of its own winding."
+  ],
+  [
+   "d2",
+   "For balanced currents of amplitude I, the sum kept a constant length, three halves of I, and turned at omega.",
+   "For balanced currents of amplitude i, the sum kept a constant length, 3/2 of i, and turned at omega."
+  ],
+  [
+   "d4",
+   "A bonus: project the vector onto a phase axis, and you read back that phase's current — as long as the three currents add up to zero.",
+   "A bonus? Project the vector onto a phase axis, and you read back that phase is current as long as the three currents add up to zero."
+  ],
+  [
+   "d6",
+   "As a general method for machine transients, it's usually credited to Kovács and Rácz, whose book appeared in Budapest in 1954.",
+   "as a general method for machine transients. It's usually credited to Kovach and Rott's, whose book appeared in Budapest in 1954."
+  ],
+  [
+   "c2",
+   "Why use it? With this power-invariant scaling, instantaneous power is simply the real part of [v](/vˈi/), times the conjugate of [i](/ˈI/).",
+   "Why use it? With this power invariant scaling, instantaneous power is simply the real part of V times the conjugate of I."
+  ],
+  [
+   "c3",
+   "With amplitude-invariant scaling, it's three halves of that, the same three halves that sits in this series' torque equation.",
+   "With amplitude invariant scaling, it's three halves of that, the same three halves that sits in the series torque equation."
+  ],
+  [
+   "c4",
+   "Check: 10 volts and 10 amps peak, in phase. The three phases deliver a steady 150 watts, and both formulas give exactly that.",
+   "Check 10V and 10A peak in phase. The three phases deliver a steady 150W and both formulas give exactly that."
+  ],
+  [
+   "c5",
+   "This series uses the amplitude-invariant form. Mix the two up in drive code, and you're off by 1.5 in power, or 22 percent in current.",
+   "This series uses the amplitude invariant form. Mix the two up in drive code and you're off by 1.5 in power or 22% in current. [BUZZER]"
+  ],
+  [
+   "f2",
+   "In Lesson 2, the stator MMF around the gap was a staircase. Here's one for a simple two-pole, six-slot winding.",
+   "In lesson two, the stator MMF around the gap was a staircase. Here's one for a simple two-pole, six-slot winding. [BUZZER]"
+  ],
+  [
+   "f3",
+   "The steps change shape as the currents change, but the fundamental, computed with a [Fourier](/fˈʊɹiˌA/) transform, slides smoothly around the gap.",
+   "The steps change shape as the currents change, but the fundamental, computed with a Fourier transform, slides smoothly around the gap."
+  ],
+  [
+   "z2",
+   "Three equal arrows, 120 degrees apart, sum to zero. The space vector doesn't move.",
+   "Three equal arrows, 120 degrees apart, sum to zero. The space vector doesn't move. [BUZZER]"
+  ],
+  [
+   "z5",
+   "In a delta connection, though, a zero-sequence current can circulate inside the delta, unseen at the terminals.",
+   "In a delta connection, though, a zero-sequence current can circulate inside the delta, unseen at the terminals. [buzzer]"
+  ],
+  [
+   "u1",
+   "What if the currents aren't balanced? Say phase [a](/ˈA/) peaks at only 8 amps, and the other two at about nine and a half, still adding to zero.",
+   "What if the currents aren't balanced? Safe phase A peaks at only 8 amps and the other two at about 9 and a half, still adding to zero."
+  ],
+  [
+   "u4",
+   "Where they line up, they make 10 amps; where they oppose, 8: the two [semi](/sˈɛmi/) axes of the ellipse.",
+   "where they line up they make 10 amps, where they oppose 8, the two semi-axes of the ellipse. (buzzer buzzes"
+  ],
+  [
+   "k1",
+   "Harmonics are just as easy. In a fifth harmonic, every phase shift is 5 times larger: 600 degrees of lag, which is 120 degrees of lead.",
+   "Harmonics are just as easy. In a fifth harmonic, every phase shift is five times larger. 600 degrees of lag, which is 120 degrees of lead."
+  ],
+  [
+   "k4",
+   "With just five percent of fifth harmonic, the circle turns into a rounded hexagon: six bumps per turn.",
+   "With just 5% of 5th harmonic, the circle turns into a rounded hexagon. 6 bumps per turn."
+  ],
+  [
+   "l1",
+   "Now, data: a synthetic log, so we know the answer. Two phase currents: 10 amps at 50 hertz, 5 percent fifth harmonic, a 200 milliamp offset on channel [a](/ˈA/), and noise.",
+   "Now data, a synthetic log so we know the answer. Two phase currents, 10 amps at 50 hertz, 5% fifth harmonic, a 200 milliamp offset on channel A and noise."
+  ],
+  [
+   "l4",
+   "The locus is a ring at 10 amps: the fundamental amplitude, read straight off the plot.",
+   "The locus is a ring at 10 amps. The fundamental amplitude, red straight off the plot."
+  ],
+  [
+   "r2",
+   "There's a line at plus 50 hertz: 10 amps, the forward fundamental. And one at minus 250: half an amp, the backward fifth.",
+   "There's a line at +50 hertz, 10 amps, the forward fundamental, and 1 at -250, half an amp, the backward fifth."
+  ],
+  [
+   "r3",
+   "The line at zero hertz is the offset: 0.23 amps at 30 degrees, because phase c was computed from the offset channel.",
+   "The line at 0 hertz is the offset. 0.23 amps at 30 degrees because phase C was computed from the offset channel."
+  ],
+  [
+   "b3",
+   "Run the same Python. The ring's radius should match the peak phase current: a clamp meter reading 7.07 amps RMS means a 10 amp ring.",
+   "Run the same Python. The rings radius should match the peak phase current. A clamp meter reading 7.0 7 amps RMS means a 10 amp ring."
+  ],
+  [
+   "q3",
+   "Two: add 1 amp of DC to all three phases. Does the space vector change?",
+   "2. Add 1 amp of DC to all three phases. Does the space vector change?"
+  ],
+  [
+   "q4",
+   "Three: phase c is open, so the current in phase [a](/ˈA/) is minus the current in phase [b](/bˈi/). What does the tip of the vector trace?",
+   "3. Phase C is open. So the current in phase A is minus the current in phase B. What does the tip of the vector trace?"
+  ],
+  [
+   "q5",
+   "Next time, we split this complex number into two real axes, alpha and beta, the Clarke transformation, and use it to diagnose sensor errors.",
+   "Next time, we split this complex number into two real axes, alpha and beta, the Clark transformation, and use it to diagnose sensor errors."
+  ]
+ ]
+}

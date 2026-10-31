@@ -1,0 +1,82 @@
+;FFMETADATA1
+title=Space Vectors — PMSM & BLDC, Lesson 11
+artist=lecture-forge
+language=eng
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=25366
+title=01 Three currents, one arrow
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=25366
+END=57323
+title=02 Answers from Lesson 10
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=57323
+END=88685
+title=03 Why phasors aren't enough
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=88685
+END=133698
+title=04 The space vector
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=133698
+END=177790
+title=05 Two scalings, two power formulas
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=177790
+END=209887
+title=06 Where the vector points
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=209887
+END=245540
+title=07 Zero sequence: invisible
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=245540
+END=283831
+title=08 Unbalance: an ellipse
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=283831
+END=326255
+title=09 Harmonics turn both ways
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=326255
+END=364085
+title=10 From a log file to a locus
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=364085
+END=394719
+title=11 Forward and backward in one spectrum
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=394719
+END=436994
+title=12 On the bench
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=436994
+END=473794
+title=13 Predict, then check

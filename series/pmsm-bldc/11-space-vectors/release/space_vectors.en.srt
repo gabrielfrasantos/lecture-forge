@@ -1,0 +1,557 @@
+1
+00:00:00,600 --> 00:00:02,267
+Here are three phase currents,
+
+2
+00:00:02,307 --> 00:00:06,124
+the kind a motor drive samples thousands
+of times a second.
+
+3
+00:00:06,164 --> 00:00:09,821
+Where is the stator field pointing right
+now, and how strong is it?
+
+4
+00:00:09,861 --> 00:00:12,915
+From three wiggling traces, that's hard to
+say.
+
+5
+00:00:12,955 --> 00:00:15,916
+Combine the three values into one complex
+number,
+
+6
+00:00:15,956 --> 00:00:19,701
+and the answer is an arrow: its angle and
+its length.
+
+7
+00:00:19,801 --> 00:00:24,466
+That arrow is the space vector, and it
+opens the control half of this series.
+
+8
+00:00:25,766 --> 00:00:28,111
+First, the answers from Lesson 10.
+
+9
+00:00:28,151 --> 00:00:31,748
+One: 8 inductance cycles per mechanical
+revolution —
+
+10
+00:00:31,788 --> 00:00:36,274
+two per electrical cycle, and 4 electrical
+cycles per turn.
+
+11
+00:00:36,314 --> 00:00:42,516
+Two: −10 A on d and 10 A on q give 0.396
+N·m in the IPM variant,
+
+12
+00:00:42,556 --> 00:00:46,818
+about a quarter of it reluctance torque.
+
+13
+00:00:46,858 --> 00:00:50,956
+Three: an LCR meter reads small-signal,
+incremental inductance;
+
+14
+00:00:50,996 --> 00:00:56,423
+eddy currents, magnet saturation and
+coupling to the other phases shift it.
+
+15
+00:00:57,723 --> 00:01:00,685
+In circuit theory, each sinusoid gets a
+phasor:
+
+16
+00:01:00,725 --> 00:01:04,725
+one fixed complex number holding its
+amplitude and phase.
+
+17
+00:01:04,765 --> 00:01:07,679
+That's perfect for steady state at one
+frequency.
+
+18
+00:01:07,719 --> 00:01:12,761
+But a phasor's angle is a shift in time,
+not a direction inside the machine.
+
+19
+00:01:12,801 --> 00:01:16,807
+A drive needs to know where the stator
+field points at every instant
+
+20
+00:01:16,847 --> 00:01:20,460
+— during start-up, with harmonics, at
+changing speed.
+
+21
+00:01:20,500 --> 00:01:23,275
+The geometry for that is already there:
+
+22
+00:01:23,315 --> 00:01:27,785
+the three winding axes sit 120 degrees
+apart, in space.
+
+23
+00:01:29,085 --> 00:01:32,343
+In Lesson 1, we added the three currents
+as vectors,
+
+24
+00:01:32,383 --> 00:01:35,216
+each along the axis of its own winding.
+
+25
+00:01:35,256 --> 00:01:39,218
+For balanced currents of amplitude I, the
+sum kept a constant length
+
+26
+00:01:39,258 --> 00:01:41,954
+— three-halves of I — and turned at ω.
+
+27
+00:01:41,994 --> 00:01:45,619
+Scale that sum by two-thirds, and you have
+the space vector.
+
+28
+00:01:45,659 --> 00:01:48,685
+Its length now equals the phase amplitude.
+
+29
+00:01:48,725 --> 00:01:52,788
+A bonus: project the vector onto a phase
+axis, and you read back
+
+30
+00:01:52,828 --> 00:01:57,648
+that phase's current — as long as the
+three currents add up to zero.
+
+31
+00:01:57,688 --> 00:01:59,843
+And nothing here assumed sinusoids:
+
+32
+00:01:59,883 --> 00:02:03,881
+the definition works for any three values,
+at any instant.
+
+33
+00:02:03,921 --> 00:02:06,763
+As a general method for machine
+transients,
+
+34
+00:02:06,803 --> 00:02:12,798
+it's usually credited to Kovács and Rácz,
+whose book appeared in Budapest in 1954.
+
+35
+00:02:14,098 --> 00:02:18,676
+Two-thirds isn't the only choice. Scale by
+the square root of two-thirds,
+
+36
+00:02:18,716 --> 00:02:21,860
+and ten-amp currents give a 12.2-amp
+vector.
+
+37
+00:02:21,900 --> 00:02:24,868
+Why use it? With this power-invariant
+scaling,
+
+38
+00:02:24,908 --> 00:02:30,106
+instantaneous power is simply the real
+part of v times the conjugate of i.
+
+39
+00:02:30,146 --> 00:02:33,328
+With amplitude-invariant scaling, it's
+three-halves of that —
+
+40
+00:02:33,368 --> 00:02:37,109
+the same three-halves that sits in this
+series' torque equation.
+
+41
+00:02:37,149 --> 00:02:41,517
+Check: 10 volts and 10 amps peak, in
+phase. The three phases
+
+42
+00:02:41,557 --> 00:02:46,719
+deliver a steady 150 watts, and both
+formulas give exactly that.
+
+43
+00:02:46,759 --> 00:02:52,222
+This series uses the amplitude-invariant
+form. Mix the two up in drive code,
+
+44
+00:02:52,262 --> 00:02:56,890
+and you're off by 1.5 in power, or 22
+percent in current.
+
+45
+00:02:58,190 --> 00:03:00,742
+So what does the vector point at,
+physically?
+
+46
+00:03:00,782 --> 00:03:04,669
+In Lesson 2, the stator MMF around the gap
+was a staircase.
+
+47
+00:03:04,709 --> 00:03:08,563
+Here's one for a simple two-pole, six-slot
+winding.
+
+48
+00:03:08,603 --> 00:03:12,611
+The steps change shape as the currents
+change, but the fundamental,
+
+49
+00:03:12,651 --> 00:03:17,099
+computed with a Fourier transform, slides
+smoothly around the gap.
+
+50
+00:03:17,139 --> 00:03:19,954
+Its peak sits exactly where the space
+vector points,
+
+51
+00:03:19,994 --> 00:03:23,418
+and its height is proportional to the
+vector's length.
+
+52
+00:03:23,458 --> 00:03:26,869
+The space harmonics of the staircase come
+from the winding layout;
+
+53
+00:03:26,909 --> 00:03:28,978
+the vector doesn't carry them.
+
+54
+00:03:30,287 --> 00:03:33,073
+Now add the same current to all three
+phases.
+
+55
+00:03:33,113 --> 00:03:39,511
+Three equal arrows, 120 degrees apart, sum
+to zero. The space vector doesn't move.
+
+56
+00:03:39,551 --> 00:03:41,818
+That common part is the zero sequence,
+
+57
+00:03:41,858 --> 00:03:46,326
+a third of the sum of the phases. We keep
+it as a separate number.
+
+58
+00:03:46,366 --> 00:03:48,508
+In a star connection without neutral,
+
+59
+00:03:48,548 --> 00:03:53,166
+Kirchhoff's current law at the star point
+makes the three currents add to zero:
+
+60
+00:03:53,206 --> 00:03:57,676
+no zero-sequence current. That's why two
+current sensors are enough.
+
+61
+00:03:57,716 --> 00:04:00,830
+In a delta connection, though, a zero-
+sequence current
+
+62
+00:04:00,870 --> 00:04:04,640
+can circulate inside the delta, unseen at
+the terminals.
+
+63
+00:04:05,940 --> 00:04:10,026
+What if the currents aren't balanced? Say
+phase a peaks at only 8 amps,
+
+64
+00:04:10,066 --> 00:04:14,362
+and the other two at about nine and a half
+— still adding to zero.
+
+65
+00:04:14,402 --> 00:04:17,242
+The tip of the vector now traces an
+ellipse.
+
+66
+00:04:17,342 --> 00:04:22,502
+It splits into two rotating parts: a
+forward vector of 9 amps at plus ω,
+
+67
+00:04:22,542 --> 00:04:26,035
+and a backward vector of 1 amp at minus ω.
+
+68
+00:04:26,075 --> 00:04:28,223
+Where they line up, they make 10 amps;
+
+69
+00:04:28,263 --> 00:04:31,889
+where they oppose, 8: the two semi-axes of
+the ellipse.
+
+70
+00:04:31,929 --> 00:04:35,404
+These are the positive- and negative-
+sequence components.
+
+71
+00:04:35,444 --> 00:04:38,796
+If the backward part grows as large as the
+forward one,
+
+72
+00:04:38,836 --> 00:04:42,913
+the ellipse flattens into a line: the
+field only pulsates.
+
+73
+00:04:44,231 --> 00:04:49,172
+Harmonics are just as easy. In a fifth
+harmonic, every phase shift is
+
+74
+00:04:49,212 --> 00:04:54,481
+five times larger: 600 degrees of lag,
+which is 120 degrees of lead.
+
+75
+00:04:54,521 --> 00:04:56,056
+The phase order reverses,
+
+76
+00:04:56,096 --> 00:05:00,336
+so its space vector turns backward, at
+five times the speed.
+
+77
+00:05:00,376 --> 00:05:04,672
+The seventh turns forward, at 7ω. And
+every multiple of three
+
+78
+00:05:04,712 --> 00:05:09,722
+is identical in all three phases: pure
+zero sequence, invisible.
+
+79
+00:05:09,762 --> 00:05:12,296
+With just five percent of fifth harmonic,
+
+80
+00:05:12,336 --> 00:05:16,562
+the circle turns into a rounded hexagon:
+six bumps per turn.
+
+81
+00:05:16,602 --> 00:05:20,837
+Seen from a frame turning with the
+fundamental, both appear at six times
+
+82
+00:05:20,877 --> 00:05:25,355
+the frequency: one source of the six-times
+ripple common in drives.
+
+83
+00:05:26,655 --> 00:05:30,267
+Now, data: a synthetic log, so we know the
+answer.
+
+84
+00:05:30,307 --> 00:05:35,087
+Two phase currents: 10 amps at 50 hertz, 5
+percent fifth harmonic,
+
+85
+00:05:35,127 --> 00:05:38,947
+a 200-milliamp offset on channel a, and
+noise.
+
+86
+00:05:38,987 --> 00:05:41,502
+It's in the release folder as a CSV file,
+
+87
+00:05:41,542 --> 00:05:45,266
+and a few lines of Python turn it into a
+space vector.
+
+88
+00:05:45,306 --> 00:05:49,642
+Phase c comes from the star-point rule;
+then it's just the definition.
+
+89
+00:05:49,682 --> 00:05:51,541
+The locus is a ring at 10 amps:
+
+90
+00:05:51,581 --> 00:05:55,350
+the fundamental amplitude, read straight
+off the plot.
+
+91
+00:05:55,390 --> 00:05:59,084
+Noise thickens it, the fifth harmonic
+makes it a rounded hexagon,
+
+92
+00:05:59,124 --> 00:06:03,185
+and the offset shifts its centre by about
+a quarter of an amp.
+
+93
+00:06:04,485 --> 00:06:06,653
+Because the space vector is complex,
+
+94
+00:06:06,693 --> 00:06:10,672
+its Fourier transform tells forward
+rotation from backward.
+
+95
+00:06:10,712 --> 00:06:15,371
+There's a line at plus 50 hertz: 10 amps,
+the forward fundamental.
+
+96
+00:06:15,411 --> 00:06:19,716
+And one at minus 250: half an amp, the
+backward fifth.
+
+97
+00:06:19,756 --> 00:06:24,176
+The line at zero hertz is the offset: 0.23
+amps at 30 degrees,
+
+98
+00:06:24,216 --> 00:06:28,489
+because phase c was computed from the
+offset channel.
+
+99
+00:06:28,529 --> 00:06:33,819
+Next lesson turns fingerprints like these
+into a diagnosis of sensor errors.
+
+100
+00:06:35,119 --> 00:06:38,205
+On a real motor: run it from a drive at
+steady load,
+
+101
+00:06:38,245 --> 00:06:41,310
+and clip current probes onto two phase
+leads.
+
+102
+00:06:41,350 --> 00:06:44,323
+Zero the probes, arrows toward the motor,
+
+103
+00:06:44,363 --> 00:06:48,658
+and log both channels together, fast
+compared with the PWM:
+
+104
+00:06:48,698 --> 00:06:54,302
+say 100 kilosamples per second for a
+20-kilohertz drive. Export a CSV.
+
+105
+00:06:54,342 --> 00:06:59,967
+Run the same Python. The ring's radius
+should match the peak phase current:
+
+106
+00:07:00,007 --> 00:07:04,696
+a clamp meter reading 7.07 amps RMS means
+a 10-amp ring.
+
+107
+00:07:04,736 --> 00:07:09,330
+PWM ripple shows up as fuzz. If the ring
+is squashed or off-centre,
+
+108
+00:07:09,370 --> 00:07:11,819
+suspect the probes before the motor.
+
+109
+00:07:11,859 --> 00:07:16,094
+And if the neutral is connected, log all
+three phases.
+
+110
+00:07:17,394 --> 00:07:19,674
+Three predictions before next time.
+
+111
+00:07:19,714 --> 00:07:24,968
+One: balanced currents of 10 amps peak.
+What's the magnitude of the space vector?
+
+112
+00:07:26,268 --> 00:07:31,655
+Two: add 1 amp of DC to all three phases.
+Does the space vector change?
+
+113
+00:07:32,955 --> 00:07:38,052
+Three: phase c is open, so the phase-a
+current is minus the phase-b current.
+
+114
+00:07:38,092 --> 00:07:41,160
+What does the tip of the vector trace?
+
+115
+00:07:42,460 --> 00:07:46,987
+Next time, we split this complex number
+into two real axes, α and β
+
+116
+00:07:47,027 --> 00:07:52,094
+— the Clarke transformation — and use it
+to diagnose sensor errors.
