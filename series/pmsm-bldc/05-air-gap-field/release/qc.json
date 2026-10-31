@@ -1,0 +1,161 @@
+{
+ "rep": {
+  "video": "h264 1920x1080 30/1 478.70s",
+  "audio": "aac 48000 Hz 1 ch 478.71s",
+  "subtitles": "1 track(s): mov_text/eng",
+  "chapters": 14,
+  "av_duration_diff_s": 0.013,
+  "integrated_LUFS": -16.1,
+  "true_peak_dBTP": -1.4,
+  "LRA_LU": 2.6,
+  "asr_word_error_rate": 0.033,
+  "captions": "109 cues, 0 cues mostly over silence, 0 overlaps, max 18.7 chars/s, last cue ends 477.0s"
+ },
+ "mism": [
+  [
+   "h1",
+   "In Lesson 3, we squeezed the field of our reference motor into one number: about 0.94 tesla in the air gap.",
+   "In lesson three, we squeezed the field of our reference motor into one number, about 0.94 Tesla in the air gap."
+  ],
+  [
+   "h2",
+   "But a stator tooth doesn't see one number. As the rotor turns, it sees a waveform.",
+   "but a stator tooth doesn't see one number. As the rotor turns, it sees a waveform. [buzzer]"
+  ],
+  [
+   "a2",
+   "One: eddy-current loss scales with lamination thickness squared, so halving the thickness cuts it to a quarter.",
+   "1. Eddy current law scales with lamination thickness squared, so having the thickness cuts it to a quarter."
+  ],
+  [
+   "a3",
+   "Two: at the same flux density, doubling the frequency doubles the hysteresis loss and quadruples the eddy loss.",
+   "2. At the same flux density, doubling the frequency doubles the hysteresis loss and quadruples the eddy loss."
+  ],
+  [
+   "a4",
+   "Three: four pole pairs at 5,000 RPM give four times 5,000, over 60: about 333 hertz in the stator iron.",
+   "3, 4 pole pairs at 5,000 RPM give 4 times 5,000 over 60, about 333 hertz in the stator iron."
+  ],
+  [
+   "a5",
+   "That frequency is set by the rotor's field: today's subject.",
+   "That frequency is set by the rotors field, today's subject."
+  ],
+  [
+   "s3",
+   "The unknown at each node is the axial vector potential, A. Its contours are field lines, with equal flux between neighbors.",
+   "The unknown at each node is the axial vector potential. A, its contours are field lines, with equal flux between neighbors. [buzzer]"
+  ],
+  [
+   "s4",
+   "Around each node, Ampère's law: the line integral of H around a small cell equals the current inside. Magnets enter as equivalent currents at their edges.",
+   "Around each node, amperes law. The line integral of H around a small cell equals the current inside. Magnets enter as equivalent currents at their edges."
+  ],
+  [
+   "s6",
+   "The steel is linear, with a relative permeability of 4,000: an assumption we'll revisit.",
+   "The steel is linear, with a relative permeability of 4,000, and assumption will revisit."
+  ],
+  [
+   "f4",
+   "So linear steel is a little optimistic here.",
+   "So linear steel is a little optimistic here. [AUDIO OUT]"
+  ],
+  [
+   "v2",
+   "With a smooth bore, it matches the analytic solution within 0.34 percent.",
+   "With a smooth bore, it matches the analytic solution within 0.34%."
+  ],
+  [
+   "v4",
+   "Doubling the grid resolution changes the fundamental by 0.03 percent, and two other tests agree as well.",
+   "Doubling the grid resolution changes the fundamental by 0.03% and two other tests agree as well."
+  ],
+  [
+   "e2",
+   "The field can't flip instantly. It goes from plus to minus 90 percent over about 3.8 millimeters: close to the magnet's thickness plus the gap.",
+   "The field can't flip instantly. It goes from plus to minus 90% over about 3.8 millimeters, close to the magnet's thickness plus the gap."
+  ],
+  [
+   "e3",
+   "And some field lines never reach the stator. They loop straight from one magnet to its neighbor: leakage, about 4 percent of each magnet's flux.",
+   "and some field lines never reach the stator. They loop straight from one magnet to its neighbor, leakage about 4% of each magnet's flux."
+  ],
+  [
+   "e4",
+   "That's why the flat top has sloped sides, and Lesson 3's number holds only near the middle of a pole.",
+   "That's why the flat top has sloped sides, and lesson three's number holds only near the middle of a pole."
+  ],
+  [
+   "o1",
+   "Next, the slot openings: 2 millimeter gaps between the tooth tips.",
+   "Next, the slot openings, 2 mm gaps between the tooth tips."
+  ],
+  [
+   "o2",
+   "Over an opening, the path through air is longer, so the flux swerves sideways, toward the tooth corners.",
+   "Over an opening, the path through air is longer, so the flux swerve sideways toward the tooth corners."
+  ],
+  [
+   "o3",
+   "Under the opening, B in the middle of the gap drops to two thirds of its plateau, and at the bore itself, to 57 percent.",
+   "Under the opening, B in the middle of the gap drops to two-thirds of its plateau, and at the bore itself to 57%."
+  ],
+  [
+   "o5",
+   "These dips belong to the stator: they stay put while the rotor turns.",
+   "These dips belong to the stator. They stay put while the rotor turns. [BUZZER]"
+  ],
+  [
+   "k4",
+   "But which gap? With the half millimeter air gap, Carter's coefficient is 1.09.",
+   "But which gap? With a half-millimeter air gap, Carter's coefficient is 1.09."
+  ],
+  [
+   "k6",
+   "The solver gives 1.022. So the slot openings cost this motor about 2 percent of its average gap flux, not 8.",
+   "The solver gives 1.022. So the slot openings cost this motor about 2% of its average gap flux, not 8."
+  ],
+  [
+   "n2",
+   "For an ideal flat top of height B, and width alpha, harmonic n has amplitude four over n pi, times B, times the sine of n alpha over two.",
+   "for an ideal flat top of height B, and with alpha, harmonic n has amplitude 4 over n pi, times b, times the sine of n alpha over 2."
+  ],
+  [
+   "n5",
+   "The slot openings lower the fundamental 2 percent, to 1.14 tesla, and add small components that come from the slots, not the magnets.",
+   "The slot openings lower the fundamental 2% to 1.14 Tesla and add small components that come from the slots, not the magnets."
+  ],
+  [
+   "t3",
+   "One full cycle takes one pole pair: a quarter turn, for this 8-pole rotor.",
+   "One full cycle takes one pole pair, a quarter turn for this eight pole rotor."
+  ],
+  [
+   "t4",
+   "So the electrical frequency is the number of pole pairs times the revolutions per second: f equals p n over 60, with n in RPM.",
+   "So the electrical frequency is the number of pole pairs times the revolutions per second. F equals pN over 60, with N in RPM."
+  ],
+  [
+   "b2",
+   "Lay a transverse Hall probe flat on the magnets, sensor about half a millimeter above the surface, and step the rotor one degree at a time.",
+   "Lay a transverse-haul probe flat on the magnets, sensor about half a millimeter above the surface, and step the rotor one degree at a time."
+  ],
+  [
+   "b4",
+   "That's about a third of the field in the motor. The stator's steel is what lets the magnets drive 0.94 tesla across the gap.",
+   "That's about a third of the field in the motor. The stator steel is what lets the magnets drive 0.94 Tesla across the gap."
+  ],
+  [
+   "l4",
+   "There's no stator current yet, so no armature reaction. And the magnets are ideal: uniform, at room temperature.",
+   "There's no state or current yet, so no armature reaction. And the magnets are ideal, uniform at room temperature."
+  ],
+  [
+   "q4",
+   "Three: at 1,500 RPM, what's the electrical frequency of this field past a tooth?",
+   "3. At 1,500 RPM, what's the electrical frequency of this field past a tooth?"
+  ]
+ ]
+}

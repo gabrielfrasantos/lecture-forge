@@ -1,0 +1,516 @@
+[
+ {
+  "id": "hook",
+  "title": "One number, or a waveform?",
+  "start": 0.0,
+  "beats": [
+   {
+    "id": "h1",
+    "start": 0.6,
+    "end": 8.174,
+    "text": "In Lesson 3, we squeezed the field of our reference motor into one number: about 0.94 tesla in the air gap."
+   },
+   {
+    "id": "h2",
+    "start": 8.574,
+    "end": 13.409,
+    "text": "But a stator tooth doesn't see one number. As the rotor turns, it sees a waveform."
+   },
+   {
+    "id": "h3",
+    "start": 13.809,
+    "end": 19.688,
+    "text": "Today we'll compute that waveform: its shape, the dips the slot openings cut into it, and its harmonics."
+   },
+   {
+    "id": "h4",
+    "start": 20.088,
+    "end": 23.035,
+    "text": "And we'll do it with a field solver you can run yourself."
+   }
+  ],
+  "end": 24.234958333333335
+ },
+ {
+  "id": "answers",
+  "title": "Answers from Lesson 4",
+  "start": 24.234958333333335,
+  "beats": [
+   {
+    "id": "a1",
+    "start": 24.635,
+    "end": 26.523,
+    "text": "First, last lesson's answers."
+   },
+   {
+    "id": "a2",
+    "start": 26.823,
+    "end": 32.779,
+    "text": "One: eddy-current loss scales with lamination thickness squared, so halving the thickness cuts it to a quarter."
+   },
+   {
+    "id": "a3",
+    "start": 33.179,
+    "end": 40.146,
+    "text": "Two: at the same flux density, doubling the frequency doubles the hysteresis loss and quadruples the eddy loss."
+   },
+   {
+    "id": "a4",
+    "start": 40.546,
+    "end": 49.865,
+    "text": "Three: four pole pairs at 5000 rpm give 4 \u00d7 5000 / 60 \u2248 333 Hz in the stator iron."
+   },
+   {
+    "id": "a5",
+    "start": 50.265,
+    "end": 53.842,
+    "text": "That frequency is set by the rotor's field: today's subject."
+   }
+  ],
+  "end": 55.04208333333334
+ },
+ {
+  "id": "waveform",
+  "title": "From one number to a waveform",
+  "start": 55.04208333333334,
+  "beats": [
+   {
+    "id": "w1",
+    "start": 55.442,
+    "end": 59.037,
+    "text": "Unroll the air gap: magnets below, the stator bore above."
+   },
+   {
+    "id": "w2",
+    "start": 59.437,
+    "end": 67.238,
+    "text": "Lesson 3's circuit says B is about 0.94 tesla under each magnet: out of a north magnet, into a south one."
+   },
+   {
+    "id": "w3",
+    "start": 67.638,
+    "end": 75.723,
+    "text": "The simplest picture is a flat-topped wave, spanning each magnet's 160 electrical degrees, and zero between magnets."
+   },
+   {
+    "id": "w4",
+    "start": 76.123,
+    "end": 84.028,
+    "text": "With a smooth bore, we can do better: expand the magnets in Fourier harmonics, and solve the field equations exactly for each one."
+   },
+   {
+    "id": "w5",
+    "start": 84.428,
+    "end": 90.589,
+    "text": "The top stays flat at 0.943 tesla, Lesson 3's value, but the corners round off."
+   }
+  ],
+  "end": 91.7885
+ },
+ {
+  "id": "solver",
+  "title": "A field solver for the cross-section",
+  "start": 91.7885,
+  "beats": [
+   {
+    "id": "s1",
+    "start": 92.189,
+    "end": 97.177,
+    "text": "Real stators have slots, and then there's no tidy formula. So we solve numerically."
+   },
+   {
+    "id": "s2",
+    "start": 97.577,
+    "end": 105.198,
+    "text": "Cover one quarter of the motor with a polar grid: 137 rings by 360 spokes, finest in the gap."
+   },
+   {
+    "id": "s3",
+    "start": 105.598,
+    "end": 113.257,
+    "text": "The unknown at each node is the axial vector potential, A. Its contours are field lines, with equal flux between neighbours."
+   },
+   {
+    "id": "s4",
+    "start": 113.657,
+    "end": 123.541,
+    "text": "Around each node, Amp\u00e8re's law: the line integral of H around a small cell equals the current inside. Magnets enter as equivalent currents at their edges."
+   },
+   {
+    "id": "s5",
+    "start": 123.941,
+    "end": 130.506,
+    "text": "That's one linear equation per node: 48,600 sparse equations, solved in about a second."
+   },
+   {
+    "id": "s6",
+    "start": 130.906,
+    "end": 136.662,
+    "text": "The steel is linear, with \u03bcr = 4000: an assumption we'll revisit."
+   }
+  ],
+  "end": 137.86154166666668
+ },
+ {
+  "id": "solution",
+  "title": "The computed cross-section",
+  "start": 137.86154166666668,
+  "beats": [
+   {
+    "id": "f1",
+    "start": 138.262,
+    "end": 141.294,
+    "text": "Here's the result, with a north magnet centred on a tooth."
+   },
+   {
+    "id": "f2",
+    "start": 141.694,
+    "end": 150.671,
+    "text": "Flux leaves the north magnet, crosses the gap, climbs the tooth, splits along the stator yoke, and returns through the south magnets and the rotor steel."
+   },
+   {
+    "id": "f3",
+    "start": 151.071,
+    "end": 158.826,
+    "text": "The colour shows the flux density. The teeth carry about 1.5 tesla, right at the knee of the steel's curve from Lesson 4."
+   },
+   {
+    "id": "f4",
+    "start": 159.226,
+    "end": 161.849,
+    "text": "So linear steel is a little optimistic here."
+   }
+  ],
+  "end": 163.04912500000003
+ },
+ {
+  "id": "checks",
+  "title": "Is the solver right?",
+  "start": 163.04912500000003,
+  "beats": [
+   {
+    "id": "v1",
+    "start": 163.449,
+    "end": 167.129,
+    "text": "Before trusting a solver, test it on problems with known answers."
+   },
+   {
+    "id": "v2",
+    "start": 167.429,
+    "end": 172.867,
+    "text": "With a smooth bore, it matches the analytic solution within 0.34 percent."
+   },
+   {
+    "id": "v3",
+    "start": 173.267,
+    "end": 182.898,
+    "text": "With real steel and air between the magnets, its pole-centre field is 0.942 tesla. Lesson 3's circuit gave 0.941."
+   },
+   {
+    "id": "v4",
+    "start": 183.298,
+    "end": 190.525,
+    "text": "Doubling the grid resolution changes the fundamental by 0.03 percent, and two other tests agree as well."
+   }
+  ],
+  "end": 191.7250416666667
+ },
+ {
+  "id": "edges",
+  "title": "Rounded edges and leakage",
+  "start": 191.7250416666667,
+  "beats": [
+   {
+    "id": "e1",
+    "start": 192.125,
+    "end": 195.156,
+    "text": "Now zoom in where one magnet ends and the next begins."
+   },
+   {
+    "id": "e2",
+    "start": 195.556,
+    "end": 205.211,
+    "text": "The field can't flip instantly. It goes from plus to minus 90 percent over about 3.8 millimetres: close to the magnet's thickness plus the gap."
+   },
+   {
+    "id": "e3",
+    "start": 205.611,
+    "end": 214.327,
+    "text": "And some field lines never reach the stator. They loop straight from one magnet to its neighbour: leakage, about 4 percent of each magnet's flux."
+   },
+   {
+    "id": "e4",
+    "start": 214.727,
+    "end": 220.182,
+    "text": "That's why the flat top has sloped sides, and Lesson 3's number holds only near the middle of a pole."
+   }
+  ],
+  "end": 221.38187500000004
+ },
+ {
+  "id": "slots",
+  "title": "Slot openings",
+  "start": 221.38187500000004,
+  "beats": [
+   {
+    "id": "o1",
+    "start": 221.782,
+    "end": 225.853,
+    "text": "Next, the slot openings: 2-millimetre gaps between the tooth tips."
+   },
+   {
+    "id": "o2",
+    "start": 226.253,
+    "end": 231.925,
+    "text": "Over an opening, the path through air is longer, so the flux swerves sideways, toward the tooth corners."
+   },
+   {
+    "id": "o3",
+    "start": 232.325,
+    "end": 239.533,
+    "text": "Under the opening, B in the middle of the gap drops to two thirds of its plateau, and at the bore itself, to 57 percent."
+   },
+   {
+    "id": "o4",
+    "start": 239.933,
+    "end": 246.16,
+    "text": "Beside the opening, the corners collect that flux: about 1.5 tesla just in front of the steel."
+   },
+   {
+    "id": "o5",
+    "start": 246.56,
+    "end": 250.328,
+    "text": "These dips belong to the stator: they stay put while the rotor turns."
+   }
+  ],
+  "end": 251.52812500000007
+ },
+ {
+  "id": "carter",
+  "title": "Carter's coefficient",
+  "start": 251.52812500000007,
+  "beats": [
+   {
+    "id": "k1",
+    "start": 251.928,
+    "end": 261.606,
+    "text": "On average, slot openings act like a slightly wider gap. F. W. Carter worked out how much in 1900 and 1901, with a conformal map."
+   },
+   {
+    "id": "k2",
+    "start": 262.006,
+    "end": 269.748,
+    "text": "The effective gap is the real one times Carter's coefficient: the slot pitch, over the slot pitch minus \u03b3 times the gap."
+   },
+   {
+    "id": "k3",
+    "start": 270.048,
+    "end": 273.503,
+    "text": "\u03b3 depends only on the ratio of slot opening to gap."
+   },
+   {
+    "id": "k4",
+    "start": 273.903,
+    "end": 279.118,
+    "text": "But which gap? With the half-millimetre air gap, Kc is 1.09."
+   },
+   {
+    "id": "k5",
+    "start": 279.418,
+    "end": 291.708,
+    "text": "A surface magnet, though, is almost air. The rotor steel is g + hm/\u03bcrec away: 3.4 millimetres. Then Kc is 1.018."
+   },
+   {
+    "id": "k6",
+    "start": 292.108,
+    "end": 300.316,
+    "text": "The solver gives 1.022. So the slot openings cost this motor about 2 percent of its average gap flux, not 8."
+   }
+  ],
+  "end": 301.5159166666668
+ },
+ {
+  "id": "spectrum",
+  "title": "Harmonics of the gap field",
+  "start": 301.5159166666668,
+  "beats": [
+   {
+    "id": "n1",
+    "start": 301.916,
+    "end": 308.088,
+    "text": "Back to the waveform. It repeats every pole pair, so write it as a Fourier series in electrical angle."
+   },
+   {
+    "id": "n2",
+    "start": 308.488,
+    "end": 317.927,
+    "text": "For an ideal flat top of height B and width \u03b1, harmonic n has amplitude 4/(n\u03c0) \u00b7 B \u00b7 sin(n\u03b1/2)."
+   },
+   {
+    "id": "n3",
+    "start": 318.227,
+    "end": 322.332,
+    "text": "Only odd harmonics appear, because each south half mirrors the north half."
+   },
+   {
+    "id": "n4",
+    "start": 322.732,
+    "end": 332.208,
+    "text": "The computed wave has a fundamental of 1.16 tesla, a little below the ideal, with weaker 3rd and 5th harmonics: its corners are rounded."
+   },
+   {
+    "id": "n5",
+    "start": 332.608,
+    "end": 341.716,
+    "text": "The slot openings lower the fundamental 2 percent, to 1.14 tesla, and add small components that come from the slots, not the magnets."
+   }
+  ],
+  "end": 342.91562500000015
+ },
+ {
+  "id": "stator",
+  "title": "What the stator sees",
+  "start": 342.91562500000015,
+  "beats": [
+   {
+    "id": "t1",
+    "start": 343.316,
+    "end": 345.768,
+    "text": "Now let the rotor turn, and watch one tooth."
+   },
+   {
+    "id": "t2",
+    "start": 346.168,
+    "end": 352.631,
+    "text": "Its flux density swings between plus and minus 1.5 tesla as north and south magnets pass."
+   },
+   {
+    "id": "t3",
+    "start": 353.031,
+    "end": 357.692,
+    "text": "One full cycle takes one pole pair: a quarter turn, for this 8-pole rotor."
+   },
+   {
+    "id": "t4",
+    "start": 358.092,
+    "end": 367.173,
+    "text": "So the electrical frequency is the number of pole pairs times the revolutions per second: f = p\u00b7n/60, with n in rpm."
+   },
+   {
+    "id": "t5",
+    "start": 367.573,
+    "end": 375.631,
+    "text": "At 3000 rpm, that's 200 hertz: a 5-millisecond cycle in every tooth and in every coil's flux linkage."
+   }
+  ],
+  "end": 376.8309583333334
+ },
+ {
+  "id": "bench",
+  "title": "Bench check with a Hall probe",
+  "start": 376.8309583333334,
+  "beats": [
+   {
+    "id": "b1",
+    "start": 377.231,
+    "end": 384.664,
+    "text": "You can map this field yourself. Take the rotor out and mount it on an indexing fixture: a printed protractor or a stepper."
+   },
+   {
+    "id": "b2",
+    "start": 385.064,
+    "end": 393.273,
+    "text": "Lay a transverse Hall probe flat on the magnets, sensor about half a millimetre above the surface, and step the rotor one degree at a time."
+   },
+   {
+    "id": "b3",
+    "start": 393.673,
+    "end": 404.991,
+    "text": "Without the stator, expect about 0.33 tesla over each magnet centre, rising toward 0.37 near the edges, and a sign change every 45 degrees."
+   },
+   {
+    "id": "b4",
+    "start": 405.391,
+    "end": 413.774,
+    "text": "That's about a third of the field in the motor. The stator's steel is what lets the magnets drive 0.94 tesla across the gap."
+   },
+   {
+    "id": "b5",
+    "start": 414.174,
+    "end": 419.176,
+    "text": "Then run the solver without the stator, and compare: a weak magnet stands out at once."
+   }
+  ],
+  "end": 420.3757083333333
+ },
+ {
+  "id": "limits",
+  "title": "Where this model stops",
+  "start": 420.3757083333333,
+  "beats": [
+   {
+    "id": "l1",
+    "start": 420.776,
+    "end": 422.204,
+    "text": "This solution has limits."
+   },
+   {
+    "id": "l2",
+    "start": 422.504,
+    "end": 430.369,
+    "text": "It's two-dimensional: the stack is infinitely long, so flux leaking around the ends of the 25-millimetre stack is missing."
+   },
+   {
+    "id": "l3",
+    "start": 430.769,
+    "end": 435.616,
+    "text": "The steel is linear, but the teeth sit at the knee, so the real field is a little lower."
+   },
+   {
+    "id": "l4",
+    "start": 436.016,
+    "end": 443.219,
+    "text": "There's no stator current yet, so no armature reaction. And the magnets are ideal: uniform, at room temperature."
+   }
+  ],
+  "end": 444.41875000000005
+ },
+ {
+  "id": "predict",
+  "title": "Predict, then check",
+  "start": 444.41875000000005,
+  "beats": [
+   {
+    "id": "q1",
+    "start": 444.819,
+    "end": 446.739,
+    "text": "Three predictions before next time."
+   },
+   {
+    "id": "q2",
+    "start": 447.139,
+    "end": 454.131,
+    "text": "One: make the slot openings wider. What happens to Carter's coefficient, and to the average flux density in the gap?"
+   },
+   {
+    "id": "q3",
+    "start": 455.731,
+    "end": 463.063,
+    "text": "Two: a flat-topped wave of height B spans 160 electrical degrees. What's the amplitude of its fundamental?"
+   },
+   {
+    "id": "q4",
+    "start": 464.663,
+    "end": 470.552,
+    "text": "Three: at 1500 rpm, what's the electrical frequency of this field past a tooth?"
+   },
+   {
+    "id": "q5",
+    "start": 472.152,
+    "end": 476.513,
+    "text": "Next time: how the winding filters these harmonics, with winding factors."
+   }
+  ],
+  "end": 478.7133750000001
+ }
+]

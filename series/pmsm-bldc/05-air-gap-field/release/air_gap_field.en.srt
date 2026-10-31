@@ -1,0 +1,530 @@
+1
+00:00:00,600 --> 00:00:05,848
+In Lesson 3, we squeezed the field of our
+reference motor into one number:
+
+2
+00:00:05,888 --> 00:00:08,534
+about 0.94 tesla in the air gap.
+
+3
+00:00:08,574 --> 00:00:13,769
+But a stator tooth doesn't see one number.
+As the rotor turns, it sees a waveform.
+
+4
+00:00:13,809 --> 00:00:16,337
+Today we'll compute that waveform: its
+shape,
+
+5
+00:00:16,377 --> 00:00:20,048
+the dips the slot openings cut into it,
+and its harmonics.
+
+6
+00:00:20,088 --> 00:00:23,535
+And we'll do it with a field solver you
+can run yourself.
+
+7
+00:00:24,635 --> 00:00:26,783
+First, last lesson's answers.
+
+8
+00:00:26,823 --> 00:00:30,248
+One: eddy-current loss scales with
+lamination thickness squared,
+
+9
+00:00:30,288 --> 00:00:33,139
+so halving the thickness cuts it to a
+quarter.
+
+10
+00:00:33,179 --> 00:00:36,496
+Two: at the same flux density, doubling
+the frequency
+
+11
+00:00:36,536 --> 00:00:40,506
+doubles the hysteresis loss and quadruples
+the eddy loss.
+
+12
+00:00:40,546 --> 00:00:50,225
+Three: four pole pairs at 5000 rpm give 4
+× 5000 / 60 ≈ 333 Hz in the stator iron.
+
+13
+00:00:50,265 --> 00:00:54,342
+That frequency is set by the rotor's
+field: today's subject.
+
+14
+00:00:55,442 --> 00:00:59,397
+Unroll the air gap: magnets below, the
+stator bore above.
+
+15
+00:00:59,437 --> 00:01:04,198
+Lesson 3's circuit says B is about 0.94
+tesla under each magnet:
+
+16
+00:01:04,238 --> 00:01:07,598
+out of a north magnet, into a south one.
+
+17
+00:01:07,638 --> 00:01:10,621
+The simplest picture is a flat-topped
+wave,
+
+18
+00:01:10,661 --> 00:01:16,083
+spanning each magnet's 160 electrical
+degrees, and zero between magnets.
+
+19
+00:01:16,123 --> 00:01:20,863
+With a smooth bore, we can do better:
+expand the magnets in Fourier harmonics,
+
+20
+00:01:20,903 --> 00:01:24,388
+and solve the field equations exactly for
+each one.
+
+21
+00:01:24,428 --> 00:01:31,089
+The top stays flat at 0.943 tesla, Lesson
+3's value, but the corners round off.
+
+22
+00:01:32,189 --> 00:01:37,537
+Real stators have slots, and then there's
+no tidy formula. So we solve numerically.
+
+23
+00:01:37,577 --> 00:01:41,596
+Cover one quarter of the motor with a
+polar grid:
+
+24
+00:01:41,636 --> 00:01:45,558
+137 rings by 360 spokes, finest in the
+gap.
+
+25
+00:01:45,598 --> 00:01:49,170
+The unknown at each node is the axial
+vector potential, A.
+
+26
+00:01:49,210 --> 00:01:53,617
+Its contours are field lines, with equal
+flux between neighbours.
+
+27
+00:01:53,657 --> 00:01:58,397
+Around each node, Ampère's law: the line
+integral of H around a small cell
+
+28
+00:01:58,437 --> 00:02:03,901
+equals the current inside. Magnets enter
+as equivalent currents at their edges.
+
+29
+00:02:03,941 --> 00:02:06,649
+That's one linear equation per node:
+
+30
+00:02:06,689 --> 00:02:10,866
+48,600 sparse equations, solved in about a
+second.
+
+31
+00:02:10,906 --> 00:02:17,162
+The steel is linear, with μr = 4000: an
+assumption we'll revisit.
+
+32
+00:02:18,262 --> 00:02:21,654
+Here's the result, with a north magnet
+centred on a tooth.
+
+33
+00:02:21,694 --> 00:02:26,202
+Flux leaves the north magnet, crosses the
+gap, climbs the tooth, splits along
+
+34
+00:02:26,242 --> 00:02:31,031
+the stator yoke, and returns through the
+south magnets and the rotor steel.
+
+35
+00:02:31,071 --> 00:02:35,361
+The colour shows the flux density. The
+teeth carry about 1.5 tesla,
+
+36
+00:02:35,401 --> 00:02:39,186
+right at the knee of the steel's curve
+from Lesson 4.
+
+37
+00:02:39,226 --> 00:02:42,349
+So linear steel is a little optimistic
+here.
+
+38
+00:02:43,449 --> 00:02:47,389
+Before trusting a solver, test it on
+problems with known answers.
+
+39
+00:02:47,429 --> 00:02:53,227
+With a smooth bore, it matches the
+analytic solution within 0.34 percent.
+
+40
+00:02:53,267 --> 00:02:57,011
+With real steel and air between the
+magnets,
+
+41
+00:02:57,051 --> 00:03:03,258
+its pole-centre field is 0.942 tesla.
+Lesson 3's circuit gave 0.941.
+
+42
+00:03:03,298 --> 00:03:08,099
+Doubling the grid resolution changes the
+fundamental by 0.03 percent,
+
+43
+00:03:08,139 --> 00:03:11,025
+and two other tests agree as well.
+
+44
+00:03:12,125 --> 00:03:15,516
+Now zoom in where one magnet ends and the
+next begins.
+
+45
+00:03:15,556 --> 00:03:20,208
+The field can't flip instantly. It goes
+from plus to minus 90 percent
+
+46
+00:03:20,248 --> 00:03:25,571
+over about 3.8 millimetres: close to the
+magnet's thickness plus the gap.
+
+47
+00:03:25,611 --> 00:03:29,929
+And some field lines never reach the
+stator. They loop straight from one
+
+48
+00:03:29,969 --> 00:03:34,687
+magnet to its neighbour: leakage, about 4
+percent of each magnet's flux.
+
+49
+00:03:34,727 --> 00:03:36,924
+That's why the flat top has sloped sides,
+
+50
+00:03:36,964 --> 00:03:40,682
+and Lesson 3's number holds only near the
+middle of a pole.
+
+51
+00:03:41,782 --> 00:03:46,213
+Next, the slot openings: 2-millimetre gaps
+between the tooth tips.
+
+52
+00:03:46,253 --> 00:03:48,856
+Over an opening, the path through air is
+longer,
+
+53
+00:03:48,896 --> 00:03:52,285
+so the flux swerves sideways, toward the
+tooth corners.
+
+54
+00:03:52,325 --> 00:03:55,798
+Under the opening, B in the middle of the
+gap drops to two
+
+55
+00:03:55,838 --> 00:03:59,893
+thirds of its plateau, and at the bore
+itself, to 57 percent.
+
+56
+00:03:59,933 --> 00:04:03,241
+Beside the opening, the corners collect
+that flux:
+
+57
+00:04:03,281 --> 00:04:06,520
+about 1.5 tesla just in front of the
+steel.
+
+58
+00:04:06,560 --> 00:04:10,828
+These dips belong to the stator: they stay
+put while the rotor turns.
+
+59
+00:04:11,928 --> 00:04:16,576
+On average, slot openings act like a
+slightly wider gap. F. W.
+
+60
+00:04:16,616 --> 00:04:21,966
+Carter worked out how much in 1900 and
+1901, with a conformal map.
+
+61
+00:04:22,006 --> 00:04:25,935
+The effective gap is the real one times
+Carter's coefficient:
+
+62
+00:04:25,975 --> 00:04:30,008
+the slot pitch, over the slot pitch minus
+γ times the gap.
+
+63
+00:04:30,048 --> 00:04:33,863
+γ depends only on the ratio of slot
+opening to gap.
+
+64
+00:04:33,903 --> 00:04:39,378
+But which gap? With the half-millimetre
+air gap, Kc is 1.09.
+
+65
+00:04:39,418 --> 00:04:43,807
+A surface magnet, though, is almost air.
+
+66
+00:04:43,847 --> 00:04:52,068
+The rotor steel is g + hm/μrec away: 3.4
+millimetres. Then Kc is 1.018.
+
+67
+00:04:52,108 --> 00:04:56,210
+The solver gives 1.022. So the slot
+openings cost this
+
+68
+00:04:56,250 --> 00:05:00,816
+motor about 2 percent of its average gap
+flux, not 8.
+
+69
+00:05:01,916 --> 00:05:04,870
+Back to the waveform. It repeats every
+pole pair,
+
+70
+00:05:04,910 --> 00:05:08,448
+so write it as a Fourier series in
+electrical angle.
+
+71
+00:05:08,488 --> 00:05:13,067
+For an ideal flat top of height B and
+width α,
+
+72
+00:05:13,107 --> 00:05:18,187
+harmonic n has amplitude 4/(nπ) · B ·
+sin(nα/2).
+
+73
+00:05:18,227 --> 00:05:22,692
+Only odd harmonics appear, because each
+south half mirrors the north half.
+
+74
+00:05:22,732 --> 00:05:28,027
+The computed wave has a fundamental of
+1.16 tesla, a little below the ideal,
+
+75
+00:05:28,067 --> 00:05:32,568
+with weaker 3rd and 5th harmonics: its
+corners are rounded.
+
+76
+00:05:32,608 --> 00:05:37,053
+The slot openings lower the fundamental 2
+percent, to 1.14 tesla,
+
+77
+00:05:37,093 --> 00:05:42,216
+and add small components that come from
+the slots, not the magnets.
+
+78
+00:05:43,316 --> 00:05:46,128
+Now let the rotor turn, and watch one
+tooth.
+
+79
+00:05:46,168 --> 00:05:49,506
+Its flux density swings between plus and
+minus
+
+80
+00:05:49,546 --> 00:05:52,991
+1.5 tesla as north and south magnets pass.
+
+81
+00:05:53,031 --> 00:05:58,052
+One full cycle takes one pole pair: a
+quarter turn, for this 8-pole rotor.
+
+82
+00:05:58,092 --> 00:06:02,395
+So the electrical frequency is the number
+of pole pairs
+
+83
+00:06:02,435 --> 00:06:07,533
+times the revolutions per second: f =
+p·n/60, with n in rpm.
+
+84
+00:06:07,573 --> 00:06:09,950
+At 3000 rpm, that's 200 hertz:
+
+85
+00:06:09,990 --> 00:06:16,131
+a 5-millisecond cycle in every tooth and
+in every coil's flux linkage.
+
+86
+00:06:17,231 --> 00:06:20,907
+You can map this field yourself. Take the
+rotor out and mount
+
+87
+00:06:20,948 --> 00:06:25,024
+it on an indexing fixture: a printed
+protractor or a stepper.
+
+88
+00:06:25,064 --> 00:06:29,069
+Lay a transverse Hall probe flat on the
+magnets, sensor about half a
+
+89
+00:06:29,109 --> 00:06:33,633
+millimetre above the surface, and step the
+rotor one degree at a time.
+
+90
+00:06:33,673 --> 00:06:39,210
+Without the stator, expect about 0.33
+tesla over each magnet centre,
+
+91
+00:06:39,250 --> 00:06:45,351
+rising toward 0.37 near the edges, and a
+sign change every 45 degrees.
+
+92
+00:06:45,391 --> 00:06:48,554
+That's about a third of the field in the
+motor.
+
+93
+00:06:48,594 --> 00:06:54,134
+The stator's steel is what lets the
+magnets drive 0.94 tesla across the gap.
+
+94
+00:06:54,174 --> 00:06:56,429
+Then run the solver without the stator,
+
+95
+00:06:56,469 --> 00:06:59,676
+and compare: a weak magnet stands out at
+once.
+
+96
+00:07:00,776 --> 00:07:02,464
+This solution has limits.
+
+97
+00:07:02,504 --> 00:07:05,779
+It's two-dimensional: the stack is
+infinitely long,
+
+98
+00:07:05,819 --> 00:07:10,729
+so flux leaking around the ends of the
+25-millimetre stack is missing.
+
+99
+00:07:10,769 --> 00:07:13,570
+The steel is linear, but the teeth sit at
+the knee,
+
+100
+00:07:13,610 --> 00:07:15,976
+so the real field is a little lower.
+
+101
+00:07:16,016 --> 00:07:19,545
+There's no stator current yet, so no
+armature reaction.
+
+102
+00:07:19,585 --> 00:07:23,719
+And the magnets are ideal: uniform, at
+room temperature.
+
+103
+00:07:24,819 --> 00:07:27,099
+Three predictions before next time.
+
+104
+00:07:27,139 --> 00:07:31,477
+One: make the slot openings wider. What
+happens to Carter's coefficient,
+
+105
+00:07:31,517 --> 00:07:34,631
+and to the average flux density in the
+gap?
+
+106
+00:07:35,731 --> 00:07:40,230
+Two: a flat-topped wave of height B spans
+160 electrical degrees.
+
+107
+00:07:40,270 --> 00:07:43,563
+What's the amplitude of its fundamental?
+
+108
+00:07:44,663 --> 00:07:51,052
+Three: at 1500 rpm, what's the electrical
+frequency of this field past a tooth?
+
+109
+00:07:52,152 --> 00:07:57,013
+Next time: how the winding filters these
+harmonics, with winding factors.
